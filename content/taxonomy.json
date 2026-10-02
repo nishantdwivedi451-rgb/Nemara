@@ -1,0 +1,22 @@
+{
+  "categories": [
+    { "slug": "necklace-sets", "name": "Necklace Sets", "line": "Collars, chokers and the studs that finish the sentence.", "image": { "src": "/art/products/raat-rani-necklace-set/worn.svg", "alt": "Necklace set worn at the collarbone", "role": "worn" } },
+    { "slug": "earrings", "name": "Earrings", "line": "Drops, jhumkas and hoops — the first thing they notice when you turn your head.", "image": { "src": "/art/products/monsoon-hour-jhumka/worn.svg", "alt": "Jhumka earring worn in profile", "role": "worn" } },
+    { "slug": "bracelets", "name": "Bracelets", "line": "For the wrist that talks with its hands.", "image": { "src": "/art/products/thread-of-thought-cuff/worn.svg", "alt": "Filigree cuff worn on the wrist", "role": "worn" } },
+    { "slug": "kada", "name": "Kada", "line": "The bangle that carries weight — in every sense.", "image": { "src": "/art/products/aangan-kada/worn.svg", "alt": "Repoussé kada worn on the wrist", "role": "worn" } }
+  ],
+  "occasions": [
+    { "slug": "after-hours", "name": "After Hours", "label": "Party wear", "line": "When the lights go low and the conversation gets interesting.", "tone": "dusk", "image": { "src": "/art/campaign/after-hours.svg", "alt": "Campaign illustration — After Hours", "role": "campaign" } },
+    { "slug": "nine-to-five", "name": "The 9 to 5", "label": "Office wear", "line": "Quiet enough for the boardroom. Interesting enough for the lift.", "tone": "mist", "image": { "src": "/art/campaign/nine-to-five.svg", "alt": "Campaign illustration — The 9 to 5", "role": "campaign" } },
+    { "slug": "celebration", "name": "The Celebration", "label": "Festive wear", "line": "Weddings, pujas, the cousin's sangeet you've been rehearsing for.", "tone": "festive", "image": { "src": "/art/campaign/celebration.svg", "alt": "Campaign illustration — The Celebration", "role": "campaign" } },
+    { "slug": "everyday", "name": "The Everyday", "label": "Daily wear", "line": "The pieces you forget you're wearing — until someone asks.", "tone": "paper", "image": { "src": "/art/campaign/everyday.svg", "alt": "Campaign illustration — The Everyday", "role": "campaign" } }
+  ],
+  "collections": [
+    { "slug": "new-arrivals", "name": "New Arrivals", "line": "Just out of the kiln." },
+    { "slug": "best-sellers", "name": "Most Loved", "line": "The pieces women keep coming back for." },
+    { "slug": "editors-picks", "name": "Pratima's Picks", "line": "Chosen by the woman who drew them." },
+    { "slug": "statement", "name": "Statement Pieces", "line": "Wear one. Say less." },
+    { "slug": "everyday-pieces", "name": "Everyday Pieces", "line": "Light, warm, made to live in." },
+    { "slug": "giftable", "name": "Giftable", "line": "For her — whichever version she is today." }
+  ]
+}

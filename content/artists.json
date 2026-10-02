@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "meher-bano",
+    "name": "Meher Bano",
+    "location": "Jaipur, Rajasthan",
+    "craft": "Meenakari enamel & kundan setting",
+    "yearsOfPractice": 22,
+    "portrait": { "src": "/art/artists/meher-bano.svg", "alt": "Placeholder portrait for Meher Bano — hands setting enamel", "role": "portrait" },
+    "summary": "Meher fires colour into metal the way her grandmother taught her: slowly, in layers, and never in a hurry to finish.",
+    "quote": "Purple is the hardest colour to fire. It goes brown if you rush it. So you learn not to rush.",
+    "contribution": "Enamel work and stone setting",
+    "story": [
+      "Meher Bano grew up in a lane in Jaipur where the sound of small hammers starts before the sound of traffic. Her grandmother was an enameller; her mother set stones. By twelve, Meher could do both, and by twenty she had decided she would do them differently.",
+      "Traditional meenakari hides its colour on the back of a piece, a secret for the wearer. Meher likes bringing it to the front. When Pratima arrived with sketches of jhumkas that 'wanted to be lilac, not ruby', Meher laughed — and then spent three weeks getting the purple right.",
+      "Today she runs a small studio of four women. Every Nemara enamel piece passes through their kiln, one firing at a time."
+    ]
+  },
+  {
+    "slug": "ramesh-soni",
+    "name": "Ramesh Soni",
+    "location": "Cuttack, Odisha",
+    "craft": "Tarakasi — silver filigree",
+    "yearsOfPractice": 31,
+    "portrait": { "src": "/art/artists/ramesh-soni.svg", "alt": "Placeholder portrait for Ramesh Soni — hands twisting silver wire", "role": "portrait" },
+    "summary": "Ramesh draws with wire. A single filigree collar can hold four hundred hand-twisted coils, each one soldered by eye.",
+    "quote": "People think filigree is decoration. It is structure. The lace is what holds the shape.",
+    "contribution": "Filigree frameworks and wirework",
+    "story": [
+      "Cuttack's filigree workers call the finest wire 'hair'. Ramesh Soni has been twisting it for thirty-one years, first in his uncle's workshop and now in his own, a room with one window and very good light.",
+      "Most of his work used to be for temple and wedding orders: heavy, symmetrical, exact. Nemara asked him for something he says he had never been asked for — asymmetry. 'Pratima drew one hoop bigger than the other and said, this is on purpose. I liked her immediately.'",
+      "His filigree gives Nemara pieces their lightness: they look sculptural and weigh almost nothing."
+    ]
+  },
+  {
+    "slug": "lakshmi-narayanan",
+    "name": "Lakshmi Narayanan",
+    "location": "Thrissur, Kerala",
+    "craft": "Hand-chasing & repoussé",
+    "yearsOfPractice": 18,
+    "portrait": { "src": "/art/artists/lakshmi-narayanan.svg", "alt": "Placeholder portrait for Lakshmi Narayanan — hands chasing a metal sheet", "role": "portrait" },
+    "summary": "Lakshmi pushes pictures into metal from behind — courtyards, lamps, temple doors — until the flat sheet remembers them.",
+    "quote": "A motif is a memory with a shape. I just press it in until it stays.",
+    "contribution": "Repoussé relief and chasing",
+    "story": [
+      "Lakshmi Narayanan trained in temple jewellery, the kind made for festivals and brides. She still makes those. But on Thursdays, she says, she makes 'the new things' — the Nemara pieces that take old motifs somewhere they haven't been.",
+      "Repoussé is worked from the back: the metal is set on a bed of pitch and coaxed outward with blunt tools, one small push at a time. A single kada can take two days of pressing before it is polished.",
+      "Her courtyard motif on the Aangan kada is drawn from the house she grew up in, which no longer stands. 'Now it does,' she says, 'on someone's wrist.'"
+    ]
+  },
+  {
+    "slug": "farida-qureshi",
+    "name": "Farida Qureshi",
+    "location": "Moradabad, Uttar Pradesh",
+    "craft": "Brass casting & hand-finishing",
+    "yearsOfPractice": 15,
+    "portrait": { "src": "/art/artists/farida-qureshi.svg", "alt": "Placeholder portrait for Farida Qureshi — hands polishing cast brass", "role": "portrait" },
+    "summary": "Farida finishes brass by hand until it feels warm before you put it on. Her pieces are the ones Nemara wears every day.",
+    "quote": "Machines make it shiny. Hands make it soft. You can feel the difference with your eyes closed.",
+    "contribution": "Casting, hammering and hand-finishing",
+    "story": [
+      "Moradabad has made brass for the world for centuries — mostly bowls, lamps and trophies. Farida Qureshi was the first woman in her family's workshop to work the metal rather than pack it.",
+      "She casts in small batches and finishes every piece herself: filing, hammering, polishing with walnut shell and, finally, her own thumb. Her hammered textures are irregular on purpose. 'If it's perfect,' she says, 'it looks like it came from nowhere.'",
+      "Farida makes Nemara's everyday line, the pieces designed to be worn to work, to the market, to sleep if you forget."
+    ]
+  }
+]

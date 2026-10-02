@@ -1,0 +1,40 @@
+{
+  "shipping": { "title": "Shipping", "body": [
+    "We ship across India. Every piece is dispatched within 2–4 working days in a Nemara pouch with its story card.",
+    "Shipping is free on orders over ₹2,500. Below that, a flat ₹99 applies.",
+    "Metro deliveries typically take 2–4 days after dispatch; other locations 4–7 days. You'll receive tracking by email and WhatsApp.",
+    "International shipping is coming soon. Write to us if you'd like to be told first."
+  ]},
+  "returns": { "title": "Returns & exchanges", "body": [
+    "If a piece isn't right, return it unworn, with its tags and packaging, within 7 days of delivery for a refund or exchange.",
+    "For hygiene, earrings can only be returned if they arrive faulty.",
+    "Start a return by writing to us on WhatsApp or email with your order number. Refunds go back to the original payment method within 5–7 working days of the piece reaching us."
+  ]},
+  "care": { "title": "Caring for your Nemara", "body": [
+    "Put your jewellery on last and take it off first: after perfume, lotion and hairspray, and before you shower, swim or exercise.",
+    "Wipe each piece with the Nemara cloth after wearing and store it in its pouch, away from moisture.",
+    "Sterling silver naturally tarnishes over time; a gentle polish with the cloth restores it. Avoid chemical dips on enamel and filigree.",
+    "Plating can wear with friction. If a favourite piece needs care, write to us — we offer re-plating for a small fee."
+  ]},
+  "size-guide": { "title": "Kada size guide", "body": [
+    "Kada sizes are measured by inner diameter in inches, using the traditional Indian scale.",
+    "2.4 — inner diameter about 5.7 cm: petite hands and narrower wrists.",
+    "2.6 — inner diameter about 6.0 cm: the most common size.",
+    "2.8 — inner diameter about 6.4 cm: broader hands, or a looser fit.",
+    "To check: measure the inside of a bangle you already wear, or ask us on WhatsApp — we'll help you choose."
+  ]},
+  "privacy": { "title": "Privacy", "body": [
+    "This policy is a placeholder and must be reviewed by a qualified professional before launch.",
+    "We collect only what we need to fulfil your order and talk to you: your name, contact details, delivery address and order history.",
+    "Payments are processed by our payment partner; Nemara never sees or stores your card or UPI credentials.",
+    "Try-on runs entirely in your browser. Camera images are never uploaded or stored by Nemara.",
+    "We use privacy-friendly analytics to understand how the site is used. With your consent, we may also use advertising pixels.",
+    "To access or delete your data, write to us at the email address on our Contact page."
+  ]},
+  "terms": { "title": "Terms of use", "body": [
+    "These terms are a placeholder and must be reviewed by a qualified professional before launch.",
+    "All prices are in Indian Rupees and include applicable taxes. We reserve the right to correct pricing errors.",
+    "Handmade pieces vary slightly from one another and from their images; these variations are part of their character, not defects.",
+    "All designs, imagery and content on this site belong to Nemara and its artists and may not be reproduced without permission."
+  ]}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Nemara",
+  "tagline": "Wear Your Story.",
+  "description": "Nemara is a new-age fashion jewellery house from India. Designed by Pratima Saxena, shaped by Indian artists, made for the many versions of you.",
+  "contact": {
+    "phone": "+91 00000 00000",
+    "email": "hello@nemara.in",
+    "whatsapp": "910000000000",
+    "whatsappMessage": "Hi Nemara, I'd love some help choosing a piece.",
+    "instagram": "nemara.in",
+    "address": "Studio address to be announced · India",
+    "hours": "Mon–Sat · 10:00–19:00 IST"
+  },
+  "shipping": {
+    "freeShippingThreshold": 2500,
+    "flatRate": 99,
+    "dispatchDays": "2–4 working days",
+    "returnsDays": 7
+  },
+  "hero": {
+    "media": null,
+    "_comment": "Set media to { \"type\": \"video\", \"src\": \"/media/hero.mp4\", \"poster\": \"/media/hero.jpg\" } or { \"type\": \"image\", \"src\": \"/media/hero.jpg\", \"alt\": \"...\" } to replace the illustrated hero."
+  },
+  "founder": {
+    "name": "Pratima Saxena",
+    "portrait": { "src": "/art/campaign/founder.svg", "alt": "Placeholder portrait of Pratima Saxena", "role": "portrait" },
+    "studio": { "src": "/art/campaign/studio.svg", "alt": "Placeholder — the Nemara design table", "role": "campaign" }
+  }
+}

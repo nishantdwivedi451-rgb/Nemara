@@ -1,0 +1,56 @@
+/* ───────── Nemara design tokens ───────── */
+:root {
+  /* colour — purple is the ink, ivory is the page */
+  --paper: #F7F3EC;
+  --warm: #FCFAF6;
+  --ink: #4B1D5C;          /* Nemara Ink — signature */
+  --night: #21102A;        /* almost-black purple — text */
+  --violet: #6E3C8C;
+  --lavender: #B9A4C8;
+  --mist: #E9E0EE;
+  --rose: #E7DCE5;
+  --champagne: #C8B184;
+  --champagne-deep: #9C8659;
+  --graphite: #5A5260;
+  --line: rgba(33, 16, 42, 0.14);
+  --line-strong: rgba(33, 16, 42, 0.32);
+  --success: #3F6B4F;
+  --danger: #9B2C3C;
+
+  --fg: var(--night);
+  --bg: var(--paper);
+  --muted: var(--graphite);
+
+  /* type */
+  --font-display: var(--ff-serif), "Times New Roman", serif;
+  --font-sans: var(--ff-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: var(--ff-hand), "Bradley Hand", cursive;
+
+  --fs-xs: 0.72rem;
+  --fs-sm: 0.84rem;
+  --fs-base: 1rem;
+  --fs-md: 1.15rem;
+  --fs-lg: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  --fs-xl: clamp(1.9rem, 1.3rem + 2.6vw, 3.2rem);
+  --fs-2xl: clamp(2.6rem, 1.4rem + 5.4vw, 6rem);
+  --fs-3xl: clamp(3.4rem, 1.2rem + 9.5vw, 11rem);
+
+  /* layout */
+  --gutter: clamp(16px, 4vw, 56px);
+  --gap: clamp(12px, 1.6vw, 24px);
+  --max: 1520px;
+  --header-h: 64px;
+  --tabbar-h: 64px;
+  --radius: 2px;
+
+  /* motion */
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --t-fast: 220ms;
+  --t-med: 520ms;
+  --t-slow: 900ms;
+}
+
+@media (min-width: 900px) {
+  :root { --header-h: 76px; --tabbar-h: 0px; }
+}

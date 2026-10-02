@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.vercel
+.env
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+public/mediapipe
+.DS_Store
+npm-debug.log*

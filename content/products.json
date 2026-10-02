@@ -1,0 +1,1102 @@
+[
+  {
+    "id": "nem_001",
+    "sku": "NEM-ER-MAR-01",
+    "handle": "margin-note-drops",
+    "name": "Margin Note Drops",
+    "subtitle": "Pearl drop earrings",
+    "description": "A single curved line that ends in a pearl — light enough to forget, distinctive enough to be asked about.",
+    "price": 1890,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 24,
+    "category": "earrings",
+    "occasions": [
+      "nine-to-five",
+      "everyday"
+    ],
+    "collections": [
+      "best-sellers",
+      "everyday-pieces",
+      "giftable"
+    ],
+    "tags": [
+      "pearl",
+      "brass",
+      "minimal",
+      "lightweight"
+    ],
+    "material": "Hand-finished brass, 22k gold plating, freshwater pearl",
+    "dimensions": "Drop length 4.2 cm · 3.1 g per earring",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "farida-qureshi",
+    "featured": true,
+    "createdAt": "2026-09-01T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/margin-note-drops/hero.svg",
+        "alt": "Margin Note Drops — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/margin-note-drops/worn.svg",
+        "alt": "Margin Note Drops — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/margin-note-drops/detail.svg",
+        "alt": "Margin Note Drops — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/margin-note-drops/story.svg",
+        "alt": "Margin Note Drops — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "For twenty-five years Pratima made the same small mark in the margins of her students' notebooks: a curved tick that meant 'yes, this — keep going'. When she began to draw jewellery, it was the first shape her pen made.",
+        "note": "the tick that meant — keep going."
+      },
+      "hand": {
+        "contribution": "Farida casts the curve in brass and hand-files it until the line thins like a pen stroke lifting off the page."
+      },
+      "making": {
+        "body": "Cast in small batches in Moradabad, hand-filed, plated in 22k gold and finished with a single freshwater pearl, drilled and set by hand.",
+        "steps": [
+          "Cast in brass",
+          "Hand-filed taper",
+          "22k gold plating",
+          "Pearl set by hand"
+        ]
+      },
+      "moment": {
+        "body": "Monday, 9:40 a.m. The meeting you prepared for. Something small at your ear that says you already know the answer."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "ears",
+      "scale": 1,
+      "overlay": "/art/products/margin-note-drops/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_002",
+    "sku": "NEM-ER-MON-02",
+    "handle": "monsoon-hour-jhumka",
+    "name": "Monsoon Hour Jhumka",
+    "subtitle": "Lilac enamel jhumkas",
+    "description": "A jhumka that heard the rain. Lilac enamel fired in layers, with a fringe that moves a half-second after you do.",
+    "price": 3490,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 12,
+    "category": "earrings",
+    "occasions": [
+      "celebration",
+      "after-hours"
+    ],
+    "collections": [
+      "new-arrivals",
+      "editors-picks",
+      "statement"
+    ],
+    "tags": [
+      "enamel",
+      "meenakari",
+      "jhumka",
+      "lilac"
+    ],
+    "material": "Brass, 22k gold plating, hand-fired lilac meenakari, glass seed beads",
+    "dimensions": "Drop length 5.8 cm · 9.4 g per earring",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "meher-bano",
+    "featured": true,
+    "createdAt": "2026-09-02T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/monsoon-hour-jhumka/hero.svg",
+        "alt": "Monsoon Hour Jhumka — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/monsoon-hour-jhumka/worn.svg",
+        "alt": "Monsoon Hour Jhumka — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/monsoon-hour-jhumka/detail.svg",
+        "alt": "Monsoon Hour Jhumka — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/monsoon-hour-jhumka/story.svg",
+        "alt": "Monsoon Hour Jhumka — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Pratima remembers sitting on her mother's verandah during the first rain of the monsoon, watching water gather and fall from the edge of the roof. She wanted a jhumka that felt like that moment: a dome, a pause, and then the drop.",
+        "note": "not ruby. lilac. like the sky just before."
+      },
+      "hand": {
+        "contribution": "Meher fires the lilac meenakari in five separate layers — purple is the hardest enamel colour to get right — and sets each bead of the fringe by hand."
+      },
+      "making": {
+        "body": "The dome is raised from a single brass sheet, enamelled in Jaipur over three days, plated, and finished with a hand-strung fringe of seed beads.",
+        "steps": [
+          "Dome raised by hand",
+          "Five enamel firings",
+          "22k gold plating",
+          "Fringe hand-strung"
+        ]
+      },
+      "moment": {
+        "body": "The sangeet, second song. You weren't going to dance. The jhumkas had other plans."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "ears",
+      "scale": 1.15,
+      "overlay": "/art/products/monsoon-hour-jhumka/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_003",
+    "sku": "NEM-ER-SEC-03",
+    "handle": "second-glance-hoops",
+    "name": "Second Glance Hoops",
+    "subtitle": "Asymmetric filigree hoops",
+    "description": "One hoop larger than the other, on purpose. The kind of detail people notice the second time they look.",
+    "price": 2690,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 18,
+    "category": "earrings",
+    "occasions": [
+      "after-hours",
+      "everyday"
+    ],
+    "collections": [
+      "new-arrivals",
+      "statement"
+    ],
+    "tags": [
+      "filigree",
+      "silver",
+      "asymmetric",
+      "hoops"
+    ],
+    "material": "92.5 sterling silver filigree, oxidised accents",
+    "dimensions": "Large hoop 4.4 cm · small hoop 2.8 cm · 4.6 g total",
+    "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
+    "artist": "ramesh-soni",
+    "featured": false,
+    "createdAt": "2026-09-03T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/second-glance-hoops/hero.svg",
+        "alt": "Second Glance Hoops — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/second-glance-hoops/worn.svg",
+        "alt": "Second Glance Hoops — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/second-glance-hoops/detail.svg",
+        "alt": "Second Glance Hoops — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/second-glance-hoops/story.svg",
+        "alt": "Second Glance Hoops — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Pratima has never liked things that match too neatly. 'The best students were never symmetrical,' she says. 'They were interesting on one side and surprising on the other.' She drew one hoop, then a smaller one, and refused to correct it.",
+        "note": "don't fix it. it's better uneven."
+      },
+      "hand": {
+        "contribution": "Ramesh twists the silver 'hair' wire into filigree coils and solders over two hundred joins per pair, entirely by eye."
+      },
+      "making": {
+        "body": "Each hoop begins as a hand-drawn silver frame, filled with coils of twisted filigree wire in Cuttack, then lightly oxidised so the lace reads in low light.",
+        "steps": [
+          "Frame drawn in silver",
+          "Filigree coils twisted",
+          "Soldered by eye",
+          "Oxidised & polished"
+        ]
+      },
+      "moment": {
+        "body": "A rooftop at 11 p.m. Someone tilts their head and says, 'Wait — are they different?' Yes. That's the point."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "ears",
+      "scale": 1.1,
+      "overlay": "/art/products/second-glance-hoops/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_004",
+    "sku": "NEM-NS-CHA-04",
+    "handle": "chalk-line-necklace-set",
+    "name": "The Chalk Line Set",
+    "subtitle": "Fine collar & studs",
+    "description": "A fine collar with a single bar, drawn as cleanly as a line of chalk on a blackboard. Comes with matching studs.",
+    "price": 4290,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 15,
+    "category": "necklace-sets",
+    "occasions": [
+      "nine-to-five",
+      "everyday"
+    ],
+    "collections": [
+      "best-sellers",
+      "everyday-pieces",
+      "giftable"
+    ],
+    "tags": [
+      "collar",
+      "brass",
+      "minimal",
+      "set"
+    ],
+    "material": "Hand-finished brass, 22k gold plating",
+    "dimensions": "Collar 38–43 cm adjustable · bar 3.2 cm · studs 0.8 cm",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "farida-qureshi",
+    "featured": true,
+    "createdAt": "2026-09-04T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/chalk-line-necklace-set/hero.svg",
+        "alt": "The Chalk Line Set — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/chalk-line-necklace-set/worn.svg",
+        "alt": "The Chalk Line Set — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/chalk-line-necklace-set/detail.svg",
+        "alt": "The Chalk Line Set — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/chalk-line-necklace-set/story.svg",
+        "alt": "The Chalk Line Set — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "The first line on a fresh blackboard is the most confident line of the day. Pratima wanted a necklace with that energy — nothing extra, one decision, made well.",
+        "note": "one line. say it once."
+      },
+      "hand": {
+        "contribution": "Farida hand-hammers the bar flat, then polishes it so it catches light along one edge only, like chalk on slate."
+      },
+      "making": {
+        "body": "The collar wire is drawn and shaped by hand in Moradabad; the bar is hammered, filed and plated, and the matching studs are cut from the same sheet.",
+        "steps": [
+          "Collar drawn & shaped",
+          "Bar hand-hammered",
+          "Edge polished",
+          "Studs cut from same sheet"
+        ]
+      },
+      "moment": {
+        "body": "The presentation. Collar under a crisp shirt. You speak, they listen."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "neck",
+      "scale": 1,
+      "overlay": "/art/products/chalk-line-necklace-set/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_005",
+    "sku": "NEM-NS-RAA-05",
+    "handle": "raat-rani-necklace-set",
+    "name": "Raat Rani Set",
+    "subtitle": "Filigree collar with violet stones",
+    "description": "Named for night-blooming jasmine. A filigree collar of petals and violet stones that opens slowly in the dark.",
+    "price": 6890,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 6,
+    "category": "necklace-sets",
+    "occasions": [
+      "after-hours",
+      "celebration"
+    ],
+    "collections": [
+      "editors-picks",
+      "statement"
+    ],
+    "tags": [
+      "filigree",
+      "statement",
+      "violet",
+      "set"
+    ],
+    "material": "92.5 sterling silver filigree, 22k gold vermeil, violet glass stones",
+    "dimensions": "Collar 40 cm with 5 cm extender · earrings 3.6 cm",
+    "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
+    "artist": "ramesh-soni",
+    "featured": true,
+    "createdAt": "2026-09-05T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/raat-rani-necklace-set/hero.svg",
+        "alt": "Raat Rani Set — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/raat-rani-necklace-set/worn.svg",
+        "alt": "Raat Rani Set — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/raat-rani-necklace-set/detail.svg",
+        "alt": "Raat Rani Set — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/raat-rani-necklace-set/story.svg",
+        "alt": "Raat Rani Set — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "There was a raat rani bush outside the school staff room where Pratima taught. Every evening, after the last bell, its scent arrived before anything else. She drew the petals on the back of an attendance sheet.",
+        "note": "the flower that only shows up after dark."
+      },
+      "hand": {
+        "contribution": "Ramesh builds each petal as a separate filigree cell — the full collar holds over four hundred hand-twisted coils — before it is vermeil-plated and set with violet stones."
+      },
+      "making": {
+        "body": "Twenty-one filigree petals are made one by one in Cuttack, linked into a flexible collar, gold-vermeil plated and hand-set with violet stones. A matching pair of petal drops completes the set.",
+        "steps": [
+          "21 petals hand-built",
+          "Linked into a collar",
+          "Gold vermeil",
+          "Violet stones set by hand"
+        ]
+      },
+      "moment": {
+        "body": "A wedding reception, late. Hair up, shoulders bare. Everybody asks where it's from — and then who made it."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "neck",
+      "scale": 1.1,
+      "overlay": "/art/products/raat-rani-necklace-set/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_006",
+    "sku": "NEM-NS-INH-06",
+    "handle": "inheritance-rewritten-set",
+    "name": "Inheritance, Rewritten",
+    "subtitle": "Temple-motif necklace set",
+    "description": "The temple necklace your grandmother wore — asked a new question. Repoussé discs, spaced like breath, around a single pearl.",
+    "price": 5990,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 9,
+    "category": "necklace-sets",
+    "occasions": [
+      "celebration"
+    ],
+    "collections": [
+      "editors-picks",
+      "statement",
+      "giftable"
+    ],
+    "tags": [
+      "temple",
+      "repousse",
+      "festive",
+      "set"
+    ],
+    "material": "Brass, 22k gold plating, hand-chased repoussé discs, pearl accents",
+    "dimensions": "Necklace 44 cm · centre disc 3.4 cm · earrings 3.0 cm",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "lakshmi-narayanan",
+    "featured": false,
+    "createdAt": "2026-09-06T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/inheritance-rewritten-set/hero.svg",
+        "alt": "Inheritance, Rewritten — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/inheritance-rewritten-set/worn.svg",
+        "alt": "Inheritance, Rewritten — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/inheritance-rewritten-set/detail.svg",
+        "alt": "Inheritance, Rewritten — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/inheritance-rewritten-set/story.svg",
+        "alt": "Inheritance, Rewritten — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Pratima inherited one piece of temple jewellery, too heavy to wear and too precious to change. Instead she asked: what would this look like if it had been designed for my daughter? Fewer discs. More space. The same reverence.",
+        "note": "keep the prayer, lose the weight."
+      },
+      "hand": {
+        "contribution": "Lakshmi presses each disc from behind on a bed of pitch — lamp, lotus, doorway — so the motifs rise softly from the metal."
+      },
+      "making": {
+        "body": "Seven discs are hand-chased in Thrissur, each with a different motif, then linked on a fine chain with pearl spacers and plated in 22k gold.",
+        "steps": [
+          "Discs pressed on pitch",
+          "Motifs chased by hand",
+          "Linked with pearls",
+          "22k gold plating"
+        ]
+      },
+      "moment": {
+        "body": "Diwali morning at your grandmother's house. She holds the centre disc, turns it over, and nods."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "neck",
+      "scale": 1.05,
+      "overlay": "/art/products/inheritance-rewritten-set/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_007",
+    "sku": "NEM-BR-REC-07",
+    "handle": "recess-bracelet",
+    "name": "Recess Bracelet",
+    "subtitle": "Beaded brass bracelet",
+    "description": "Brass and lilac beads in no particular order. The best part of the school day, worn on your wrist.",
+    "price": 1690,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 30,
+    "category": "bracelets",
+    "occasions": [
+      "everyday"
+    ],
+    "collections": [
+      "best-sellers",
+      "everyday-pieces",
+      "giftable"
+    ],
+    "tags": [
+      "beads",
+      "brass",
+      "playful",
+      "stackable"
+    ],
+    "material": "Hand-finished brass beads, lilac glass beads, stretch cord",
+    "dimensions": "Fits 15–17 cm wrists · bead 6 mm",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "farida-qureshi",
+    "featured": false,
+    "createdAt": "2026-09-07T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/recess-bracelet/hero.svg",
+        "alt": "Recess Bracelet — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/recess-bracelet/worn.svg",
+        "alt": "Recess Bracelet — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/recess-bracelet/detail.svg",
+        "alt": "Recess Bracelet — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/recess-bracelet/story.svg",
+        "alt": "Recess Bracelet — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Recess was when Pratima saw who her students really were — the leaders, the jokers, the quiet ones drawing in corners. This bracelet is deliberately unplanned: no two have the same order of beads.",
+        "note": "no pattern. that's the pattern."
+      },
+      "hand": {
+        "contribution": "Farida hand-polishes every brass bead with walnut shell, then strings them by feel rather than by count."
+      },
+      "making": {
+        "body": "Brass beads are cast, tumbled and finished by hand in Moradabad, then strung with lilac glass beads in a different sequence every time.",
+        "steps": [
+          "Beads cast & tumbled",
+          "Walnut-shell polish",
+          "Strung by feel",
+          "Never the same twice"
+        ]
+      },
+      "moment": {
+        "body": "Saturday market, coffee in one hand. Stack it with everything or wear it alone."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "/art/products/recess-bracelet/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_008",
+    "sku": "NEM-BR-THR-08",
+    "handle": "thread-of-thought-cuff",
+    "name": "Thread of Thought Cuff",
+    "subtitle": "Woven filigree cuff",
+    "description": "An open cuff woven from silver threads — a reminder that every good idea is a few loose ends, pulled together.",
+    "price": 2990,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 14,
+    "category": "bracelets",
+    "occasions": [
+      "nine-to-five",
+      "after-hours"
+    ],
+    "collections": [
+      "new-arrivals",
+      "editors-picks"
+    ],
+    "tags": [
+      "filigree",
+      "silver",
+      "cuff",
+      "woven"
+    ],
+    "material": "92.5 sterling silver filigree",
+    "dimensions": "Opening 2.4 cm · width 1.8 cm · fits most wrists",
+    "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
+    "artist": "ramesh-soni",
+    "featured": true,
+    "createdAt": "2026-09-08T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/thread-of-thought-cuff/hero.svg",
+        "alt": "Thread of Thought Cuff — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/thread-of-thought-cuff/worn.svg",
+        "alt": "Thread of Thought Cuff — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/thread-of-thought-cuff/detail.svg",
+        "alt": "Thread of Thought Cuff — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/thread-of-thought-cuff/story.svg",
+        "alt": "Thread of Thought Cuff — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Pratima's lesson plans were never linear. They were webs — one idea leading to three more. She wanted a cuff that looked the way her thinking felt: woven, open-ended, holding together because of its threads.",
+        "note": "thinking, made visible."
+      },
+      "hand": {
+        "contribution": "Ramesh weaves six strands of twisted silver over a frame by hand, then solders the weave at forty points so it holds its shape."
+      },
+      "making": {
+        "body": "A silver frame is shaped in Cuttack and filled with a hand-woven lattice of twisted filigree wire, then gently domed so it sits close to the wrist.",
+        "steps": [
+          "Frame shaped",
+          "Six-strand weave",
+          "Soldered at 40 points",
+          "Domed to fit"
+        ]
+      },
+      "moment": {
+        "body": "Thursday evening. Laptop closed, sleeves rolled up. Straight from the office to dinner, no change needed."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "/art/products/thread-of-thought-cuff/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_009",
+    "sku": "NEM-BR-LAN-09",
+    "handle": "lantern-bracelet",
+    "name": "Lantern Bracelet",
+    "subtitle": "Enamel link bracelet",
+    "description": "Small enamel links that glow like lanterns strung across a courtyard on a festival night.",
+    "price": 2490,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 11,
+    "category": "bracelets",
+    "occasions": [
+      "after-hours",
+      "celebration"
+    ],
+    "collections": [
+      "new-arrivals",
+      "giftable"
+    ],
+    "tags": [
+      "enamel",
+      "links",
+      "violet",
+      "festive"
+    ],
+    "material": "Brass, 22k gold plating, hand-fired violet meenakari",
+    "dimensions": "Length 17.5 cm + 2 cm extender · link 1.1 cm",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "meher-bano",
+    "featured": false,
+    "createdAt": "2026-09-09T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/lantern-bracelet/hero.svg",
+        "alt": "Lantern Bracelet — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/lantern-bracelet/worn.svg",
+        "alt": "Lantern Bracelet — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/lantern-bracelet/detail.svg",
+        "alt": "Lantern Bracelet — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/lantern-bracelet/story.svg",
+        "alt": "Lantern Bracelet — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Every Diwali the girls' hostel strung paper lanterns across the courtyard, and Pratima walked beneath them doing the night round. Years later she drew a bracelet that looked like that row of lights.",
+        "note": "a row of small lights. walking under them."
+      },
+      "hand": {
+        "contribution": "Meher enamels each link individually in deep violet and plum, then fires them twice so the colour glows from beneath the surface."
+      },
+      "making": {
+        "body": "Eleven links are cut, enamelled and double-fired in Jaipur, then joined by hand with gold-plated jump rings.",
+        "steps": [
+          "Links cut from sheet",
+          "Violet enamel",
+          "Double-fired",
+          "Joined by hand"
+        ]
+      },
+      "moment": {
+        "body": "Festival night on the terrace. Sparklers, laughter, a wrist that catches the light every time you raise a glass."
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "/art/products/lantern-bracelet/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_010",
+    "sku": "NEM-KD-SUN-10",
+    "handle": "sunday-kada",
+    "name": "Sunday Kada",
+    "subtitle": "Hammered brass kada",
+    "description": "A hammered kada with the slow warmth of a Sunday morning. Irregular, soft, entirely yours.",
+    "price": 2190,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 22,
+    "category": "kada",
+    "occasions": [
+      "everyday",
+      "nine-to-five"
+    ],
+    "collections": [
+      "best-sellers",
+      "everyday-pieces"
+    ],
+    "tags": [
+      "brass",
+      "hammered",
+      "kada",
+      "everyday"
+    ],
+    "material": "Hand-hammered brass, 22k gold plating",
+    "dimensions": "Width 0.9 cm · available in 2.4, 2.6 and 2.8",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "farida-qureshi",
+    "featured": false,
+    "createdAt": "2026-09-10T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/sunday-kada/hero.svg",
+        "alt": "Sunday Kada — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/sunday-kada/worn.svg",
+        "alt": "Sunday Kada — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/sunday-kada/detail.svg",
+        "alt": "Sunday Kada — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/sunday-kada/story.svg",
+        "alt": "Sunday Kada — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Sundays were the only day Pratima didn't correct anything. This kada is a celebration of the unedited — every hammer mark left exactly where it fell.",
+        "note": "the day nothing needs correcting."
+      },
+      "hand": {
+        "contribution": "Farida hammers each kada by hand over a steel mandrel — around three hundred blows — and refuses to make two the same."
+      },
+      "making": {
+        "body": "Cast brass blanks are hammered by hand in Moradabad, shaped round on a mandrel, plated and finished to a soft satin glow.",
+        "steps": [
+          "Blank cast",
+          "~300 hammer blows",
+          "Shaped on mandrel",
+          "Satin finish"
+        ]
+      },
+      "moment": {
+        "body": "Sunday, late breakfast, newspaper, nowhere to be. Then Monday, and you leave it on."
+      }
+    },
+    "variants": [
+      {
+        "title": "2.4",
+        "sku": "NEM-KD-SUN-24"
+      },
+      {
+        "title": "2.6",
+        "sku": "NEM-KD-SUN-26"
+      },
+      {
+        "title": "2.8",
+        "sku": "NEM-KD-SUN-28"
+      }
+    ],
+    "tryOn": {
+      "supported": true,
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "/art/products/sunday-kada/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_011",
+    "sku": "NEM-KD-AAN-11",
+    "handle": "aangan-kada",
+    "name": "Aangan Kada",
+    "subtitle": "Repoussé courtyard kada",
+    "description": "An aangan — the open courtyard at the heart of a home — pressed into brass and wrapped around the wrist.",
+    "price": 3890,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 8,
+    "category": "kada",
+    "occasions": [
+      "celebration"
+    ],
+    "collections": [
+      "editors-picks",
+      "statement",
+      "giftable"
+    ],
+    "tags": [
+      "repousse",
+      "kada",
+      "festive",
+      "motif"
+    ],
+    "material": "Brass, 22k gold plating, hand-chased repoussé",
+    "dimensions": "Width 1.6 cm · available in 2.4, 2.6 and 2.8",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "lakshmi-narayanan",
+    "featured": true,
+    "createdAt": "2026-09-11T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/aangan-kada/hero.svg",
+        "alt": "Aangan Kada — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/aangan-kada/worn.svg",
+        "alt": "Aangan Kada — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/aangan-kada/detail.svg",
+        "alt": "Aangan Kada — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/aangan-kada/story.svg",
+        "alt": "Aangan Kada — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Pratima grew up in a house built around a courtyard: the place where everyone eventually met. She asked Lakshmi whether a kada could hold a courtyard. Lakshmi said she had one in mind.",
+        "note": "the room with no roof, where everyone meets."
+      },
+      "hand": {
+        "contribution": "Lakshmi presses the courtyard motif — pillars, tulsi, a doorway — from the inside of the band over two days of slow repoussé."
+      },
+      "making": {
+        "body": "A brass band is set on pitch in Thrissur and chased from behind, then from the front, until the motif stands in soft relief; it is then plated and hand-burnished.",
+        "steps": [
+          "Band set on pitch",
+          "Pressed from inside",
+          "Chased from outside",
+          "Burnished by hand"
+        ]
+      },
+      "moment": {
+        "body": "The griha pravesh of your first home. Everyone in the courtyard. You, in the doorway."
+      }
+    },
+    "variants": [
+      {
+        "title": "2.4",
+        "sku": "NEM-KD-AAN-24"
+      },
+      {
+        "title": "2.6",
+        "sku": "NEM-KD-AAN-26"
+      },
+      {
+        "title": "2.8",
+        "sku": "NEM-KD-AAN-28"
+      }
+    ],
+    "tryOn": {
+      "supported": true,
+      "anchor": "wrist",
+      "scale": 1.05,
+      "overlay": "/art/products/aangan-kada/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_012",
+    "sku": "NEM-KD-INK-12",
+    "handle": "ink-and-gold-kada-pair",
+    "name": "Ink & Gold Kada Pair",
+    "subtitle": "Enamel-inlay kada pair",
+    "description": "Two gold kadas, each drawn through with a single line of purple enamel — Nemara's signature, in ink.",
+    "price": 4490,
+    "compareAtPrice": null,
+    "currency": "INR",
+    "inventory": 10,
+    "category": "kada",
+    "occasions": [
+      "after-hours",
+      "celebration",
+      "nine-to-five"
+    ],
+    "collections": [
+      "new-arrivals",
+      "editors-picks",
+      "giftable"
+    ],
+    "tags": [
+      "enamel",
+      "kada",
+      "signature",
+      "pair"
+    ],
+    "material": "Brass, 22k gold plating, hand-fired Nemara-ink enamel",
+    "dimensions": "Width 0.7 cm each · available in 2.4, 2.6 and 2.8",
+    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "artist": "meher-bano",
+    "featured": true,
+    "createdAt": "2026-09-12T00:00:00.000Z",
+    "images": [
+      {
+        "src": "/art/products/ink-and-gold-kada-pair/hero.svg",
+        "alt": "Ink & Gold Kada Pair — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/art/products/ink-and-gold-kada-pair/worn.svg",
+        "alt": "Ink & Gold Kada Pair — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/art/products/ink-and-gold-kada-pair/detail.svg",
+        "alt": "Ink & Gold Kada Pair — close-up detail",
+        "role": "detail"
+      },
+      {
+        "src": "/art/products/ink-and-gold-kada-pair/story.svg",
+        "alt": "Ink & Gold Kada Pair — Pratima's design sketch",
+        "role": "story"
+      }
+    ],
+    "story": {
+      "idea": {
+        "body": "Purple was the colour of Pratima's pen for twenty-five years — she used it instead of red because red felt like a scolding, and purple felt like a conversation. This pair carries that line of ink.",
+        "note": "purple, not red. a conversation, not a correction."
+      },
+      "hand": {
+        "contribution": "Meher cuts a channel into each band and fills it with Nemara-ink enamel, firing it four times until the line is perfectly even."
+      },
+      "making": {
+        "body": "Brass bands are channelled, enamelled and fired in Jaipur, then plated in 22k gold so the purple line sits flush with the metal.",
+        "steps": [
+          "Channel cut",
+          "Ink enamel laid",
+          "Four firings",
+          "Flush-polished"
+        ]
+      },
+      "moment": {
+        "body": "Any day you want to sign your name on it. Wear them together, or give one away."
+      }
+    },
+    "variants": [
+      {
+        "title": "2.4",
+        "sku": "NEM-KD-INK-24"
+      },
+      {
+        "title": "2.6",
+        "sku": "NEM-KD-INK-26"
+      },
+      {
+        "title": "2.8",
+        "sku": "NEM-KD-INK-28"
+      }
+    ],
+    "tryOn": {
+      "supported": true,
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "/art/products/ink-and-gold-kada-pair/overlay.svg",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  }
+]
