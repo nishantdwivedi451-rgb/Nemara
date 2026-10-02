@@ -7,6 +7,7 @@ import "server-only";
  * Failures are logged, never surfaced to customers.
  */
 export async function notify(kind: "order" | "contact" | "newsletter", payload: Record<string, unknown>) {
+  // kinds: order → ORDER_WEBHOOK_URL; contact/newsletter (incl. Circle sign-ups & daily digest) → LEAD_WEBHOOK_URL
   const tasks: Promise<unknown>[] = [];
   const hook = kind === "order" ? process.env.ORDER_WEBHOOK_URL : process.env.LEAD_WEBHOOK_URL || process.env.ORDER_WEBHOOK_URL;
   if (hook) tasks.push(fetch(hook, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, ...payload, at: new Date().toISOString() }) }));

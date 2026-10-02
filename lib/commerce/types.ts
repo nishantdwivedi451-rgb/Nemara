@@ -45,6 +45,8 @@ export type Product = {
   care: string;
   artist: string;
   featured: boolean;
+  /** Members-only / Nemara Circle exclusive design. */
+  exclusive?: boolean;
   createdAt: string;
   images: ImageAsset[];
   story: ProductStory;

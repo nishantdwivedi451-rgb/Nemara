@@ -4,6 +4,7 @@ import { addressSchema, cartLinesSchema, priceCart } from "@/lib/orders";
 import { commerce } from "@/lib/commerce";
 import { payments } from "@/lib/payments";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
+import { recordCheckout } from "@/lib/oms";
 
 const body = z.object({ lines: cartLinesSchema, address: addressSchema, company: z.string().optional() });
 
@@ -26,6 +27,8 @@ export async function POST(req: Request) {
     const priced = await priceCart(parsed.data.lines);
     const receipt = `NEM-${Date.now().toString(36).toUpperCase()}`;
     const order = await payments().createOrder({ amount: priced.total, currency: "INR", receipt, notes: { receipt, pincode: parsed.data.address.pincode } });
+    // abandoned-checkout follow-up in Nemara Studio; never blocks payment
+    await recordCheckout({ gatewayOrderId: order.orderId, customer: parsed.data.address, items: priced.items, total: priced.total }).catch((e) => console.error("[checkout] record failed", e));
     return NextResponse.json({ ...order, summary: { subtotal: priced.subtotal, shipping: priced.shipping, total: priced.total } });
   } catch (e) {
     console.error("[checkout]", e);

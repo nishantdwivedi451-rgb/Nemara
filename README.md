@@ -16,6 +16,7 @@ A digital fashion house for **Nemara**, a new-age fashion jewellery brand from I
 | **Try It On** | Camera try-on with on-device face/hand tracking (MediaPipe), manual & photo fallback, snapshot + share, provider abstraction (`TRY_ON_PROVIDER`) |
 | **Nemara Stylist** | Occasion/outfit/budget-aware styling engine behind a chat UI, AI-ready interface |
 | **Commerce** | Cart drawer, wishlist, guest checkout with PIN autofill, server-side repricing, Razorpay (UPI/cards/net banking/wallets), Shopify adapter, demo mode |
+| **Nemara Studio** (`/admin`) | Private OMS + inventory + catalogue manager + Circle membership capture + birthday/festival/abandoned-cart automation, synced live with the storefront |
 | **Platform** | SEO (metadata, OG, canonical, sitemap, robots, Product/Breadcrumb/Org/Article JSON-LD), modular analytics, CSP & security headers, a11y, rate-limited validated APIs |
 
 ## Quick start
@@ -35,6 +36,7 @@ Node ≥ 20.9. No environment variables are required to run: the site starts wit
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): system design, folder map, providers (commerce, payments, try-on, stylist, analytics)
 - [`docs/CATALOGUE.md`](docs/CATALOGUE.md): editing products, artists, images and stories; Shopify metafield mapping
 - [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md): Vercel, continuous deployment, domains, environment variables, launch checklist
+- [`docs/STUDIO.md`](docs/STUDIO.md): Nemara Studio — orders, inventory, products, customers, visitors, Circle and marketing automation
 - [`.env.example`](.env.example): every variable, documented
 
 ## Replacing placeholder imagery
