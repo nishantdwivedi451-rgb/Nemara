@@ -4,27 +4,28 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Taxon } from "@/lib/commerce/types";
 
-/** Typographic index — on desktop a preview image follows the hovered line. */
+/** Typographic index with a dedicated preview column (desktop) — image never overlaps the text. */
 export function CategoryIndex({ categories, counts }: { categories: Taxon[]; counts: Record<string, number> }) {
-  const [hover, setHover] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
   return (
-    <div className="cindex" onMouseLeave={() => setHover(null)}>
-      <ul>
+    <div className="cindex">
+      <ul className="cindex__list">
         {categories.map((c, i) => (
           <li key={c.slug}>
-            <Link href={`/shop/${c.slug}`} className="cindex__row" onMouseEnter={() => setHover(i)} onFocus={() => setHover(i)}>
-              <span className="cindex__n">0{i + 1}</span>
-              <span className="cindex__name">{c.name}</span>
-              <span className="cindex__line">{c.line}</span>
+            <Link href={`/shop/${c.slug}`} className={`cindex__row ${active === i ? "is-on" : ""}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)}>
+              <span className="cindex__text">
+                <span className="cindex__name">{c.name}</span>
+                <span className="cindex__line">{c.line}</span>
+              </span>
               <span className="cindex__count">{counts[c.slug] ?? 0} pieces</span>
-              {c.image && <span className="cindex__thumb frame ratio-45 mobile-only"><Image src={c.image.src} alt="" fill sizes="40vw" unoptimized /></span>}
+              {c.image && <span className="cindex__thumb frame mobile-only"><Image src={c.image.src} alt="" fill sizes="88px" unoptimized /></span>}
             </Link>
           </li>
         ))}
       </ul>
-      <div className={`cindex__preview desktop-only ${hover !== null ? "is-on" : ""}`} aria-hidden="true">
+      <div className="cindex__preview frame desktop-only" aria-hidden="true">
         {categories.map((c, i) => c.image && (
-          <Image key={c.slug} src={c.image.src} alt="" fill sizes="30vw" className={hover === i ? "is-on" : ""} unoptimized />
+          <Image key={c.slug} src={c.image.src} alt="" fill sizes="30vw" className={active === i ? "is-on" : ""} unoptimized />
         ))}
       </div>
     </div>

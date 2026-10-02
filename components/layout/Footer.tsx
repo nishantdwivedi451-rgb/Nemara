@@ -11,7 +11,6 @@ export function Footer() {
         <div className="footer__top">
           <div className="footer__sign">
             <p className="display footer__claim">Wear your<br /><em>story.</em></p>
-            <p className="hand footer__note">every piece begins with an idea — and a pair of hands. — P.</p>
           </div>
           <div className="footer__news">
             <p className="eyebrow">The Nemara Letter</p>

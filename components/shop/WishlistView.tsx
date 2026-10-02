@@ -8,7 +8,7 @@ export function WishlistView() {
   const { wishlist, toggleWish, hydrated } = useStore();
   return (
     <>
-      <header className="wrap page-head"><p className="eyebrow edition"><b>♡</b> Saved</p><h1 className="h1">Your wishlist</h1></header>
+      <header className="wrap page-head"><p className="eyebrow">Saved</p><h1 className="h1">Your wishlist</h1></header>
       <div className="wrap">
         {!hydrated ? <p className="muted">Loading…</p> : wishlist.length === 0 ? (
           <div className="empty empty--page"><p className="hand">nothing saved yet.</p><p className="muted">Tap the heart on any piece to keep it here.</p><Link href="/shop" className="btn">Explore Nemara</Link></div>

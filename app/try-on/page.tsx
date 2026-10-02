@@ -13,15 +13,15 @@ export default async function TryOnPage({ searchParams }: SP) {
   return (
     <div className="page-enter tryon-page">
       <header className="wrap tryon-page__head">
-        <p className="eyebrow edition"><b>◎</b> The Nemara mirror</p>
-        <h1 className="h1">Try it on.<br /><em>Then decide.</em></h1>
-        <p className="lede">Earrings follow your ears, sets settle at your neck, kadas find your wrist. Switch pieces, take a snapshot, send it to your sister. Nothing leaves your device.</p>
+        <p className="eyebrow">The Nemara mirror</p>
+        <h1 className="h1">See it on you, <em>then decide.</em></h1>
+        <p className="lede">Earrings follow your ears, sets settle at your neck, kadas find your wrist. Switch pieces, compare, take a snapshot. Nothing leaves your device.</p>
       </header>
       <div className="wrap"><TryOnStudio pieces={products.map(toPiece)} initial={piece} /></div>
-      <section className="wrap tryon-page__how">
-        <div><span className="eyebrow">01</span><h2 className="h3">Allow your camera</h2><p className="muted">Your browser asks first. Tracking runs on-device with no uploads, recordings or storage.</p></div>
-        <div><span className="eyebrow">02</span><h2 className="h3">Choose a piece</h2><p className="muted">Earrings and sets track your face; bracelets and kadas track your hand. If you&apos;d rather place it yourself, drag it into place.</p></div>
-        <div><span className="eyebrow">03</span><h2 className="h3">Snap, share, decide</h2><p className="muted">Save a snapshot or share it straight to WhatsApp, then add to bag.</p></div>
+      <section className="wrap tryon-page__how" aria-label="How it works">
+        <div><h2 className="h3">Private by design</h2><p className="muted">Tracking runs entirely in your browser. No uploads, no recordings, nothing stored.</p></div>
+        <div><h2 className="h3">Tracks as you move</h2><p className="muted">Earrings and sets follow your face; bracelets and kadas follow your hand. Prefer to place it yourself? Tap Adjust.</p></div>
+        <div><h2 className="h3">Snap and share</h2><p className="muted">Save a Nemara snapshot or send it straight to WhatsApp, then add the piece to your bag.</p></div>
       </section>
     </div>
   );

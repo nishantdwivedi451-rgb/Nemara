@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { IconClose } from "@/components/brand/Icons";
 import type { ImageAsset } from "@/lib/commerce/types";
 
-const LABEL: Record<string, string> = { hero: "The piece", worn: "As worn", detail: "Up close", story: "The sketch" };
-
 export function ProductGallery({ images, name }: { images: ImageAsset[]; name: string }) {
   const [zoom, setZoom] = useState<number | null>(null);
   const [active, setActive] = useState(0);
@@ -37,7 +35,6 @@ export function ProductGallery({ images, name }: { images: ImageAsset[]; name: s
             <button className="frame ratio-45 gallery__btn" onClick={() => setZoom(i)} aria-label={`Enlarge: ${im.alt}`}>
               <Image src={im.src} alt={im.alt} fill priority={i === 0} sizes="(min-width: 900px) 30vw, 100vw" unoptimized />
             </button>
-            {im.role && LABEL[im.role] && <span className="gallery__label hand">{LABEL[im.role]}</span>}
           </li>
         ))}
       </ul>

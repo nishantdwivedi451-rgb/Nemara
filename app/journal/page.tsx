@@ -11,7 +11,7 @@ export default async function Journal() {
   return (
     <div className="page-enter">
       <header className="wrap page-head">
-        <p className="eyebrow edition"><b>J</b> The Journal</p>
+        <p className="eyebrow">The Journal</p>
         <h1 className="display">Notes from<br /><em>the margin.</em></h1>
       </header>
       <div className="wrap journal">

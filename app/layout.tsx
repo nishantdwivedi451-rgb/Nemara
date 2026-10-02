@@ -6,6 +6,7 @@ import "@/styles/tokens.css";
 import "@/styles/base.css";
 import "@/styles/components.css";
 import "@/styles/pages.css";
+import "@/styles/tryon.css";
 import { StoreProvider } from "@/components/layout/StoreProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";

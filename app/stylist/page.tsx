@@ -8,7 +8,7 @@ export default function StylistPage() {
   return (
     <div className="page-enter stylist-page">
       <header className="wrap page-head">
-        <p className="eyebrow edition"><b>✦</b> Nemara Stylist <span className="pill">Preview</span></p>
+        <p className="eyebrow">Nemara Stylist <span className="pill">Preview</span></p>
         <h1 className="h1">Where are you going?<br /><em>What are you wearing?</em></h1>
         <p className="lede">Describe the occasion, the outfit and your budget. The Stylist reads the whole edition and puts together a look you can try on straight away.</p>
       </header>

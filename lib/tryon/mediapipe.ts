@@ -2,8 +2,12 @@
 import type { TryOnAnchor } from "@/lib/commerce/types";
 import type { AnchorPoint, Tracker, TryOnProvider } from "./types";
 
-const MODEL_BASE = process.env.NEXT_PUBLIC_TRYON_MODEL_BASE || "https://storage.googleapis.com/mediapipe-models";
+const REMOTE = process.env.NEXT_PUBLIC_TRYON_MODEL_BASE || "https://storage.googleapis.com/mediapipe-models";
 const WASM = "/mediapipe/wasm";
+const MODELS = {
+  face: ["/mediapipe/models/face_landmarker.task", `${REMOTE}/face_landmarker/face_landmarker/float16/1/face_landmarker.task`],
+  hand: ["/mediapipe/models/hand_landmarker.task", `${REMOTE}/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`],
+};
 
 type P = { x: number; y: number };
 
@@ -14,17 +18,20 @@ export const mediapipeProvider: TryOnProvider = {
   async createTracker(anchor: TryOnAnchor): Promise<Tracker> {
     const vision = await import("@mediapipe/tasks-vision");
     const fileset = await vision.FilesetResolver.forVisionTasks(WASM);
-    const make = async (delegate: "GPU" | "CPU") => anchor === "wrist"
-      ? vision.HandLandmarker.createFromOptions(fileset, {
-          baseOptions: { modelAssetPath: `${MODEL_BASE}/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`, delegate },
-          runningMode: "VIDEO", numHands: 1,
-        })
-      : vision.FaceLandmarker.createFromOptions(fileset, {
-          baseOptions: { modelAssetPath: `${MODEL_BASE}/face_landmarker/face_landmarker/float16/1/face_landmarker.task`, delegate },
-          runningMode: "VIDEO", numFaces: 1,
-        });
-    let lm: Awaited<ReturnType<typeof make>>;
-    try { lm = await make("GPU"); } catch { lm = await make("CPU"); }
+    const make = async (path: string, delegate: "GPU" | "CPU") => anchor === "wrist"
+      ? vision.HandLandmarker.createFromOptions(fileset, { baseOptions: { modelAssetPath: path, delegate }, runningMode: "VIDEO", numHands: 1 })
+      : vision.FaceLandmarker.createFromOptions(fileset, { baseOptions: { modelAssetPath: path, delegate }, runningMode: "VIDEO", numFaces: 1 });
+    // self-hosted model first, Google CDN second; GPU first, CPU second
+    let lm: Awaited<ReturnType<typeof make>> | null = null;
+    let lastErr: unknown;
+    for (const path of MODELS[anchor === "wrist" ? "hand" : "face"]) {
+      for (const d of ["GPU", "CPU"] as const) {
+        try { lm = await make(path, d); break; } catch (e) { lastErr = e; }
+      }
+      if (lm) break;
+    }
+    if (!lm) throw lastErr;
+    const model = lm;
 
     return {
       detect(video, ts) {
@@ -34,7 +41,7 @@ export const mediapipeProvider: TryOnProvider = {
         const dist = (a: P, b: P) => Math.hypot((a.x - b.x) * ar, a.y - b.y);
         const ang = (a: P, b: P) => Math.atan2(b.y - a.y, (b.x - a.x) * ar);
         if (anchor === "wrist") {
-          const r = (lm as import("@mediapipe/tasks-vision").HandLandmarker).detectForVideo(video, ts);
+          const r = (model as import("@mediapipe/tasks-vision").HandLandmarker).detectForVideo(video, ts);
           const h = r.landmarks?.[0];
           if (!h) return null;
           const wrist = h[0], mid = h[9];
@@ -44,7 +51,7 @@ export const mediapipeProvider: TryOnProvider = {
           const pt: AnchorPoint = { x: wrist.x - (mid.x - wrist.x) * 0.18, y: wrist.y - (mid.y - wrist.y) * 0.18, scale: palm * 1.9, angle, visible: true };
           return { points: [pt] };
         }
-        const r = (lm as import("@mediapipe/tasks-vision").FaceLandmarker).detectForVideo(video, ts);
+        const r = (model as import("@mediapipe/tasks-vision").FaceLandmarker).detectForVideo(video, ts);
         const f = r.faceLandmarks?.[0];
         if (!f) return null;
         const left = f[234], right = f[454], top = f[10], chin = f[152];
@@ -64,7 +71,7 @@ export const mediapipeProvider: TryOnProvider = {
           ],
         };
       },
-      close() { lm.close(); },
+      close() { model.close(); },
     };
   },
 };

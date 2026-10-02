@@ -41,13 +41,14 @@ export default async function TaxonPage({ params }: Params) {
       <TrackOnMount event="view_category" props={{ category: slug, type: r.type }} />
       <JsonLd data={breadcrumbLd([{ name: "Home", path: "/" }, { name: "Shop", path: "/shop" }, { name: r.t.name, path: `/shop/${slug}` }])} />
       {isMoment && r.t.image ? (
-        <header className={`moment-hero moment--${r.t.tone}`}>
-          <Image src={r.t.image.src} alt={r.t.image.alt} fill priority sizes="100vw" unoptimized />
-          <div className="wrap moment-hero__copy">
-            <p className="eyebrow">Choose your moment · {r.t.label}</p>
+        <header className="moment-hero wrap">
+          <div className="moment-hero__copy">
+            <nav aria-label="Breadcrumb" className="crumbs"><Link href="/shop">Shop</Link> / <span aria-current="page">{r.t.name}</span></nav>
+            <p className="eyebrow">{r.t.label}</p>
             <h1 className="display">{r.t.name}</h1>
-            <p className="moment-hero__line">{r.t.line}</p>
+            <p className="lede">{r.t.line}</p>
           </div>
+          <div className="moment-hero__img frame"><Image src={r.t.image.src} alt={r.t.image.alt} fill priority sizes="(min-width: 900px) 40vw, 100vw" unoptimized /></div>
         </header>
       ) : (
         <header className="shop-hero wrap">

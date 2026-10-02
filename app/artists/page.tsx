@@ -12,7 +12,7 @@ export default async function ArtistsPage() {
   return (
     <div className="page-enter">
       <header className="wrap page-head">
-        <p className="eyebrow edition"><b>✋</b> Artists</p>
+        <p className="eyebrow">Artists</p>
         <h1 className="display">The hand<br /><em>behind the piece.</em></h1>
         <p className="lede">Nemara doesn&apos;t say “handcrafted by artisans” and leave it there. Every piece names the person who made it, where they work and what their hands contributed.</p>
       </header>
@@ -23,7 +23,7 @@ export default async function ArtistsPage() {
             <Reveal key={a.slug} as="article" className={`reveal artist-feature ${i % 2 ? "is-flip" : ""}`}>
               <Link href={`/artists/${a.slug}`} className="artist-feature__img arch frame"><Image src={a.portrait.src} alt={a.portrait.alt} fill sizes="(min-width: 900px) 40vw, 90vw" unoptimized /></Link>
               <div className="artist-feature__copy">
-                <p className="eyebrow">{String(i + 1).padStart(2, "0")} · {a.location}</p>
+                <p className="eyebrow">{a.location}</p>
                 <h2 className="h1"><Link href={`/artists/${a.slug}`}>{a.name}</Link></h2>
                 <p className="muted">{a.craft} · {a.yearsOfPractice} years</p>
                 <p className="lede">{a.summary}</p>

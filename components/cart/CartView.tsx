@@ -10,7 +10,7 @@ export function CartView({ threshold, flat }: { threshold: number; flat: number 
   const shipping = subtotal === 0 ? 0 : subtotal >= threshold ? 0 : flat;
   return (
     <div className="wrap cart-page">
-      <header className="page-head"><p className="eyebrow edition"><b>◇</b> Your bag</p><h1 className="h1">The pieces you chose</h1></header>
+      <header className="page-head"><p className="eyebrow">Your bag</p><h1 className="h1">The pieces you chose</h1></header>
       {!hydrated ? <p className="muted">Loading…</p> : cart.length === 0 ? (
         <div className="empty empty--page"><p className="hand">your bag is waiting.</p><Link href="/shop" className="btn">Explore Nemara</Link></div>
       ) : (

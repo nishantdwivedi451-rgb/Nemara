@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { VersionTicker } from "./VersionTicker";
 import { SITE } from "@/lib/site";
 
 type Media = { type: "video"; src: string; poster?: string } | { type: "image"; src: string; alt?: string } | null;
@@ -12,14 +11,13 @@ export function Hero() {
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__grid wrap">
         <div className="hero__copy">
-          <p className="eyebrow edition hero__edition"><b>01</b> The First Edition · Autumn–Winter 2026</p>
+          <p className="eyebrow hero__edition">Autumn–Winter 2026 · Designed in India</p>
           <h1 id="hero-title" className="display hero__title">
             <span className="hero__line"><span>Wear</span></span>
             <span className="hero__line"><span>your</span></span>
             <span className="hero__line"><span><em>story.</em></span></span>
           </h1>
           <p className="hero__sub">Jewellery designed in India, shaped by artists, and made for the many versions of you.</p>
-          <VersionTicker />
           <div className="hero__ctas">
             <Link href="/shop" className="btn">Explore Nemara</Link>
             <Link href="/our-story" className="btn btn--ghost">Discover the story</Link>
@@ -34,14 +32,8 @@ export function Hero() {
           ) : (
             <HeroDrawing />
           )}
-          <p className="hand hero__note" aria-hidden="true">first a line,<br />then a jhumka.</p>
-          <Link href="/product/monsoon-hour-jhumka" className="hero__tag">
-            <span className="eyebrow">Worn here</span>
-            <span>Monsoon Hour Jhumka</span>
-          </Link>
         </div>
       </div>
-      <div className="hero__scroll" aria-hidden="true"><span /></div>
     </section>
   );
 }
@@ -55,7 +47,6 @@ function HeroDrawing() {
         <radialGradient id="hl" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#EDE2F4" /><stop offset=".6" stopColor="#B9A4C8" /><stop offset="1" stopColor="#8E77A3" /></radialGradient>
       </defs>
       <path className="hero__arch" d="M120 1000V330C120 180 330 70 400 30C470 70 680 180 680 330V1000Z" />
-      <circle className="hero__sun" cx="200" cy="230" r="70" />
       <g className="hero__ink" fill="none" stroke="#4B1D5C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" pathLength={1}>
         <path pathLength={1} d="M520 230C565 245 592 290 598 340C600 360 598 372 602 384C615 410 638 440 650 466C654 476 646 484 634 488L616 492C620 500 624 508 618 516C612 520 612 526 618 530C622 540 616 552 602 558C606 580 600 604 574 616C540 630 490 618 458 580" />
         <path pathLength={1} d="M560 393C570 401 584 401 592 393" /><path pathLength={1} d="M556 372C570 364 588 366 598 373" />

@@ -13,7 +13,7 @@ export function ProductRail({ products, label }: { products: CardProduct[]; labe
         <button className="icon-btn" onClick={() => go(1)} aria-label={`Scroll ${label} forward`}><IconArrow /></button>
       </div>
       <ul className="rail__track" ref={ref} aria-label={label}>
-        {products.map((p) => <li key={p.handle}><ProductCard p={p} showNote /></li>)}
+        {products.map((p) => <li key={p.handle}><ProductCard p={p} /></li>)}
       </ul>
     </div>
   );

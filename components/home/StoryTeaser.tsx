@@ -15,10 +15,9 @@ export function StoryTeaser({ product, artist }: { product: Product; artist?: Ar
             <Image src={hero.src} alt={hero.alt} fill sizes="(min-width: 900px) 45vw, 100vw" unoptimized />
             <Image className="teaser__sketch" src={sketch.src} alt="" fill sizes="(min-width: 900px) 45vw, 100vw" unoptimized />
           </Link>
-          <p className="hand teaser__hint">hover — the sketch becomes the piece</p>
         </Reveal>
         <div className="teaser__copy">
-          <p className="eyebrow edition"><b>05</b> Every piece has a story</p>
+          <p className="eyebrow">Every piece has a story</p>
           <h2 id="teaser-title" className="h1">{product.name}</h2>
           <p className="hand teaser__note">“{product.story.idea.note}”</p>
           <ol className="teaser__steps">

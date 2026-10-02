@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <div className="page-enter">
       <header className="wrap page-head">
-        <p className="eyebrow edition"><b>✉</b> Contact</p>
+        <p className="eyebrow">Contact</p>
         <h1 className="display">Talk to<br /><em>Nemara.</em></h1>
         <p className="lede">Help choosing, a question about an order, a gift for someone hard to buy for — write to us. {contact.hours}.</p>
       </header>

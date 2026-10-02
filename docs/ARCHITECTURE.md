@@ -69,4 +69,4 @@ Bag (localStorage) → /checkout (guest form, PIN autofill)
 CSP and security headers in `next.config.ts` (frame-ancestors none, HSTS, nosniff, camera limited to self). All inputs are validated with zod. Forms use honeypots and per-IP rate limiting (in-memory; move it to Upstash/Vercel KV for strict guarantees). JSON-LD is escaped. Analytics scripts load only when configured.
 
 ## Performance
-Static generation, `next/font` (self-hosted, swap), SVG placeholder art (small, cached for 1 day), lazy images with `sizes`, no animation library, MediaPipe loaded only when the camera starts, and WASM self-hosted and cached immutably.
+Static generation, `next/font` (self-hosted, swap), SVG placeholder art (small, cached for 1 day), lazy images with `sizes`, no animation library. MediaPipe loads only when the camera starts; its WASM and the face/hand models are self-hosted (downloaded at build time by `scripts/copy-mediapipe.mjs`, with Google's CDN as a fallback) and cached immutably.

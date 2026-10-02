@@ -23,3 +23,9 @@ export const IconWhatsApp = (p: P) => (
 );
 export const IconDownload = (p: P) => <svg {...base} {...p}><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>;
 export const IconShare = (p: P) => <svg {...base} {...p}><circle cx="6" cy="12" r="2.4" /><circle cx="18" cy="6" r="2.4" /><circle cx="18" cy="18" r="2.4" /><path d="M8.2 11l7.6-4M8.2 13l7.6 4" /></svg>;
+export const IconFlip = (p: P) => <svg {...base} {...p}><path d="M4 9h11a4 4 0 014 4v0M20 15H9a4 4 0 01-4-4v0" /><path d="M7 6L4 9l3 3M17 18l3-3-3-3" /></svg>;
+export const IconSliders = (p: P) => <svg {...base} {...p}><path d="M5 7h9M18 7h1M5 17h3M12 17h7" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg>;
+export const IconEye = (p: P) => <svg {...base} {...p}><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" /><circle cx="12" cy="12" r="2.8" /></svg>;
+export const IconLock = (p: P) => <svg {...base} {...p}><rect x="5" y="10.5" width="14" height="9.5" rx="1.5" /><path d="M8 10.5V8a4 4 0 018 0v2.5" /></svg>;
+export const IconImage = (p: P) => <svg {...base} {...p}><rect x="3.5" y="4.5" width="17" height="15" rx="1.5" /><circle cx="9" cy="10" r="1.6" /><path d="M20.5 16l-5-5-8.5 8.5" /></svg>;
+export const IconRefresh = (p: P) => <svg {...base} {...p}><path d="M19 12a7 7 0 11-2.05-4.95M19 4v4h-4" /></svg>;

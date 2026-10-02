@@ -10,7 +10,7 @@ export default async function ShopPage() {
   return (
     <div className="page-enter">
       <header className="shop-hero wrap">
-        <p className="eyebrow edition"><b>№</b> The catalogue · {d.products.length} pieces</p>
+        <p className="eyebrow">The catalogue · {d.products.length} pieces</p>
         <h1 className="display shop-hero__title">The <em>Edition</em></h1>
         <p className="lede">Every piece here was drawn by hand, made by someone we can name, and shown on the body — so you know how it will feel to wear.</p>
       </header>

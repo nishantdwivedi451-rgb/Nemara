@@ -87,8 +87,8 @@ export function Header({ nav }: { nav: NavData }) {
           </div>
           <Link href="/try-on" className="mega__feature" tabIndex={mega ? 0 : -1}>
             <div className="frame ratio-45"><Image src="/art/campaign/after-hours.svg" alt="" fill sizes="240px" unoptimized /></div>
-            <span className="hand">see it on you →</span>
             <span className="eyebrow">Try it on, live</span>
+            <span className="mega__feature-line">See any piece on you before you buy.</span>
           </Link>
         </div>
       </div>
