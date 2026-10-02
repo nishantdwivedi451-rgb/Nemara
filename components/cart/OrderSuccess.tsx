@@ -25,7 +25,7 @@ export function OrderSuccess() {
         <div><p className="eyebrow">Wear</p><p><Link className="text-link" href="/info/care">Care for it</Link> and it will keep its glow for years.</p></div>
         <div><p className="eyebrow">Belong</p><p>Share your moment with <a className="text-link" href={`https://instagram.com/${contact.instagram}`} target="_blank" rel="noopener noreferrer">@{contact.instagram}</a> and #WearYourStory — we feature our favourites, with the artist.</p></div>
       </div>
-      <Link href="/journal" className="btn btn--ghost">Read the Journal</Link>
+      <div className="success__ctas"><Link href="/account" className="btn">Track your order</Link><Link href="/journal" className="btn btn--ghost">Read the Journal</Link></div>
     </div>
   );
 }

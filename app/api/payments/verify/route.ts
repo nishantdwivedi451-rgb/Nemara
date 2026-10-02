@@ -7,6 +7,7 @@ import { clientIp, rateLimit } from "@/lib/rate-limit";
 import { recordPaidOrder } from "@/lib/oms";
 import { adjustStock } from "@/lib/catalogue";
 import { store } from "@/lib/store";
+import { attachOrder, currentCustomer } from "@/lib/customers";
 
 const body = z.object({
   provider: z.string(), orderId: z.string().max(120), paymentId: z.string().max(120), signature: z.string().max(256),
@@ -35,6 +36,8 @@ export async function POST(req: Request) {
     try {
       const order = await recordPaidOrder({ reference, gateway: gateway.name, gatewayOrderId: d.orderId, paymentId: d.paymentId, demo: gateway.name === "demo", customer: d.address, ...priced });
       await store().put("order_keys", keyId, { id: order.id });
+      const account = await currentCustomer().catch(() => null);
+      await attachOrder(account?.phone ?? d.address.phone, order.id).catch((e) => console.error("[verify] attach failed", e));
       await adjustStock(priced.items.map((i) => ({ handle: i.handle, delta: -i.quantity, reason: "Order", ref: reference })), "system");
     } catch (e) { console.error("[verify] persisting order failed", e); }
     await notify("order", { reference, provider: gateway.name, live: gateway.live, orderId: d.orderId, paymentId: d.paymentId, customer: d.address, ...priced });

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useStore } from "@/components/layout/StoreProvider";
+import { AuthFlow } from "@/components/account/AuthFlow";
 import { formatPrice } from "@/lib/format";
 import { track } from "@/lib/analytics";
 
@@ -24,7 +25,11 @@ function loadRazorpay(): Promise<boolean> {
 }
 
 export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: number; flat: number; demo: boolean; preview: boolean }) {
-  const { cart, subtotal, clear, hydrated } = useStore();
+  const { cart, subtotal, clear, hydrated, customer, accountsAvailable, accountReady, setCustomer, openAuth } = useStore();
+  const saved = customer?.addresses ?? [];
+  const [addrId, setAddrId] = useState<string>("new");
+  const sel = saved.find((a) => a.id === addrId);
+  const needAuth = accountReady && accountsAvailable && !customer;
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -35,6 +40,18 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
   const lines = cart.map((c) => ({ handle: c.handle, variantId: c.variantId, quantity: c.quantity }));
 
   useEffect(() => { if (hydrated && cart.length) track("begin_checkout", { value: subtotal, currency: "INR", items: cart.length }); }, [hydrated]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // preselect the default saved address once the account loads
+  useEffect(() => {
+    if (!customer?.addresses.length) { setAddrId("new"); return; }
+    const d = customer.addresses.find((a) => a.isDefault) ?? customer.addresses[0];
+    setAddrId(d.id); setCity(d.city); setState(d.state);
+  }, [customer]);
+  const pickAddress = (id: string) => {
+    setAddrId(id);
+    const a = saved.find((x) => x.id === id);
+    setCity(a?.city ?? ""); setState(a?.state ?? "");
+  };
 
   async function lookupPin(pin: string) {
     if (!/^[1-9]\d{5}$/.test(pin)) return;
@@ -62,9 +79,17 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
     const address = { name: fd.name, email: fd.email, phone: fd.phone, line1: fd.line1, line2: fd.line2, city: fd.city, state: fd.state, pincode: fd.pincode, gift: fd.gift === "on", note: fd.note };
     setBusy(true); setError(""); setFields({});
     try {
+      if (customer && fd.saveAddress === "on") {
+        const s = await fetch("/api/account/addresses", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ op: "save", address: { label: fd.addrLabel || "Home", name: fd.name, phone: fd.deliveryPhone || customer.phone, line1: fd.line1, line2: fd.line2, city: fd.city, state: fd.state, pincode: fd.pincode, isDefault: !saved.length } }) });
+        const sd = await s.json();
+        if (s.ok) setCustomer(sd.customer);
+      }
       const r = await fetch("/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ lines, address, company: fd.company }) });
       const d: Created & { error?: string; fields?: Record<string, string> } = await r.json();
-      if (!r.ok) { setFields(d.fields ?? {}); throw new Error(d.error || "Please check your details."); }
+      if (!r.ok) {
+        if ((d as { needAuth?: boolean }).needAuth) { setBusy(false); openAuth("checkout"); return; }
+        setFields(d.fields ?? {}); throw new Error(d.error || "Please check your details.");
+      }
       if (d.redirect) { window.location.href = d.redirect; return; }
       const base = { provider: d.provider, orderId: d.orderId, lines, address };
       if (d.provider === "razorpay") {
@@ -99,28 +124,59 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
       <header className="checkout__head">
         <Link href="/cart" className="text-link muted">← Back to bag</Link>
         <h1 className="h1">Checkout</h1>
-        <p className="muted">Guest checkout — no account needed. Takes about a minute.</p>
+        <p className="muted">{accountsAvailable ? "Verify once, then track your order and reuse your address next time." : "Takes about a minute."}</p>
       </header>
       <div className="checkout__grid">
+        {needAuth ? (
+          <div className="checkout__auth"><AuthFlow reason="checkout" embedded /></div>
+        ) : (
         <form className="form checkout__form" onSubmit={submit} noValidate>
+          {customer ? (
+            <fieldset><legend className="h3">Contact</legend>
+              <div className="checkout__verified">
+                <span>Signed in as <b>{customer.name}</b></span>
+                <span>+91 {customer.phone} <i>✓ verified</i></span>
+                <span>{customer.email} <i>✓ verified</i></span>
+              </div>
+              <input type="hidden" name="email" value={customer.email} />
+              <input type="hidden" name="phone" value={customer.phone} />
+            </fieldset>
+          ) : (
           <fieldset><legend className="h3">Contact</legend>
             <div className="form__row">
               <div className="field"><label htmlFor="co-email">Email</label><input id="co-email" name="email" type="email" className="input" autoComplete="email" required inputMode="email" {...inv("email")} />{err("email")}</div>
               <div className="field"><label htmlFor="co-phone">Mobile</label><input id="co-phone" name="phone" type="tel" className="input" autoComplete="tel-national" required inputMode="tel" placeholder="10-digit mobile" {...inv("phone")} />{err("phone")}</div>
             </div>
           </fieldset>
-          <fieldset><legend className="h3">Delivery</legend>
-            <div className="field"><label htmlFor="co-name">Full name</label><input id="co-name" name="name" className="input" autoComplete="name" required {...inv("name")} />{err("name")}</div>
-            <div className="field"><label htmlFor="co-l1">Address</label><input id="co-l1" name="line1" className="input" autoComplete="address-line1" required placeholder="House, street, area" {...inv("line1")} />{err("line1")}</div>
-            <div className="field"><label htmlFor="co-l2">Landmark <span className="muted">(optional)</span></label><input id="co-l2" name="line2" className="input" autoComplete="address-line2" /></div>
+          )}
+          <fieldset key={addrId}><legend className="h3">Delivery</legend>
+            {saved.length > 0 && (
+              <div className="checkout__addrs" role="radiogroup" aria-label="Saved addresses">
+                {saved.map((a) => (
+                  <button type="button" key={a.id} role="radio" aria-checked={addrId === a.id} className={`checkout__addr ${addrId === a.id ? "is-on" : ""}`} onClick={() => pickAddress(a.id)}>
+                    <b>{a.label}</b><span>{a.line1}, {a.city} {a.pincode}</span>
+                  </button>
+                ))}
+                <button type="button" role="radio" aria-checked={addrId === "new"} className={`checkout__addr ${addrId === "new" ? "is-on" : ""}`} onClick={() => pickAddress("new")}><b>+ New address</b><span>Deliver somewhere else</span></button>
+              </div>
+            )}
+            <div className="field"><label htmlFor="co-name">Full name</label><input id="co-name" name="name" className="input" autoComplete="name" required defaultValue={sel?.name ?? customer?.name} {...inv("name")} />{err("name")}</div>
+            <div className="field"><label htmlFor="co-l1">Address</label><input id="co-l1" name="line1" className="input" autoComplete="address-line1" required placeholder="House, street, area" defaultValue={sel?.line1} {...inv("line1")} />{err("line1")}</div>
+            <div className="field"><label htmlFor="co-l2">Landmark <span className="muted">(optional)</span></label><input id="co-l2" name="line2" className="input" autoComplete="address-line2" defaultValue={sel?.line2} /></div>
             <div className="form__row form__row--3">
-              <div className="field"><label htmlFor="co-pin">PIN code</label><input id="co-pin" name="pincode" className="input" autoComplete="postal-code" inputMode="numeric" maxLength={6} required onChange={(e) => lookupPin(e.target.value)} {...inv("pincode")} />{err("pincode")}</div>
+              <div className="field"><label htmlFor="co-pin">PIN code</label><input id="co-pin" name="pincode" className="input" autoComplete="postal-code" inputMode="numeric" maxLength={6} required defaultValue={sel?.pincode} onChange={(e) => lookupPin(e.target.value)} {...inv("pincode")} />{err("pincode")}</div>
               <div className="field"><label htmlFor="co-city">City</label><input id="co-city" name="city" className="input" autoComplete="address-level2" required value={city} onChange={(e) => setCity(e.target.value)} {...inv("city")} />{err("city")}</div>
               <div className="field"><label htmlFor="co-state">State</label>
                 <select id="co-state" name="state" className="select" autoComplete="address-level1" required value={state} onChange={(e) => setState(e.target.value)} {...inv("state")}>
                   <option value="">Select</option>{STATES.map((s) => <option key={s}>{s}</option>)}
                 </select>{err("state")}</div>
             </div>
+            {customer && addrId === "new" && (
+              <div className="checkout__save">
+                <label className="check"><input type="checkbox" name="saveAddress" defaultChecked /> Save this address to my account as</label>
+                <input name="addrLabel" className="input" defaultValue={saved.length ? "Other" : "Home"} aria-label="Address label" />
+              </div>
+            )}
             <label className="check"><input type="checkbox" name="gift" /> This is a gift — hide prices and add a handwritten story card</label>
             <div className="field"><label htmlFor="co-note">Note for us <span className="muted">(optional)</span></label><input id="co-note" name="note" className="input" maxLength={300} /></div>
             <input name="company" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
@@ -133,6 +189,7 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
           <button className="btn btn--block checkout__pay" disabled={busy || !hydrated}>{busy ? "Opening secure payment…" : `Pay ${formatPrice(subtotal + shipping)}`}</button>
           <p className="muted checkout__legal">By placing your order you agree to our <Link className="text-link" href="/info/terms">terms</Link> and <Link className="text-link" href="/info/returns">returns policy</Link>.</p>
         </form>
+        )}
 
         <aside className="summary checkout__summary" aria-label="Order summary">
           <h2 className="h3">Your order</h2>

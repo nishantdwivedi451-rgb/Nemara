@@ -5,6 +5,8 @@ import { commerce } from "@/lib/commerce";
 import { payments } from "@/lib/payments";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 import { recordCheckout } from "@/lib/oms";
+import { currentCustomer } from "@/lib/customers";
+import { storeConfigured } from "@/lib/store";
 
 const body = z.object({ lines: cartLinesSchema, address: addressSchema, company: z.string().optional() });
 
@@ -17,6 +19,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Please check the highlighted details.", fields }, { status: 400 });
   }
   if (parsed.data.company) return NextResponse.json({ error: "Unable to process." }, { status: 400 }); // honeypot
+
+  // Orders are placed from a verified Nemara account (OTP on mobile + email) whenever accounts are available.
+  if (storeConfigured()) {
+    const customer = await currentCustomer();
+    if (!customer) return NextResponse.json({ error: "Please verify your mobile and email to place your order.", needAuth: true }, { status: 401 });
+    parsed.data.address.email = customer.email;
+    parsed.data.address.phone = customer.phone;
+  }
 
   try {
     // Shopify (or any hosted-checkout backend) takes over payment entirely.

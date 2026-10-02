@@ -5,11 +5,14 @@ import { useStore } from "@/components/layout/StoreProvider";
 import { formatPrice } from "@/lib/format";
 
 export function WishlistView() {
-  const { wishlist, toggleWish, hydrated } = useStore();
+  const { wishlist, toggleWish, hydrated, customer, accountsAvailable, openAuth } = useStore();
   return (
     <>
       <header className="wrap page-head"><p className="eyebrow">Saved</p><h1 className="h1">Your wishlist</h1></header>
       <div className="wrap">
+        {accountsAvailable && !customer && hydrated && (
+          <div className="wish-signin"><p><b>Keep your wishlist on every device.</b> Sign in with a quick code on your mobile or email.</p><button className="btn btn--sm" onClick={() => openAuth("wishlist")}>Sign in</button></div>
+        )}
         {!hydrated ? <p className="muted">Loading…</p> : wishlist.length === 0 ? (
           <div className="empty empty--page"><p className="hand">nothing saved yet.</p><p className="muted">Tap the heart on any piece to keep it here.</p><Link href="/shop" className="btn">Explore Nemara</Link></div>
         ) : (

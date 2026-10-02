@@ -29,3 +29,4 @@ export const IconEye = (p: P) => <svg {...base} {...p}><path d="M2.5 12S6 5.5 12
 export const IconLock = (p: P) => <svg {...base} {...p}><rect x="5" y="10.5" width="14" height="9.5" rx="1.5" /><path d="M8 10.5V8a4 4 0 018 0v2.5" /></svg>;
 export const IconImage = (p: P) => <svg {...base} {...p}><rect x="3.5" y="4.5" width="17" height="15" rx="1.5" /><circle cx="9" cy="10" r="1.6" /><path d="M20.5 16l-5-5-8.5 8.5" /></svg>;
 export const IconRefresh = (p: P) => <svg {...base} {...p}><path d="M19 12a7 7 0 11-2.05-4.95M19 4v4h-4" /></svg>;
+export const IconUser = (p: P) => <svg {...base} {...p}><circle cx="12" cy="8.5" r="3.6" /><path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6" /></svg>;

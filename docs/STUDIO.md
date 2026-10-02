@@ -33,3 +33,12 @@ Writes are frugal by design: one write per engaged session, one per Circle sign-
 node scripts/hash-password.mjs "a-new-strong-passphrase"
 ```
 Paste the output into Vercel → Settings → Environment Variables → `ADMIN_PASSWORD_HASH`, then redeploy. To sign everyone out, also rotate `ADMIN_SESSION_SECRET`.
+
+## Customer accounts (storefront)
+- **Sign in / register** from the header, the mobile tab bar, the wishlist, or checkout. Enter a mobile number *or* email, then a 6-digit code. New customers also verify the other contact (mobile + email), so every account has both verified.
+- **Checkout** requires a verified account whenever storage is connected. Contact details are locked to the verified ones, saved addresses appear as one-tap choices, and a new address can be saved during checkout.
+- **My account** (`/account`): orders with live status, a tracking page per order (placed → being prepared → packed → on its way → delivered, courier and tracking link from Studio), saved addresses (add, edit, default, remove), profile and wishlist.
+- **Wishlist**: works signed-out on the device. Signing in merges it into the account and keeps it in sync across devices. The first save invites sign-in, but never blocks it.
+- **Security**: codes are 6 digits, HMAC-hashed at rest, expire in 10 minutes, lock after 5 wrong attempts, and have a 30s resend cooldown and per-IP/per-number send limits. Sessions are signed HTTP-only cookies (30 days), domain-separated from Studio sessions. Orders are visible only to the account they belong to.
+- **Delivery**: email via Resend (`RESEND_API_KEY`, `OTP_EMAIL_FROM` on a verified domain). SMS via MSG91 (`MSG91_AUTH_KEY`, `MSG91_OTP_TEMPLATE_ID`, DLT-registered template) or Twilio. Until a provider is connected, the preview edition shows the code on screen so the flow can be tested.
+- Paid orders attach automatically to the account with the same verified mobile number.

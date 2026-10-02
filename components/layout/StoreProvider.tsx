@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
 
 export type CartItem = {
@@ -21,7 +21,8 @@ type Action =
   | { type: "qty"; key: string; quantity: number }
   | { type: "remove"; key: string }
   | { type: "clear" }
-  | { type: "wish"; item: WishItem };
+  | { type: "wish"; item: WishItem }
+  | { type: "setWish"; wishlist: WishItem[] };
 
 const keyOf = (h: string, v?: string) => (v ? `${h}::${v}` : h);
 
@@ -39,6 +40,7 @@ function reducer(s: State, a: Action): State {
     case "qty": return { ...s, cart: s.cart.map((c) => (c.key === a.key ? { ...c, quantity: Math.max(1, Math.min(10, a.quantity)) } : c)) };
     case "remove": return { ...s, cart: s.cart.filter((c) => c.key !== a.key) };
     case "clear": return { ...s, cart: [] };
+    case "setWish": return { ...s, wishlist: a.wishlist };
     case "wish": {
       const has = s.wishlist.some((w) => w.handle === a.item.handle);
       return { ...s, wishlist: has ? s.wishlist.filter((w) => w.handle !== a.item.handle) : [a.item, ...s.wishlist] };
@@ -61,7 +63,20 @@ type Ctx = State & {
   setSearchOpen: (v: boolean) => void;
   toast: string | null;
   notify: (msg: string) => void;
+  /* accounts */
+  customer: Customer | null;
+  accountsAvailable: boolean;
+  accountReady: boolean;
+  setCustomer: (c: Customer | null) => void;
+  authReason: AuthReason | null;
+  openAuth: (reason?: AuthReason) => void;
+  closeAuth: () => void;
+  logout: () => Promise<void>;
 };
+
+export type AuthReason = "account" | "wishlist" | "checkout";
+export type Address = { id: string; label: string; name: string; phone: string; line1: string; line2?: string; city: string; state: string; pincode: string; isDefault?: boolean };
+export type Customer = { id: string; name: string; phone: string; email: string; phoneVerified: boolean; emailVerified: boolean; addresses: Address[]; wishlist: WishItem[]; createdAt: string; marketingConsent?: boolean };
 
 const StoreCtx = createContext<Ctx | null>(null);
 const LS_KEY = "nemara:v1";
@@ -71,6 +86,35 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [cartOpen, setCartOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [customer, setCustomerState] = useState<Customer | null>(null);
+  const [accountsAvailable, setAccountsAvailable] = useState(false);
+  const [accountReady, setAccountReady] = useState(false);
+  const [authReason, setAuthReason] = useState<AuthReason | null>(null);
+  const merged = useRef<string | null>(null);
+  const wishPrompted = useRef(false);
+
+  useEffect(() => {
+    fetch("/api/account/me", { cache: "no-store" }).then((r) => r.json()).then((d) => {
+      setAccountsAvailable(!!d.available);
+      setCustomerState(d.customer ?? null);
+    }).catch(() => {}).finally(() => setAccountReady(true));
+  }, []);
+
+  // on sign-in: merge this device's wishlist into the account (union), then keep them in sync
+  useEffect(() => {
+    if (!customer || !state.hydrated || merged.current === customer.id) return;
+    merged.current = customer.id;
+    const union = [...customer.wishlist];
+    for (const w of state.wishlist) if (!union.some((u) => u.handle === w.handle)) union.push(w);
+    dispatch({ type: "setWish", wishlist: union });
+  }, [customer, state.hydrated, state.wishlist]);
+  useEffect(() => {
+    if (!customer || merged.current !== customer.id) return;
+    const t = window.setTimeout(() => {
+      fetch("/api/account/wishlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items: state.wishlist }) }).catch(() => {});
+    }, 600);
+    return () => window.clearTimeout(t);
+  }, [state.wishlist, customer]);
 
   useEffect(() => {
     let cart: CartItem[] = [], wishlist: WishItem[] = [];
@@ -105,13 +149,22 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       const had = state.wishlist.some((w) => w.handle === item.handle);
       dispatch({ type: "wish", item });
       if (!had) track("add_to_wishlist", { item_id: item.handle, value: item.price, currency: "INR" });
-      notify(had ? "Removed from your wishlist" : "Saved to your wishlist");
+      notify(had ? "Removed from your wishlist" : customer ? "Saved to your wishlist" : "Saved on this device");
+      // invite (once per visit) to save the wishlist to an account — never blocks saving
+      if (!had && !customer && accountsAvailable && !wishPrompted.current) {
+        wishPrompted.current = true;
+        window.setTimeout(() => setAuthReason("wishlist"), 500);
+      }
     },
     isWished: (h) => state.wishlist.some((w) => w.handle === h),
     count: state.cart.reduce((n, c) => n + c.quantity, 0),
     subtotal: state.cart.reduce((n, c) => n + c.quantity * c.price, 0),
     cartOpen, setCartOpen, searchOpen, setSearchOpen, toast, notify,
-  }), [state, cartOpen, searchOpen, toast, notify]);
+    customer, accountsAvailable, accountReady,
+    setCustomer: (c) => { setCustomerState(c); if (!c) merged.current = null; },
+    authReason, openAuth: (r = "account") => setAuthReason(r), closeAuth: () => setAuthReason(null),
+    logout: async () => { await fetch("/api/account/logout", { method: "POST" }).catch(() => {}); merged.current = null; setCustomerState(null); notify("Signed out"); },
+  }), [state, cartOpen, searchOpen, toast, notify, customer, accountsAvailable, accountReady, authReason]);
 
   return <StoreCtx.Provider value={value}>{children}</StoreCtx.Provider>;
 }

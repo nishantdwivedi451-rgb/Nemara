@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "@/components/brand/Logo";
-import { IconBag, IconClose, IconHeart, IconMenu, IconSearch } from "@/components/brand/Icons";
+import { IconBag, IconClose, IconHeart, IconMenu, IconSearch, IconUser } from "@/components/brand/Icons";
 import { useStore } from "./StoreProvider";
 import type { Taxon } from "@/lib/commerce/types";
 
@@ -12,7 +12,7 @@ export type NavData = { categories: Taxon[]; occasions: Taxon[]; collections: Ta
 
 export function Header({ nav }: { nav: NavData }) {
   const pathname = usePathname();
-  const { count, wishlist, setCartOpen, setSearchOpen } = useStore();
+  const { count, wishlist, setCartOpen, setSearchOpen, customer, accountsAvailable, openAuth } = useStore();
   const [scrolled, setScrolled] = useState(false);
   const [mega, setMega] = useState(false);
   const [drawer, setDrawer] = useState(false);
@@ -61,6 +61,9 @@ export function Header({ nav }: { nav: NavData }) {
             <Link href="/contact" className={active("/contact")}>Contact</Link>
           </div>
           <button className="icon-btn" onClick={() => setSearchOpen(true)} aria-label="Search"><IconSearch /></button>
+          {accountsAvailable && (customer
+            ? <Link href="/account" className="icon-btn desktop-only" aria-label={`Your account, ${customer.name}`} title={customer.name}><IconUser /><span className="acct-dot" /></Link>
+            : <button className="icon-btn desktop-only" onClick={() => openAuth("account")} aria-label="Sign in"><IconUser /></button>)}
           <Link href="/wishlist" className="icon-btn desktop-only" aria-label={`Wishlist, ${wishlist.length} saved`}>
             <IconHeart />{wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
           </Link>
@@ -101,7 +104,7 @@ export function Header({ nav }: { nav: NavData }) {
           <button className="icon-btn" onClick={() => setDrawer(false)} aria-label="Close menu"><IconClose /></button>
         </div>
         <ul className="nav-drawer__primary">
-          {[["Shop", "/shop"], ["Our Story", "/our-story"], ["Artists", "/artists"], ["Try It On", "/try-on"], ["Nemara Stylist", "/stylist"], ["Journal", "/journal"], ["Contact", "/contact"]].map(([l, h], i) => (
+          {[["Shop", "/shop"], ["Our Story", "/our-story"], ["Artists", "/artists"], ["Try It On", "/try-on"], ["Nemara Stylist", "/stylist"], ["Journal", "/journal"], ["My account", "/account"], ["Contact", "/contact"]].map(([l, h], i) => (
             <li key={h} style={{ ["--i" as string]: i }}><Link href={h} tabIndex={drawer ? 0 : -1}>{l}</Link></li>
           ))}
         </ul>

@@ -33,13 +33,18 @@ export async function dashboard() {
   };
 }
 
-export type Customer = { key: string; name: string; phone: string; email: string; city?: string; member?: Member; orders: number; spend: number; lastOrder?: string; birthday?: string };
+export type Customer = { key: string; name: string; phone: string; email: string; city?: string; member?: Member; registered?: boolean; addresses?: number; orders: number; spend: number; lastOrder?: string; birthday?: string };
 export async function customers(): Promise<Customer[]> {
-  const [orders, members] = await Promise.all([getOrders(), getMembers()]);
+  const [orders, members, accounts] = await Promise.all([getOrders(), getMembers(), listAll<{ name: string; phone: string; email: string; addresses: { city: string }[] }>("customers")]);
   const map = new Map<string, Customer>();
+  for (const a of accounts) {
+    const k = normPhone(a.phone);
+    map.set(k, { key: k, name: a.name, phone: a.phone, email: a.email, city: a.addresses[0]?.city, registered: true, addresses: a.addresses.length, orders: 0, spend: 0 });
+  }
   for (const m of members) {
     const k = normPhone(m.phone) || m.email.toLowerCase();
-    map.set(k, { key: k, name: m.name, phone: m.phone, email: m.email, city: m.city, member: m, orders: 0, spend: 0, birthday: m.birthday });
+    const prev = map.get(k);
+    map.set(k, { ...(prev ?? { key: k, name: m.name, phone: m.phone, email: m.email, orders: 0, spend: 0 }), city: prev?.city ?? m.city, member: m, birthday: m.birthday });
   }
   for (const o of orders.filter(isPaid)) {
     const k = normPhone(o.customer.phone) || o.customer.email.toLowerCase();

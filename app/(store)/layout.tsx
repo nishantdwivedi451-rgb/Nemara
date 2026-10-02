@@ -4,6 +4,7 @@ import "@/styles/components.css";
 import "@/styles/pages.css";
 import "@/styles/tryon.css";
 import "@/styles/circle.css";
+import "@/styles/account.css";
 import { StoreProvider } from "@/components/layout/StoreProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -15,6 +16,7 @@ import { Toast } from "@/components/layout/Toast";
 import { PreviewRibbon } from "@/components/layout/PreviewRibbon";
 import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
 import { CircleInvite } from "@/components/marketing/CircleInvite";
+import { AuthDialog } from "@/components/account/AuthDialog";
 import { JsonLd } from "@/components/editorial/JsonLd";
 import { commerce } from "@/lib/commerce";
 import { getMarketingSettings } from "@/lib/marketing";
@@ -41,6 +43,7 @@ export default async function StoreLayout({ children }: { children: React.ReactN
         <MobileTabBar />
         <WhatsAppButton href={whatsappUrl()} />
         <Toast />
+        <AuthDialog />
         {/* never collect details we can't store: the Circle switches on once a database is connected */}
         <CircleInvite settings={{ ...marketing.popup, enabled: marketing.popup.enabled && storeConfigured() }} track={storeConfigured()} exclusives={exclusives} />
       </StoreProvider>
