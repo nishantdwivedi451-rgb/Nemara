@@ -58,7 +58,7 @@ export default async function TaxonPage({ params }: Params) {
         </header>
       )}
       <Suspense fallback={null}>
-        <ShopExplorer products={d.products} categories={d.categories} occasions={d.occasions} campaigns={d.campaigns.filter((c) => !c.href.endsWith(slug))} artists={d.artists} quotes={QUOTES} lock={{ type: r.type, slug }} />
+        <ShopExplorer products={d.products} categories={d.categories} occasions={d.occasions} campaigns={d.campaigns.filter((c) => !c.href.endsWith(slug))} markets={d.markets} quotes={QUOTES} lock={{ type: r.type, slug }} />
       </Suspense>
     </div>
   );

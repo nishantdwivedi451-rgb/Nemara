@@ -17,7 +17,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ kind: st
   }
   else if (kind === "customers") rows = (await customers()).map((c) => ({ name: c.name, phone: c.phone, email: c.email, city: c.city ?? "", circle_code: c.member?.code ?? "", birthday: c.birthday ?? "", orders: c.orders, spend: c.spend, last_order: c.lastOrder ?? "" }));
   else if (kind === "visitors") rows = (await getVisitors()).map((v) => ({ engaged_at: v.engagedAt, visitor: v.visitorId, landing: v.landing, pages: v.pages.length, referrer: v.referrer ?? "", utm_source: v.utm?.utm_source ?? "", utm_campaign: v.utm?.utm_campaign ?? "", device: v.device, browser: v.browser ?? "", city: v.city ?? "", country: v.country ?? "", returning: v.returning }));
-  else if (kind === "products" || kind === "inventory") rows = (await loadCatalogueFresh()).map((p) => ({ sku: p.sku, handle: p.handle, name: p.name, category: p.category, price: p.price, inventory: p.inventory, low_stock_at: p.lowStockAt ?? 5, status: p.status ?? "active", exclusive: !!p.exclusive, artist: p.artist }));
+  else if (kind === "products" || kind === "inventory") rows = (await loadCatalogueFresh()).map((p) => ({ sku: p.sku, handle: p.handle, name: p.name, category: p.category, price: p.price, inventory: p.inventory, low_stock_at: p.lowStockAt ?? 5, status: p.status ?? "active", exclusive: !!p.exclusive, market: p.market }));
   else return new Response("Unknown export", { status: 404 });
   return new Response("﻿" + toCsv(rows), { headers: { "Content-Type": "text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="nemara-${kind}-${new Date().toISOString().slice(0, 10)}.csv"`, "Cache-Control": "no-store" } });
 }

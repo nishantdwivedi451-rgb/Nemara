@@ -1,23 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProductCard, type CardProduct } from "./ProductCard";
-import type { Artist } from "@/lib/commerce/types";
+import type { Market } from "@/lib/commerce/types";
 
 export type CampaignTile = { image: string; alt: string; eyebrow: string; title: string; line: string; href: string; tone?: "dark" | "light" };
 
 /**
  * Editorial merchandising: products are paginated like a magazine, in full rows,
- * interrupted by campaign spreads, artist stories and founder notes.
+ * interrupted by campaign spreads, market stories and style notes.
  */
-type Row = { kind: "products"; size: number; span: number } | { kind: "campaign" | "quote" } | { kind: "artist" };
+type Row = { kind: "products"; size: number; span: number } | { kind: "campaign" | "quote" } | { kind: "market" };
 const ROWS: Row[] = [
   { kind: "products", size: 2, span: 6 }, { kind: "campaign" }, { kind: "products", size: 3, span: 4 },
-  { kind: "artist" }, { kind: "quote" }, { kind: "products", size: 4, span: 3 }, { kind: "products", size: 3, span: 4 },
+  { kind: "market" }, { kind: "quote" }, { kind: "products", size: 4, span: 3 }, { kind: "products", size: 3, span: 4 },
 ];
 const SPAN_FOR_COUNT: Record<number, number> = { 1: 6, 2: 6, 3: 4, 4: 3 };
 
-export function EditorialGrid({ products, campaigns = [], artists = [], quotes = [] }:
-  { products: CardProduct[]; campaigns?: CampaignTile[]; artists?: Artist[]; quotes?: string[] }) {
+export function EditorialGrid({ products, campaigns = [], markets = [], quotes = [] }:
+  { products: CardProduct[]; campaigns?: CampaignTile[]; markets?: Market[]; quotes?: string[] }) {
   const tiles: React.ReactNode[] = [];
   let i = 0, c = 0, a = 0, q = 0, step = 0;
   const card = (p: CardProduct, span: number) =>
@@ -37,25 +37,25 @@ export function EditorialGrid({ products, campaigns = [], artists = [], quotes =
           <div className="etile__img frame"><Image src={t.image} alt={t.alt} fill sizes="(min-width: 900px) 55vw, 100vw" unoptimized /></div>
           <div className="etile__copy"><p className="eyebrow">{t.eyebrow}</p><h3 className="h1">{t.title}</h3><p>{t.line}</p><span className="link-arrow">Shop the moment</span></div>
         </Link>);
-    } else if (row.kind === "artist") {
-      const ar = artists[a++ % Math.max(1, artists.length)];
-      if (ar && remaining >= 1) {
+    } else if (row.kind === "market") {
+      const mk = markets[a++ % Math.max(1, markets.length)];
+      if (mk && remaining >= 1) {
         tiles.push(
-          <Link key={`a${step}`} href={`/artists/${ar.slug}`} className="etile etile--artist">
-            <div className="etile__portrait arch"><Image src={ar.portrait.src} alt={ar.portrait.alt} fill sizes="(min-width: 900px) 30vw, 60vw" unoptimized /></div>
+          <Link key={`a${step}`} href={`/markets/${mk.slug}`} className="etile etile--market">
+            <div className="etile__portrait etile__portrait--market"><Image src={mk.image.src} alt={mk.image.alt} fill sizes="(min-width: 900px) 30vw, 60vw" unoptimized /></div>
             <div className="etile__copy">
-              <p className="eyebrow">The hand behind the piece</p>
-              <h3 className="h2">{ar.name}</h3>
-              <p className="muted">{ar.craft} · {ar.location}</p>
-              {ar.quote && <blockquote className="etile__quote">“{ar.quote}”</blockquote>}
-              <span className="link-arrow">Read the story</span>
+              <p className="eyebrow">Handpicked in {mk.city}</p>
+              <h3 className="h2">{mk.market}</h3>
+              <p className="muted">Known for {mk.signature.toLowerCase()}</p>
+              <blockquote className="etile__quote">“{mk.tip}”</blockquote>
+              <span className="link-arrow">Explore {mk.city}</span>
             </div>
           </Link>);
         tiles.push(card(products[i++], 4));
       }
     } else if (row.kind === "quote") {
       const text = quotes[q++ % Math.max(1, quotes.length)];
-      if (text && remaining > 1) tiles.push(<div key={`q${step}`} className="etile etile--quote"><p className="etile__q">{text}</p><span className="eyebrow">Pratima Saxena, founder</span></div>);
+      if (text && remaining > 1) tiles.push(<div key={`q${step}`} className="etile etile--quote"><p className="etile__q">{text}</p><span className="eyebrow">The Nemara edit</span></div>);
     }
   }
   return <div className="egrid">{tiles}</div>;

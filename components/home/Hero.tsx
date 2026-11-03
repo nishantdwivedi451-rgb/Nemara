@@ -14,16 +14,16 @@ export function Hero() {
       <FloralLily className="hero__floral hero__floral--br" />
       <div className="hero__grid wrap">
         <div className="hero__copy">
-          <p className="eyebrow hero__edition">Autumn–Winter 2026 · Designed in India</p>
+          <p className="eyebrow hero__edition">Curated across India · The new edit</p>
           <h1 id="hero-title" className="display hero__title">
             <span className="hero__line"><span>Wear</span></span>
             <span className="hero__line"><span>your</span></span>
             <span className="hero__line"><span><em>story.</em></span></span>
           </h1>
-          <p className="hero__sub">Jewellery designed in India, shaped by artists, and made for the many versions of you.</p>
+          <p className="hero__sub">Premium jewellery handpicked from India&apos;s most loved markets — Jaipur to Srinagar — checked piece by piece and styled for every version of you.</p>
           <div className="hero__ctas">
             <Link href="/shop" className="btn">Explore Nemara</Link>
-            <Link href="/our-story" className="btn btn--ghost">Discover the story</Link>
+            <Link href="/markets" className="btn btn--ghost">Explore the markets</Link>
           </div>
         </div>
 

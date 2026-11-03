@@ -6,7 +6,7 @@ import { ProductStory } from "@/components/product/ProductStory";
 import { ProductRail } from "@/components/product/ProductRail";
 import { JsonLd } from "@/components/editorial/JsonLd";
 import { commerce } from "@/lib/commerce";
-import { getArtist } from "@/lib/content";
+import { getMarket } from "@/lib/content";
 import { SITE } from "@/lib/site";
 import { breadcrumbLd, pageMeta, productLd } from "@/lib/seo";
 
@@ -26,15 +26,15 @@ export default async function ProductPage({ params }: Params) {
   const { handle } = await params;
   const p = await commerce.getProduct(handle);
   if (!p) notFound();
-  const [artist, all, occasions, categories] = await Promise.all([getArtist(p.artist), commerce.getProducts(), commerce.getOccasions(), commerce.getCategories()]);
+  const [market, all, occasions, categories] = await Promise.all([getMarket(p.market), commerce.getProducts(), commerce.getOccasions(), commerce.getCategories()]);
   const moment = occasions.find((o) => o.slug === p.occasions[0]);
   const category = categories.find((c) => c.slug === p.category);
   const look = all.filter((x) => x.handle !== p.handle && x.category !== p.category && x.occasions.some((o) => p.occasions.includes(o))).slice(0, 6);
-  const byArtist = all.filter((x) => x.handle !== p.handle && x.artist === p.artist).slice(0, 6);
+  const fromMarket = all.filter((x) => x.handle !== p.handle && x.market === p.market).slice(0, 6);
 
   return (
     <div className="page-enter">
-      <JsonLd data={[productLd(p, artist?.name), breadcrumbLd([{ name: "Home", path: "/" }, { name: "Shop", path: "/shop" }, ...(category ? [{ name: category.name, path: `/shop/${category.slug}` }] : []), { name: p.name, path: `/product/${p.handle}` }])]} />
+      <JsonLd data={[productLd(p, market ? `${market.market}, ${market.city}` : undefined), breadcrumbLd([{ name: "Home", path: "/" }, { name: "Shop", path: "/shop" }, ...(category ? [{ name: category.name, path: `/shop/${category.slug}` }] : []), { name: p.name, path: `/product/${p.handle}` }])]} />
       <div className="wrap">
         <nav aria-label="Breadcrumb" className="crumbs pdp__crumbs">
           <Link href="/shop">Shop</Link> / {category && <><Link href={`/shop/${category.slug}`}>{category.name}</Link> / </>}<span aria-current="page">{p.name}</span>
@@ -42,10 +42,10 @@ export default async function ProductPage({ params }: Params) {
       </div>
       <section className="pdp wrap">
         <ProductGallery images={p.images} name={p.name} />
-        <BuyBox p={p} artist={artist} shipping={SITE.shipping} />
+        <BuyBox p={p} market={market} shipping={SITE.shipping} />
       </section>
 
-      <ProductStory p={p} artist={artist} moment={moment} />
+      <ProductStory p={p} market={market} moment={moment} />
 
       {look.length > 0 && (
         <section className="section--tight" aria-labelledby="look-title">
@@ -53,10 +53,10 @@ export default async function ProductPage({ params }: Params) {
           <div className="wrap"><ProductRail products={look} label="Complete the look" /></div>
         </section>
       )}
-      {artist && byArtist.length > 0 && (
-        <section className="section--tight" aria-labelledby="artist-more">
-          <div className="wrap section-head"><div><p className="eyebrow">Also by {artist.name}</p><h2 id="artist-more" className="h2">From the same hands</h2></div><Link href={`/artists/${artist.slug}`} className="link-arrow">Artist story</Link></div>
-          <div className="wrap"><ProductRail products={byArtist} label={`More by ${artist.name}`} /></div>
+      {market && fromMarket.length > 0 && (
+        <section className="section--tight" aria-labelledby="market-more">
+          <div className="wrap section-head"><div><p className="eyebrow">Also from {market.city}</p><h2 id="market-more" className="h2">More from {market.market}</h2></div><Link href={`/markets/${market.slug}`} className="link-arrow">The {market.city} edit</Link></div>
+          <div className="wrap"><ProductRail products={fromMarket} label={`More from ${market.city}`} /></div>
         </section>
       )}
     </div>

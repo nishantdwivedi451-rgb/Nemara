@@ -1,33 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal, Lines } from "@/components/editorial/Reveal";
-import { SITE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({ title: "Our Story", description: "Twenty-five years of teaching, one purple pen, and a jewellery house built with Indian artists. The story of Pratima Saxena and Nemara.", path: "/our-story" });
+export const metadata = pageMeta({ title: "Our Story — Curated across India", description: "Nemara handpicks premium fashion jewellery from India's most loved markets — Jaipur, Delhi, Srinagar, Hyderabad, Mumbai and Ahmedabad — checks every piece, and styles it for real life.", path: "/our-story" });
 
 const CHAPTERS = [
-  { k: "Twenty-five years", h: <>A classroom is a room<br />full of <em>different people.</em></>, img: "/art/campaign/nine-to-five.svg",
-    body: ["For twenty-five years, Pratima Saxena stood at the front of a classroom. She taught grammar and literature, but mostly she taught attention: how to look closely at something until it told you what it was.", "She learned that no two students were alike. The loud ones and the quiet ones, the ones who drew in the margins, the ones who asked the question everyone else was thinking. Her job was to notice each of them."],
-    note: "every child had a version of themselves they hadn't shown anyone yet." },
-  { k: "The passion", h: <>She had always<br /><em>drawn jewellery.</em></>, img: "/art/products/monsoon-hour-jhumka/story.svg",
-    body: ["On the backs of attendance sheets, in the margins of lesson plans, on the last page of every diary: earrings, collars, a kada that looked like a courtyard. Always in the same purple ink.", "For years the drawings stayed in drawers. There was always another term, another batch, another exam."],
-    note: "the drawer was full before I admitted it was a plan." },
-  { k: "The shift", h: <>One term, she<br /><em>didn&apos;t go back.</em></>, img: "/art/campaign/founder.svg",
-    body: ["After twenty-five years, Pratima did the bravest thing a teacher can do: she became a student again. She learned metals and finishes, costing and casting. She failed at things. She asked questions in workshops where nobody expected a former principal to be taking notes.", "It was not a retirement. It was a second first day."],
-    note: "a second first day." },
-  { k: "The designer", h: <>Design, the way<br /><em>a teacher thinks.</em></>, img: "/art/products/raat-rani-necklace-set/story.svg",
-    body: ["Pratima designs the way she taught: start with the person, simplify the idea, then test it until it holds. Every Nemara piece begins with a question — who is she, where is she going, what does she want to feel?", "She is suspicious of anything that only looks good on a tray. If it doesn't sit beautifully on a body, it is redrawn."],
-    note: "if it only looks good on a tray, it isn't finished." },
-  { k: "The artists", h: <>The hands she<br /><em>went looking for.</em></>, img: "/art/artists/meher-bano.svg",
-    body: ["She travelled to Jaipur, Cuttack, Thrissur and Moradabad — to enamellers, filigree workers, chasers and brass finishers — and asked them to make things they had never been asked to make.", "Some laughed. Most said yes. Today every Nemara piece carries the name of the artist who made it, because Pratima believes that a story without its storyteller is only half told."],
-    note: "if I can't tell you who made it, I won't sell it." },
-  { k: "The brand", h: <>And so,<br /><em>Nemara.</em></>, img: "/art/campaign/hero.svg",
-    body: ["Nemara is what happens when a teacher's eye, an artist's hands and a modern woman's life meet on the same page. Jewellery that is designed with intention, made with people, born in India, and made for her — every version of her."],
+  { k: "The idea", h: <>India has the best<br /><em>jewellery markets</em> in the world.</>, img: "/art/markets/jaipur.svg",
+    body: ["Johari Bazaar for meenakari. Dariba Kalan for statement collars. Laad Bazaar for pearls. Colaba Causeway for the everyday. Every city has a market with its own signature — and most of us will never get to shop them all.", "Even when you do, it's a gamble: two hours of bargaining, a hundred near-identical trays, and no way to know if the plating will last past the wedding."],
+    note: "what if someone did the hunting for you?" },
+  { k: "The route", h: <>So we go.<br /><em>Season after season.</em></>, img: "/art/markets/kashmir.svg",
+    body: ["Our buyers walk six markets every season — Jaipur, Old Delhi, Srinagar, Hyderabad, Mumbai and Ahmedabad — and we're already scouting Kolkata, Chennai and Lucknow.", "We go early, before the lanes fill. We drink a lot of chai. We find the small counters with the workshop upstairs, and the stalls that change their stock every week."],
+    note: "the best pieces are never on the front counter." },
+  { k: "The pick", h: <>One in fifty<br /><em>makes it.</em></>, img: "/art/products/monsoon-hour-jhumka/story.svg",
+    body: ["We pick for three things: is it beautiful, will you actually wear it, and does it feel like now. A jhumka that's too heavy to dance in doesn't make it. Neither does a trend that's already everywhere.", "Sometimes we ask for one change — a lighter dome, a softer colour, a stronger clasp — and wait for the sample."],
+    note: "lilac, not ruby. this one." },
+  { k: "The check", h: <>Checked like<br /><em>fine jewellery.</em></>, img: "/art/campaign/studio.svg",
+    body: ["Markets are where the magic is. They're also where quality varies the most. So every piece comes through our checking table before it reaches you.", "Plating under bright light. Stones and pearls pushed, twisted and matched. Clasps opened and closed until we trust them. Earrings weighed for comfort. Every edge that touches skin, smoothed. If a batch fails, we drop the design — however pretty it is."],
+    note: "and then we back it for 3 months." },
+  { k: "The style", h: <>Styled for<br /><em>your actual life.</em></>, img: "/art/campaign/nine-to-five.svg",
+    body: ["Every piece comes with how to wear it — what to pair it with, where it works, what to leave off. Try anything on with your camera before you buy, or ask the Nemara Stylist where you're going.", "The 9 to 5. The brunch. The sangeet. The date you're overthinking. There's a piece for each — and most work for all of them."],
+    note: "office to dinner, no change needed." },
+  { k: "The price", h: <>Premium,<br /><em>not precious.</em></>, img: "/art/campaign/after-hours.svg",
+    body: ["Nemara is premium fashion jewellery: the look and finish of fine jewellery, at a price that lets you build a whole wardrobe instead of buying one piece and saving it for best.", "Wear it on a Tuesday. Wear it to the wedding. Lend it to your best friend."],
+    note: "the best jewellery is the one you actually wear." },
+  { k: "The wardrobe", h: <>Your jewellery<br /><em>wardrobe.</em></>, img: "/art/campaign/celebration.svg",
+    body: ["That's the whole idea: a jewellery wardrobe, built one find at a time, from every corner of India. Each piece arrives in a Nemara pouch with a card telling you which market it came from — so your jewellery comes with a story.", "Join the Nemara Circle for first look at every new market edit, plus a gift on your birthday and the big festivals."],
     note: "wear your story." },
-  { k: "The belief", h: <>Women, and the<br /><em>people who make.</em></>, img: "/art/campaign/celebration.svg",
-    body: ["Nemara exists to back two groups Pratima has always believed in: women who are told to be one thing, and India's makers, who are too often left uncredited.", "Every purchase pays an artist fairly, credits them publicly and keeps a craft in practice. That is the part of the story you wear without seeing."],
-    note: "the part of the story you wear without seeing." },
 ];
 
 export default function OurStory() {
@@ -37,10 +36,10 @@ export default function OurStory() {
         <div className="wrap story-hero__grid">
           <div>
             <p className="eyebrow">Our story</p>
-            <Lines as="h1" className="display" lines={["Twenty-five", "years. One", <em key="p">purple pen.</em>]} />
-            <p className="lede">The story of Pratima Saxena — teacher, designer, founder — and the jewellery house she built with India&apos;s artists.</p>
+            <Lines as="h1" className="display" lines={["Curated", "across", <em key="p">India.</em>]} />
+            <p className="lede">Nemara handpicks premium fashion jewellery from India&apos;s most loved markets, checks every piece, and styles it for the many versions of you.</p>
           </div>
-          <div className="story-hero__img arch frame"><Image src={SITE.founder.portrait.src} alt={SITE.founder.portrait.alt} fill priority sizes="(min-width: 900px) 40vw, 90vw" unoptimized /></div>
+          <div className="story-hero__img"><Image src="/art/markets/delhi.svg" alt="Illustration of Old Delhi's domes above Dariba Kalan" fill priority sizes="(min-width: 900px) 40vw, 90vw" unoptimized /></div>
         </div>
       </header>
 
@@ -60,9 +59,9 @@ export default function OurStory() {
 
       <section className="story-end section">
         <div className="wrap story-end__inner">
-          <p className="hand">— and now, your chapter.</p>
+          <p className="hand">— and now, your wardrobe.</p>
           <h2 className="h1">Find the piece that<br /><em>sounds like you.</em></h2>
-          <div className="story-end__ctas"><Link href="/shop" className="btn">Explore Nemara</Link><Link href="/artists" className="btn btn--ghost">Meet the artists</Link></div>
+          <div className="story-end__ctas"><Link href="/shop" className="btn">Shop the edit</Link><Link href="/markets" className="btn btn--ghost">Explore the markets</Link></div>
         </div>
       </section>
     </div>

@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "jaipur",
+    "city": "Jaipur",
+    "market": "Johari Bazaar",
+    "region": "Rajasthan",
+    "signature": "Kundan, meenakari & jhumkas",
+    "image": { "src": "/art/markets/jaipur.svg", "alt": "Illustration of Jaipur's pink-city jharokhas above Johari Bazaar" },
+    "summary": "The pink city's jewellers' lane — where meenakari colour and kundan sparkle have been traded for three hundred years.",
+    "lead": "Johari literally means jeweller. In Jaipur's Johari Bazaar, shopfronts glitter under pink arches, and every second counter is a riot of enamel, kundan and jhumkas.",
+    "story": [
+      "We start early, before the lanes fill. The best counters are the small ones near Bapu Bazaar, where pieces are still enamelled in the workshop upstairs and the owner will tell you exactly which colours are hardest to fire.",
+      "Jaipur is where we find colour. Lilac and violet meenakari, soft kundan that catches light without shouting, jhumkas with fringes that move half a second after you do. It is wedding-season jewellery that we edit for the way you actually dress — lighter, wearable, and happy with denim as much as a lehenga.",
+      "Out of every fifty pieces we pick up here, one makes it to Nemara."
+    ],
+    "lookFor": ["Even, glossy enamel with no pinholes", "Kundan that sits flush in its setting", "Jhumkas light enough for a full night", "Colours that work beyond red and green"],
+    "wearIt": "One statement jhumka, hair tied back, everything else quiet.",
+    "tip": "If the enamel looks the same colour in sunlight and shop light, it's good enamel."
+  },
+  {
+    "slug": "delhi",
+    "city": "Delhi",
+    "market": "Dariba Kalan & Janpath",
+    "region": "Delhi",
+    "signature": "Oxidised silver-tone & statement collars",
+    "image": { "src": "/art/markets/delhi.svg", "alt": "Illustration of Old Delhi domes and minarets over Dariba Kalan" },
+    "summary": "Old Delhi's jewellers' lane for statement pieces, and Janpath's stalls for the oxidised, boho finds everyone asks about.",
+    "lead": "Dariba Kalan in Chandni Chowk has been a jewellers' street since the Mughals. A short metro ride away, Janpath's stalls are where Delhi's college girls have always found their oxidised jhumkas.",
+    "story": [
+      "Delhi gives us two moods in one day. In Dariba Kalan, it's collars and chokers built for a big entrance — intricate, layered, unapologetically dramatic. At Janpath it's the opposite: oxidised hoops, mirror-work drops and the boho pieces that live in your college bag.",
+      "We look for pieces that bridge both — a filigree hoop sharp enough for the office, a collar that turns a plain black dress into an event.",
+      "Delhi is loud. We bring back the pieces that are loud in the right way."
+    ],
+    "lookFor": ["Crisp filigree with no broken wires", "Oxidising that's even, not patchy", "Collars that sit flat on the collarbone", "Clasps strong enough for a dance floor"],
+    "wearIt": "Oxidised hoops with a white kurta, or one big collar with a black dress.",
+    "tip": "Run a finger along the back. A well-made piece is smooth where it touches skin."
+  },
+  {
+    "slug": "kashmir",
+    "city": "Srinagar",
+    "market": "Lal Chowk & Polo View",
+    "region": "Kashmir",
+    "signature": "Enamel, filigree-look & chandbalis",
+    "image": { "src": "/art/markets/kashmir.svg", "alt": "Illustration of a shikara on Dal Lake below the Kashmir mountains" },
+    "summary": "Srinagar's old markets, where enamel takes its colours from papier-mâché and the cuffs look like lace.",
+    "lead": "Between Lal Chowk and the shops of Polo View, Kashmir sells jewellery the way it sells everything — slowly, over kahwa, with a story about where the pattern came from.",
+    "story": [
+      "Kashmir is our quietest market and our favourite. The jewellery here borrows from papier-mâché boxes and shawl borders: tiny painted florals, deep violets, filigree-look cuffs that read like lace on the wrist.",
+      "We go for pieces that feel like an heirloom you didn't have to inherit — a cuff you'll wear every day for a year, a lantern charm that makes a plain bracelet personal.",
+      "Every Kashmir find comes with a little patience. It's worth it."
+    ],
+    "lookFor": ["Fine, even filigree-look patterns", "Painted enamel with clean edges", "Cuffs that flex without bending out of shape", "Motifs you won't see in every mall"],
+    "wearIt": "A filigree cuff stacked with your watch — office to dinner without a change.",
+    "tip": "Ask what the motif is called. In Kashmir, every pattern has a name."
+  },
+  {
+    "slug": "hyderabad",
+    "city": "Hyderabad",
+    "market": "Laad Bazaar, Charminar",
+    "region": "Telangana",
+    "signature": "Pearls, coins & Nizami drops",
+    "image": { "src": "/art/markets/hyderabad.svg", "alt": "Illustration of the Charminar above Laad Bazaar" },
+    "summary": "The bangle lane in the shadow of the Charminar — and India's most famous address for pearls.",
+    "lead": "Laad Bazaar runs straight out from the Charminar, a kilometre of bangles, pearls and stone-set drops that has dressed Hyderabadi brides since the Nizams.",
+    "story": [
+      "Hyderabad is pearl city, so this is where our pearl pieces come from — drops, studs and the coin-and-pearl sets that look like they were made for a nikaah but work just as well with a linen shirt.",
+      "We hunt for the classics, then pick the versions that feel current: one pearl instead of five, coins that catch the light without clinking, sets you can wear in pieces.",
+      "Come for the bangles, stay for the pearls. We always do."
+    ],
+    "lookFor": ["Pearls with an even, soft lustre", "Coins and discs that are crisply stamped", "Drops that hang straight, not twisted", "Sets that can be worn separately"],
+    "wearIt": "Single pearl drops with your hair down and a crisp shirt.",
+    "tip": "Roll two pearls together — good ones look alike from every side."
+  },
+  {
+    "slug": "mumbai",
+    "city": "Mumbai",
+    "market": "Colaba Causeway",
+    "region": "Maharashtra",
+    "signature": "Minimal gold-tone, beads & everyday layers",
+    "image": { "src": "/art/markets/mumbai.svg", "alt": "Illustration of the Gateway of India by the sea" },
+    "summary": "The city's most fashionable footpath — minimal gold-tone, beads and the pieces you wear every single day.",
+    "lead": "Colaba Causeway is a street-style runway disguised as a market. Between the cafés and the bookstalls, the stalls change their edit every few weeks to keep up with what Mumbai is wearing.",
+    "story": [
+      "Mumbai is where we find the everyday. Clean gold-tone lines, beaded stacks, slim necklaces you can layer on a Tuesday and forget you're wearing.",
+      "It's the market that keeps us honest about trends: if it isn't on the Causeway yet, it isn't a trend. If it's everywhere, we've already moved on.",
+      "These are the pieces that get worn the most. That's the point."
+    ],
+    "lookFor": ["Light pieces that are comfortable all day", "Clean finishing on minimal designs", "Beads strung on strong, stretchy cord", "Easy layering lengths"],
+    "wearIt": "Stack two bracelets and a slim necklace with a white tee. Repeat daily.",
+    "tip": "Minimal pieces have nowhere to hide — check every edge and joint."
+  },
+  {
+    "slug": "ahmedabad",
+    "city": "Ahmedabad",
+    "market": "Law Garden Night Market",
+    "region": "Gujarat",
+    "signature": "Hammered metal, kadas & festive oxidised",
+    "image": { "src": "/art/markets/ahmedabad.svg", "alt": "Illustration of kites over Ahmedabad's rooftops" },
+    "summary": "The night market that dresses all of Gujarat for Navratri — kadas, hammered metal and festive pieces built to dance in.",
+    "lead": "Law Garden only really wakes up after sunset. The lights come on, the stalls fold out, and every girl in the city is there choosing what she'll wear for nine nights of garba.",
+    "story": [
+      "Ahmedabad gives us kadas — hammered, chased, stamped — and festive pieces made to survive a full night of dancing. Nothing here is delicate for the sake of it.",
+      "We pick the kadas with the best weight and finish, the ones that still feel special in March, not just in October.",
+      "If it can survive nine nights of garba, it can survive your week."
+    ],
+    "lookFor": ["Even hammering with no sharp edges", "Kadas with a satisfying weight", "Openings that slip on easily", "Finishes that look good up close"],
+    "wearIt": "One hammered kada on each wrist, with a sari or with joggers.",
+    "tip": "Slide it on and shake your hand — a good kada moves, it doesn't rattle."
+  }
+]

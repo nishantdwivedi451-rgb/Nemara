@@ -7,11 +7,11 @@ import { IconCamera, IconHeart } from "@/components/brand/Icons";
 import { TryOnModal } from "@/components/tryon/TryOnModal";
 import { formatPrice, cx } from "@/lib/format";
 import { track } from "@/lib/analytics";
-import type { Artist, Product } from "@/lib/commerce/types";
+import type { Market, Product } from "@/lib/commerce/types";
 
-type Props = { p: Product; artist: Artist | null; shipping: { freeShippingThreshold: number; dispatchDays: string; returnsDays: number } };
+type Props = { p: Product; market: Market | null; shipping: { freeShippingThreshold: number; dispatchDays: string; returnsDays: number } };
 
-export function BuyBox({ p, artist, shipping }: Props) {
+export function BuyBox({ p, market, shipping }: Props) {
   const { add, toggleWish, isWished } = useStore();
   const [variant, setVariant] = useState<string | null>(p.variants.length === 1 ? p.variants[0].id : null);
   const [err, setErr] = useState("");
@@ -45,11 +45,11 @@ export function BuyBox({ p, artist, shipping }: Props) {
       {p.subtitle && <p className="buybox__sub">{p.subtitle}</p>}
       <p className="buybox__price">{formatPrice(p.price)} <span className="muted">incl. of all taxes</span></p>
       <p className="buybox__desc">{p.description}</p>
-      {artist && (
-        <Link href={`/artists/${artist.slug}`} className="buybox__artist">
-          <span className="eyebrow">Made by</span>
-          <span className="buybox__artist-name">{artist.name}</span>
-          <span className="muted">{artist.craft} · {artist.location}</span>
+      {market && (
+        <Link href={`/markets/${market.slug}`} className="buybox__market">
+          <span className="eyebrow">Handpicked in</span>
+          <span className="buybox__market-name">{market.city} · {market.market}</span>
+          <span className="muted">Known for {market.signature.toLowerCase()}</span>
         </Link>
       )}
 

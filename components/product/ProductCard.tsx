@@ -41,7 +41,7 @@ export function ProductCard({ p, size = "md", priority = false, showNote = false
         <h3 className="pcard__name">{p.name}</h3>
         <span className="pcard__price">{formatPrice(p.price)}</span>
         {p.subtitle && <span className="pcard__sub">{p.subtitle}</span>}
-        {showNote && p.story.idea.note && <span className="hand pcard__note">“{p.story.idea.note}”</span>}
+        {showNote && p.story.find.note && <span className="hand pcard__note">“{p.story.find.note}”</span>}
       </Link>
     </article>
   );

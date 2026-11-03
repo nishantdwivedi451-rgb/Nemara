@@ -26,7 +26,7 @@ async function storefront<T>(query: string, variables: Record<string, unknown> =
   return json.data as T;
 }
 
-const MF = ["subtitle", "category", "material", "dimensions", "care", "artist", "story", "try_on", "featured", "occasions"];
+const MF = ["subtitle", "category", "material", "dimensions", "care", "market", "story", "try_on", "featured", "occasions"];
 const PRODUCT_FIELDS = `
   id handle title description createdAt tags productType totalInventory
   priceRange { minVariantPrice { amount } }
@@ -62,9 +62,9 @@ function map(n: SNode): Product {
     occasions: parse<string[]>(mf.occasions, n.tags.filter((t) => t.startsWith("occasion:")).map((t) => t.slice(9))),
     collections: n.collections.nodes.map((c) => c.handle),
     tags: n.tags, material: mf.material ?? "", dimensions: mf.dimensions ?? "", care: mf.care ?? "",
-    artist: mf.artist ?? "", featured: mf.featured === "true", createdAt: n.createdAt,
+    market: mf.market ?? "", featured: mf.featured === "true", createdAt: n.createdAt,
     images: n.images.nodes.map((im, i) => ({ src: im.url, alt: im.altText ?? n.title, role: ROLES[i] ?? "gallery", width: im.width, height: im.height })),
-    story: parse(mf.story, { idea: { body: "" }, hand: { contribution: "" }, making: { body: "" }, moment: { body: "" } }),
+    story: parse(mf.story, { find: { body: "" }, check: { body: "" }, style: { body: "" } }),
     variants: n.variants.nodes.length > 1 ? n.variants.nodes.map((v) => ({ id: v.id, title: v.title, sku: v.sku, available: v.availableForSale, price: Number(v.price.amount) })) : [],
     tryOn: parse(mf.try_on, undefined),
   };

@@ -5,13 +5,13 @@ import { saveProduct, uploadImage, type ProductInput } from "@/app/admin/actions
 import type { StoredProduct } from "@/lib/catalogue";
 
 type Taxon = { slug: string; name: string };
-type Props = { initial?: StoredProduct; taxonomy: { categories: Taxon[]; occasions: Taxon[]; collections: Taxon[] }; artists: { slug: string; name: string }[] };
+type Props = { initial?: StoredProduct; taxonomy: { categories: Taxon[]; occasions: Taxon[]; collections: Taxon[] }; markets: { slug: string; name: string }[] };
 
 const SLOTS = [
   { role: "hero", label: "Main image", help: "The piece on a clean background" },
   { role: "worn", label: "As worn", help: "On the body — also the hover image" },
   { role: "detail", label: "Close-up", help: "Texture, stones, finish" },
-  { role: "story", label: "Sketch / story", help: "Pratima's sketch or making-of" },
+  { role: "story", label: "Buyer's note / sketch", help: "Market photo or buyer's sketch" },
 ];
 const slug = (s: string) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
 
@@ -27,7 +27,9 @@ async function compress(file: File, max = 1800): Promise<File> {
   return new File([blob], file.name.replace(/\.\w+$/, ".webp"), { type: "image/webp" });
 }
 
-export function ProductForm({ initial, taxonomy, artists }: Props) {
+const lines = (v: string) => v.split("\n").map((s) => s.trim()).filter(Boolean);
+
+export function ProductForm({ initial, taxonomy, markets }: Props) {
   const router = useRouter();
   const [pending, start] = useTransition();
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -40,11 +42,11 @@ export function ProductForm({ initial, taxonomy, artists }: Props) {
     inventory: initial?.inventory ?? 0, lowStockAt: initial?.lowStockAt ?? 5,
     category: initial?.category ?? taxonomy.categories[0]?.slug ?? "", occasions: initial?.occasions ?? [], collections: initial?.collections ?? [],
     tags: (initial?.tags ?? []).join(", "), material: initial?.material ?? "", dimensions: initial?.dimensions ?? "", care: initial?.care ?? "",
-    artist: initial?.artist ?? "", featured: initial?.featured ?? false, exclusive: initial?.exclusive ?? false, status: initial?.status ?? "active",
+    market: initial?.market ?? "", featured: initial?.featured ?? false, exclusive: initial?.exclusive ?? false, status: initial?.status ?? "active",
     images: SLOTS.map((s) => initial?.images.find((i) => i.role === s.role)?.src ?? ""),
-    ideaBody: initial?.story.idea.body ?? "", ideaNote: initial?.story.idea.note ?? "",
-    handContribution: initial?.story.hand.contribution ?? "", handQuote: (initial?.story.hand as { quote?: string } | undefined)?.quote ?? "",
-    makingBody: initial?.story.making.body ?? "", makingSteps: (initial?.story.making.steps ?? []).join("\n"), momentBody: initial?.story.moment.body ?? "",
+    findBody: initial?.story.find.body ?? "", findNote: initial?.story.find.note ?? "",
+    checkBody: initial?.story.check.body ?? "", checkSteps: (initial?.story.check.steps ?? []).join("\n"),
+    styleBody: initial?.story.style.body ?? "", pairWith: (initial?.story.style.pairWith ?? []).join("\n"),
     sizes: (initial?.variants ?? []).map((v) => v.title).join(", "),
     tryOn: initial?.tryOn?.supported ?? false, anchor: (initial?.tryOn?.anchor as "ears" | "neck" | "wrist") ?? "ears",
     overlay: initial?.tryOn?.overlay ?? "", scale: initial?.tryOn?.scale ?? 1,
@@ -74,11 +76,12 @@ export function ProductForm({ initial, taxonomy, artists }: Props) {
       description: f.description.trim(), price: Math.round(Number(f.price)), compareAtPrice: Number(f.compareAtPrice) > 0 ? Math.round(Number(f.compareAtPrice)) : null,
       inventory: Math.round(Number(f.inventory)), lowStockAt: Math.round(Number(f.lowStockAt)),
       category: f.category, occasions: f.occasions, collections: f.collections, tags: f.tags.split(",").map((t) => t.trim()).filter(Boolean),
-      material: f.material, dimensions: f.dimensions, care: f.care, artist: f.artist, featured: f.featured, exclusive: f.exclusive, status: f.status as "active" | "draft",
+      material: f.material, dimensions: f.dimensions, care: f.care, market: f.market, featured: f.featured, exclusive: f.exclusive, status: f.status as "active" | "draft",
       images: SLOTS.map((s, i) => ({ src: f.images[i], alt: `${f.name} — ${s.label.toLowerCase()}`, role: s.role })).filter((i) => i.src),
       story: {
-        idea: { body: f.ideaBody, note: f.ideaNote || undefined }, hand: { contribution: f.handContribution, quote: f.handQuote || undefined },
-        making: { body: f.makingBody, steps: f.makingSteps.split("\n").map((s) => s.trim()).filter(Boolean) }, moment: { body: f.momentBody },
+        find: { body: f.findBody, note: f.findNote || undefined },
+        check: { body: f.checkBody, steps: lines(f.checkSteps) },
+        style: { body: f.styleBody, pairWith: lines(f.pairWith) },
       },
       variants: sizes.map((t) => ({ title: t, sku: `${f.sku.trim().toUpperCase()}-${t.replace(/\W/g, "")}` })),
       tryOn: f.tryOn && f.overlay ? { supported: true, anchor: f.anchor, overlay: f.overlay, scale: Number(f.scale) || 1 } : null,
@@ -130,18 +133,17 @@ export function ProductForm({ initial, taxonomy, artists }: Props) {
         </section>
 
         <section className="a-card">
-          <div className="a-card__head"><h2>The story</h2><small className="a-muted">Idea → Hand → Making → Moment, shown on the product page</small></div>
+          <div className="a-card__head"><h2>The story</h2><small className="a-muted">The find → The market → The check → Wear it, shown on the product page</small></div>
           <div className="a-form">
-            <label className="a-field"><span>The idea — what inspired Pratima?</span><textarea className="a-input" rows={3} value={f.ideaBody} onChange={(e) => set("ideaBody", e.target.value)} /></label>
-            <label className="a-field"><span>Margin note (handwritten line)</span><input className="a-input" value={f.ideaNote} onChange={(e) => set("ideaNote", e.target.value)} placeholder="not ruby. lilac." /></label>
             <div className="a-row2">
-              <label className="a-field"><span>Artist</span><select className="a-input" value={f.artist} onChange={(e) => set("artist", e.target.value)}><option value="">—</option>{artists.map((a) => <option key={a.slug} value={a.slug}>{a.name}</option>)}</select></label>
-              <label className="a-field"><span>Artist quote (optional)</span><input className="a-input" value={f.handQuote} onChange={(e) => set("handQuote", e.target.value)} /></label>
+              <label className="a-field"><span>Handpicked in (market)</span><select className="a-input" value={f.market} onChange={(e) => set("market", e.target.value)}><option value="">—</option>{markets.map((m) => <option key={m.slug} value={m.slug}>{m.name}</option>)}</select></label>
+              <label className="a-field"><span>Buyer&apos;s note (handwritten line)</span><input className="a-input" value={f.findNote} onChange={(e) => set("findNote", e.target.value)} placeholder="lilac, not ruby. this one." /></label>
             </div>
-            <label className="a-field"><span>The hand — what the artist contributed</span><textarea className="a-input" rows={2} value={f.handContribution} onChange={(e) => set("handContribution", e.target.value)} /></label>
-            <label className="a-field"><span>The making</span><textarea className="a-input" rows={2} value={f.makingBody} onChange={(e) => set("makingBody", e.target.value)} /></label>
-            <label className="a-field"><span>Making steps (one per line)</span><textarea className="a-input" rows={3} value={f.makingSteps} onChange={(e) => set("makingSteps", e.target.value)} /></label>
-            <label className="a-field"><span>The moment — where is she wearing it?</span><textarea className="a-input" rows={2} value={f.momentBody} onChange={(e) => set("momentBody", e.target.value)} /></label>
+            <label className="a-field"><span>The find — where and how did we find it?</span><textarea className="a-input" rows={3} value={f.findBody} onChange={(e) => set("findBody", e.target.value)} /></label>
+            <label className="a-field"><span>The Nemara check — what did we check or improve?</span><textarea className="a-input" rows={2} value={f.checkBody} onChange={(e) => set("checkBody", e.target.value)} /></label>
+            <label className="a-field"><span>Check points (one per line)</span><textarea className="a-input" rows={3} value={f.checkSteps} onChange={(e) => set("checkSteps", e.target.value)} placeholder={"Plating checked under bright light\nClasp tested"} /></label>
+            <label className="a-field"><span>Wear it — the moment</span><textarea className="a-input" rows={2} value={f.styleBody} onChange={(e) => set("styleBody", e.target.value)} /></label>
+            <label className="a-field"><span>Pair it with (one per line)</span><textarea className="a-input" rows={3} value={f.pairWith} onChange={(e) => set("pairWith", e.target.value)} placeholder={"White shirt\nHair tied back"} /></label>
           </div>
         </section>
 

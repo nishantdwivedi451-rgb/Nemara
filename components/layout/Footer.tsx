@@ -15,7 +15,7 @@ export function Footer() {
           </div>
           <div className="footer__news">
             <p className="eyebrow">The Nemara Letter</p>
-            <p className="footer__news-copy">New pieces, the hands behind them, and the occasional note from Pratima. Once a month, never more.</p>
+            <p className="footer__news-copy">New market edits, styling notes and first look at every drop. Once a month, never more.</p>
             <NewsletterForm dark />
           </div>
         </div>
@@ -24,7 +24,7 @@ export function Footer() {
             <li><Link href="/shop">All pieces</Link></li><li><Link href="/shop/earrings">Earrings</Link></li><li><Link href="/shop/necklace-sets">Necklace Sets</Link></li>
             <li><Link href="/shop/bracelets">Bracelets</Link></li><li><Link href="/shop/kada">Kada</Link></li><li><Link href="/shop/giftable">Gifts</Link></li></ul></nav>
           <nav aria-label="Nemara"><p className="eyebrow">Nemara</p><ul>
-            <li><Link href="/our-story">Our Story</Link></li><li><Link href="/artists">Artists</Link></li><li><Link href="/try-on">Try It On</Link></li>
+            <li><Link href="/our-story">Our Story</Link></li><li><Link href="/markets">Markets</Link></li><li><Link href="/try-on">Try It On</Link></li>
             <li><Link href="/stylist">Nemara Stylist</Link></li><li><Link href="/journal">Journal</Link></li><li><Link href="/contact">Contact</Link></li></ul></nav>
           <nav aria-label="Help"><p className="eyebrow">Help</p><ul>
             <li><Link href="/info/shipping">Shipping</Link></li><li><Link href="/info/returns">Returns</Link></li><li><Link href="/info/care">Jewellery care</Link></li><li><Link href="/info/warranty">3-month warranty</Link></li>
@@ -38,7 +38,7 @@ export function Footer() {
           <Wordmark className="footer__wordmark" />
           <div className="footer__legal">
             <Mark className="footer__mark" />
-            <span>© {year} Nemara. Designed in India by Pratima Saxena, made with Indian artists.</span>
+            <span>© {year} Nemara. Premium jewellery, curated across India.</span>
           </div>
         </div>
       </div>

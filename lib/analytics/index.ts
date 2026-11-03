@@ -5,7 +5,7 @@
 
 export type AnalyticsEvent =
   | "page_view" | "view_item" | "search" | "view_category" | "try_on_started" | "try_on_completed"
-  | "add_to_cart" | "begin_checkout" | "purchase" | "add_to_wishlist" | "whatsapp_click" | "artist_story_view"
+  | "add_to_cart" | "begin_checkout" | "purchase" | "add_to_wishlist" | "whatsapp_click" | "market_story_view"
   | "stylist_query" | "newsletter_signup";
 
 type Props = Record<string, string | number | boolean | undefined | null | object>;

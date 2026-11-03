@@ -26,6 +26,13 @@ const nextConfig: NextConfig = {
   experimental: { serverActions: { bodySizeLimit: "4mb" } },
   reactStrictMode: true,
   images: { formats: ["image/avif", "image/webp"], remotePatterns: [{ protocol: "https", hostname: "cdn.shopify.com" }] },
+  async redirects() {
+    // Artisan pages were replaced by the markets story.
+    return [
+      { source: "/artists", destination: "/markets", permanent: true },
+      { source: "/artists/:slug", destination: "/markets", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

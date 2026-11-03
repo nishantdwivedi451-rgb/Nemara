@@ -124,11 +124,13 @@
 .cindex__preview img.is-on { opacity: 1; }
 
 /* ───────── FOUNDER ───────── */
-.founder { background: var(--mist); }
-.founder__grid { display: grid; gap: 40px; }
-@media (min-width: 900px) { .founder__grid { grid-template-columns: .85fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: center; } }
-.founder__img { position: relative; aspect-ratio: 3 / 4; width: 100%; max-width: 480px; }
-.founder__copy { display: grid; gap: 22px; justify-items: start; }
+.experience { background: linear-gradient(180deg, transparent, rgba(232, 221, 240, .7) 18%, rgba(232, 221, 240, .7) 82%, transparent); }
+.experience__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
+@media (min-width: 700px) { .experience__steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .experience__steps { grid-template-columns: repeat(5, 1fr); } }
+.experience__steps li { display: grid; gap: 8px; align-content: start; padding: 22px; background: rgba(252, 250, 253, .8); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.experience__n { font-family: var(--font-caps); font-size: var(--fs-xs); letter-spacing: .2em; color: var(--champagne-deep); }
+.experience__steps p { margin: 0; color: var(--muted); }
 
 /* ───────── TRY-ON PROMO ───────── */
 .tryon-promo { background: var(--night); color: var(--warm); padding-block: var(--section); }
@@ -142,15 +144,15 @@
 .tryon-promo__mirror img { object-fit: cover; }
 
 /* ───────── ARTISTS ROW ───────── */
-.artist-row { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
-.artist-row::-webkit-scrollbar { display: none; }
-@media (min-width: 900px) { .artist-row { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); overflow: visible; margin: 0; padding: 0; } }
-.artist-row > li { scroll-snap-align: start; }
-.artist-chip { display: grid; gap: 6px; }
-.artist-chip .frame { margin-bottom: 10px; }
-.artist-chip img { transition: transform 1.4s var(--ease); }
-.artist-chip:hover img { transform: scale(1.04); }
-.artist-chip .muted { font-size: var(--fs-sm); }
+.market-row { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+.market-row::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { .market-row { grid-auto-flow: row; grid-template-columns: repeat(6, 1fr); overflow: visible; margin: 0; padding: 0; } }
+.market-row > li { scroll-snap-align: start; }
+.market-chip { display: grid; gap: 6px; }
+.market-chip .frame { margin-bottom: 10px; }
+.market-chip img { transition: transform 1.4s var(--ease); }
+.market-chip:hover img { transform: scale(1.04); }
+.market-chip .muted { font-size: var(--fs-sm); }
 
 /* ───────── STYLIST PROMO ───────── */
 .stylist-promo { background: var(--warm); border-top: 1px solid var(--line); }
@@ -207,24 +209,24 @@
 .pstory__ch--moment .h2 { max-width: 24ch; }
 
 /* ───────── ARTISTS ───────── */
-.artists-list { display: grid; gap: clamp(72px, 8vw, 128px); padding-bottom: var(--section); }
-.artist-feature { display: grid; gap: 32px; }
-@media (min-width: 900px) { .artist-feature { grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: center; } .artist-feature.is-flip .artist-feature__img { order: 2; justify-self: end; } }
-.artist-feature__img { position: relative; aspect-ratio: 3 / 4; max-width: 460px; width: 100%; }
-.artist-feature__copy { display: grid; gap: 16px; justify-items: start; }
-.artist-hero { display: grid; gap: 36px; padding-block: clamp(24px, 4vw, 56px); }
-@media (min-width: 900px) { .artist-hero { grid-template-columns: .9fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: center; } }
-.artist-hero__img { position: relative; aspect-ratio: 3 / 4; max-width: 500px; width: 100%; }
-.artist-hero__copy { display: grid; gap: 18px; }
-.artist-hero .display { font-size: clamp(2.8rem, 1.4rem + 5vw, 6.5rem); }
-.artist-facts { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; border-top: 1px solid var(--line); margin-top: 8px; }
-.artist-facts div { padding: 14px 0; border-bottom: 1px solid var(--line); }
-.artist-facts dt { font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.artist-facts dd { margin: 4px 0 0; font-family: var(--font-display); font-size: 1.25rem; line-height: 1.3; }
-.artist-story { display: grid; gap: 40px; padding-block: var(--section); border-top: 1px solid var(--line); margin-top: clamp(32px, 4vw, 64px); }
-@media (min-width: 900px) { .artist-story { grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: start; } }
-.artist-story__quote { font-style: italic; color: var(--ink); max-width: 18ch; }
-.artist-story__body { font-size: var(--fs-md); }
+.markets-list { display: grid; gap: clamp(72px, 8vw, 128px); padding-bottom: var(--section); }
+.market-feature { display: grid; gap: 32px; }
+@media (min-width: 900px) { .market-feature { grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: center; } .market-feature.is-flip .market-feature__img { order: 2; justify-self: end; } }
+.market-feature__img { position: relative; aspect-ratio: 3 / 4; max-width: 460px; width: 100%; }
+.market-feature__copy { display: grid; gap: 16px; justify-items: start; }
+.market-hero { display: grid; gap: 36px; padding-block: clamp(24px, 4vw, 56px); }
+@media (min-width: 900px) { .market-hero { grid-template-columns: .9fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: center; } }
+.market-hero__img { position: relative; aspect-ratio: 3 / 4; max-width: 500px; width: 100%; }
+.market-hero__copy { display: grid; gap: 18px; }
+.market-hero .display { font-size: clamp(2.8rem, 1.4rem + 5vw, 6.5rem); }
+.market-facts { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; border-top: 1px solid var(--line); margin-top: 8px; }
+.market-facts div { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.market-facts dt { font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.market-facts dd { margin: 4px 0 0; font-family: var(--font-display); font-size: 1.25rem; line-height: 1.3; }
+.market-story { display: grid; gap: 40px; padding-block: var(--section); border-top: 1px solid var(--line); margin-top: clamp(32px, 4vw, 64px); }
+@media (min-width: 900px) { .market-story { grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 112px); align-items: start; } }
+.market-story__quote { font-style: italic; color: var(--ink); max-width: 18ch; }
+.market-story__body { font-size: var(--fs-md); }
 .others { border-top: 1px solid var(--line); }
 .others__list { display: grid; gap: 10px; margin-top: 14px; }
 
@@ -319,3 +321,16 @@ a.contact__row:hover { color: var(--ink); }
 .success__next > div { display: grid; gap: 6px; align-content: start; }
 .notfound { gap: 18px; }
 .info-body { max-width: 720px; font-size: var(--fs-md); padding-bottom: var(--section); }
+.market-tip { display: grid; gap: 4px; padding: 12px 16px; border-left: 2px solid var(--champagne); background: rgba(255, 255, 255, .45); max-width: 46ch; }
+.market-check { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; font-family: var(--font-display); font-size: 1.3rem; }
+.market-check li { padding-left: 28px; position: relative; }
+.market-check li::before { content: "✓"; position: absolute; left: 0; color: var(--champagne-deep); font-family: var(--font-sans); }
+.next-stops { border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.next-stops__list { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 14px; }
+@media (min-width: 900px) { .next-stops__list { grid-template-columns: repeat(3, 1fr); } }
+.next-stops__list li { display: grid; gap: 4px; padding: 18px; border: 1px dashed var(--line-strong); border-radius: var(--radius-lg); }
+/* market illustrations carry their own arch — no extra frame shape */
+.market-feature__img, .market-hero__img, .story-hero__img { background: none; }
+.market-chip__img { position: relative; aspect-ratio: 4 / 5; margin-bottom: 10px; overflow: hidden; }
+.pstory__portrait--market, .etile__portrait--market { background: none; border-radius: 0; }
+.market-feature__img img, .market-hero__img img, .story-hero__img img, .market-chip__img img, .pstory__portrait--market img, .etile__portrait--market img { object-fit: contain; }

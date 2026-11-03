@@ -97,7 +97,7 @@ export async function style(raw: string): Promise<StylistReply> {
     message: picks.length ? parts.join(" ") : "Nothing in this edition fits that brief yet — try a higher budget or a different moment, or message us on WhatsApp and we'll help personally.",
     picks: picks.map((p) => ({
       handle: p.handle, name: p.name, price: p.price, image: p.images[1]?.src ?? p.images[0].src, tryOn: !!p.tryOn?.supported, needsSize: p.variants.length > 0,
-      reason: brief.occasion && p.occasions.includes(brief.occasion) ? p.story.moment.body : p.description,
+      reason: brief.occasion && p.occasions.includes(brief.occasion) ? p.story.style.body : p.description,
     })),
     followUps: [
       !brief.budget ? "Keep it under ₹3,000" : "Show me something more statement",

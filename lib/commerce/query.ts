@@ -15,7 +15,7 @@ export function applyQuery(all: Product[], q: ProductQuery = {}): Product[] {
   if (q.category) list = list.filter((p) => p.category === q.category);
   if (q.occasion) list = list.filter((p) => p.occasions.includes(q.occasion!));
   if (q.collection) list = list.filter((p) => p.collections.includes(q.collection!));
-  if (q.artist) list = list.filter((p) => p.artist === q.artist);
+  if (q.market) list = list.filter((p) => p.market === q.market);
   if (q.q) {
     let text = q.q.toLowerCase();
     const max = text.match(/(?:under|below|less than|<)\s*(?:₹|rs\.?|inr)?\s*([\d,]+)/);
@@ -26,7 +26,7 @@ export function applyQuery(all: Product[], q: ProductQuery = {}): Product[] {
     }
     const terms = text.split(/\s+/).filter((t) => t && !STOP.has(t)).map((t) => SYNONYMS[t] ?? t);
     list = list.filter((p) => {
-      const hay = [p.name, p.subtitle, p.description, p.material, p.category, ...p.tags, ...p.occasions, ...p.collections, p.artist].join(" ").toLowerCase();
+      const hay = [p.name, p.subtitle, p.description, p.material, p.category, ...p.tags, ...p.occasions, ...p.collections, p.market].join(" ").toLowerCase();
       return terms.every((t) => hay.includes(t));
     });
   }

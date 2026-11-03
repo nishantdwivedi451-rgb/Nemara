@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getJournal } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({ title: "Journal", description: "Founder notes, behind-the-design stories, styling guides and the people who make Nemara.", path: "/journal" });
+export const metadata = pageMeta({ title: "Journal", description: "Market diaries, how we check every piece, and styling guides from the Nemara team.", path: "/journal" });
 
 export default async function Journal() {
   const entries = await getJournal();
@@ -12,7 +12,7 @@ export default async function Journal() {
     <div className="page-enter">
       <header className="wrap page-head">
         <p className="eyebrow">The Journal</p>
-        <h1 className="display">Notes from<br /><em>the margin.</em></h1>
+        <h1 className="display">Notes from<br /><em>the market.</em></h1>
       </header>
       <div className="wrap journal">
         {lead && (

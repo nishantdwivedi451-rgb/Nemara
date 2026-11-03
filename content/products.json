@@ -26,10 +26,10 @@
       "minimal",
       "lightweight"
     ],
-    "material": "Hand-finished brass, 22k gold plating, freshwater pearl",
+    "material": "Brass, gold-tone plating, glass pearl",
     "dimensions": "Drop length 4.2 cm · 3.1 g per earring",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "farida-qureshi",
+    "market": "hyderabad",
     "featured": true,
     "createdAt": "2026-09-01T00:00:00.000Z",
     "images": [
@@ -50,29 +50,31 @@
       },
       {
         "src": "/art/products/margin-note-drops/story.svg",
-        "alt": "Margin Note Drops — Pratima's design sketch",
+        "alt": "Margin Note Drops — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "For twenty-five years Pratima made the same small mark in the margins of her students' notebooks: a curved tick that meant 'yes, this — keep going'. When she began to draw jewellery, it was the first shape her pen made.",
-        "note": "the tick that meant — keep going."
+      "find": {
+        "body": "Found on a pearl counter halfway down Laad Bazaar, in a tray of fifty near-identical drops. This was the one with a single clean curve — no extra pearls, no fuss.",
+        "note": "one pearl. that's the whole point."
       },
-      "hand": {
-        "contribution": "Farida casts the curve in brass and hand-files it until the line thins like a pen stroke lifting off the page."
-      },
-      "making": {
-        "body": "Cast in small batches in Moradabad, hand-filed, plated in 22k gold and finished with a single freshwater pearl, drilled and set by hand.",
+      "check": {
+        "body": "We matched every pair for pearl size and lustre, swapped the hooks for secure lever-backs and checked that the curve hangs straight.",
         "steps": [
-          "Cast in brass",
-          "Hand-filed taper",
-          "22k gold plating",
-          "Pearl set by hand"
+          "Pearls matched in pairs",
+          "Plating checked under bright light",
+          "Lever-backs fitted",
+          "Weight under 4 g a pair"
         ]
       },
-      "moment": {
-        "body": "Monday, 9:40 a.m. The meeting you prepared for. Something small at your ear that says you already know the answer."
+      "style": {
+        "body": "Monday, 9:40 a.m. The meeting you prepared for. Something small at your ear that says you already know the answer.",
+        "pairWith": [
+          "Crisp white shirt",
+          "Low bun",
+          "The Chalk Line Set"
+        ]
       }
     },
     "variants": [],
@@ -115,10 +117,10 @@
       "jhumka",
       "lilac"
     ],
-    "material": "Brass, 22k gold plating, hand-fired lilac meenakari, glass seed beads",
+    "material": "Brass, gold-tone plating, lilac meenakari, glass seed beads",
     "dimensions": "Drop length 5.8 cm · 9.4 g per earring",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "meher-bano",
+    "market": "jaipur",
     "featured": true,
     "createdAt": "2026-09-02T00:00:00.000Z",
     "images": [
@@ -139,29 +141,31 @@
       },
       {
         "src": "/art/products/monsoon-hour-jhumka/story.svg",
-        "alt": "Monsoon Hour Jhumka — Pratima's design sketch",
+        "alt": "Monsoon Hour Jhumka — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Pratima remembers sitting on her mother's verandah during the first rain of the monsoon, watching water gather and fall from the edge of the roof. She wanted a jhumka that felt like that moment: a dome, a pause, and then the drop.",
-        "note": "not ruby. lilac. like the sky just before."
+      "find": {
+        "body": "Spotted in a tiny Johari Bazaar shop with the enamelling workshop right upstairs. Every jhumka on the counter was red and green — except one tray in lilac.",
+        "note": "not ruby. lilac. this one."
       },
-      "hand": {
-        "contribution": "Meher fires the lilac meenakari in five separate layers — purple is the hardest enamel colour to get right — and sets each bead of the fringe by hand."
-      },
-      "making": {
-        "body": "The dome is raised from a single brass sheet, enamelled in Jaipur over three days, plated, and finished with a hand-strung fringe of seed beads.",
+      "check": {
+        "body": "We asked for a lighter dome so you can dance in them all night, checked every enamel layer for pinholes and every bead on the fringe.",
         "steps": [
-          "Dome raised by hand",
-          "Five enamel firings",
-          "22k gold plating",
-          "Fringe hand-strung"
+          "Enamel checked for pinholes",
+          "Fringe pulled bead by bead",
+          "Lighter dome — under 9 g each",
+          "Hooks tested for grip"
         ]
       },
-      "moment": {
-        "body": "The sangeet, second song. You weren't going to dance. The jhumkas had other plans."
+      "style": {
+        "body": "The sangeet, second song. You weren't going to dance. The jhumkas had other plans.",
+        "pairWith": [
+          "Pastel lehenga or a plain kurta",
+          "Hair tied back",
+          "Nothing else at the neck"
+        ]
       }
     },
     "variants": [],
@@ -203,10 +207,10 @@
       "asymmetric",
       "hoops"
     ],
-    "material": "92.5 sterling silver filigree, oxidised accents",
+    "material": "Silver-tone filigree, oxidised accents",
     "dimensions": "Large hoop 4.4 cm · small hoop 2.8 cm · 4.6 g total",
     "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
-    "artist": "ramesh-soni",
+    "market": "delhi",
     "featured": false,
     "createdAt": "2026-09-03T00:00:00.000Z",
     "images": [
@@ -227,29 +231,31 @@
       },
       {
         "src": "/art/products/second-glance-hoops/story.svg",
-        "alt": "Second Glance Hoops — Pratima's design sketch",
+        "alt": "Second Glance Hoops — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Pratima has never liked things that match too neatly. 'The best students were never symmetrical,' she says. 'They were interesting on one side and surprising on the other.' She drew one hoop, then a smaller one, and refused to correct it.",
+      "find": {
+        "body": "Picked up from a Janpath stall that changes its stock every week. One hoop larger than the other — we thought it was a mistake, then couldn't stop looking.",
         "note": "don't fix it. it's better uneven."
       },
-      "hand": {
-        "contribution": "Ramesh twists the silver 'hair' wire into filigree coils and solders over two hundred joins per pair, entirely by eye."
-      },
-      "making": {
-        "body": "Each hoop begins as a hand-drawn silver frame, filled with coils of twisted filigree wire in Cuttack, then lightly oxidised so the lace reads in low light.",
+      "check": {
+        "body": "We checked the filigree for broken wires, the oxidising for even colour, and that both hoops close cleanly every time.",
         "steps": [
-          "Frame drawn in silver",
-          "Filigree coils twisted",
-          "Soldered by eye",
-          "Oxidised & polished"
+          "Filigree wire by wire",
+          "Even oxidised finish",
+          "Click-shut hoops",
+          "Smooth inside edges"
         ]
       },
-      "moment": {
-        "body": "A rooftop at 11 p.m. Someone tilts their head and says, 'Wait — are they different?' Yes. That's the point."
+      "style": {
+        "body": "A rooftop at 11 p.m. Someone tilts their head and says, 'Wait — are they different?' Yes. That's the point.",
+        "pairWith": [
+          "Black slip dress",
+          "White kurta & jeans",
+          "Hair down"
+        ]
       }
     },
     "variants": [],
@@ -271,7 +277,7 @@
     "handle": "chalk-line-necklace-set",
     "name": "The Chalk Line Set",
     "subtitle": "Fine collar & studs",
-    "description": "A fine collar with a single bar, drawn as cleanly as a line of chalk on a blackboard. Comes with matching studs.",
+    "description": "A fine collar with a single bar — the cleanest line on the street. Comes with matching studs.",
     "price": 4290,
     "compareAtPrice": null,
     "currency": "INR",
@@ -292,10 +298,10 @@
       "minimal",
       "set"
     ],
-    "material": "Hand-finished brass, 22k gold plating",
+    "material": "Brass, gold-tone plating",
     "dimensions": "Collar 38–43 cm adjustable · bar 3.2 cm · studs 0.8 cm",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "farida-qureshi",
+    "market": "mumbai",
     "featured": true,
     "createdAt": "2026-09-04T00:00:00.000Z",
     "images": [
@@ -316,29 +322,31 @@
       },
       {
         "src": "/art/products/chalk-line-necklace-set/story.svg",
-        "alt": "The Chalk Line Set — Pratima's design sketch",
+        "alt": "The Chalk Line Set — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "The first line on a fresh blackboard is the most confident line of the day. Pratima wanted a necklace with that energy — nothing extra, one decision, made well.",
+      "find": {
+        "body": "Found on Colaba Causeway, on a stall that sells only minimal pieces. A fine collar with a single bar — the cleanest line on the whole street.",
         "note": "one line. say it once."
       },
-      "hand": {
-        "contribution": "Farida hand-hammers the bar flat, then polishes it so it catches light along one edge only, like chalk on slate."
-      },
-      "making": {
-        "body": "The collar wire is drawn and shaped by hand in Moradabad; the bar is hammered, filed and plated, and the matching studs are cut from the same sheet.",
+      "check": {
+        "body": "Minimal pieces have nowhere to hide, so we checked every joint and edge, the clasp and the stud backs, and that the collar sits flat.",
         "steps": [
-          "Collar drawn & shaped",
-          "Bar hand-hammered",
-          "Edge polished",
-          "Studs cut from same sheet"
+          "Every joint and edge checked",
+          "Sits flat on the collarbone",
+          "Secure lobster clasp",
+          "Matching studs paired"
         ]
       },
-      "moment": {
-        "body": "The presentation. Collar under a crisp shirt. You speak, they listen."
+      "style": {
+        "body": "The presentation. Collar under a crisp shirt. You speak, they listen.",
+        "pairWith": [
+          "Crisp shirt, top button open",
+          "Blazer",
+          "Margin Note Drops"
+        ]
       }
     },
     "variants": [],
@@ -380,10 +388,10 @@
       "violet",
       "set"
     ],
-    "material": "92.5 sterling silver filigree, 22k gold vermeil, violet glass stones",
+    "material": "Silver-tone filigree, gold-tone accents, violet glass stones",
     "dimensions": "Collar 40 cm with 5 cm extender · earrings 3.6 cm",
     "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
-    "artist": "ramesh-soni",
+    "market": "delhi",
     "featured": true,
     "createdAt": "2026-09-05T00:00:00.000Z",
     "images": [
@@ -404,29 +412,31 @@
       },
       {
         "src": "/art/products/raat-rani-necklace-set/story.svg",
-        "alt": "Raat Rani Set — Pratima's design sketch",
+        "alt": "Raat Rani Set — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "There was a raat rani bush outside the school staff room where Pratima taught. Every evening, after the last bell, its scent arrived before anything else. She drew the petals on the back of an attendance sheet.",
+      "find": {
+        "body": "From a second-floor shop in Dariba Kalan, Old Delhi's jewellers' lane since the Mughals. A filigree collar of petals and violet stones that looked like jasmine opening at night.",
         "note": "the flower that only shows up after dark."
       },
-      "hand": {
-        "contribution": "Ramesh builds each petal as a separate filigree cell — the full collar holds over four hundred hand-twisted coils — before it is vermeil-plated and set with violet stones."
-      },
-      "making": {
-        "body": "Twenty-one filigree petals are made one by one in Cuttack, linked into a flexible collar, gold-vermeil plated and hand-set with violet stones. A matching pair of petal drops completes the set.",
+      "check": {
+        "body": "We checked every petal for loose stones, made sure the collar lies flat without pinching, and tested the clasp for a full night of dancing.",
         "steps": [
-          "21 petals hand-built",
-          "Linked into a collar",
-          "Gold vermeil",
-          "Violet stones set by hand"
+          "Every stone checked for grip",
+          "Filigree inspected petal by petal",
+          "Lies flat, no pinching",
+          "Clasp tested for a long night"
         ]
       },
-      "moment": {
-        "body": "A wedding reception, late. Hair up, shoulders bare. Everybody asks where it's from — and then who made it."
+      "style": {
+        "body": "A wedding reception, late. Hair up, shoulders bare. Everybody asks where it's from.",
+        "pairWith": [
+          "Off-shoulder blouse or saree",
+          "Hair up",
+          "Skip the earrings — or go tiny"
+        ]
       }
     },
     "variants": [],
@@ -468,10 +478,10 @@
       "festive",
       "set"
     ],
-    "material": "Brass, 22k gold plating, hand-chased repoussé discs, pearl accents",
+    "material": "Brass, gold-tone plating, chased discs, pearl accents",
     "dimensions": "Necklace 44 cm · centre disc 3.4 cm · earrings 3.0 cm",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "lakshmi-narayanan",
+    "market": "hyderabad",
     "featured": false,
     "createdAt": "2026-09-06T00:00:00.000Z",
     "images": [
@@ -492,29 +502,31 @@
       },
       {
         "src": "/art/products/inheritance-rewritten-set/story.svg",
-        "alt": "Inheritance, Rewritten — Pratima's design sketch",
+        "alt": "Inheritance, Rewritten — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Pratima inherited one piece of temple jewellery, too heavy to wear and too precious to change. Instead she asked: what would this look like if it had been designed for my daughter? Fewer discs. More space. The same reverence.",
-        "note": "keep the prayer, lose the weight."
+      "find": {
+        "body": "Found in Laad Bazaar among the coin-and-pearl sets Hyderabadi brides have worn for generations. This one kept the prayer and lost the weight.",
+        "note": "keep the tradition, lose the weight."
       },
-      "hand": {
-        "contribution": "Lakshmi presses each disc from behind on a bed of pitch — lamp, lotus, doorway — so the motifs rise softly from the metal."
-      },
-      "making": {
-        "body": "Seven discs are hand-chased in Thrissur, each with a different motif, then linked on a fine chain with pearl spacers and plated in 22k gold.",
+      "check": {
+        "body": "We checked every disc for crisp stamping, matched the pearl, and made sure the whole set is light enough to wear from the puja to the party.",
         "steps": [
-          "Discs pressed on pitch",
-          "Motifs chased by hand",
-          "Linked with pearls",
-          "22k gold plating"
+          "Discs checked for crisp detail",
+          "Pearl matched and secured",
+          "Light enough for all-day wear",
+          "Earrings paired and balanced"
         ]
       },
-      "moment": {
-        "body": "Diwali morning at your grandmother's house. She holds the centre disc, turns it over, and nods."
+      "style": {
+        "body": "Diwali morning at your grandmother's house. She holds the centre disc, turns it over, and nods.",
+        "pairWith": [
+          "Silk saree or a solid kurta",
+          "Small bindi",
+          "A kada on one wrist"
+        ]
       }
     },
     "variants": [],
@@ -536,7 +548,7 @@
     "handle": "recess-bracelet",
     "name": "Recess Bracelet",
     "subtitle": "Beaded brass bracelet",
-    "description": "Brass and lilac beads in no particular order. The best part of the school day, worn on your wrist.",
+    "description": "Brass and lilac beads in no particular order. Stack it, gift it, forget you're wearing it.",
     "price": 1690,
     "compareAtPrice": null,
     "currency": "INR",
@@ -556,10 +568,10 @@
       "playful",
       "stackable"
     ],
-    "material": "Hand-finished brass beads, lilac glass beads, stretch cord",
+    "material": "Brass beads, lilac glass beads, stretch cord",
     "dimensions": "Fits 15–17 cm wrists · bead 6 mm",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "farida-qureshi",
+    "market": "mumbai",
     "featured": false,
     "createdAt": "2026-09-07T00:00:00.000Z",
     "images": [
@@ -580,29 +592,31 @@
       },
       {
         "src": "/art/products/recess-bracelet/story.svg",
-        "alt": "Recess Bracelet — Pratima's design sketch",
+        "alt": "Recess Bracelet — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Recess was when Pratima saw who her students really were — the leaders, the jokers, the quiet ones drawing in corners. This bracelet is deliberately unplanned: no two have the same order of beads.",
+      "find": {
+        "body": "Pulled out of a jar of mixed beads at a Colaba stall. Brass and lilac in no particular order — exactly the kind of thing you wear every day.",
         "note": "no pattern. that's the pattern."
       },
-      "hand": {
-        "contribution": "Farida hand-polishes every brass bead with walnut shell, then strings them by feel rather than by count."
-      },
-      "making": {
-        "body": "Brass beads are cast, tumbled and finished by hand in Moradabad, then strung with lilac glass beads in a different sequence every time.",
+      "check": {
+        "body": "We restrung the beads on stronger stretch cord, checked every bead for chips and made sure it stacks without tangling.",
         "steps": [
-          "Beads cast & tumbled",
-          "Walnut-shell polish",
-          "Strung by feel",
-          "Never the same twice"
+          "Restrung on stronger cord",
+          "Beads checked for chips",
+          "Stretch-tested 200 times",
+          "Stacks without tangling"
         ]
       },
-      "moment": {
-        "body": "Saturday market, coffee in one hand. Stack it with everything or wear it alone."
+      "style": {
+        "body": "Saturday market, coffee in one hand. Stack it with everything or wear it alone.",
+        "pairWith": [
+          "White tee & denim",
+          "Your everyday watch",
+          "Sunday Kada"
+        ]
       }
     },
     "variants": [],
@@ -644,10 +658,10 @@
       "cuff",
       "woven"
     ],
-    "material": "92.5 sterling silver filigree",
+    "material": "Silver-tone filigree",
     "dimensions": "Opening 2.4 cm · width 1.8 cm · fits most wrists",
     "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
-    "artist": "ramesh-soni",
+    "market": "kashmir",
     "featured": true,
     "createdAt": "2026-09-08T00:00:00.000Z",
     "images": [
@@ -668,29 +682,31 @@
       },
       {
         "src": "/art/products/thread-of-thought-cuff/story.svg",
-        "alt": "Thread of Thought Cuff — Pratima's design sketch",
+        "alt": "Thread of Thought Cuff — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Pratima's lesson plans were never linear. They were webs — one idea leading to three more. She wanted a cuff that looked the way her thinking felt: woven, open-ended, holding together because of its threads.",
-        "note": "thinking, made visible."
+      "find": {
+        "body": "Found in a quiet shop near Polo View in Srinagar, over a cup of kahwa. An open cuff woven like lace — the kind of thing you'll wear every day for a year.",
+        "note": "looks like lace. wears like armour."
       },
-      "hand": {
-        "contribution": "Ramesh weaves six strands of twisted silver over a frame by hand, then solders the weave at forty points so it holds its shape."
-      },
-      "making": {
-        "body": "A silver frame is shaped in Cuttack and filled with a hand-woven lattice of twisted filigree wire, then gently domed so it sits close to the wrist.",
+      "check": {
+        "body": "We checked the woven filigree for loose threads, made sure the cuff flexes to your wrist without losing shape, and smoothed the ends.",
         "steps": [
-          "Frame shaped",
-          "Six-strand weave",
-          "Soldered at 40 points",
-          "Domed to fit"
+          "Weave checked thread by thread",
+          "Flex-tested to keep its shape",
+          "Smoothed, rounded ends",
+          "Oxidised finish checked"
         ]
       },
-      "moment": {
-        "body": "Thursday evening. Laptop closed, sleeves rolled up. Straight from the office to dinner, no change needed."
+      "style": {
+        "body": "Thursday evening. Laptop closed, sleeves rolled up. Straight from the office to dinner, no change needed.",
+        "pairWith": [
+          "Rolled-up shirt sleeves",
+          "Your watch on the same wrist",
+          "Second Glance Hoops"
+        ]
       }
     },
     "variants": [],
@@ -732,10 +748,10 @@
       "violet",
       "festive"
     ],
-    "material": "Brass, 22k gold plating, hand-fired violet meenakari",
+    "material": "Brass, gold-tone plating, violet meenakari",
     "dimensions": "Length 17.5 cm + 2 cm extender · link 1.1 cm",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "meher-bano",
+    "market": "kashmir",
     "featured": false,
     "createdAt": "2026-09-09T00:00:00.000Z",
     "images": [
@@ -756,29 +772,31 @@
       },
       {
         "src": "/art/products/lantern-bracelet/story.svg",
-        "alt": "Lantern Bracelet — Pratima's design sketch",
+        "alt": "Lantern Bracelet — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Every Diwali the girls' hostel strung paper lanterns across the courtyard, and Pratima walked beneath them doing the night round. Years later she drew a bracelet that looked like that row of lights.",
-        "note": "a row of small lights. walking under them."
+      "find": {
+        "body": "From a Lal Chowk counter where the enamel colours come straight from Kashmir's papier-mâché boxes. Little violet links that glow like lanterns.",
+        "note": "a row of small lights."
       },
-      "hand": {
-        "contribution": "Meher enamels each link individually in deep violet and plum, then fires them twice so the colour glows from beneath the surface."
-      },
-      "making": {
-        "body": "Eleven links are cut, enamelled and double-fired in Jaipur, then joined by hand with gold-plated jump rings.",
+      "check": {
+        "body": "We checked every enamel link for clean edges and even colour, tested each jump ring, and fitted a clasp you can close one-handed.",
         "steps": [
-          "Links cut from sheet",
-          "Violet enamel",
-          "Double-fired",
-          "Joined by hand"
+          "Enamel edges checked link by link",
+          "Jump rings tested",
+          "One-hand clasp",
+          "Colour matched across links"
         ]
       },
-      "moment": {
-        "body": "Festival night on the terrace. Sparklers, laughter, a wrist that catches the light every time you raise a glass."
+      "style": {
+        "body": "Festival night on the terrace. Sparklers, laughter, a wrist that catches the light every time you raise a glass.",
+        "pairWith": [
+          "Festive kurta or a little black dress",
+          "Monsoon Hour Jhumka",
+          "Bare neck"
+        ]
       }
     },
     "variants": [],
@@ -820,10 +838,10 @@
       "kada",
       "everyday"
     ],
-    "material": "Hand-hammered brass, 22k gold plating",
+    "material": "Hammered brass, gold-tone plating",
     "dimensions": "Width 0.9 cm · available in 2.4, 2.6 and 2.8",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "farida-qureshi",
+    "market": "ahmedabad",
     "featured": false,
     "createdAt": "2026-09-10T00:00:00.000Z",
     "images": [
@@ -844,29 +862,31 @@
       },
       {
         "src": "/art/products/sunday-kada/story.svg",
-        "alt": "Sunday Kada — Pratima's design sketch",
+        "alt": "Sunday Kada — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Sundays were the only day Pratima didn't correct anything. This kada is a celebration of the unedited — every hammer mark left exactly where it fell.",
-        "note": "the day nothing needs correcting."
+      "find": {
+        "body": "From Law Garden night market, where all of Gujarat shops for Navratri. A hammered kada with soft, irregular light — good for garba, better for every day.",
+        "note": "the one you never take off."
       },
-      "hand": {
-        "contribution": "Farida hammers each kada by hand over a steel mandrel — around three hundred blows — and refuses to make two the same."
-      },
-      "making": {
-        "body": "Cast brass blanks are hammered by hand in Moradabad, shaped round on a mandrel, plated and finished to a soft satin glow.",
+      "check": {
+        "body": "We checked the hammering for sharp spots, the plating for even colour, and that it slips on easily and moves without rattling.",
         "steps": [
-          "Blank cast",
-          "~300 hammer blows",
-          "Shaped on mandrel",
-          "Satin finish"
+          "Hammering checked for sharp spots",
+          "Even gold-tone finish",
+          "Easy slip-on opening",
+          "Weight balanced for daily wear"
         ]
       },
-      "moment": {
-        "body": "Sunday, late breakfast, newspaper, nowhere to be. Then Monday, and you leave it on."
+      "style": {
+        "body": "Sunday, late breakfast, nowhere to be. Then Monday, and you leave it on.",
+        "pairWith": [
+          "Joggers & a tee",
+          "Linen kurta",
+          "Recess Bracelet"
+        ]
       }
     },
     "variants": [
@@ -921,10 +941,10 @@
       "festive",
       "motif"
     ],
-    "material": "Brass, 22k gold plating, hand-chased repoussé",
+    "material": "Brass, gold-tone plating, chased",
     "dimensions": "Width 1.6 cm · available in 2.4, 2.6 and 2.8",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "lakshmi-narayanan",
+    "market": "ahmedabad",
     "featured": true,
     "createdAt": "2026-09-11T00:00:00.000Z",
     "images": [
@@ -945,29 +965,31 @@
       },
       {
         "src": "/art/products/aangan-kada/story.svg",
-        "alt": "Aangan Kada — Pratima's design sketch",
+        "alt": "Aangan Kada — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Pratima grew up in a house built around a courtyard: the place where everyone eventually met. She asked Lakshmi whether a kada could hold a courtyard. Lakshmi said she had one in mind.",
-        "note": "the room with no roof, where everyone meets."
+      "find": {
+        "body": "Found at Law Garden on the busiest night of the year. A chased kada with a courtyard pattern all the way round — the statement piece of the stall.",
+        "note": "the one everyone reached for."
       },
-      "hand": {
-        "contribution": "Lakshmi presses the courtyard motif — pillars, tulsi, a doorway — from the inside of the band over two days of slow repoussé."
-      },
-      "making": {
-        "body": "A brass band is set on pitch in Thrissur and chased from behind, then from the front, until the motif stands in soft relief; it is then plated and hand-burnished.",
+      "check": {
+        "body": "We checked the chased pattern up close, the inner edge for comfort, and the plating for even colour all the way round.",
         "steps": [
-          "Band set on pitch",
-          "Pressed from inside",
-          "Chased from outside",
-          "Burnished by hand"
+          "Chased detail checked up close",
+          "Comfort-rounded inner edge",
+          "Even plating all round",
+          "Sized for an easy slip-on"
         ]
       },
-      "moment": {
-        "body": "The griha pravesh of your first home. Everyone in the courtyard. You, in the doorway."
+      "style": {
+        "body": "The griha pravesh of your first home. Everyone in the courtyard. You, in the doorway.",
+        "pairWith": [
+          "Silk saree or anarkali",
+          "Inheritance, Rewritten",
+          "Hair in a braid"
+        ]
       }
     },
     "variants": [
@@ -1002,7 +1024,7 @@
     "handle": "ink-and-gold-kada-pair",
     "name": "Ink & Gold Kada Pair",
     "subtitle": "Enamel-inlay kada pair",
-    "description": "Two gold kadas, each drawn through with a single line of purple enamel — Nemara's signature, in ink.",
+    "description": "Two gold-tone kadas, each drawn through with a single line of deep purple enamel — Nemara's colour, made to be shared.",
     "price": 4490,
     "compareAtPrice": null,
     "currency": "INR",
@@ -1024,10 +1046,10 @@
       "signature",
       "pair"
     ],
-    "material": "Brass, 22k gold plating, hand-fired Nemara-ink enamel",
+    "material": "Brass, gold-tone plating, deep purple enamel",
     "dimensions": "Width 0.7 cm each · available in 2.4, 2.6 and 2.8",
     "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "artist": "meher-bano",
+    "market": "jaipur",
     "featured": true,
     "createdAt": "2026-09-12T00:00:00.000Z",
     "images": [
@@ -1048,29 +1070,31 @@
       },
       {
         "src": "/art/products/ink-and-gold-kada-pair/story.svg",
-        "alt": "Ink & Gold Kada Pair — Pratima's design sketch",
+        "alt": "Ink & Gold Kada Pair — buyer's notebook sketch",
         "role": "story"
       }
     ],
     "story": {
-      "idea": {
-        "body": "Purple was the colour of Pratima's pen for twenty-five years — she used it instead of red because red felt like a scolding, and purple felt like a conversation. This pair carries that line of ink.",
-        "note": "purple, not red. a conversation, not a correction."
+      "find": {
+        "body": "From a Jaipur enameller who usually works in ruby and emerald. We asked for a single line of deep purple instead — Nemara's colour, in enamel.",
+        "note": "purple, not red. our colour."
       },
-      "hand": {
-        "contribution": "Meher cuts a channel into each band and fills it with Nemara-ink enamel, firing it four times until the line is perfectly even."
-      },
-      "making": {
-        "body": "Brass bands are channelled, enamelled and fired in Jaipur, then plated in 22k gold so the purple line sits flush with the metal.",
+      "check": {
+        "body": "We checked the enamel line for an even fill, matched the two kadas exactly, and tested that they sound good together — a soft clink, not a clatter.",
         "steps": [
-          "Channel cut",
-          "Ink enamel laid",
-          "Four firings",
-          "Flush-polished"
+          "Enamel line checked for even fill",
+          "Pair matched exactly",
+          "Comfort-rounded inner edges",
+          "Plating checked under bright light"
         ]
       },
-      "moment": {
-        "body": "Any day you want to sign your name on it. Wear them together, or give one away."
+      "style": {
+        "body": "Any day you want to sign your name on it. Wear them together, or give one away.",
+        "pairWith": [
+          "Anything — they go with everything",
+          "One on each wrist",
+          "Share one with your best friend"
+        ]
       }
     },
     "variants": [

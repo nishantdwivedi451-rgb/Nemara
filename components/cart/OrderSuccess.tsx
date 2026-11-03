@@ -21,7 +21,7 @@ export function OrderSuccess() {
         ))}</ul>
       ) : null}
       <div className="success__next">
-        <div><p className="eyebrow">Unbox</p><p>Every piece arrives with a story card signed by the artist who made it.</p></div>
+        <div><p className="eyebrow">Unbox</p><p>Every piece arrives in a Nemara pouch with a card telling you which market it came from.</p></div>
         <div><p className="eyebrow">Wear</p><p><Link className="text-link" href="/info/care">Care for it</Link> and it will keep its glow for years.</p></div>
         <div><p className="eyebrow">Belong</p><p>Share your moment with <a className="text-link" href={`https://instagram.com/${contact.instagram}`} target="_blank" rel="noopener noreferrer">@{contact.instagram}</a> and #WearYourStory — we feature our favourites, with the artist.</p></div>
       </div>

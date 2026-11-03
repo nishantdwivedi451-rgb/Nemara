@@ -9,8 +9,8 @@ import { join } from "node:path";
 
 const OUT = join(process.cwd(), "public/art");
 const C = {
-  ink: "#4B1D5C", night: "#21102A", violet: "#6E3C8C", lav: "#B9A4C8", mist: "#E9E0EE",
-  paper: "#F7F3EC", warm: "#FCFAF6", champ: "#C8B184", graphite: "#5A5260", aubergine: "#38133F",
+  ink: "#4A1A5C", night: "#2B1236", violet: "#6E3C8C", lav: "#B9A0D6", mist: "#E8DDF0",
+  paper: "#F4EDF7", warm: "#FCFAFD", champ: "#D9A452", graphite: "#5A5260", aubergine: "#38133F",
   pearl: "#F3ECE2", rose: "#D9C6D6",
 };
 const METAL = {
@@ -348,22 +348,6 @@ const camp = {
 };
 for (const [k, v] of Object.entries(camp)) write(`campaign/${k}.svg`, v);
 
-// ---------- artist placeholders: hands at work, each with their craft object ----------
-const artistArt = {
-  "meher-bano": { bg: C.mist, tone: C.lav, obj: g("translate(600 470) scale(4)", EAR.jhumka("gold", "color")) },
-  "ramesh-soni": { bg: C.paper, tone: C.rose, obj: g("translate(600 450) scale(4)", EAR.hoop("silver", "color", 22)) },
-  "lakshmi-narayanan": { bg: C.warm, tone: C.mist, obj: g("translate(600 600) scale(1.4)", WRIST.repousse("gold", "color", { rx: 110, ry: 40, full: true })) },
-  "farida-qureshi": { bg: C.paper, tone: C.lav, obj: g("translate(600 600) scale(1.4)", WRIST.hammered("gold", "color", { rx: 110, ry: 40, full: true })) },
-};
-for (const [slug, a] of Object.entries(artistArt)) {
-  write(`artists/${slug}.svg`, svg(arch(180, 140, 840, 1360, a.tone, `opacity=".6"`) +
-    g("translate(-70 540) scale(1.2) rotate(14 400 560)", figure("hand", C.ink, 2)) +
-    g("translate(1270 540) scale(-1.2 1.2) rotate(14 400 560)", figure("hand", C.ink, 2)) + a.obj, { bg: a.bg }));
-}
-
-// ---------- brand mark (used for OG/social exports) ----------
-const N_MARK = `<path d="M0 0H3V100H0Z"/><path d="M67 0H70V100H67Z"/><path d="M0 0H14L70 100H56Z"/><circle cx="68.5" cy="-14" r="7"/>`;
-write("brand/mark-ink.svg", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -30 100 140">${g("", `<g fill="${C.ink}">${N_MARK}</g>`)}</svg>`);
-write("brand/mark-ivory.svg", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -30 100 140"><g fill="${C.warm}">${N_MARK}</g></svg>`);
+// Market illustrations live in scripts/generate-market-art.mjs; the lotus marks in public/art/brand are hand-drawn.
 
 console.log("art generated →", OUT);

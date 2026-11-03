@@ -6,7 +6,7 @@ import { applyQuery } from "@/lib/commerce/query";
 import { IconClose } from "@/components/brand/Icons";
 import { cx } from "@/lib/format";
 import { track } from "@/lib/analytics";
-import type { Artist, Product, SortKey, Taxon } from "@/lib/commerce/types";
+import type { Market, Product, SortKey, Taxon } from "@/lib/commerce/types";
 
 const PRICES = [
   { id: "u2", label: "Under ₹2,000", test: (p: number) => p < 2000 },
@@ -22,12 +22,12 @@ type Props = {
   categories: Taxon[];
   occasions: Taxon[];
   campaigns: CampaignTile[];
-  artists: Artist[];
+  markets: Market[];
   quotes: string[];
   lock?: { type: "category" | "occasion" | "collection"; slug: string };
 };
 
-export function ShopExplorer({ products, categories, occasions, campaigns, artists, quotes, lock }: Props) {
+export function ShopExplorer({ products, categories, occasions, campaigns, markets, quotes, lock }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const sp = useSearchParams();
@@ -123,7 +123,7 @@ export function ShopExplorer({ products, categories, occasions, campaigns, artis
             </div>
           </div>
         ) : (
-          <EditorialGrid products={list} campaigns={campaigns} artists={artists} quotes={quotes} />
+          <EditorialGrid products={list} campaigns={campaigns} markets={markets} quotes={quotes} />
         )}
       </div>
 

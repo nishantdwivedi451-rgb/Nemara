@@ -10,15 +10,14 @@ import { Reveal, Lines } from "@/components/editorial/Reveal";
 import { StylistPrompt } from "@/components/stylist/StylistPrompt";
 import { PromiseCard } from "@/components/brand/Promise";
 import { commerce } from "@/lib/commerce";
-import { getArtists, getArtist } from "@/lib/content";
-import { SITE } from "@/lib/site";
+import { getMarkets, getMarket } from "@/lib/content";
 
 export default async function Home() {
-  const [all, newest, categories, occasions, artists] = await Promise.all([
-    commerce.getProducts(), commerce.getProducts({ sort: "newest", limit: 8 }), commerce.getCategories(), commerce.getOccasions(), getArtists(),
+  const [all, newest, categories, occasions, markets] = await Promise.all([
+    commerce.getProducts(), commerce.getProducts({ sort: "newest", limit: 8 }), commerce.getCategories(), commerce.getOccasions(), getMarkets(),
   ]);
   const storyPiece = all.find((p) => p.handle === "monsoon-hour-jhumka") ?? all[0];
-  const storyArtist = await getArtist(storyPiece.artist);
+  const storyMarket = await getMarket(storyPiece.market);
   const counts = Object.fromEntries(categories.map((c) => [c.slug, all.filter((p) => p.category === c.slug).length]));
 
   return (
@@ -37,9 +36,9 @@ export default async function Home() {
               ))}
             </Reveal>
             <Reveal className="reveal manifesto__body" delay={250}>
-              <p className="lede">Nemara is a jewellery house for all of her. Each piece is drawn by our founder, Pratima Saxena, made by a named Indian artist, and designed to move with whichever version of you walks out of the door.</p>
-              <p className="hand">her jewellery should keep up. — P.</p>
-              <Link href="/our-story" className="link-arrow">Meet the woman with the purple pen</Link>
+              <p className="lede">Nemara is your jewellery wardrobe — premium fashion jewellery handpicked from India&apos;s most loved markets, checked piece by piece, and styled to move with whichever version of you walks out of the door.</p>
+              <p className="hand">one wardrobe. every version of you.</p>
+              <Link href="/our-story" className="link-arrow">How we curate</Link>
             </Reveal>
           </div>
         </div>
@@ -47,12 +46,12 @@ export default async function Home() {
 
       <NemaraWorld />
       <Moments occasions={occasions} />
-      <StoryTeaser product={storyPiece} artist={storyArtist} />
+      <StoryTeaser product={storyPiece} market={storyMarket} />
 
       {/* New arrivals */}
       <section className="section--tight" aria-labelledby="new-title">
         <div className="wrap section-head">
-          <div><p className="eyebrow">Just out of the kiln</p><h2 id="new-title" className="h2">New this edition</h2></div>
+          <div><p className="eyebrow">Fresh from the market run</p><h2 id="new-title" className="h2">New this edition</h2></div>
           <Link href="/shop/new-arrivals" className="link-arrow">See all</Link>
         </div>
         <div className="wrap"><ProductRail products={newest} label="New arrivals" /></div>
@@ -66,19 +65,22 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Founder */}
-      <section className="founder section" aria-labelledby="founder-title">
-        <div className="wrap founder__grid">
-          <Reveal className="reveal-crop founder__img arch">
-            <Image src={SITE.founder.portrait.src} alt={SITE.founder.portrait.alt} fill sizes="(min-width: 900px) 40vw, 90vw" unoptimized />
-          </Reveal>
-          <div className="founder__copy">
-            <p className="eyebrow">The founder</p>
-            <Lines as="h2" className="h1" lines={["Twenty-five years", "of teaching.", <em key="e">One purple pen.</em>]} />
-            <p className="lede">Pratima Saxena spent a quarter of a century noticing what made each student different. Then she picked up the same purple pen and began drawing jewellery — for every kind of woman she had ever taught.</p>
-            <blockquote className="pull">“Red is a correction. Purple is a conversation.”</blockquote>
-            <Link href="/our-story" className="btn btn--ghost">Read her story</Link>
-          </div>
+      {/* The Nemara experience */}
+      <section className="experience section" aria-labelledby="exp-title">
+        <div className="wrap">
+          <div className="section-head"><div><p className="eyebrow">The Nemara experience</p><h2 id="exp-title" className="h2">We do the hunting.<br /><em>You do the wearing.</em></h2></div>
+            <Link href="/our-story" className="link-arrow">Our story</Link></div>
+          <ol className="experience__steps">
+            {[
+              ["Scout", "Six of India's most famous jewellery markets, every season — Jaipur to Srinagar."],
+              ["Handpick", "One in fifty pieces makes the edit. Beautiful, wearable and right for now."],
+              ["Check", "Plating, stones, clasps, comfort and edges — checked like fine jewellery."],
+              ["Style", "Every piece comes with how to wear it. Try it on with your camera first."],
+              ["Deliver", "In a Nemara pouch with its market story — and a 3-month warranty."],
+            ].map(([k, v], i) => (
+              <Reveal as="li" key={k} delay={i * 90}><span className="experience__n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><h3 className="h3">{k}</h3><p>{v}</p></Reveal>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -99,21 +101,21 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Artists */}
-      <section className="section" aria-labelledby="artists-title">
+      {/* Markets */}
+      <section className="section" aria-labelledby="markets-title">
         <div className="wrap">
           <div className="section-head">
-            <div><p className="eyebrow">The hands behind the pieces</p><h2 id="artists-title" className="h2">Made by people.<br />Credited by name.</h2></div>
-            <Link href="/artists" className="link-arrow">Meet the artists</Link>
+            <div><p className="eyebrow">Curated across India</p><h2 id="markets-title" className="h2">Shop by market.</h2></div>
+            <Link href="/markets" className="link-arrow">Explore the markets</Link>
           </div>
-          <ul className="artist-row">
-            {artists.map((a, i) => (
-              <Reveal as="li" key={a.slug} delay={i * 90}>
-                <Link href={`/artists/${a.slug}`} className="artist-chip">
-                  <div className="frame ratio-34 arch"><Image src={a.portrait.src} alt={a.portrait.alt} fill sizes="(min-width: 900px) 22vw, 45vw" unoptimized /></div>
-                  <h3 className="h3">{a.name}</h3>
-                  <p className="muted">{a.craft}</p>
-                  <p className="eyebrow">{a.location}</p>
+          <ul className="market-row">
+            {markets.map((m, i) => (
+              <Reveal as="li" key={m.slug} delay={i * 70}>
+                <Link href={`/markets/${m.slug}`} className="market-chip">
+                  <div className="market-chip__img"><Image src={m.image.src} alt={m.image.alt} fill sizes="(min-width: 900px) 16vw, 45vw" unoptimized /></div>
+                  <h3 className="h3">{m.city}</h3>
+                  <p className="muted">{m.signature}</p>
+                  <p className="eyebrow">{m.market}</p>
                 </Link>
               </Reveal>
             ))}

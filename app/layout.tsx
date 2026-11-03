@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: { default: "Nemara — Your Jewellery Wardrobe", template: "%s — Nemara" },
   description: SITE.description,
   applicationName: "Nemara",
-  keywords: ["Nemara", "fashion jewellery India", "designer jewellery", "artisan jewellery", "jhumka", "kada", "necklace set", "Pratima Saxena"],
+  keywords: ["Nemara", "fashion jewellery India", "designer jewellery", "artificial jewellery", "premium fashion jewellery", "curated jewellery", "jhumka", "kada", "necklace set", "Jaipur jewellery"],
   openGraph: { siteName: "Nemara", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },

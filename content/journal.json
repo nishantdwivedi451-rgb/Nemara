@@ -1,32 +1,84 @@
 [
   {
-    "slug": "why-purple",
-    "kind": "Founder Note",
-    "title": "Why purple, and not red",
-    "excerpt": "For twenty-five years I corrected notebooks in purple ink. Here is why — and why it became Nemara's colour.",
-    "date": "2026-09-12",
-    "author": "Pratima Saxena",
-    "cover": { "src": "/art/campaign/founder.svg", "alt": "Placeholder — Pratima's purple pen", "role": "campaign" },
+    "slug": "a-morning-in-johari-bazaar",
+    "kind": "Market Diary",
+    "title": "A morning in Johari Bazaar",
+    "excerpt": "Pink arches, chai at 9 a.m., and the one lilac tray that became the Monsoon Hour jhumka.",
+    "date": "2026-10-12",
+    "author": "Nemara Buying Team",
+    "cover": {
+      "src": "/art/markets/jaipur.svg",
+      "alt": "Illustration of Jaipur's jharokhas",
+      "role": "campaign"
+    },
     "body": [
-      { "type": "p", "text": "In my first year of teaching, a girl in the third row cried when she saw her notebook. It wasn't the marks. It was the red. Every line I had underlined looked like a wound." },
-      { "type": "p", "text": "The next morning I bought a purple pen. I used it for the next twenty-five years." },
-      { "type": "quote", "text": "Red is a correction. Purple is a conversation." },
-      { "type": "p", "text": "When I began drawing jewellery, the sketches were in the same ink — because that was the pen in my bag. Somewhere along the way, the colour stopped being a tool and became a point of view. Nemara is that point of view: you are not being corrected. You are being noticed." }
+      {
+        "type": "p",
+        "text": "We get to Johari Bazaar before ten, which in Jaipur means most shutters are still half down. That's the best time: owners have time to talk, and the trays haven't been picked over yet."
+      },
+      {
+        "type": "h",
+        "text": "Red, green… and one tray of lilac"
+      },
+      {
+        "type": "p",
+        "text": "Almost every jhumka counter here leads with ruby red and emerald green. They're beautiful, and they're everywhere. Three shops in, we found a single tray of lilac meenakari — the enameller upstairs had been experimenting. That tray became our Monsoon Hour jhumka."
+      },
+      {
+        "type": "p",
+        "text": "We asked for one change: a lighter dome, so you can wear them through a whole sangeet without your ears hating you. Two weeks later, the samples arrived."
+      },
+      {
+        "type": "quote",
+        "text": "Out of every fifty pieces we pick up in a market, one makes it to Nemara."
+      },
+      {
+        "type": "h",
+        "text": "What we look for in Jaipur"
+      },
+      {
+        "type": "p",
+        "text": "Glossy enamel with no pinholes. Kundan that sits flush. Fringes that move. And colours that work with denim as much as with a lehenga."
+      }
     ]
   },
   {
-    "slug": "behind-the-design-raat-rani",
-    "kind": "Behind the Design",
-    "title": "Four hundred coils: making the Raat Rani collar",
-    "excerpt": "Inside Ramesh Soni's Cuttack workshop, where one necklace takes eleven days and a great deal of patience.",
-    "date": "2026-09-02",
-    "author": "Nemara Studio",
-    "cover": { "src": "/art/campaign/studio.svg", "alt": "Placeholder — Raat Rani sketch on the design table", "role": "campaign" },
+    "slug": "how-we-check-every-piece",
+    "kind": "Inside Nemara",
+    "title": "How we check every piece before it reaches you",
+    "excerpt": "Plating, stones, clasps, weight, edges — the checklist every Nemara find has to pass.",
+    "date": "2026-09-28",
+    "author": "Nemara Quality Desk",
+    "cover": {
+      "src": "/art/campaign/studio.svg",
+      "alt": "Illustration of the Nemara checking table",
+      "role": "campaign"
+    },
     "body": [
-      { "type": "p", "text": "Ramesh starts each petal with a frame of silver no thicker than a pencil line. He fills it with coils — twisted, flattened, curled — until the frame looks like lace." },
-      { "type": "p", "text": "There are twenty-one petals. Each has its own small differences, because each was made on a different morning, in different light." },
-      { "type": "quote", "text": "The lace is what holds the shape. — Ramesh Soni" },
-      { "type": "p", "text": "Once linked, the collar is plated in gold vermeil and the violet stones are set one at a time. It is, in Ramesh's words, 'a slow necklace for fast evenings'." }
+      {
+        "type": "p",
+        "text": "Markets are where the magic is. They're also where quality varies the most. So nothing goes from a market tray straight into your bag — every piece comes through our checking table first."
+      },
+      {
+        "type": "h",
+        "text": "The Nemara check"
+      },
+      {
+        "type": "p",
+        "text": "Plating: checked under bright light for patches and bubbles. Stones and pearls: pushed, twisted and matched in pairs. Clasps and hooks: opened and closed until we trust them. Weight: earrings have to be comfortable for a full evening. Edges: every part that touches skin should feel smooth."
+      },
+      {
+        "type": "p",
+        "text": "If a piece fails, it goes back. If a whole batch fails, we drop the design — however pretty it is."
+      },
+      {
+        "type": "quote",
+        "text": "Market finds, checked like fine jewellery. And backed by a 3-month warranty."
+      },
+      {
+        "type": "p",
+        "text": "Then it's packed in a Nemara pouch with a card that tells you which market it came from — so your piece arrives with its story."
+      }
     ]
   },
   {
@@ -36,13 +88,32 @@
     "excerpt": "The Ink & Gold pair, worn from a Monday stand-up to a Saturday sangeet.",
     "date": "2026-08-21",
     "author": "Nemara Studio",
-    "cover": { "src": "/art/campaign/everyday.svg", "alt": "Placeholder — kadas stacked on the wrist", "role": "campaign" },
+    "cover": {
+      "src": "/art/campaign/everyday.svg",
+      "alt": "Placeholder — kadas stacked on the wrist",
+      "role": "campaign"
+    },
     "body": [
-      { "type": "p", "text": "Monday: one kada, crisp white shirt, sleeves pushed up. The purple line does the talking." },
-      { "type": "p", "text": "Wednesday: both kadas with a watch on the other wrist. Balanced, not matched." },
-      { "type": "p", "text": "Friday: stack them with the Recess bracelet. Play is allowed." },
-      { "type": "p", "text": "Saturday: with a silk saree and the Monsoon Hour jhumkas — gold to gold, lilac to purple." },
-      { "type": "quote", "text": "Sunday: give one to your sister. She'll know why." }
+      {
+        "type": "p",
+        "text": "Monday: one kada, crisp white shirt, sleeves pushed up. The purple line does the talking."
+      },
+      {
+        "type": "p",
+        "text": "Wednesday: both kadas with a watch on the other wrist. Balanced, not matched."
+      },
+      {
+        "type": "p",
+        "text": "Friday: stack them with the Recess bracelet. Play is allowed."
+      },
+      {
+        "type": "p",
+        "text": "Saturday: with a silk saree and the Monsoon Hour jhumkas — gold to gold, lilac to purple."
+      },
+      {
+        "type": "quote",
+        "text": "Sunday: give one to your sister. She'll know why."
+      }
     ]
   }
 ]

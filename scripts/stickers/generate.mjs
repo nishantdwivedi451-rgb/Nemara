@@ -22,7 +22,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../.
 const OUT = path.join(ROOT, "print/stickers");
 const SITE = "https://nemara.shop";
 const products = JSON.parse(fs.readFileSync(path.join(ROOT, "content/products.json"), "utf8"));
-const artists = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, "content/artists.json"), "utf8")).map((a) => [a.slug ?? a.handle, a]));
+const markets = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, "content/markets.json"), "utf8")).map((m) => [m.slug, m]));
 
 const C = { paper: "#F4EDF7", ink: "#4A1A5C", night: "#2B1236", violet: "#6E3C8C", lavender: "#B9A0D6", mist: "#E8DDF0", champagne: "#D9A452" };
 const BLEED = 1.5;
@@ -85,7 +85,7 @@ function seal() {
       <circle class="fs" cx="${c}" cy="${c}" r="8.85" fill="none" stroke-width="0.25"/>
       <circle class="fs" cx="${c}" cy="${c}" r="5.55" fill="none" stroke-width="0.2"/>
       <path id="seal-ring" d="${ring}" fill="none"/>
-      <text class="f" font-family="ISans" font-weight="600" font-size="1.62" letter-spacing="0.2"><textPath href="#seal-ring" textLength="${(circ * 0.985).toFixed(2)}" lengthAdjust="spacing">WEAR YOUR STORY · NEMARA · HANDMADE ·</textPath></text>
+      <text class="f" font-family="ISans" font-weight="600" font-size="1.62" letter-spacing="0.2"><textPath href="#seal-ring" textLength="${(circ * 0.985).toFixed(2)}" lengthAdjust="spacing">WEAR YOUR STORY · NEMARA · CURATED ·</textPath></text>
       ${mark(c, c + 0.2, 5.0, "f")}`,
     cut: `<circle cx="${c}" cy="${c}" r="${R}"/>`,
   };
@@ -93,7 +93,7 @@ function seal() {
 
 /** 02 — The Story Tag. 32 × 20 mm. One per product: name, maker, QR to the piece's story. Box backs, care cards. */
 function storyTag(p) {
-  const a = artists[p.artist];
+  const m = markets[p.market];
   const lines = wrap(p.name, 12);
   const qr = qrPath(`${SITE}/p/${p.handle}`, 18.4, 2.2, 12);
   const nameY = lines.length > 1 ? 7.6 : 9.2;
@@ -103,8 +103,8 @@ function storyTag(p) {
       ${wordmark(2.2, 2.6, 13, "f", 3)}
       ${lines.map((l, i) => `<text x="2.2" y="${nameY + i * 2.75}" font-family="ISerif" font-size="2.55" fill="${C.ink}">${esc(l)}</text>`).join("")}
       <path d="M2.2 ${nameY + (lines.length - 1) * 2.75 + 1.6}h4" stroke="${C.champagne}" stroke-width="0.2"/>
-      <text x="2.2" y="15.9" font-family="ISans" font-weight="500" font-size="1.5" fill="${C.ink}">Made by ${esc(a.name)}</text>
-      <text x="2.2" y="17.8" font-family="ISans" font-size="1.42" fill="${C.violet}">${esc(a.location.split(",")[0])}</text>
+      <text x="2.2" y="15.9" font-family="ISans" font-weight="500" font-size="1.5" fill="${C.ink}">Handpicked in ${esc(m.city)}</text>
+      <text x="2.2" y="17.8" font-family="ISans" font-size="1.42" fill="${C.violet}">${esc(m.market)}</text>
       <rect x="17.6" y="1.4" width="13.6" height="13.6" rx="0.8" fill="#fff"/>
       <path d="${qr.d}" fill="${C.night}"/>
       <text x="24.4" y="17.75" text-anchor="middle" font-family="ISerif" font-style="italic" font-size="1.75" fill="${C.ink}">scan its story</text>`,
@@ -148,12 +148,12 @@ function arch() {
       ${mark(w / 2, 12.4, 7.2, "f")}
       ${wordmark(w / 2 - 7, 18.6, 14, C.ink, 4)}
       <text x="${w / 2}" y="25.2" text-anchor="middle" font-family="ISerif" font-style="italic" font-size="2.5" fill="${C.violet}">wear your story</text>
-      <text x="${w / 2}" y="28.6" text-anchor="middle" font-family="ISans" font-weight="600" font-size="1.3" letter-spacing="0.32" fill="${C.ink}">HANDMADE IN INDIA</text>`,
+      <text x="${w / 2}" y="28.6" text-anchor="middle" font-family="ISans" font-weight="600" font-size="1.12" letter-spacing="0.16" fill="${C.ink}">CURATED ACROSS INDIA</text>`,
     cut: `<path d="${shape(0, rb)}"/>`,
   };
 }
 
-/** 05 — The Margin Note. 60 × 12 mm seal strip in Pratima's hand, signed by the artisan who made the piece. Pouch flaps, box seams, thank-you cards. */
+/** 05 — The Margin Note. 60 × 12 mm seal strip: a handwritten line plus the market the piece came from. Pouch flaps, box seams, thank-you cards. */
 function marginNote(a) {
   const w = 60, h = 12, b = BLEED;
   return {
@@ -164,8 +164,8 @@ function marginNote(a) {
       ${mark(6, h / 2, 5.4, "f")}
       <path class="fs" d="M12 0V${h}" stroke-width="0.35"/>
       <text x="14.4" y="5.45" font-family="Caveat" font-weight="600" font-size="4.3" fill="${C.violet}">this one has a story.</text>
-      <text x="14.4" y="8.3" font-family="ISans" font-weight="500" font-size="1.45" fill="${C.ink}">Designed by Pratima Saxena · Made by ${esc(a.name)}</text>
-      <text x="14.4" y="10.15" font-family="ISans" font-size="1.3" letter-spacing="0.06" fill="${C.violet}">${esc(a.location)} · Handmade in India</text>`,
+      <text x="14.4" y="8.3" font-family="ISans" font-weight="500" font-size="1.45" fill="${C.ink}">Handpicked in ${esc(a.market)}, ${esc(a.city)}</text>
+      <text x="14.4" y="10.15" font-family="ISans" font-size="1.3" letter-spacing="0.06" fill="${C.violet}">Checked by Nemara · Curated across India</text>`,
     cut: `<path d="${rrect(0, 0, w, h, 1.2)}"/>`,
   };
 }
@@ -230,7 +230,7 @@ const OPTIONS = [
   { id: "02-the-story-tag", title: "Option 2 · The Story Tag", spec: "32 × 20 mm, r2 corners", make: () => products.map((p) => ({ d: storyTag(p), variant: `${p.name} · ${p.sku}` })) },
   { id: "03-the-jewel-flag", title: "Option 3 · The Jewel Flag (wrap tag)", spec: "56 × 10 mm barbell, pads 14 × 10", make: () => products.map((p) => ({ d: jewelFlag(p), variant: `${p.name} · ${p.sku}` })) },
   { id: "04-the-arch", title: "Option 4 · The Arch", spec: "24 × 32 mm die-cut arch", make: () => [{ d: arch(), variant: "One design" }] },
-  { id: "05-the-margin-note", title: "Option 5 · The Margin Note", spec: "60 × 12 mm seal strip", make: () => Object.values(artists).map((a) => ({ d: marginNote(a), variant: `Made by ${a.name}` })) },
+  { id: "05-the-margin-note", title: "Option 5 · The Margin Note", spec: "60 × 12 mm seal strip", make: () => Object.values(markets).map((m) => ({ d: marginNote(m), variant: `${m.city} — ${m.market}` })) },
 ];
 
 const pw = await import(path.join(execSync("npm root -g").toString().trim(), "playwright/index.mjs"));
@@ -283,15 +283,15 @@ const hoopMock = (() => {
       <g transform="translate(3 -5)"><g filter="drop-shadow(0 .4px .5px rgba(33,16,42,.3))"><g clip-path="url(#padA)"><rect width="14" height="10" fill="${C.ink}"/>${mark(7, 5, 5.8, "f")}</g></g></g>
     </g></svg>`;
 })();
-const seals = seal(), story = storyTag(products.find((p) => p.handle === "monsoon-hour-jhumka")), flag = jewelFlag(sample), archD = arch(), note = marginNote(artists["meher-bano"]);
+const seals = seal(), story = storyTag(products.find((p) => p.handle === "monsoon-hour-jhumka")), flag = jewelFlag(sample), archD = arch(), note = marginNote(markets.jaipur);
 const swap = (d) => d;
 const fit = (d, bw, bh) => Math.min(bw / (d.w + 6), bh / (d.h + 6));
 const tiles = [
   { n: "The Seal", size: "Ø20 mm round", d: seals, k: 2.6, line: "The signature.", use: "Closes every pouch, gift box and envelope. The first thing she touches when the parcel arrives — it should feel like a wax seal, not a label.", finish: ["Ink-purple ground, hot-foil champagne gold", "Matte laminate so the foil reads against it", "One design · 88 per A4"] },
-  { n: "The Story Tag", size: "32 × 20 mm", d: story, k: 2.2, line: "The piece, introduced.", use: "Back of the box or the care card. The QR opens that exact piece — its artisan, its story, the live try-on — and every scan lands in Studio as a visit (utm_source=tag), so you can see which pieces get scanned.", finish: ["Ivory textured / felt label stock", "Gold-foil wordmark; QR printed solid, never foiled", "12 designs, one per product · 55 per A4"], vars: products.map(storyTag) },
+  { n: "The Story Tag", size: "32 × 20 mm", d: story, k: 2.2, line: "The piece, introduced.", use: "Back of the box or the care card. The QR opens that exact piece — the market it came from, its story, the live try-on — and every scan lands in Studio as a visit (utm_source=tag), so you can see which pieces get scanned.", finish: ["Ivory textured / felt label stock", "Gold-foil wordmark; QR printed solid, never foiled", "12 designs, one per product · 55 per A4"], vars: products.map(storyTag) },
   { n: "The Jewel Flag", size: "56 × 10 mm wrap tag", d: flag, k: 1.9, line: "The one that goes on the jewellery.", use: "Adhesive on plating or enamel leaves residue and can lift the finish. So the flag never touches the metal: the thin tail loops a hoop, chain or kada and the two pads stick to each other — lotus on the front, name and MRP on the back. Peels off clean in one pull.", finish: ["White synthetic PP / vinyl, 80–100 µ — paper tails tear", "Permanent adhesive (sticks pad-to-pad), matte lam.", "12 designs · 54 per A4"], vars: products.map(jewelFlag), mock: true },
   { n: "The Arch", size: "24 × 32 mm die-cut", d: archD, k: 2.0, line: "The gift.", use: "Gift boxes, festive hampers and Circle-member birthday parcels. The arch is the website's frame made physical — the lotus in gold foil over the plum wordmark.", finish: ["Pearl / shimmer lilac label stock", "Gold-foil lotus and keyline, soft-touch lam.", "One design · 42 per A4"] },
-  { n: "The Margin Note", size: "60 × 12 mm seal strip", d: note, k: 1.9, line: "The signature of the hands.", use: "Runs across the box seam or pouch flap. Pratima's line in handwriting, signed by the artisan who made the piece — the brand promise, sealed shut.", finish: ["Ivory uncoated stock (you can write on it)", "Removable adhesive — opens without tearing the box", "4 artisan versions · 48 per A4"], vars: Object.values(artists).map(marginNote) },
+  { n: "The Margin Note", size: "60 × 12 mm seal strip", d: note, k: 1.9, line: "Where it came from.", use: "Runs across the box seam or pouch flap. A handwritten line and the market the piece was handpicked in — the Nemara promise, sealed shut.", finish: ["Ivory uncoated stock (you can write on it)", "Removable adhesive — opens without tearing the box", "6 market versions · 48 per A4"], vars: Object.values(markets).map(marginNote) },
 ];
 const brief = `<!doctype html><html><head><meta charset="utf-8"><style>${FONT_CSS}
   @page{size:297mm 210mm;margin:0}*{box-sizing:border-box}${GOLD_CSS}html,body{margin:0;background:${C.paper};color:${C.ink};font-family:ISans}
@@ -337,7 +337,7 @@ ${tiles.map((t, i) => `<section class="pg"><div class="opt">
     <tr><td><b>2 · The Story Tag</b></td><td>32 × 20 mm, r2 mm</td><td>Ivory / cream textured (felt) label</td><td>Permanent</td><td>CMYK + gold-foil wordmark. QR must stay CMYK black, no foil, no lam. gloss</td><td>12 × ${summary[1].perSheet}</td><td>1 sheet per product</td></tr>
     <tr><td><b>3 · The Jewel Flag</b></td><td>56 × 10 mm barbell, 3 mm tail</td><td>White synthetic PP / vinyl, 80–100 µ (tear-proof)</td><td>Permanent — sticks pad-to-pad only</td><td>CMYK + gold foil, matte lam. Kiss-cut, fillets kept</td><td>12 × ${summary[2].perSheet}</td><td>1 sheet per product</td></tr>
     <tr><td><b>4 · The Arch</b></td><td>24 × 32 mm arch</td><td>Pearl / shimmer lilac label</td><td>Permanent</td><td>CMYK + gold-foil lotus &amp; keyline, soft-touch lam.</td><td>1 × ${summary[3].perSheet}</td><td>10 sheets (≈${summary[3].perSheet * 10})</td></tr>
-    <tr><td><b>5 · The Margin Note</b></td><td>60 × 12 mm, r1.2</td><td>Ivory uncoated (writable) label</td><td>Removable / peelable</td><td>CMYK + gold-foil lotus &amp; rule</td><td>4 × ${summary[4].perSheet}</td><td>2 sheets per artisan</td></tr>
+    <tr><td><b>5 · The Margin Note</b></td><td>60 × 12 mm, r1.2</td><td>Ivory uncoated (writable) label</td><td>Removable / peelable</td><td>CMYK + gold-foil lotus &amp; rule</td><td>4 × ${summary[4].perSheet}</td><td>2 sheets per market</td></tr>
   </table>
   <div class="cols">
     <div><h4>Colour &amp; foil</h4><ul>

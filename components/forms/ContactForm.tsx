@@ -26,7 +26,7 @@ export function ContactForm() {
         <div className="field"><label htmlFor="c-email">Email</label><input id="c-email" name="email" type="email" className="input" required autoComplete="email" {...f("email")} />{errors.email && <span id="email-err" className="field-error">{errors.email}</span>}</div>
       </div>
       <div className="field"><label htmlFor="c-topic">About</label>
-        <select id="c-topic" name="topic" className="select" defaultValue="Choosing a piece"><option>Choosing a piece</option><option>An existing order</option><option>Gifting & bulk orders</option><option>Press & collaborations</option><option>Artists — work with us</option><option>Something else</option></select></div>
+        <select id="c-topic" name="topic" className="select" defaultValue="Choosing a piece"><option>Choosing a piece</option><option>An existing order</option><option>Gifting & bulk orders</option><option>Press & collaborations</option><option>Suppliers &amp; sellers — work with us</option><option>Something else</option></select></div>
       <div className="field"><label htmlFor="c-msg">Message</label><textarea id="c-msg" name="message" className="textarea" required minLength={10} maxLength={2000} {...f("message")} />{errors.message && <span id="message-err" className="field-error">{errors.message}</span>}</div>
       <input name="company" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       {state === "err" && <p className="field-error" role="alert">{msg}</p>}

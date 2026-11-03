@@ -19,7 +19,7 @@ export const breadcrumbLd = (items: { name: string; path: string }[]) => ({
   itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: `${siteUrl()}${it.path}` })),
 });
 
-export const productLd = (p: Product, artistName?: string) => ({
+export const productLd = (p: Product, sourcedFrom?: string) => ({
   "@context": "https://schema.org",
   "@type": "Product",
   name: p.name,
@@ -29,7 +29,7 @@ export const productLd = (p: Product, artistName?: string) => ({
   brand: { "@type": "Brand", name: "Nemara" },
   material: p.material,
   category: p.category,
-  ...(artistName ? { additionalProperty: [{ "@type": "PropertyValue", name: "Artisan", value: artistName }] } : {}),
+  ...(sourcedFrom ? { additionalProperty: [{ "@type": "PropertyValue", name: "Handpicked in", value: sourcedFrom }] } : {}),
   offers: {
     "@type": "Offer",
     url: `${siteUrl()}/product/${p.handle}`,

@@ -3,11 +3,13 @@
 
 export type ImageAsset = { src: string; alt: string; role?: string; width?: number; height?: number };
 
-export type StoryIdea = { body: string; note?: string; sketch?: ImageAsset };
-export type StoryHand = { contribution: string; quote?: string };
-export type StoryMaking = { body: string; steps?: string[]; image?: ImageAsset; video?: string };
-export type StoryMoment = { body: string; image?: ImageAsset };
-export type ProductStory = { idea: StoryIdea; hand: StoryHand; making: StoryMaking; moment: StoryMoment };
+/** How we found it: the market moment, plus the buyer's one-line note. */
+export type StoryFind = { body: string; note?: string; sketch?: ImageAsset };
+/** What the Nemara quality check covered for this piece. */
+export type StoryCheck = { body: string; steps?: string[]; image?: ImageAsset };
+/** Where to wear it and what to wear it with. */
+export type StoryStyle = { body: string; pairWith?: string[]; image?: ImageAsset };
+export type ProductStory = { find: StoryFind; check: StoryCheck; style: StoryStyle };
 
 export type TryOnAnchor = "ears" | "neck" | "wrist";
 export type TryOnConfig = {
@@ -43,7 +45,8 @@ export type Product = {
   material: string;
   dimensions: string;
   care: string;
-  artist: string;
+  /** Slug of the market (content/markets.json) the piece was handpicked from. */
+  market: string;
   featured: boolean;
   /** Members-only / Nemara Circle exclusive design. */
   exclusive?: boolean;
@@ -57,17 +60,20 @@ export type Product = {
 
 export type Taxon = { slug: string; name: string; line: string; label?: string; tone?: string; image?: ImageAsset };
 
-export type Artist = {
+/** One of India's jewellery markets Nemara curates from. */
+export type Market = {
   slug: string;
-  name: string;
-  location: string;
-  craft: string;
-  yearsOfPractice?: number;
-  portrait: ImageAsset;
+  city: string;
+  market: string;
+  region: string;
+  signature: string;
+  image: ImageAsset;
   summary: string;
-  quote?: string;
-  contribution: string;
+  lead: string;
   story: string[];
+  lookFor: string[];
+  wearIt: string;
+  tip: string;
 };
 
 export type SortKey = "featured" | "newest" | "price-asc" | "price-desc";
@@ -76,7 +82,7 @@ export type ProductQuery = {
   category?: string;
   occasion?: string;
   collection?: string;
-  artist?: string;
+  market?: string;
   q?: string;
   sort?: SortKey;
   limit?: number;

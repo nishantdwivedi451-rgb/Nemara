@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 const WORLD = [
-  { k: "Design", img: "/art/products/raat-rani-necklace-set/story.svg", note: "every piece starts as a line in a notebook.", body: "Pratima draws every Nemara piece by hand, in purple ink, before a single gram of metal is touched. Ideas are tested on paper, argued with, redrawn.", href: "/our-story" },
-  { k: "Craft", img: "/art/products/aangan-kada/detail.svg", note: "pressed, twisted, fired, finished.", body: "Filigree from Cuttack. Meenakari from Jaipur. Repoussé from Thrissur. Brass from Moradabad. Old techniques, asked new questions.", href: "/artists" },
-  { k: "Artists", img: "/art/artists/ramesh-soni.svg", note: "a name behind every piece.", body: "Every product page tells you who made it, where, and how. Not ‘artisans’ — artists, credited by name.", href: "/artists" },
-  { k: "India", img: "/art/campaign/celebration.svg", note: "born here. not stuck in the past.", body: "Nemara borrows from India’s courtyards, monsoons and festival nights — then designs for the life you actually live today.", href: "/our-story" },
-  { k: "Women", img: "/art/campaign/nine-to-five.svg", note: "for the many versions of her.", body: "Founded by a woman, made in studios led by women, worn by women who refuse to be one thing. That is the whole point.", href: "/our-story" },
-  { k: "Expression", img: "/art/campaign/after-hours.svg", note: "see it on you, then decide.", body: "Try any piece on with your camera. Ask the Nemara Stylist. Mix, stack, break the rules — it is your story.", href: "/try-on" },
+  { k: "Markets", img: "/art/markets/jaipur.svg", note: "six cities. one wardrobe.", body: "Johari Bazaar, Dariba Kalan, Lal Chowk, Laad Bazaar, Colaba Causeway, Law Garden. We walk India's most famous jewellery markets every season, so you don't have to.", href: "/markets" },
+  { k: "Handpicked", img: "/art/products/monsoon-hour-jhumka/story.svg", note: "one in fifty makes it.", body: "We pick for three things: beautiful, wearable, right for now. Too heavy to dance in? It doesn't make it. Already everywhere? Neither does that.", href: "/our-story" },
+  { k: "Checked", img: "/art/products/aangan-kada/detail.svg", note: "checked like fine jewellery.", body: "Plating, stones, clasps, comfort and every edge that touches your skin — checked before it ships, and backed by a 3-month warranty.", href: "/info/warranty" },
+  { k: "Styled", img: "/art/campaign/nine-to-five.svg", note: "office to dinner, no change needed.", body: "Every piece comes with how to wear it and what to pair it with. Ask the Nemara Stylist where you're going and get an edit back.", href: "/stylist" },
+  { k: "Premium", img: "/art/campaign/celebration.svg", note: "premium, not precious.", body: "The look and finish of fine jewellery at a price that lets you build a whole wardrobe — and actually wear it on a Tuesday.", href: "/shop" },
+  { k: "Yours", img: "/art/campaign/after-hours.svg", note: "see it on you, then decide.", body: "Try any piece on with your camera. Mix, stack, break the rules — it's your wardrobe and your story.", href: "/try-on" },
 ];
 
 export function NemaraWorld() {
@@ -20,7 +20,7 @@ export function NemaraWorld() {
       <div className="wrap">
         <div className="world__head">
           <p className="eyebrow">The Nemara world</p>
-          <h2 id="world-title" className="h2">Six words we build everything on.</h2>
+          <h2 id="world-title" className="h2">Six words we curate by.</h2>
         </div>
         <div className="world__grid">
           <ol className="world__list" role="tablist" aria-label="The Nemara world">

@@ -46,7 +46,7 @@ export function Header({ nav }: { nav: NavData }) {
               <Link href="/shop" className={active("/shop")} aria-expanded={mega} aria-haspopup="true" onFocus={openMega}>Shop</Link>
             </div>
             <Link href="/our-story" className={active("/our-story")}>Our Story</Link>
-            <Link href="/artists" className={active("/artists")}>Artists</Link>
+            <Link href="/markets" className={active("/markets")}>Markets</Link>
           </div>
         </nav>
 
@@ -104,7 +104,7 @@ export function Header({ nav }: { nav: NavData }) {
           <button className="icon-btn" onClick={() => setDrawer(false)} aria-label="Close menu"><IconClose /></button>
         </div>
         <ul className="nav-drawer__primary">
-          {[["Shop", "/shop"], ["Our Story", "/our-story"], ["Artists", "/artists"], ["Try It On", "/try-on"], ["Nemara Stylist", "/stylist"], ["Journal", "/journal"], ["My account", "/account"], ["Contact", "/contact"]].map(([l, h], i) => (
+          {[["Shop", "/shop"], ["Our Story", "/our-story"], ["Markets", "/markets"], ["Try It On", "/try-on"], ["Nemara Stylist", "/stylist"], ["Journal", "/journal"], ["My account", "/account"], ["Contact", "/contact"]].map(([l, h], i) => (
             <li key={h} style={{ ["--i" as string]: i }}><Link href={h} tabIndex={drawer ? 0 : -1}>{l}</Link></li>
           ))}
         </ul>
