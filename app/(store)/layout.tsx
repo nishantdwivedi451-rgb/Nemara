@@ -13,14 +13,13 @@ import { SearchOverlay } from "@/components/layout/SearchOverlay";
 import { MobileTabBar } from "@/components/layout/MobileTabBar";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { Toast } from "@/components/layout/Toast";
-import { PreviewRibbon } from "@/components/layout/PreviewRibbon";
 import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
 import { CircleInvite } from "@/components/marketing/CircleInvite";
 import { AuthDialog } from "@/components/account/AuthDialog";
 import { JsonLd } from "@/components/editorial/JsonLd";
 import { commerce } from "@/lib/commerce";
 import { getMarketingSettings } from "@/lib/marketing";
-import { PREVIEW_MODE, SITE, whatsappUrl } from "@/lib/site";
+import { SITE, hasWhatsApp, whatsappUrl } from "@/lib/site";
 import { organizationLd } from "@/lib/seo";
 import { storeConfigured } from "@/lib/store";
 
@@ -34,14 +33,13 @@ export default async function StoreLayout({ children }: { children: React.ReactN
     <>
       <a href="#main" className="skip-link">Skip to content</a>
       <StoreProvider>
-        {PREVIEW_MODE && <PreviewRibbon />}
         <Header nav={{ categories, occasions, collections }} />
         <main id="main">{children}</main>
         <Footer />
         <CartDrawer freeShippingThreshold={SITE.shipping.freeShippingThreshold} flatRate={SITE.shipping.flatRate} />
         <SearchOverlay />
         <MobileTabBar />
-        <WhatsAppButton href={whatsappUrl()} />
+        {hasWhatsApp && <WhatsAppButton href={whatsappUrl()} />}
         <Toast />
         <AuthDialog />
         {/* never collect details we can't store: the Circle switches on once a database is connected */}

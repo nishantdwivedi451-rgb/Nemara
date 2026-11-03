@@ -24,7 +24,6 @@
 .hero__line:nth-child(2) > span { animation-delay: .12s; }
 .hero__line:nth-child(3) > span { animation-delay: .24s; }
 @keyframes lineUp { from { transform: translateY(110%); } to { transform: none; } }
-.hero__edition { animation: pageIn 1s var(--ease) both; }
 .hero__sub { font-size: var(--fs-md); max-width: 40ch; color: var(--graphite); animation: pageIn 1s var(--ease) .5s both; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 10px; animation: pageIn 1s var(--ease) .7s both; }
 .hero__visual { position: relative; height: min(58svh, 520px); }

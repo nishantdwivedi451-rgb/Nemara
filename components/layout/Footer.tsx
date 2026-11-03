@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Wordmark, Mark, Lockup } from "@/components/brand/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
-import { SITE, contact, whatsappUrl } from "@/lib/site";
+import { SITE, contact, hasWhatsApp, whatsappUrl } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,14 +31,14 @@ export function Footer() {
             <li><Link href="/info/terms">Terms &amp; Conditions</Link></li><li><Link href="/info/privacy">Privacy Policy</Link></li></ul></nav>
           <div><p className="eyebrow">Talk to us</p><ul>
             <li><a href={`https://instagram.com/${contact.instagram}`} target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            {hasWhatsApp && <li><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>}
             <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li></ul></div>
         </div>
         <div className="footer__base">
           <Wordmark className="footer__wordmark" />
           <div className="footer__legal">
             <Mark className="footer__mark" />
-            <span>© {year} {SITE.legal.business}. Nemara is a brand of {SITE.legal.business}. {contact.address}</span>
+            <span>© {year} {SITE.legal.business}. Nemara is a brand of {SITE.legal.business}.{contact.address ? ` ${contact.address}` : ""}</span>
           </div>
         </div>
       </div>

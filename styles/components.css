@@ -5,13 +5,6 @@
 @media (min-width: 900px) { .nav-links.desktop-only { display: flex !important; } .icon-btn.desktop-only { display: inline-grid !important; } }
 .nav-links > div { display: flex; }
 
-/* ───────── preview ribbon ───────── */
-.preview-ribbon { display: flex; gap: 12px; align-items: baseline; justify-content: center; flex-wrap: wrap; padding: 7px var(--gutter); background: var(--night); color: rgba(252, 250, 253, .78); font-size: 12px; text-align: center; }
-.preview-ribbon .hand { color: var(--lavender); font-size: 1.05rem; }
-@media (max-width: 699px) { .preview-ribbon span:last-child { font-size: 11px; } .preview-ribbon { flex-wrap: nowrap; padding-block: 5px; } .preview-ribbon .full { display: none; } }
-.preview-ribbon .short { display: none; }
-@media (max-width: 699px) { .preview-ribbon .short { display: inline; } }
-
 /* ───────── header ───────── */
 .site-header { position: sticky; top: 0; z-index: 60; transition: background var(--t-med) var(--ease), box-shadow var(--t-med); }
 .site-header.is-solid { background: rgba(244, 237, 247, .985); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); box-shadow: 0 1px 0 var(--line); }

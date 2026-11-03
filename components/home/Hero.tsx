@@ -14,7 +14,6 @@ export function Hero() {
       <FloralLily className="hero__floral hero__floral--br" />
       <div className="hero__grid wrap">
         <div className="hero__copy">
-          <p className="eyebrow hero__edition">Curated across India · The new edit</p>
           <h1 id="hero-title" className="display hero__title">
             <span className="hero__line"><span>Wear</span></span>
             <span className="hero__line"><span>your</span></span>

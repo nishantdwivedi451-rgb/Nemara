@@ -78,7 +78,6 @@ export function StylistChat() {
         <input id="chat-q" className="input" value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. A green lehenga for my cousin's sangeet, under ₹5,000" maxLength={240} />
         <button className="btn" disabled={busy || !q.trim()}>Send</button>
       </form>
-      <p className="muted chat__note">Preview: the Stylist uses Nemara&apos;s styling rules today; a conversational AI stylist can plug into the same experience later.</p>
     </div>
   );
 }

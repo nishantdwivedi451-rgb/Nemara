@@ -86,7 +86,7 @@ export function AuthFlow({ reason = "account", onDone, embedded = false }: { rea
       </ol>
 
       {devCode && (step === "code" || step === "code2") && (
-        <p className="auth__dev" role="note">Preview edition — SMS & email delivery isn&apos;t connected yet, so here&apos;s your code: <b>{devCode}</b> <button type="button" className="text-link" onClick={() => setCode(devCode)}>Fill it in</button></p>
+        <p className="auth__dev" role="note">SMS and email delivery aren&apos;t connected yet, so here&apos;s your code: <b>{devCode}</b> <button type="button" className="text-link" onClick={() => setCode(devCode)}>Fill it in</button></p>
       )}
 
       {step === "identify" && (

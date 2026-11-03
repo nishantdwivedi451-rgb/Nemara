@@ -25,7 +25,7 @@ function loadRazorpay(): Promise<boolean> {
   });
 }
 
-export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: number; flat: number; demo: boolean; preview: boolean }) {
+export function CheckoutForm({ threshold, flat, demo }: { threshold: number; flat: number; demo: boolean }) {
   const { cart, subtotal, clear, hydrated, customer, accountsAvailable, accountReady, setCustomer, openAuth } = useStore();
   const saved = customer?.addresses ?? [];
   const [addrId, setAddrId] = useState<string>("new");
@@ -188,7 +188,7 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
           </fieldset>
           <fieldset><legend className="h3">Payment</legend>
             <p className="muted">UPI (GPay, PhonePe, Paytm), cards, net banking and wallets — in a secure window from our payment partner. Nemara never sees your card or UPI details.</p>
-            {demo && <p className="notice">{preview ? "Preview edition: " : ""}no payment gateway is connected yet, so this checkout runs in <strong>demo mode</strong> and no money will be taken.</p>}
+            {demo && <p className="notice">Online payment isn&apos;t switched on yet, so this checkout runs in <strong>demo mode</strong> and no money will be taken.</p>}
           </fieldset>
           {error && <p className="field-error checkout__error" role="alert">{error}</p>}
           <button className="btn btn--block checkout__pay" disabled={busy || !hydrated}>{busy ? "Opening secure payment…" : `Pay ${formatPrice(subtotal + shipping)}`}</button>

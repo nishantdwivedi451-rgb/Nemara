@@ -45,8 +45,8 @@ export function Lockup({ className, tagline = false, title = "Nemara" }: { class
       <path transform={`translate(0 ${lotusH + gap})`} d={WORDMARK.d} />
       {tagline && (
         <g transform={`translate(0 ${tagY})`}>
-          <path transform={`translate(${(W - tw) / 2} 0) scale(${tagScale})`} d={TAGLINE.d} />
-          <path d={`M0 ${tagCap / 2}H${(W - tw) / 2 - 26}M${(W + tw) / 2 + 26} ${tagCap / 2}H${W}`} stroke="currentColor" strokeWidth={3} />
+          <path transform={`translate(${((W - tw) / 2).toFixed(2)} 0) scale(${tagScale})`} d={TAGLINE.d} />
+          <path d={`M0 ${tagCap / 2}H${((W - tw) / 2 - 26).toFixed(2)}M${((W + tw) / 2 + 26).toFixed(2)} ${tagCap / 2}H${W}`} stroke="currentColor" strokeWidth={3} />
         </g>
       )}
     </svg>

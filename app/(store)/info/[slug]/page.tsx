@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import info from "@/content/info.json";
-import { SITE } from "@/lib/site";
+import { SITE, contact, hasPhone } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -9,7 +9,9 @@ type Info = Record<string, { title: string; body: string[] }>;
 /** Policies reference the business details once ({{business}}, {{email}}…) so they never drift from content/site.json. */
 const TOKENS: Record<string, string> = {
   business: SITE.legal.business, grievanceOfficer: SITE.legal.grievanceOfficer, jurisdiction: SITE.legal.jurisdiction, updated: SITE.legal.updated,
-  email: SITE.contact.email, phone: SITE.contact.phone, address: SITE.contact.address, hours: SITE.contact.hours,
+  email: contact.email, phone: contact.phone, address: contact.address, hours: contact.hours,
+  reach: [contact.email, hasPhone ? contact.phone : ""].filter(Boolean).join(" or "),
+  contactLine: [SITE.legal.business, contact.address, contact.email, hasPhone ? contact.phone : "", contact.hours].filter(Boolean).join(" · "),
 };
 const fill = (s: string) => s.replace(/\{\{(\w+)\}\}/g, (_, k: string) => TOKENS[k] ?? "");
 

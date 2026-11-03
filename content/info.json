@@ -17,7 +17,7 @@
       "## Delays",
       "Delivery dates are estimates. Delays caused by courier disruptions, weather, strikes or other events outside our control are rare, but we will keep you updated if they happen.",
       "## Contact",
-      "{{business}} · {{email}} · {{phone}} · {{hours}}"
+      "{{contactLine}}"
     ]
   },
   "returns": {
@@ -26,7 +26,7 @@
       "Last updated: {{updated}}",
       "We want you to love every Nemara piece. This policy explains how cancellations, returns, exchanges and refunds work for orders placed on nemara.shop, operated by {{business}}.",
       "## Cancelling an order",
-      "You can cancel an order free of charge before it is dispatched — write to us on WhatsApp or at {{email}} with your order number. You will receive a full refund. Once an order has been dispatched it cannot be cancelled, but you can return it under the policy below.",
+      "You can cancel an order free of charge before it is dispatched — write to us at {{reach}} with your order number. You will receive a full refund. Once an order has been dispatched it cannot be cancelled, but you can return it under the policy below.",
       "## Returns",
       "You can return a piece within 7 days of delivery if it is unused, unworn and in its original condition with its tags, pouch and packaging. For hygiene reasons, earrings can be returned only if they arrive damaged, defective or are not what you ordered. Pieces bought on a final-sale offer are not returnable unless faulty.",
       "To start a return, contact us within 7 days of delivery with your order number and the reason. We will arrange a reverse pickup where available, or share the return address. Once the piece reaches us, we inspect it within 2 working days.",
@@ -37,7 +37,7 @@
       "## Refunds",
       "Approved refunds are issued to your original payment method (UPI, card, net banking or wallet) through our payment gateway, PhonePe, within 5–7 working days of approval. Depending on your bank, it may take a few additional days to reflect in your account. Shipping charges are non-refundable unless the return is due to our error. We do not offer cash refunds.",
       "## Contact",
-      "{{business}} · {{email}} · {{phone}} · {{hours}}"
+      "{{contactLine}}"
     ]
   },
   "care": {
@@ -56,7 +56,7 @@
       "2.4 — inner diameter about 5.7 cm: petite hands and narrower wrists.",
       "2.6 — inner diameter about 6.0 cm: the most common size.",
       "2.8 — inner diameter about 6.4 cm: broader hands, or a looser fit.",
-      "To check: measure the inside of a bangle you already wear, or ask us on WhatsApp — we'll help you choose."
+      "To check: measure the inside of a bangle you already wear, or ask us — we'll help you choose."
     ]
   },
   "privacy": {
@@ -79,7 +79,7 @@
       "## Children",
       "Our site is not intended for children under 18 without parental supervision, and we do not knowingly collect their data.",
       "## Changes and contact",
-      "We may update this policy and will post the new version here with its date. Questions or complaints: {{grievanceOfficer}}, {{business}}, {{address}} · {{email}} · {{phone}}."
+      "We may update this policy and will post the new version here with its date. Questions or complaints: {{grievanceOfficer}} · {{contactLine}}."
     ]
   },
   "terms": {
@@ -107,9 +107,9 @@
       "## Governing law and disputes",
       "These terms are governed by the laws of India. Any dispute will be subject to the exclusive jurisdiction of the courts at {{jurisdiction}}. We encourage you to contact us first — most issues are resolved within a few days.",
       "## Grievance officer",
-      "In accordance with the Consumer Protection (E-Commerce) Rules, 2020 and the Information Technology Act, 2000, you can contact our {{grievanceOfficer}} at {{email}} or {{phone}}. We acknowledge complaints within 48 hours and aim to resolve them within one month.",
+      "In accordance with the Consumer Protection (E-Commerce) Rules, 2020 and the Information Technology Act, 2000, you can contact our {{grievanceOfficer}} at {{reach}}. We acknowledge complaints within 48 hours and aim to resolve them within one month.",
       "## Contact",
-      "{{business}} · {{address}} · {{email}} · {{phone}} · {{hours}}"
+      "{{contactLine}}"
     ]
   },
   "warranty": {
@@ -118,7 +118,7 @@
       "Every Nemara piece carries a 3-month warranty from the date of delivery against manufacturing defects.",
       "Covered: a stone or bead coming loose, a clasp, hook or screw-back failing, or plating flaking under normal wear.",
       "Not covered: everyday wear and tear, scratches, damage from water, perfume, sweat or chemicals, stretching or bending, and lost or stolen pieces.",
-      "To claim, write to us on WhatsApp or email with your order number and a photo of the piece. We'll repair it or send a replacement — and if that design has sold out, you'll get full store credit.",
+      "To claim, write to us with your order number and a photo of the piece. We'll repair it or send a replacement — and if that design has sold out, you'll get full store credit.",
       "Keep your piece dry, put it on after perfume, and store it in its Nemara pouch — see our care guide for more."
     ]
   }

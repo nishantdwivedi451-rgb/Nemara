@@ -51,7 +51,7 @@ export default async function Home() {
       {/* New arrivals */}
       <section className="section--tight" aria-labelledby="new-title">
         <div className="wrap section-head">
-          <div><p className="eyebrow">Fresh from the market run</p><h2 id="new-title" className="h2">New this edition</h2></div>
+          <h2 id="new-title" className="h2">New arrivals</h2>
           <Link href="/shop/new-arrivals" className="link-arrow">See all</Link>
         </div>
         <div className="wrap"><ProductRail products={newest} label="New arrivals" /></div>
@@ -60,7 +60,7 @@ export default async function Home() {
       {/* Category index */}
       <section className="section" aria-labelledby="cat-title">
         <div className="wrap">
-          <div className="section-head"><div><p className="eyebrow">The index</p><h2 id="cat-title" className="h2">Shop by piece</h2></div></div>
+          <div className="section-head"><h2 id="cat-title" className="h2">Shop by piece</h2></div>
           <CategoryIndex categories={categories} counts={counts} />
         </div>
       </section>
@@ -90,7 +90,6 @@ export default async function Home() {
       <section className="tryon-promo" aria-labelledby="tryon-title">
         <div className="wrap tryon-promo__grid">
           <div>
-            <p className="eyebrow tryon-promo__ed">Try it on</p>
             <h2 id="tryon-title" className="h1">See it on you<br /><em>before it&apos;s yours.</em></h2>
             <p className="tryon-promo__lede">Turn on your camera and try any Nemara piece — earrings at your ears, sets at your neck, kadas at your wrist. Nothing leaves your device.</p>
             <Link href="/try-on" className="btn btn--light">Open the try-on mirror</Link>
@@ -105,7 +104,7 @@ export default async function Home() {
       <section className="section" aria-labelledby="markets-title">
         <div className="wrap">
           <div className="section-head">
-            <div><p className="eyebrow">Curated across India</p><h2 id="markets-title" className="h2">Shop by market.</h2></div>
+            <h2 id="markets-title" className="h2">Shop by market</h2>
             <Link href="/markets" className="link-arrow">Explore the markets</Link>
           </div>
           <ul className="market-row">
@@ -126,7 +125,7 @@ export default async function Home() {
       {/* Stylist */}
       <section className="stylist-promo section--tight" aria-labelledby="stylist-title">
         <div className="wrap stylist-promo__inner">
-          <p className="eyebrow">Nemara Stylist <span className="pill">Preview</span></p>
+          <p className="eyebrow">Nemara Stylist</p>
           <h2 id="stylist-title" className="h2">Tell us where you&apos;re going.<br /><em>We&apos;ll tell you what to wear.</em></h2>
           <StylistPrompt />
         </div>

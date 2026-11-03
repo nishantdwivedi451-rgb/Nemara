@@ -22,6 +22,10 @@ export const contact = {
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE || site.contact.instagram,
 };
 
+/** Contact channels render only once real details are set (content/site.json or NEXT_PUBLIC_* env). */
+export const hasWhatsApp = contact.whatsapp.replace(/\D/g, "").length >= 10;
+export const hasPhone = contact.phone.replace(/\D/g, "").length >= 10;
+
 export const whatsappUrl = (text = contact.whatsappMessage) =>
   `https://wa.me/${contact.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`;
 

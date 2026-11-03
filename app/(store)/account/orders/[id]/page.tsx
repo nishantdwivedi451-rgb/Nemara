@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { currentCustomer } from "@/lib/customers";
 import { getOrder, STATUS_LABEL, type OrderStatus } from "@/lib/oms";
 import { formatPrice } from "@/lib/format";
-import { whatsappUrl } from "@/lib/site";
+import { contact, hasWhatsApp, whatsappUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Track your order", robots: { index: false } };
@@ -57,7 +57,9 @@ export default async function TrackOrder({ params }: { params: Promise<{ id: str
         <section className="track__card">
           <h2 className="h3">Delivering to</h2>
           <p>{o.customer.name}<br />{o.customer.line1}{o.customer.line2 ? `, ${o.customer.line2}` : ""}<br />{o.customer.city}, {o.customer.state} {o.customer.pincode}</p>
-          <a className="text-link" href={whatsappUrl(`Hi Nemara, I have a question about my order ${o.reference}.`)} target="_blank" rel="noopener noreferrer">Questions? Message us on WhatsApp</a>
+          {hasWhatsApp
+            ? <a className="text-link" href={whatsappUrl(`Hi Nemara, I have a question about my order ${o.reference}.`)} target="_blank" rel="noopener noreferrer">Questions? Message us on WhatsApp</a>
+            : <a className="text-link" href={`mailto:${contact.email}?subject=${encodeURIComponent(`Order ${o.reference}`)}`}>Questions? Email us</a>}
         </section>
       </div>
     </div>
