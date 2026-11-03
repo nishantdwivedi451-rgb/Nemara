@@ -1,5 +1,5 @@
 /* ═════════ Nemara Studio — admin ═════════ */
-.studio-root { --a-bg: #F4F1EC; --a-card: #FFFFFF; --a-line: #E6E0E8; --a-text: #21102A; --a-muted: #6E6675; --a-ink: #4B1D5C; --a-ink-soft: #F1EAF5;
+.studio-root { --a-bg: #F4F1EC; --a-card: #FFFFFF; --a-line: #E6E0E8; --a-text: #2B1236; --a-muted: #6E6675; --a-ink: #4A1A5C; --a-ink-soft: #F1EAF5;
   background: var(--a-bg); color: var(--a-text); min-height: 100vh; font-size: 14px; padding-bottom: 0; }
 .studio-root a { color: inherit; }
 
@@ -22,7 +22,7 @@
 @media (min-width: 1000px) { .a-nav { flex-direction: column; overflow: visible; margin: 0; } }
 .a-nav a { padding: 9px 12px; border-radius: 6px; white-space: nowrap; color: rgba(237, 230, 240, .75) !important; font-weight: 500; transition: background .15s, color .15s; }
 .a-nav a:hover { background: rgba(255, 255, 255, .06); color: #fff !important; }
-.a-nav a.is-on { background: rgba(185, 164, 200, .18); color: #fff !important; }
+.a-nav a.is-on { background: rgba(185, 160, 214, .18); color: #fff !important; }
 .a-side__foot { display: none; }
 @media (min-width: 1000px) { .a-side__foot { display: grid; gap: 8px; margin-top: auto; font-size: 12px; color: rgba(237, 230, 240, .6); } }
 .a-side__link { color: rgba(237, 230, 240, .85) !important; text-align: left; font-size: 12px; }
@@ -52,7 +52,7 @@
 .a-link { color: var(--a-ink) !important; font-weight: 600; font-size: 13px; }
 .a-link:hover { text-decoration: underline; }
 .a-input { width: 100%; min-height: 38px; padding: 8px 10px; border: 1px solid var(--a-line); border-radius: 6px; background: #fff; font-size: 14px; color: var(--a-text); }
-.a-input:focus { outline: none; border-color: var(--a-ink); box-shadow: 0 0 0 3px rgba(75, 29, 92, .12); }
+.a-input:focus { outline: none; border-color: var(--a-ink); box-shadow: 0 0 0 3px rgba(74, 26, 92, .12); }
 textarea.a-input { resize: vertical; line-height: 1.45; }
 .a-form { display: grid; gap: 14px; }
 .a-field { display: grid; gap: 6px; min-width: 0; border: 0; padding: 0; margin: 0; }
@@ -175,6 +175,6 @@ textarea.a-input { resize: vertical; line-height: 1.45; }
 .a-seg button.is-on { background: var(--a-ink); color: #fff; }
 .a-toggle { padding: 3px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 600; background: #F2F0F3; color: var(--a-muted); border: 1px solid transparent; }
 .a-toggle.is-on { background: #E7F5EB; color: #2F6B45; }
-.a-savebar { position: sticky; bottom: 12px; display: grid; gap: 8px; background: var(--a-card); border: 1px solid var(--a-line); border-radius: 10px; padding: 14px; box-shadow: 0 10px 30px rgba(33, 16, 42, .08); }
+.a-savebar { position: sticky; bottom: 12px; display: grid; gap: 8px; background: var(--a-card); border: 1px solid var(--a-line); border-radius: 10px; padding: 14px; box-shadow: 0 10px 30px rgba(43, 18, 54, .08); }
 .a-danger { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; border: 1px solid #F0C9D0; background: #FFF8F9; border-radius: 10px; padding: 16px 18px; }
 .a-danger p { color: var(--a-muted); font-size: 13px; }

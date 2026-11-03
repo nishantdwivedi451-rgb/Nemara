@@ -1,19 +1,19 @@
 /* ───────── Nemara design tokens ───────── */
 :root {
-  /* colour — purple is the ink, ivory is the page */
-  --paper: #F7F3EC;
-  --warm: #FCFAF6;
-  --ink: #4B1D5C;          /* Nemara Ink — signature */
-  --night: #21102A;        /* almost-black purple — text */
+  /* colour — from the brand card: lilac paper, plum ink, lavender florals, saffron-gold stamens */
+  --paper: #F4EDF7;
+  --warm: #FCFAFD;
+  --ink: #4A1A5C;          /* Nemara Plum — signature */
+  --night: #2B1236;        /* deep plum — text */
   --violet: #6E3C8C;
-  --lavender: #B9A4C8;
-  --mist: #E9E0EE;
-  --rose: #E7DCE5;
-  --champagne: #C8B184;
-  --champagne-deep: #9C8659;
-  --graphite: #5A5260;
-  --line: rgba(33, 16, 42, 0.14);
-  --line-strong: rgba(33, 16, 42, 0.32);
+  --lavender: #B9A0D6;
+  --mist: #E8DDF0;
+  --rose: #EEE4F4;
+  --champagne: #D9A452;      /* saffron-gold, the lily's stamens */
+  --champagne-deep: #A87A33;
+  --graphite: #5E4F68;
+  --line: rgba(74, 26, 92, 0.16);
+  --line-strong: rgba(74, 26, 92, 0.36);
   --success: #3F6B4F;
   --danger: #9B2C3C;
 
@@ -22,9 +22,10 @@
   --muted: var(--graphite);
 
   /* type */
-  --font-display: var(--ff-serif), "Times New Roman", serif;
-  --font-sans: var(--ff-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-hand: var(--ff-hand), "Bradley Hand", cursive;
+  --font-display: var(--ff-serif), "Cormorant Garamond", Georgia, serif;
+  --font-caps: var(--ff-caps), "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-sans: var(--ff-sans), Georgia, "Times New Roman", serif;   /* body: a sturdy book serif, like the card */
+  --font-hand: var(--ff-hand), "Snell Roundhand", cursive;
 
   --fs-xs: 0.72rem;
   --fs-sm: 0.84rem;
@@ -42,7 +43,8 @@
   --max: 1520px;
   --header-h: 64px;
   --tabbar-h: 64px;
-  --radius: 2px;
+  --radius: 4px;
+  --radius-lg: 18px;
 
   /* motion */
   --ease: cubic-bezier(.2, .7, .1, 1);

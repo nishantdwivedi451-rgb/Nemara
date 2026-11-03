@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Wordmark } from "@/components/brand/Logo";
+import { Lockup, Wordmark } from "@/components/brand/Logo";
 import { IconBag, IconClose, IconHeart, IconMenu, IconSearch, IconUser } from "@/components/brand/Icons";
 import { useStore } from "./StoreProvider";
 import type { Taxon } from "@/lib/commerce/types";
@@ -51,7 +51,7 @@ export function Header({ nav }: { nav: NavData }) {
         </nav>
 
         <Link href="/" className="site-header__logo" aria-label="Nemara — home">
-          <Wordmark />
+          <Lockup />
         </Link>
 
         <div className="site-header__right">

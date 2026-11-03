@@ -31,7 +31,7 @@ export async function deliverOtp(channel: Channel, target: string, code: string)
         from: process.env.OTP_EMAIL_FROM || process.env.NOTIFY_EMAIL_FROM || "Nemara <onboarding@resend.dev>", to: [target],
         subject: `${code} is your Nemara code`,
         text: `Your Nemara verification code is ${code}. It expires in 10 minutes. If you didn't ask for it, ignore this email.`,
-        html: `<div style="font-family:Georgia,serif;color:#21102A;padding:24px"><p style="letter-spacing:.3em;font-size:12px;color:#4B1D5C">NEMARA</p><p>Your verification code</p><p style="font-size:34px;letter-spacing:.2em;margin:8px 0">${code}</p><p style="color:#5A5260;font-size:13px">It expires in 10 minutes. If you didn't ask for it, you can ignore this email.</p></div>`,
+        html: `<div style="font-family:Georgia,serif;color:#2B1236;padding:24px"><p style="letter-spacing:.3em;font-size:12px;color:#4A1A5C">NEMARA</p><p>Your verification code</p><p style="font-size:34px;letter-spacing:.2em;margin:8px 0">${code}</p><p style="color:#5A5260;font-size:13px">It expires in 10 minutes. If you didn't ask for it, you can ignore this email.</p></div>`,
       }),
     });
   } else if (provider === "msg91") {

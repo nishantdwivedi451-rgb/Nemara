@@ -279,18 +279,18 @@ export function TryOnStudio({ pieces, initial, variant = "page", onClose }: { pi
     const out = document.createElement("canvas");
     out.width = cv.width; out.height = cv.height + band;
     const o = out.getContext("2d")!;
-    o.fillStyle = "#FCFAF6"; o.fillRect(0, 0, out.width, out.height);
+    o.fillStyle = "#FCFAFD"; o.fillRect(0, 0, out.width, out.height);
     o.drawImage(cv, 0, 0);
     await document.fonts?.ready;
     const serif = getComputedStyle(document.documentElement).getPropertyValue("--ff-serif").trim() || "serif";
     const sans = getComputedStyle(document.documentElement).getPropertyValue("--ff-sans").trim() || "sans-serif";
     const pad = Math.round(out.width * 0.06);
-    o.fillStyle = "#4B1D5C";
+    o.fillStyle = "#4A1A5C";
     o.font = `${Math.round(band * 0.22)}px ${serif}`;
     o.textBaseline = "middle";
     // letter-spaced wordmark
     let x = pad; for (const ch of "NEMARA") { o.fillText(ch, x, cv.height + band * 0.38); x += o.measureText(ch).width + band * 0.06; }
-    o.fillStyle = "#21102A"; o.font = `italic ${Math.round(band * 0.2)}px ${serif}`;
+    o.fillStyle = "#2B1236"; o.font = `italic ${Math.round(band * 0.2)}px ${serif}`;
     o.fillText(piece.name, pad, cv.height + band * 0.68);
     o.fillStyle = "#5A5260"; o.font = `${Math.round(band * 0.1)}px ${sans}`; o.textAlign = "right";
     o.fillText("Wear your story.", out.width - pad, cv.height + band * 0.38);

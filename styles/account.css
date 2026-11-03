@@ -12,7 +12,7 @@
 .auth__ok { color: var(--success); font-size: var(--fs-sm); }
 .auth__dev { background: #FFF6E5; border: 1px solid #F1DDB0; padding: 10px 12px; font-size: var(--fs-sm); color: #6A4B0F; }
 .auth__dev b { font-size: 1.1em; letter-spacing: .12em; margin: 0 4px; }
-.auth-dialog { position: fixed; inset: 0; z-index: 155; background: rgba(33, 16, 42, .5); display: grid; place-items: end center; animation: fadeIn .3s var(--ease); }
+.auth-dialog { position: fixed; inset: 0; z-index: 155; background: rgba(43, 18, 54, .5); display: grid; place-items: end center; animation: fadeIn .3s var(--ease); }
 @media (min-width: 640px) { .auth-dialog { place-items: center; padding: 20px; } }
 .auth-dialog__card { position: relative; width: 100%; max-width: 460px; max-height: 92svh; overflow-y: auto; background: var(--paper); padding: 28px 24px calc(24px + env(safe-area-inset-bottom)); border-radius: 14px 14px 0 0; display: grid; gap: 12px; animation: circleUp .45s var(--ease); }
 @media (min-width: 640px) { .auth-dialog__card { border-radius: 4px; padding: 36px 32px; } }

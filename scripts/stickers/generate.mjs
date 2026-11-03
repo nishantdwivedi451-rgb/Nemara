@@ -24,27 +24,28 @@ const SITE = "https://nemara.vercel.app";
 const products = JSON.parse(fs.readFileSync(path.join(ROOT, "content/products.json"), "utf8"));
 const artists = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, "content/artists.json"), "utf8")).map((a) => [a.slug ?? a.handle, a]));
 
-const C = { paper: "#F7F3EC", ink: "#4B1D5C", night: "#21102A", violet: "#6E3C8C", lavender: "#B9A4C8", mist: "#E9E0EE", champagne: "#C8B184" };
+const C = { paper: "#F4EDF7", ink: "#4A1A5C", night: "#2B1236", violet: "#6E3C8C", lavender: "#B9A0D6", mist: "#E8DDF0", champagne: "#D9A452" };
 const BLEED = 1.5;
 const CUT = "#EC008C";
 
-/* ---------- brand geometry (from components/brand/Logo.tsx) ---------- */
-const WORDMARK = ["M0 0h3v100H0zM67 0h3v100h-3zM0 0h14l56 100H56z", "M92 0h14v100H92zM92 0h56v3H92zM92 48.5h44v3H92zM92 97h58v3H92z", "M172 0h3v100h-3zM172 0h14l34 100h-7zM214 100h3l34-100h-3zM248 0h14v100h-14z", "M284 100h3l36-100h-3zM320 0h8l32 100h-14zM297 64h41v3h-41z", "M382 0h14v100h-14zM396 0h24c20 0 26 12 26 26s-8 26-26 26h-24v-3h22c14 0 16-11 16-23s-4-23-16-23h-22zM414 52h12l28 48h-14z", "M476 100h3l36-100h-3zM512 0h8l32 100h-14zM489 64h41v3h-41z"].join("");
-// Micro mark: hairlines thickened 3→7 units so they survive foil at 6–9 mm.
-const MARK_N = "M0 0h7v100H0zM63 0h7v100h-7zM0 0h16l54 100H54z";
-const BEAD = { cx: 68.5, cy: -14, r: 8 };
+/* ---------- brand geometry — read from the site's own logo sources so print never drifts ---------- */
+const logoSrc = fs.readFileSync(path.join(ROOT, "lib/brand/logo-paths.ts"), "utf8");
+const WM = JSON.parse(logoSrc.match(/WORDMARK = (\{.*?\}) as const/)[1]);
+const LOTUS = [...fs.readFileSync(path.join(ROOT, "components/brand/Logo.tsx"), "utf8").match(/LOTUS_PATHS = \[([\s\S]*?)\]/)[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+const WORDMARK = WM.d;
 
 /** "f" = gold foil, anything else = a print colour. */
 const fin = (f) => (f === "f" ? 'class="f"' : `fill="${f}"`);
-/** Wordmark of a given width (mm). `weight` adds an outline (font units) so hairlines hold at micro size. */
+/** Wordmark of a given width (mm). `weight` adds an outline (font units) so serifs hold at micro size. */
 const wordmark = (x, y, w, f, weight = 0) => {
   const stroke = weight ? (f === "f" ? ` class="f ws" stroke-width="${weight}"` : ` ${fin(f)} stroke="${f}" stroke-width="${weight}"`) : ` ${fin(f)}`;
-  return `<path${stroke} transform="translate(${x} ${y}) scale(${w / 552})" d="${WORDMARK}"/>`;
+  return `<path${stroke} transform="translate(${x} ${y}) scale(${w / WM.width})" d="${WORDMARK}"/>`;
 };
-/** Monogram centred on (cx, cy), total height h (mm); the N and its bead can take different finishes. */
-const mark = (cx, cy, h, fN, fBead = fN) => {
-  const s = h / 122; // bbox y −22…100
-  return `<g transform="translate(${cx - 38 * s} ${cy - 39 * s}) scale(${s})"><path ${fin(fN)} d="${MARK_N}"/><circle ${fin(fBead)} cx="${BEAD.cx}" cy="${BEAD.cy}" r="${BEAD.r}"/></g>`;
+/** Lotus centred on (cx, cy), height h (mm). Stroked line-art; line weight held at ≥0.28 mm for foil. */
+const mark = (cx, cy, h, f) => {
+  const s = h / 68, sw = Math.max(3.4, 0.28 / s);
+  const attrs = f === "f" ? `class="fs" fill="none"` : `fill="none" stroke="${f}"`;
+  return `<g transform="translate(${cx - 58 * s} ${cy - 34 * s}) scale(${s}) translate(-2 -2)" stroke-width="${sw.toFixed(2)}" stroke-linejoin="round">${LOTUS.map((d) => `<path ${attrs} d="${d}"/>`).join("")}</g>`;
 };
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
@@ -74,7 +75,7 @@ function qrPath(url, x, y, size) {
 
 /* ---------- the five designs. Each returns { w, h, art, cut } in local mm ---------- */
 
-/** 01 — The Seal. 20 mm round. Ink ground, gold-foil monogram and ring legend. Pouches, boxes, envelopes. */
+/** 01 — The Seal. 20 mm round. Plum ground, gold-foil lotus and ring legend. Pouches, boxes, envelopes. */
 function seal() {
   const R = 10, c = R, rt = 6.9, circ = 2 * Math.PI * rt;
   const ring = `M${c - rt} ${c}A${rt} ${rt} 0 1 1 ${c + rt} ${c}A${rt} ${rt} 0 1 1 ${c - rt} ${c}`;
@@ -85,7 +86,7 @@ function seal() {
       <circle class="fs" cx="${c}" cy="${c}" r="5.55" fill="none" stroke-width="0.2"/>
       <path id="seal-ring" d="${ring}" fill="none"/>
       <text class="f" font-family="ISans" font-weight="600" font-size="1.62" letter-spacing="0.2"><textPath href="#seal-ring" textLength="${(circ * 0.985).toFixed(2)}" lengthAdjust="spacing">WEAR YOUR STORY · NEMARA · HANDMADE ·</textPath></text>
-      ${mark(c, c + 0.35, 6.6, "f")}`,
+      ${mark(c, c + 0.2, 5.0, "f")}`,
     cut: `<circle cx="${c}" cy="${c}" r="${R}"/>`,
   };
 }
@@ -99,9 +100,9 @@ function storyTag(p) {
   return {
     w: 32, h: 20,
     art: `<path d="${rrect(-BLEED, -BLEED, 32 + 2 * BLEED, 20 + 2 * BLEED, 2 + BLEED)}" fill="${C.paper}"/>
-      ${wordmark(2.2, 2.4, 12.4, "f", 5)}
-      ${lines.map((l, i) => `<text x="2.2" y="${nameY + i * 3.1}" font-family="ISerif" font-size="3" fill="${C.ink}">${esc(l)}</text>`).join("")}
-      <path d="M2.2 ${nameY + (lines.length - 1) * 3.1 + 1.7}h4" stroke="${C.champagne}" stroke-width="0.2"/>
+      ${wordmark(2.2, 2.6, 13, "f", 3)}
+      ${lines.map((l, i) => `<text x="2.2" y="${nameY + i * 2.75}" font-family="ISerif" font-size="2.55" fill="${C.ink}">${esc(l)}</text>`).join("")}
+      <path d="M2.2 ${nameY + (lines.length - 1) * 2.75 + 1.6}h4" stroke="${C.champagne}" stroke-width="0.2"/>
       <text x="2.2" y="15.9" font-family="ISans" font-weight="500" font-size="1.5" fill="${C.ink}">Made by ${esc(a.name)}</text>
       <text x="2.2" y="17.8" font-family="ISans" font-size="1.42" fill="${C.violet}">${esc(a.location.split(",")[0])}</text>
       <rect x="17.6" y="1.4" width="13.6" height="13.6" rx="0.8" fill="#fff"/>
@@ -117,7 +118,7 @@ function jewelFlag(p) {
   const PW = 14, H = 10, T = 28, TH = 3, W = PW * 2 + T, r = 1.5, f = 0.6;
   const y1 = (H - TH) / 2, y2 = y1 + TH, xb = PW + T;
   const cut = `M${r} 0H${PW - r}A${r} ${r} 0 0 1 ${PW} ${r}V${y1 - f}A${f} ${f} 0 0 0 ${PW + f} ${y1}H${xb - f}A${f} ${f} 0 0 0 ${xb} ${y1 - f}V${r}A${r} ${r} 0 0 1 ${xb + r} 0H${W - r}A${r} ${r} 0 0 1 ${W} ${r}V${H - r}A${r} ${r} 0 0 1 ${W - r} ${H}H${xb + r}A${r} ${r} 0 0 1 ${xb} ${H - r}V${y2 + f}A${f} ${f} 0 0 0 ${xb - f} ${y2}H${PW + f}A${f} ${f} 0 0 0 ${PW} ${y2 + f}V${H - r}A${r} ${r} 0 0 1 ${PW - r} ${H}H${r}A${r} ${r} 0 0 1 0 ${H - r}V${r}A${r} ${r} 0 0 1 ${r} 0Z`;
-  const lines = wrap(p.name, 15);
+  const lines = wrap(p.name, 12);
   const nameY = lines.length > 1 ? 2.9 : 3.6;
   const b = BLEED;
   return {
@@ -126,8 +127,8 @@ function jewelFlag(p) {
       <rect x="${PW - 1}" y="${y1 - b}" width="${T + 2}" height="${TH + 2 * b}" fill="${C.ink}"/>
       <path d="${rrect(xb, -b, PW + b, H + 2 * b, 0.01)}" fill="${C.paper}"/>
       <path d="M${xb} ${-b}h${PW - r}a${r + b} ${r + b} 0 0 1 ${r + b} ${r + b}v${H - 2 * r}a${r + b} ${r + b} 0 0 1 ${-(r + b)} ${r + b}h${-(PW - r)}z" fill="${C.paper}"/>
-      ${mark(PW / 2, H / 2 + 0.3, 6.4, "f")}
-      ${lines.map((l, i) => `<text x="${xb + 1.3}" y="${nameY + i * 2.25}" font-family="ISerif" font-size="2.15" fill="${C.ink}">${esc(l)}</text>`).join("")}
+      ${mark(PW / 2, H / 2, 5.8, "f")}
+      ${lines.map((l, i) => `<text x="${xb + 1.3}" y="${nameY + i * 2.25}" font-family="ISerif" font-size="2.05" fill="${C.ink}">${esc(l)}</text>`).join("")}
       <text x="${xb + 1.3}" y="7.15" font-family="ISans" font-weight="600" font-size="1.85" fill="${C.ink}">${inr(p.price)}</text>
       <text x="${xb + PW - 1.1}" y="7.1" text-anchor="end" font-family="ISans" font-weight="500" font-size="1.05" fill="${C.violet}">${esc(p.sku.split("-").slice(-2).join("-"))}</text>
       <text x="${xb + 1.3}" y="8.75" font-family="ISans" font-size="1.12" fill="${C.violet}">MRP incl. of all taxes</text>`,
@@ -135,7 +136,7 @@ function jewelFlag(p) {
   };
 }
 
-/** 04 — The Arch. 24 × 32 mm die-cut arch on pearl stock. Ink monogram, gold bead and keyline. Gift boxes, hampers, lookbooks. */
+/** 04 — The Arch. 24 × 32 mm die-cut arch on pearl stock. Gold-foil lotus and keyline, plum wordmark. Gift boxes, hampers, lookbooks. */
 function arch() {
   const w = 24, h = 32, R = w / 2, b = BLEED, rb = 1.5, i = 1.4;
   const shape = (o, rr) => `M${-o} ${h + o - rr}V${R}A${R + o} ${R + o} 0 0 1 ${w + o} ${R}V${h + o - rr}A${rr} ${rr} 0 0 1 ${w + o - rr} ${h + o}H${-o + rr}A${rr} ${rr} 0 0 1 ${-o} ${h + o - rr}Z`;
@@ -144,8 +145,8 @@ function arch() {
     w, h,
     art: `<path d="${shape(b, rb + b)}" fill="${C.paper}"/>
       <path class="fs" d="${inner}" fill="none" stroke-width="0.25"/>
-      ${mark(w / 2, 12.6, 9.4, C.ink, "f")}
-      ${wordmark(w / 2 - 6.6, 19.4, 13.2, C.ink, 8)}
+      ${mark(w / 2, 12.4, 7.2, "f")}
+      ${wordmark(w / 2 - 7, 18.6, 14, C.ink, 4)}
       <text x="${w / 2}" y="25.2" text-anchor="middle" font-family="ISerif" font-style="italic" font-size="2.5" fill="${C.violet}">wear your story</text>
       <text x="${w / 2}" y="28.6" text-anchor="middle" font-family="ISans" font-weight="600" font-size="1.3" letter-spacing="0.32" fill="${C.ink}">HANDMADE IN INDIA</text>`,
     cut: `<path d="${shape(0, rb)}"/>`,
@@ -160,7 +161,7 @@ function marginNote(a) {
     art: `<path d="${rrect(-b, -b, w + 2 * b, h + 2 * b, 1.2 + b)}" fill="${C.paper}"/>
       <path d="${rrect(-b, -b, 12 + b, h + 2 * b, 0.01)}" fill="${C.ink}"/>
       <path d="M${-b} ${-b}h${b + 1.2}v${h + 2 * b}h${-(b + 1.2)}z" fill="${C.ink}"/>
-      ${mark(6, h / 2 + 0.25, 6.6, "f")}
+      ${mark(6, h / 2, 5.4, "f")}
       <path class="fs" d="M12 0V${h}" stroke-width="0.35"/>
       <text x="14.4" y="5.45" font-family="Caveat" font-weight="600" font-size="4.3" fill="${C.violet}">this one has a story.</text>
       <text x="14.4" y="8.3" font-family="ISans" font-weight="500" font-size="1.45" fill="${C.ink}">Designed by Pratima Saxena · Made by ${esc(a.name)}</text>
@@ -183,13 +184,14 @@ function impose(design, gap = 4) {
 
 const fontDir = (pkg) => path.dirname(require.resolve(`${pkg}/package.json`)) + "/files/";
 const FONT_CSS = [
-  ["ISans", "@fontsource/instrument-sans", ["400", "500", "600"], "normal"],
-  ["ISerif", "@fontsource/instrument-serif", ["400"], "normal"],
-  ["ISerif", "@fontsource/instrument-serif", ["400"], "italic"],
-  ["Caveat", "@fontsource/caveat", ["500", "600"], "normal"],
-].flatMap(([fam, pkg, weights, style]) => weights.flatMap((wt) => ["latin", "latin-ext"].map((sub) => {
+  // [alias used in the artwork, package, file weight, declared weight range]
+  ["ISans", "@fontsource/lora", ["400", "500", "600"], "normal"],
+  ["ISerif", "@fontsource/cormorant-garamond", ["500"], "normal", "100 499"],
+  ["ISerif", "@fontsource/cormorant-garamond", ["500"], "italic", "100 499"],
+  ["Caveat", "@fontsource/great-vibes", ["400"], "normal", "100 900"],
+].flatMap(([fam, pkg, weights, style, range]) => weights.flatMap((wt) => ["latin", "latin-ext"].map((sub) => {
   const file = `${fontDir(pkg)}${pkg.split("/")[1]}-${sub}-${wt}-${style}.woff2`;
-  return fs.existsSync(file) ? `@font-face{font-family:${fam};font-weight:${wt};font-style:${style};src:url("file://${file}") format("woff2")${sub === "latin-ext" ? ";unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF" : ""}}` : "";
+  return fs.existsSync(file) ? `@font-face{font-family:${fam};font-weight:${range ?? wt};font-style:${style};src:url("file://${file}") format("woff2")${sub === "latin-ext" ? ";unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF" : ""}}` : "";
 }))).join("\n");
 
 const DEFS = `<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAD9A8"/><stop offset=".45" stop-color="#C8A867"/><stop offset=".7" stop-color="#F1E2B6"/><stop offset="1" stop-color="#B08A4C"/></linearGradient></defs>`;
@@ -278,7 +280,7 @@ const hoopMock = (() => {
     <circle cx="26" cy="27" r="17" fill="none" stroke="url(#metal)" stroke-width="2.2"/>
     <g transform="translate(36.5 37.5) rotate(38)">
       <rect x="-1.5" y="-1.6" width="5" height="3.2" rx="1.4" fill="${C.ink}"/>
-      <g transform="translate(3 -5)"><g filter="drop-shadow(0 .4px .5px rgba(33,16,42,.3))"><g clip-path="url(#padA)"><rect width="14" height="10" fill="${C.ink}"/>${mark(7, 5.3, 6.4, "f")}</g></g></g>
+      <g transform="translate(3 -5)"><g filter="drop-shadow(0 .4px .5px rgba(33,16,42,.3))"><g clip-path="url(#padA)"><rect width="14" height="10" fill="${C.ink}"/>${mark(7, 5, 5.8, "f")}</g></g></g>
     </g></svg>`;
 })();
 const seals = seal(), story = storyTag(products.find((p) => p.handle === "monsoon-hour-jhumka")), flag = jewelFlag(sample), archD = arch(), note = marginNote(artists["meher-bano"]);
@@ -287,8 +289,8 @@ const fit = (d, bw, bh) => Math.min(bw / (d.w + 6), bh / (d.h + 6));
 const tiles = [
   { n: "The Seal", size: "Ø20 mm round", d: seals, k: 2.6, line: "The signature.", use: "Closes every pouch, gift box and envelope. The first thing she touches when the parcel arrives — it should feel like a wax seal, not a label.", finish: ["Ink-purple ground, hot-foil champagne gold", "Matte laminate so the foil reads against it", "One design · 88 per A4"] },
   { n: "The Story Tag", size: "32 × 20 mm", d: story, k: 2.2, line: "The piece, introduced.", use: "Back of the box or the care card. The QR opens that exact piece — its artisan, its story, the live try-on — and every scan lands in Studio as a visit (utm_source=tag), so you can see which pieces get scanned.", finish: ["Ivory textured / felt label stock", "Gold-foil wordmark; QR printed solid, never foiled", "12 designs, one per product · 55 per A4"], vars: products.map(storyTag) },
-  { n: "The Jewel Flag", size: "56 × 10 mm wrap tag", d: flag, k: 1.9, line: "The one that goes on the jewellery.", use: "Adhesive on plating or enamel leaves residue and can lift the finish. So the flag never touches the metal: the thin tail loops a hoop, chain or kada and the two pads stick to each other — monogram on the front, name and MRP on the back. Peels off clean in one pull.", finish: ["White synthetic PP / vinyl, 80–100 µ — paper tails tear", "Permanent adhesive (sticks pad-to-pad), matte lam.", "12 designs · 54 per A4"], vars: products.map(jewelFlag), mock: true },
-  { n: "The Arch", size: "24 × 32 mm die-cut", d: archD, k: 2.0, line: "The gift.", use: "Gift boxes, festive hampers and Circle-member birthday parcels. The arch is the website's frame made physical — ink monogram, with its bead picked out in gold.", finish: ["Pearl / shimmer ivory label stock", "Gold-foil keyline and bead, soft-touch lam.", "One design · 42 per A4"] },
+  { n: "The Jewel Flag", size: "56 × 10 mm wrap tag", d: flag, k: 1.9, line: "The one that goes on the jewellery.", use: "Adhesive on plating or enamel leaves residue and can lift the finish. So the flag never touches the metal: the thin tail loops a hoop, chain or kada and the two pads stick to each other — lotus on the front, name and MRP on the back. Peels off clean in one pull.", finish: ["White synthetic PP / vinyl, 80–100 µ — paper tails tear", "Permanent adhesive (sticks pad-to-pad), matte lam.", "12 designs · 54 per A4"], vars: products.map(jewelFlag), mock: true },
+  { n: "The Arch", size: "24 × 32 mm die-cut", d: archD, k: 2.0, line: "The gift.", use: "Gift boxes, festive hampers and Circle-member birthday parcels. The arch is the website's frame made physical — the lotus in gold foil over the plum wordmark.", finish: ["Pearl / shimmer lilac label stock", "Gold-foil lotus and keyline, soft-touch lam.", "One design · 42 per A4"] },
   { n: "The Margin Note", size: "60 × 12 mm seal strip", d: note, k: 1.9, line: "The signature of the hands.", use: "Runs across the box seam or pouch flap. Pratima's line in handwriting, signed by the artisan who made the piece — the brand promise, sealed shut.", finish: ["Ivory uncoated stock (you can write on it)", "Removable adhesive — opens without tearing the box", "4 artisan versions · 48 per A4"], vars: Object.values(artists).map(marginNote) },
 ];
 const brief = `<!doctype html><html><head><meta charset="utf-8"><style>${FONT_CSS}
@@ -317,11 +319,11 @@ const brief = `<!doctype html><html><head><meta charset="utf-8"><style>${FONT_CS
 </style></head><body>
 <section class="pg">
   <div class="top"><div><p class="eyebrow">Nemara · Sticker &amp; tag system · v1</p><h1>Five ways to <i>sign</i> a piece.</h1></div>
-  <svg width="38mm" viewBox="0 0 552 100"><path fill="${C.ink}" d="${WORDMARK}"/></svg></div>
+  <svg width="44mm" viewBox="0 0 ${WM.width} 100"><path fill="${C.ink}" d="${WORDMARK}"/></svg></div>
   <div class="lineup">${[0, 1, 3, 2, 4].map((i) => [tiles[i], i]).map(([t, i]) => `<figure>${big(t.d, t.k, "l" + i)}<figcaption>${t.n}<small>${t.size}</small></figcaption></figure>`).join("")}</div>
 </section>
 ${tiles.map((t, i) => `<section class="pg"><div class="opt">
-  <div class="stage">${t.mock ? `<div class="steps">${hoopMock}<span>1 · loop the tail round the wire<br>2 · press the pads together<br>3 · monogram front, price back</span></div>` : ""}
+  <div class="stage">${t.mock ? `<div class="steps">${hoopMock}<span>1 · loop the tail round the wire<br>2 · press the pads together<br>3 · lotus front, price back</span></div>` : ""}
     ${big(t.d, fit(t.d, 140, t.vars ? (t.mock ? 40 : 95) : 150), "o" + i)}
     ${t.vars ? `<div class="vars">${t.vars.map((v, j) => big(v, fit(v, t.vars.length > 6 ? 34 : 70, 26), `v${i}-${j}`)).join("")}</div>` : ""}</div>
   <div class="side"><p class="eyebrow">Option ${i + 1} · ${t.size}</p><h2>${t.n}</h2><p class="line">${t.line}</p><p>${t.use}</p>
@@ -334,13 +336,13 @@ ${tiles.map((t, i) => `<section class="pg"><div class="opt">
     <tr><td><b>1 · The Seal</b></td><td>Ø20 mm round</td><td>White semi-gloss or uncoated paper label</td><td>Permanent</td><td>Full ink ground (CMYK) + hot-foil gold, matte lam.</td><td>1 × ${summary[0].perSheet}</td><td>20 sheets (≈${summary[0].perSheet * 20})</td></tr>
     <tr><td><b>2 · The Story Tag</b></td><td>32 × 20 mm, r2 mm</td><td>Ivory / cream textured (felt) label</td><td>Permanent</td><td>CMYK + gold-foil wordmark. QR must stay CMYK black, no foil, no lam. gloss</td><td>12 × ${summary[1].perSheet}</td><td>1 sheet per product</td></tr>
     <tr><td><b>3 · The Jewel Flag</b></td><td>56 × 10 mm barbell, 3 mm tail</td><td>White synthetic PP / vinyl, 80–100 µ (tear-proof)</td><td>Permanent — sticks pad-to-pad only</td><td>CMYK + gold foil, matte lam. Kiss-cut, fillets kept</td><td>12 × ${summary[2].perSheet}</td><td>1 sheet per product</td></tr>
-    <tr><td><b>4 · The Arch</b></td><td>24 × 32 mm arch</td><td>Pearl / shimmer ivory label</td><td>Permanent</td><td>CMYK ink + gold-foil keyline &amp; bead, soft-touch lam.</td><td>1 × ${summary[3].perSheet}</td><td>10 sheets (≈${summary[3].perSheet * 10})</td></tr>
-    <tr><td><b>5 · The Margin Note</b></td><td>60 × 12 mm, r1.2</td><td>Ivory uncoated (writable) label</td><td>Removable / peelable</td><td>CMYK + gold-foil monogram &amp; rule</td><td>4 × ${summary[4].perSheet}</td><td>2 sheets per artisan</td></tr>
+    <tr><td><b>4 · The Arch</b></td><td>24 × 32 mm arch</td><td>Pearl / shimmer lilac label</td><td>Permanent</td><td>CMYK + gold-foil lotus &amp; keyline, soft-touch lam.</td><td>1 × ${summary[3].perSheet}</td><td>10 sheets (≈${summary[3].perSheet * 10})</td></tr>
+    <tr><td><b>5 · The Margin Note</b></td><td>60 × 12 mm, r1.2</td><td>Ivory uncoated (writable) label</td><td>Removable / peelable</td><td>CMYK + gold-foil lotus &amp; rule</td><td>4 × ${summary[4].perSheet}</td><td>2 sheets per artisan</td></tr>
   </table>
   <div class="cols">
     <div><h4>Colour &amp; foil</h4><ul>
-      <li><span class="sw" style="background:${C.ink}"></span><b>Nemara Ink</b> #4B1D5C ≈ C72 M100 Y24 K32 · Pantone ~2627 C. Ask for a hard proof — purple drifts on press.</li>
-      <li><span class="sw" style="background:${C.violet}"></span>Violet #6E3C8C ≈ C62 M86 Y8 K0 · <span class="sw" style="background:${C.paper}"></span>Ivory #F7F3EC ≈ C2 M3 Y7 K0</li>
+      <li><span class="sw" style="background:${C.ink}"></span><b>Nemara Plum</b> #4A1A5C ≈ C73 M100 Y25 K30 · Pantone ~2627 C. Ask for a hard proof — purple drifts on press.</li>
+      <li><span class="sw" style="background:${C.violet}"></span>Violet #6E3C8C ≈ C62 M86 Y8 K0 · <span class="sw" style="background:${C.paper}"></span>Lilac paper #F4EDF7 ≈ C3 M7 Y0 K0</li>
       <li><span class="sw" style="background:linear-gradient(135deg,#EAD9A8,#B08A4C)"></span><b>Foil:</b> matte/brushed champagne gold (not bright yellow-gold). Page 2 of each sheet is the foil plate, 100% K.</li>
       <li>Fine foil rules are ≥0.2 mm, foil type ≥4.5 pt. If the printer can't hold the Seal's ring text in foil, print it CMYK gold (C20 M28 Y55 K0) instead.</li></ul></div>
     <div><h4>Cutting &amp; checks</h4><ul>
@@ -359,7 +361,7 @@ await pg.close();
 
 // ship the OFL fonts for prepress
 fs.mkdirSync(path.join(OUT, "fonts"), { recursive: true });
-for (const [pkg, files] of [["@fontsource/instrument-sans", ["latin-400-normal", "latin-500-normal", "latin-600-normal"]], ["@fontsource/instrument-serif", ["latin-400-normal", "latin-400-italic"]], ["@fontsource/caveat", ["latin-600-normal"]]]) {
+for (const [pkg, files] of [["@fontsource/lora", ["latin-400-normal", "latin-500-normal", "latin-600-normal"]], ["@fontsource/cormorant-garamond", ["latin-500-normal", "latin-500-italic"]], ["@fontsource/great-vibes", ["latin-400-normal"]], ["@fontsource/cinzel", ["latin-500-normal"]]]) {
   for (const f of files) fs.copyFileSync(`${fontDir(pkg)}${pkg.split("/")[1]}-${f}.woff2`, path.join(OUT, "fonts", `${pkg.split("/")[1]}-${f}.woff2`));
 }
 await browser.close();

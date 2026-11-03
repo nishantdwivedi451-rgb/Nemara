@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { IconClose } from "@/components/brand/Icons";
+import { FloralSprig } from "@/components/brand/Florals";
 import { track } from "@/lib/analytics";
 
 type Popup = { enabled: boolean; delaySeconds: number; eyebrow: string; title: string; body: string; benefits: string[]; cta: string; consentText: string; showExclusives: boolean };
@@ -135,6 +136,7 @@ export function CircleInvite({ settings, exclusives, track: trackEngaged = true 
           </div>
         )}
         <div className="circle__body">
+          <FloralSprig className="circle__floral" />
           {state === "done" && result ? (
             <div className="circle__done">
               <p className="eyebrow">{settings.eyebrow}</p>

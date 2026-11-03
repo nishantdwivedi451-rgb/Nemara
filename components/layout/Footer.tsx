@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wordmark, Mark } from "@/components/brand/Logo";
+import { Wordmark, Mark, Lockup } from "@/components/brand/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { contact, whatsappUrl } from "@/lib/site";
 
@@ -10,6 +10,7 @@ export function Footer() {
       <div className="wrap">
         <div className="footer__top">
           <div className="footer__sign">
+            <Lockup className="footer__lockup" tagline />
             <p className="display footer__claim">Wear your<br /><em>story.</em></p>
           </div>
           <div className="footer__news">
@@ -26,7 +27,7 @@ export function Footer() {
             <li><Link href="/our-story">Our Story</Link></li><li><Link href="/artists">Artists</Link></li><li><Link href="/try-on">Try It On</Link></li>
             <li><Link href="/stylist">Nemara Stylist</Link></li><li><Link href="/journal">Journal</Link></li><li><Link href="/contact">Contact</Link></li></ul></nav>
           <nav aria-label="Help"><p className="eyebrow">Help</p><ul>
-            <li><Link href="/info/shipping">Shipping</Link></li><li><Link href="/info/returns">Returns</Link></li><li><Link href="/info/care">Jewellery care</Link></li>
+            <li><Link href="/info/shipping">Shipping</Link></li><li><Link href="/info/returns">Returns</Link></li><li><Link href="/info/care">Jewellery care</Link></li><li><Link href="/info/warranty">3-month warranty</Link></li>
             <li><Link href="/info/privacy">Privacy</Link></li><li><Link href="/info/terms">Terms</Link></li></ul></nav>
           <div><p className="eyebrow">Talk to us</p><ul>
             <li><a href={`https://instagram.com/${contact.instagram}`} target="_blank" rel="noopener noreferrer">Instagram</a></li>

@@ -1,14 +1,14 @@
 /* ═════════ Nemara Circle invitation ═════════ */
-.circle { position: fixed; inset: 0; z-index: 150; display: grid; place-items: end center; background: rgba(33, 16, 42, .5); padding: 0; animation: fadeIn .35s var(--ease); }
+.circle { position: fixed; inset: 0; z-index: 150; display: grid; place-items: end center; background: rgba(43, 18, 54, .5); padding: 0; animation: fadeIn .35s var(--ease); }
 @media (min-width: 760px) { .circle { place-items: center; padding: 24px; } }
 .circle__card { position: relative; width: 100%; max-height: 92svh; overflow-y: auto; background: var(--paper); display: grid; border-radius: 14px 14px 0 0; animation: circleUp .5s var(--ease); }
 @media (min-width: 760px) { .circle__card { width: min(920px, 100%); grid-template-columns: 0.9fr 1.1fr; border-radius: 4px; max-height: 88vh; } }
 @keyframes circleUp { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
-.circle__close { position: absolute; z-index: 2; top: 12px; right: 12px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: rgba(252, 250, 246, .9); }
+.circle__close { position: absolute; z-index: 2; top: 12px; right: 12px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: rgba(252, 250, 253, .9); }
 .circle__close svg { width: 18px; height: 18px; }
 .circle__art { position: relative; background: radial-gradient(120% 100% at 50% 10%, #3B1A49, #1C0C24 70%); color: var(--warm); display: grid; align-content: center; gap: 18px; padding: 28px 20px; }
 @media (max-width: 759px) { .circle__art { padding: 22px 16px 18px; } }
-.circle__tag { justify-self: center; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--champagne); border: 1px solid rgba(200, 177, 132, .5); padding: 6px 12px; border-radius: 999px; }
+.circle__tag { justify-self: center; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--champagne); border: 1px solid rgba(217, 164, 82, .5); padding: 6px 12px; border-radius: 999px; }
 .circle__pieces { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end; max-width: 380px; width: 100%; justify-self: center; }
 .circle__piece { position: relative; aspect-ratio: 3 / 4; background: var(--warm); }
 .circle__piece:nth-child(2) { transform: translateY(-14px); }
@@ -31,3 +31,5 @@
 .circle__done { display: grid; gap: 14px; justify-items: start; padding-block: 12px; }
 .circle__code { font-size: var(--fs-md); }
 .circle__code strong { font-family: var(--font-display); font-size: 1.6rem; color: var(--ink); letter-spacing: .04em; margin-left: 6px; }
+.circle__body { position: relative; isolation: isolate; }
+.circle__floral { position: absolute; z-index: -1; top: -8px; right: -10px; width: 150px; height: auto; transform: scaleX(-1); opacity: .5; pointer-events: none; }

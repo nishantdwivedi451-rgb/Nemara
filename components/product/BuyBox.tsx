@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { PromiseRow } from "@/components/brand/Promise";
 import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/components/layout/StoreProvider";
 import { IconCamera, IconHeart } from "@/components/brand/Icons";
@@ -77,6 +78,8 @@ export function BuyBox({ p, artist, shipping }: Props) {
         </div>
       </div>
 
+      <PromiseRow className="buybox__trust" />
+
       <ul className="buybox__promises">
         <li>Free shipping over {formatPrice(shipping.freeShippingThreshold)}</li>
         <li>{shipping.returnsDays}-day easy returns</li>
@@ -88,6 +91,7 @@ export function BuyBox({ p, artist, shipping }: Props) {
         <details><summary>Dimensions</summary><p>{p.dimensions}</p></details>
         <details><summary>Care</summary><p>{p.care}</p></details>
         <details><summary>Shipping</summary><p>Dispatched in {shipping.dispatchDays} in a Nemara pouch and story card. Free across India over {formatPrice(shipping.freeShippingThreshold)}. <Link className="text-link" href="/info/shipping">Shipping details</Link></p></details>
+        <details><summary>Warranty</summary><p>Covered for 3 months from delivery against manufacturing defects — loose stones, failed clasps or flaking plating. <Link className="text-link" href="/info/warranty">Warranty terms</Link></p></details>
         <details><summary>Returns</summary><p>Changed your mind? Return unworn pieces within {shipping.returnsDays} days of delivery. Earrings are non-returnable for hygiene unless faulty. <Link className="text-link" href="/info/returns">Returns policy</Link></p></details>
       </div>
 

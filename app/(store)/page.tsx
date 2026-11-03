@@ -8,6 +8,7 @@ import { CategoryIndex } from "@/components/home/CategoryIndex";
 import { ProductRail } from "@/components/product/ProductRail";
 import { Reveal, Lines } from "@/components/editorial/Reveal";
 import { StylistPrompt } from "@/components/stylist/StylistPrompt";
+import { PromiseCard } from "@/components/brand/Promise";
 import { commerce } from "@/lib/commerce";
 import { getArtists, getArtist } from "@/lib/content";
 import { SITE } from "@/lib/site";
@@ -80,6 +81,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <PromiseCard />
 
       {/* Try it on */}
       <section className="tryon-promo" aria-labelledby="tryon-title">

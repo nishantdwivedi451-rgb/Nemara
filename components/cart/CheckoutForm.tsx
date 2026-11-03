@@ -98,7 +98,7 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
           key: d.publicKey, order_id: d.orderId, amount: Math.round((d.amount ?? 0) * 100), currency: "INR",
           name: "Nemara", description: "Wear your story.", image: `${window.location.origin}/icon.svg`,
           prefill: { name: address.name, email: address.email, contact: address.phone },
-          notes: { pincode: address.pincode }, theme: { color: "#4B1D5C" },
+          notes: { pincode: address.pincode }, theme: { color: "#4A1A5C" },
           modal: { ondismiss: () => setBusy(false) },
           handler: async (resp: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) => {
             try { await complete({ ...base, orderId: resp.razorpay_order_id, paymentId: resp.razorpay_payment_id, signature: resp.razorpay_signature }); }
