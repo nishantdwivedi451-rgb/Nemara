@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Wordmark, Mark, Lockup } from "@/components/brand/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
-import { contact, whatsappUrl } from "@/lib/site";
+import { SITE, contact, whatsappUrl } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -27,8 +27,8 @@ export function Footer() {
             <li><Link href="/our-story">Our Story</Link></li><li><Link href="/markets">Markets</Link></li><li><Link href="/try-on">Try It On</Link></li>
             <li><Link href="/stylist">Nemara Stylist</Link></li><li><Link href="/journal">Journal</Link></li><li><Link href="/contact">Contact</Link></li></ul></nav>
           <nav aria-label="Help"><p className="eyebrow">Help</p><ul>
-            <li><Link href="/info/shipping">Shipping</Link></li><li><Link href="/info/returns">Returns</Link></li><li><Link href="/info/care">Jewellery care</Link></li><li><Link href="/info/warranty">3-month warranty</Link></li>
-            <li><Link href="/info/privacy">Privacy</Link></li><li><Link href="/info/terms">Terms</Link></li></ul></nav>
+            <li><Link href="/info/shipping">Shipping &amp; Delivery</Link></li><li><Link href="/info/returns">Refund &amp; Cancellation</Link></li><li><Link href="/info/warranty">3-month warranty</Link></li><li><Link href="/info/care">Jewellery care</Link></li>
+            <li><Link href="/info/terms">Terms &amp; Conditions</Link></li><li><Link href="/info/privacy">Privacy Policy</Link></li></ul></nav>
           <div><p className="eyebrow">Talk to us</p><ul>
             <li><a href={`https://instagram.com/${contact.instagram}`} target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
@@ -38,7 +38,7 @@ export function Footer() {
           <Wordmark className="footer__wordmark" />
           <div className="footer__legal">
             <Mark className="footer__mark" />
-            <span>© {year} Nemara. Premium jewellery, curated across India.</span>
+            <span>© {year} {SITE.legal.business}. Nemara is a brand of {SITE.legal.business}. {contact.address}</span>
           </div>
         </div>
       </div>

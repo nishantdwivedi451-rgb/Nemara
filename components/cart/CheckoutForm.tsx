@@ -1,4 +1,5 @@
 "use client";
+import { SITE } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -90,7 +91,11 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
         if ((d as { needAuth?: boolean }).needAuth) { setBusy(false); openAuth("checkout"); return; }
         setFields(d.fields ?? {}); throw new Error(d.error || "Please check your details.");
       }
-      if (d.redirect) { window.location.href = d.redirect; return; }
+      if (d.redirect) {
+        // PhonePe sends the customer back to /checkout/return — remember what to confirm there
+        if (d.orderId) try { sessionStorage.setItem("nemara:pending-payment", JSON.stringify({ provider: d.provider, orderId: d.orderId, lines, address, items: cart.map((c) => ({ name: c.name, handle: c.handle, image: c.image })) })); } catch { /* ignore */ }
+        window.location.href = d.redirect; return;
+      }
       const base = { provider: d.provider, orderId: d.orderId, lines, address };
       if (d.provider === "razorpay") {
         if (!(await loadRazorpay()) || !window.Razorpay) throw new Error("The payment window couldn't load. Check your connection and try again.");
@@ -187,7 +192,7 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
           </fieldset>
           {error && <p className="field-error checkout__error" role="alert">{error}</p>}
           <button className="btn btn--block checkout__pay" disabled={busy || !hydrated}>{busy ? "Opening secure payment…" : `Pay ${formatPrice(subtotal + shipping)}`}</button>
-          <p className="muted checkout__legal">By placing your order you agree to our <Link className="text-link" href="/info/terms">terms</Link> and <Link className="text-link" href="/info/returns">returns policy</Link>.</p>
+          <p className="muted checkout__legal">By placing your order you agree to our <Link className="text-link" href="/info/terms">Terms &amp; Conditions</Link>, <Link className="text-link" href="/info/returns">Refund &amp; Cancellation</Link> and <Link className="text-link" href="/info/shipping">Shipping</Link> policies. Payments are processed securely by PhonePe for {SITE.legal.business}.</p>
         </form>
         )}
 
@@ -212,7 +217,7 @@ export function CheckoutForm({ threshold, flat, demo, preview }: { threshold: nu
           <div className="demo-pay__card">
             <p className="eyebrow">Demo payment · no money moves</p>
             <h2 className="h2">{formatPrice(subtotal + shipping)}</h2>
-            <p className="muted">When Razorpay keys are added, this step becomes the real payment window (UPI, cards, net banking, wallets).</p>
+            <p className="muted">When PhonePe is connected, this step becomes the real PhonePe payment page (UPI, cards, net banking, wallets).</p>
             <div className="demo-pay__methods">{["UPI", "Card", "Net banking", "Wallet"].map((m) => <span key={m} className="chip">{m}</span>)}</div>
             <button className="btn btn--block" onClick={async () => { try { await complete({ ...demoOrder.payload, paymentId: "demo", signature: "demo" }); } catch (e) { setError((e as Error).message); setDemoOrder(null); setBusy(false); } }}>Simulate successful payment</button>
             <button className="text-link muted" onClick={() => { setDemoOrder(null); setBusy(false); }}>Cancel</button>

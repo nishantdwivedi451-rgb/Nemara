@@ -334,3 +334,5 @@ a.contact__row:hover { color: var(--ink); }
 .market-chip__img { position: relative; aspect-ratio: 4 / 5; margin-bottom: 10px; overflow: hidden; }
 .pstory__portrait--market, .etile__portrait--market { background: none; border-radius: 0; }
 .market-feature__img img, .market-hero__img img, .story-hero__img img, .market-chip__img img, .pstory__portrait--market img, .etile__portrait--market img { object-fit: contain; }
+.info-body__h { margin: 1.6em 0 .5em; }
+.pay-return { min-height: 50vh; display: grid; align-content: center; gap: 14px; justify-items: start; }

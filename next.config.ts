@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
     return [
       { source: "/artists", destination: "/markets", permanent: true },
       { source: "/artists/:slug", destination: "/markets", permanent: true },
+      // short policy URLs for payment-gateway review and customer links
+      { source: "/terms", destination: "/info/terms", permanent: true },
+      { source: "/privacy-policy", destination: "/info/privacy", permanent: true },
+      { source: "/refund-policy", destination: "/info/returns", permanent: true },
+      { source: "/shipping-policy", destination: "/info/shipping", permanent: true },
     ];
   },
   async headers() {

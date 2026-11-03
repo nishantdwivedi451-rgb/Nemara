@@ -1,19 +1,43 @@
 {
   "shipping": {
-    "title": "Shipping",
+    "title": "Shipping & Delivery Policy",
     "body": [
-      "We ship across India. Every piece is dispatched within 2–4 working days in a Nemara pouch with its story card.",
-      "Shipping is free on orders over ₹2,500. Below that, a flat ₹99 applies.",
-      "Metro deliveries typically take 2–4 days after dispatch; other locations 4–7 days. You'll receive tracking by email and WhatsApp.",
-      "International shipping is coming soon. Write to us if you'd like to be told first."
+      "Last updated: {{updated}}",
+      "Nemara, operated by {{business}}, ships across India. We do not ship internationally at present.",
+      "## Dispatch",
+      "Orders are packed in a Nemara pouch and dispatched within 2–4 working days of payment confirmation. Orders placed on Sundays or public holidays are processed the next working day.",
+      "## Delivery time",
+      "After dispatch, delivery usually takes 2–4 working days to metro cities and 4–7 working days to other locations, depending on the pincode and our courier partner. Remote areas may take longer.",
+      "## Shipping charges",
+      "Shipping is free on orders of ₹2,500 and above. Orders below ₹2,500 carry a flat shipping charge of ₹99, shown at checkout before you pay.",
+      "## Tracking",
+      "As soon as your order is dispatched you will receive a tracking link by email and/or WhatsApp. You can also track your order from My Account.",
+      "## Delivery issues",
+      "Please check that your address and pincode are correct before paying — we can update an address only before dispatch. If a delivery attempt fails and the parcel is returned to us, we will contact you to re-ship (re-shipping charges may apply) or refund the order value excluding shipping. If the outer packaging looks tampered with, please refuse the parcel or record an unboxing video and contact us within 48 hours.",
+      "## Delays",
+      "Delivery dates are estimates. Delays caused by courier disruptions, weather, strikes or other events outside our control are rare, but we will keep you updated if they happen.",
+      "## Contact",
+      "{{business}} · {{email}} · {{phone}} · {{hours}}"
     ]
   },
   "returns": {
-    "title": "Returns & exchanges",
+    "title": "Refund & Cancellation Policy",
     "body": [
-      "If a piece isn't right, return it unworn, with its tags and packaging, within 7 days of delivery for a refund or exchange.",
-      "For hygiene, earrings can only be returned if they arrive faulty.",
-      "Start a return by writing to us on WhatsApp or email with your order number. Refunds go back to the original payment method within 5–7 working days of the piece reaching us."
+      "Last updated: {{updated}}",
+      "We want you to love every Nemara piece. This policy explains how cancellations, returns, exchanges and refunds work for orders placed on nemara.shop, operated by {{business}}.",
+      "## Cancelling an order",
+      "You can cancel an order free of charge before it is dispatched — write to us on WhatsApp or at {{email}} with your order number. You will receive a full refund. Once an order has been dispatched it cannot be cancelled, but you can return it under the policy below.",
+      "## Returns",
+      "You can return a piece within 7 days of delivery if it is unused, unworn and in its original condition with its tags, pouch and packaging. For hygiene reasons, earrings can be returned only if they arrive damaged, defective or are not what you ordered. Pieces bought on a final-sale offer are not returnable unless faulty.",
+      "To start a return, contact us within 7 days of delivery with your order number and the reason. We will arrange a reverse pickup where available, or share the return address. Once the piece reaches us, we inspect it within 2 working days.",
+      "## Damaged, defective or wrong items",
+      "If your order arrives damaged, defective or incorrect, please tell us within 48 hours of delivery with photos (an unboxing video helps). We will send a replacement or give a full refund, including shipping charges, at no extra cost to you. Defects that appear later are covered by our 3-Month Warranty.",
+      "## Exchanges",
+      "You can exchange an eligible piece for another size or design of equal value within 7 days of delivery, subject to stock. If the new piece costs more, we will share a link to pay the difference.",
+      "## Refunds",
+      "Approved refunds are issued to your original payment method (UPI, card, net banking or wallet) through our payment gateway, PhonePe, within 5–7 working days of approval. Depending on your bank, it may take a few additional days to reflect in your account. Shipping charges are non-refundable unless the return is due to our error. We do not offer cash refunds.",
+      "## Contact",
+      "{{business}} · {{email}} · {{phone}} · {{hours}}"
     ]
   },
   "care": {
@@ -21,7 +45,7 @@
     "body": [
       "Put your jewellery on last and take it off first: after perfume, lotion and hairspray, and before you shower, swim or exercise.",
       "Wipe each piece with the Nemara cloth after wearing and store it in its pouch, away from moisture.",
-      "Sterling silver naturally tarnishes over time; a gentle polish with the cloth restores it. Avoid chemical dips on enamel and filigree.",
+      "Silver-tone and oxidised finishes can darken over time; a gentle polish with the cloth restores it. Avoid chemical dips on enamel and filigree.",
       "Plating can wear with friction. If a favourite piece needs care, write to us — we offer re-plating for a small fee."
     ]
   },
@@ -36,23 +60,56 @@
     ]
   },
   "privacy": {
-    "title": "Privacy",
+    "title": "Privacy Policy",
     "body": [
-      "This policy is a placeholder and must be reviewed by a qualified professional before launch.",
-      "We collect only what we need to fulfil your order and talk to you: your name, contact details, delivery address and order history.",
-      "Payments are processed by our payment partner; Nemara never sees or stores your card or UPI credentials.",
-      "Try-on runs entirely in your browser. Camera images are never uploaded or stored by Nemara.",
-      "We use privacy-friendly analytics to understand how the site is used. With your consent, we may also use advertising pixels.",
-      "To access or delete your data, write to us at the email address on our Contact page."
+      "Last updated: {{updated}}",
+      "This policy explains how {{business}}, which operates Nemara (nemara.shop), collects, uses and protects your personal data, in line with the Digital Personal Data Protection Act, 2023 and the Information Technology Act, 2000.",
+      "## What we collect",
+      "Account and order details: your name, mobile number, email address, delivery addresses, birthday (only if you choose to share it) and order history. Payment details are entered on the payment gateway's secure page; we receive only a payment reference and status, never your card or bank details. Site usage: pages visited, device and browser information and approximate location, collected through cookies and analytics. Try-on: the camera try-on runs entirely in your browser — images are never uploaded or stored by us.",
+      "## How we use it",
+      "To verify your account with one-time codes, process and deliver your orders, provide customer support and handle returns and warranty claims, prevent fraud, and improve the site. If you opt in, we also send you offers, new-arrival updates and birthday and festival messages by WhatsApp, SMS or email. You can opt out at any time.",
+      "## Who we share it with",
+      "Only with partners who help us run the business, and only what they need: our payment gateway (PhonePe), courier and logistics partners, SMS, WhatsApp and email providers, and our hosting and analytics providers. We do not sell your personal data. We may disclose data where required by law or to protect our rights.",
+      "## Cookies",
+      "We use essential cookies to keep you signed in and remember your bag and wishlist, and analytics cookies to understand how the site is used. You can block cookies in your browser settings, but some features may stop working.",
+      "## Storage and security",
+      "Your data is stored on secure cloud infrastructure with encryption in transit. One-time codes are stored only in hashed form and expire after 10 minutes. We keep order records for as long as required by tax and accounting law, and other personal data only as long as needed for the purposes above.",
+      "## Your rights",
+      "You can ask us to access, correct or delete your personal data, or withdraw consent for marketing, by writing to {{email}}. We will respond within 30 days. Some data may need to be kept to meet legal obligations.",
+      "## Children",
+      "Our site is not intended for children under 18 without parental supervision, and we do not knowingly collect their data.",
+      "## Changes and contact",
+      "We may update this policy and will post the new version here with its date. Questions or complaints: {{grievanceOfficer}}, {{business}}, {{address}} · {{email}} · {{phone}}."
     ]
   },
   "terms": {
-    "title": "Terms of use",
+    "title": "Terms & Conditions",
     "body": [
-      "These terms are a placeholder and must be reviewed by a qualified professional before launch.",
-      "All prices are in Indian Rupees and include applicable taxes. We reserve the right to correct pricing errors.",
-      "Handmade pieces vary slightly from one another and from their images; these variations are part of their character, not defects.",
-      "All designs, imagery and content on this site belong to Nemara and may not be reproduced without permission."
+      "Last updated: {{updated}}",
+      "This website, nemara.shop, and the Nemara brand are owned and operated by {{business}} (“we”, “us”, “our”). By browsing the site or placing an order you agree to these Terms & Conditions, together with our Privacy Policy, Refund & Cancellation Policy and Shipping & Delivery Policy.",
+      "## Eligibility and accounts",
+      "You must be at least 18 years old, or use the site under the supervision of a parent or guardian. When you create an account we verify your mobile number and email with a one-time code. You are responsible for keeping access to your phone and email secure and for all activity on your account.",
+      "## Our products",
+      "Nemara sells premium fashion (artificial) jewellery, handpicked from markets across India. Our pieces are made from base metals such as brass and alloy with plated, enamelled or stone finishes; they are not gold, silver or precious jewellery unless clearly stated. Colours, finishes and sizes may vary slightly from the photographs because of lighting, screens and the handmade nature of many market pieces. Product dimensions and materials are listed on each product page.",
+      "## Prices and payment",
+      "All prices are in Indian Rupees (INR) and include applicable taxes (GST). Shipping charges, if any, are shown at checkout before you pay. We may correct obvious pricing or listing errors; if an error affects an order you have already paid for, we will contact you and either honour the order or cancel it with a full refund.",
+      "Payments are processed securely by our payment partner, PhonePe Payment Gateway, using UPI, debit and credit cards, net banking and wallets. {{business}} does not see or store your card or bank details. An order is confirmed only when we receive payment confirmation from the payment gateway.",
+      "## Orders and cancellations",
+      "After you place an order you will receive a confirmation by email or SMS. We may decline or cancel an order — for example if a piece is out of stock, the payment is flagged as suspicious, or the delivery pincode is not serviceable. If we cancel a paid order, you will receive a full refund to your original payment method. Your own cancellation and return rights are set out in our Refund & Cancellation Policy.",
+      "## Shipping, returns and warranty",
+      "Delivery timelines and charges are described in our Shipping & Delivery Policy. Returns, exchanges and refunds are described in our Refund & Cancellation Policy. Manufacturing defects are covered by our 3-Month Warranty.",
+      "## Use of the site",
+      "You agree not to misuse the site — including attempting to access accounts or data that are not yours, interfering with its security or operation, or using it for any unlawful purpose. Reviews, photos or messages you send us must be your own and must not be offensive or misleading.",
+      "## Intellectual property",
+      "All content on this site — including the Nemara name and lotus logo, designs, photographs, illustrations and text — belongs to {{business}} or is used with permission, and may not be copied or reused without our written consent.",
+      "## Limitation of liability",
+      "To the extent permitted by law, our total liability for any claim relating to an order is limited to the amount you paid for that order. We are not liable for indirect or consequential losses, or for delays caused by events outside our reasonable control such as courier disruptions, strikes or natural events.",
+      "## Governing law and disputes",
+      "These terms are governed by the laws of India. Any dispute will be subject to the exclusive jurisdiction of the courts at {{jurisdiction}}. We encourage you to contact us first — most issues are resolved within a few days.",
+      "## Grievance officer",
+      "In accordance with the Consumer Protection (E-Commerce) Rules, 2020 and the Information Technology Act, 2000, you can contact our {{grievanceOfficer}} at {{email}} or {{phone}}. We acknowledge complaints within 48 hours and aim to resolve them within one month.",
+      "## Contact",
+      "{{business}} · {{address}} · {{email}} · {{phone}} · {{hours}}"
     ]
   },
   "warranty": {

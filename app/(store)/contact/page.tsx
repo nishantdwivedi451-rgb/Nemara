@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/forms/ContactForm";
 import { IconInstagram, IconMail, IconPhone, IconPin, IconWhatsApp } from "@/components/brand/Icons";
-import { contact, whatsappUrl } from "@/lib/site";
+import { SITE, contact, whatsappUrl } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({ title: "Talk to Nemara", description: "Questions about a piece, an order or a gift? Talk to Nemara on WhatsApp, phone, email or Instagram.", path: "/contact" });
@@ -11,7 +11,7 @@ export default function Contact() {
     { icon: <IconPhone />, k: "Phone", v: contact.phone, href: `tel:${contact.phone.replace(/\s/g, "")}` },
     { icon: <IconMail />, k: "Email", v: contact.email, href: `mailto:${contact.email}` },
     { icon: <IconInstagram />, k: "Instagram", v: `@${contact.instagram}`, href: `https://instagram.com/${contact.instagram}`, ext: true },
-    { icon: <IconPin />, k: "Studio", v: contact.address },
+    { icon: <IconPin />, k: "Registered office", v: `${SITE.legal.business}, ${contact.address}` },
   ];
   return (
     <div className="page-enter">

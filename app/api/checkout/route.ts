@@ -6,7 +6,8 @@ import { payments } from "@/lib/payments";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 import { recordCheckout } from "@/lib/oms";
 import { currentCustomer } from "@/lib/customers";
-import { storeConfigured } from "@/lib/store";
+import { store, storeConfigured } from "@/lib/store";
+import { siteUrl } from "@/lib/site";
 
 const body = z.object({ lines: cartLinesSchema, address: addressSchema, company: z.string().optional() });
 
@@ -36,7 +37,9 @@ export async function POST(req: Request) {
     }
     const priced = await priceCart(parsed.data.lines);
     const receipt = `NEM-${Date.now().toString(36).toUpperCase()}`;
-    const order = await payments().createOrder({ amount: priced.total, currency: "INR", receipt, notes: { receipt, pincode: parsed.data.address.pincode } });
+    const order = await payments().createOrder({ amount: priced.total, currency: "INR", receipt, notes: { receipt, pincode: parsed.data.address.pincode }, returnUrl: `${siteUrl()}/checkout/return?order=${receipt}` });
+    // redirect gateways confirm by webhook too — keep what's needed to build the order server-side
+    if (order.redirect && storeConfigured()) await store().put("pending_payments", receipt, { lines: parsed.data.lines, address: parsed.data.address, createdAt: new Date().toISOString() }).catch((e) => console.error("[checkout] pending save failed", e));
     // abandoned-checkout follow-up in Nemara Studio; never blocks payment
     await recordCheckout({ gatewayOrderId: order.orderId, customer: parsed.data.address, items: priced.items, total: priced.total }).catch((e) => console.error("[checkout] record failed", e));
     return NextResponse.json({ ...order, summary: { subtotal: priced.subtotal, shipping: priced.shipping, total: priced.total } });
