@@ -14,7 +14,7 @@ Every A4 sheet comes as three pages in identical position: **Artwork** (CMYK, fo
 **Key specs:** 1.5 mm bleed, text ≥1 mm inside cut, print at 100%. Nemara Ink #4B1D5C ≈ C72 M100 Y24 K32 (Pantone ~2627 C) — get a hard proof.
 Foil = matte champagne gold. Jewel Flag must be on synthetic PP/vinyl (paper tails tear). Scan-test one Story Tag QR per sheet.
 
-QR codes point to `https://nemara.vercel.app/p/<handle>` → redirects to the product page with `utm_source=tag`, so scans appear in Studio › Visitors.
+QR codes point to `https://nemara.shop/p/<handle>` → redirects to the product page with `utm_source=tag`, so scans appear in Studio › Visitors.
 Prices on the Jewel Flag come from `content/products.json` — regenerate if prices change:
 
 ```bash

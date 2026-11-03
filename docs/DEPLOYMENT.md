@@ -3,7 +3,7 @@
 ## Live project
 | | |
 |---|---|
-| Production URL | https://nemara.vercel.app |
+| Production URL | https://nemara.shop (also https://nemara.vercel.app) · Studio: https://admin.nemara.shop |
 | Vercel project | `nemara` (team **JPB**, `prj_ZV9bX5EReZrLCFPAFlNjBwx8zRUa`) |
 | Repository | `nishantdwivedi451-rgb/Nemara` |
 | Production branch | `claude/nemara-brand-ecommerce-7f1ey4` (the repo's current default). Once you merge it into `main`, change it in Vercel → Settings → Git. |

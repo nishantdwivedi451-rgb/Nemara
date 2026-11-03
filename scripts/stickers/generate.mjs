@@ -20,7 +20,7 @@ import QRCode from "qrcode";
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
 const OUT = path.join(ROOT, "print/stickers");
-const SITE = "https://nemara.vercel.app";
+const SITE = "https://nemara.shop";
 const products = JSON.parse(fs.readFileSync(path.join(ROOT, "content/products.json"), "utf8"));
 const artists = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, "content/artists.json"), "utf8")).map((a) => [a.slug ?? a.handle, a]));
 

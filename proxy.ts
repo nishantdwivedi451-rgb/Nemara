@@ -3,13 +3,14 @@ import { SESSION_COOKIE, verifySession } from "@/lib/admin/session";
 
 /**
  * Guards Nemara Studio. Every /admin page and /api/admin endpoint requires a valid signed
- * session; the dedicated admin hostname (ADMIN_HOST, e.g. nemara-admin.vercel.app) only serves the Studio.
+ * session; the dedicated admin hostnames (ADMIN_HOST, comma-separated, e.g. "admin.nemara.shop,nemara-admin")
+ * open the Studio at "/".
  */
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const host = req.headers.get("host") ?? "";
-  const adminHost = process.env.ADMIN_HOST;
-  const onAdminHost = !!adminHost && host.startsWith(adminHost);
+  const adminHosts = (process.env.ADMIN_HOST ?? "").split(",").map((h) => h.trim()).filter(Boolean);
+  const onAdminHost = adminHosts.some((h) => host.startsWith(h));
 
   if (onAdminHost && pathname === "/") return NextResponse.redirect(new URL("/admin", req.url));
 
