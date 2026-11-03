@@ -37,7 +37,7 @@ export async function POST(req: Request) {
     }
     const priced = await priceCart(parsed.data.lines);
     const receipt = `NEM-${Date.now().toString(36).toUpperCase()}`;
-    const order = await payments().createOrder({ amount: priced.total, currency: "INR", receipt, notes: { receipt, pincode: parsed.data.address.pincode }, returnUrl: `${siteUrl()}/checkout/return?order=${receipt}` });
+    const order = await payments().createOrder({ amount: priced.total, currency: "INR", receipt, notes: { receipt, pincode: parsed.data.address.pincode, phone: parsed.data.address.phone.replace(/\D/g, "").slice(-10) }, returnUrl: `${siteUrl()}/checkout/return?order=${receipt}` });
     // redirect gateways confirm by webhook too — keep what's needed to build the order server-side
     if (order.redirect && storeConfigured()) await store().put("pending_payments", receipt, { lines: parsed.data.lines, address: parsed.data.address, createdAt: new Date().toISOString() }).catch((e) => console.error("[checkout] pending save failed", e));
     // abandoned-checkout follow-up in Nemara Studio; never blocks payment
