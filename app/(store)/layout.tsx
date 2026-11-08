@@ -6,6 +6,7 @@ import "@/styles/tryon.css";
 import "@/styles/circle.css";
 import "@/styles/account.css";
 import { StoreProvider } from "@/components/layout/StoreProvider";
+import { ImageGuard } from "@/components/layout/ImageGuard";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/layout/CartDrawer";
@@ -33,6 +34,7 @@ export default async function StoreLayout({ children }: { children: React.ReactN
     <>
       <a href="#main" className="skip-link">Skip to content</a>
       <StoreProvider>
+        <ImageGuard />
         <Header nav={{ categories, occasions, collections }} />
         <main id="main">{children}</main>
         <Footer />

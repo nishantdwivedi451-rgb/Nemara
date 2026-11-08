@@ -352,3 +352,6 @@ body:has(.sticky-buy.is-on) .wa-float, body:has(.studio) .wa-float { opacity: 0;
 .pstory__pair { display: grid; gap: 10px; margin-top: 18px; }
 .pstory__pair ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .pstory__pair li { padding: 6px 14px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: var(--fs-sm); background: rgba(252, 250, 253, .7); }
+
+/* Product photography: no drag-out, no iOS long-press save, no selection highlight */
+.frame img, img[src*="/products/"] { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }

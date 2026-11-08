@@ -6,8 +6,24 @@ import { SESSION_COOKIE, verifySession } from "@/lib/admin/session";
  * session; the dedicated admin hostnames (ADMIN_HOST, comma-separated, e.g. "admin.nemara.shop,nemara-admin")
  * open the Studio at "/".
  */
+// Product images may only be embedded by Nemara itself (and search engines). Direct visits and social
+// link previews send no Referer and still work; another shop hotlinking our photos gets a 403.
+const IMAGE_REFERERS = /(^|\.)(nemara\.shop|vercel\.app|localhost|google\.[a-z.]+|bing\.com|duckduckgo\.com)$/i;
+
+function hotlinkBlocked(req: NextRequest): boolean {
+  const ref = req.headers.get("referer");
+  if (!ref) return false;
+  try {
+    const refHost = new URL(ref).hostname;
+    return refHost !== req.nextUrl.hostname && !IMAGE_REFERERS.test(refHost);
+  } catch { return true; }
+}
+
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  if (pathname.startsWith("/products/")) {
+    return hotlinkBlocked(req) ? new NextResponse("Image not available", { status: 403 }) : NextResponse.next();
+  }
   const host = req.headers.get("host") ?? "";
   const adminHosts = (process.env.ADMIN_HOST ?? "").split(",").map((h) => h.trim()).filter(Boolean);
   const onAdminHost = adminHosts.some((h) => host.startsWith(h));
@@ -33,5 +49,5 @@ export async function proxy(req: NextRequest) {
   return res;
 }
 
-// Only Studio routes (and "/" for the admin hostname) pass through the proxy — storefront stays fully static.
-export const config = { matcher: ["/", "/admin/:path*", "/api/admin/:path*"] };
+// Only Studio routes, "/" (admin hostname) and product images pass through the proxy — storefront pages stay fully static.
+export const config = { matcher: ["/", "/admin/:path*", "/api/admin/:path*", "/products/:path*"] };
