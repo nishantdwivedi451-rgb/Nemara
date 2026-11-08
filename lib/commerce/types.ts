@@ -34,6 +34,8 @@ export type Product = {
   subtitle?: string;
   description: string;
   price: number;
+  /** True when sizes/options are priced differently — price is then the lowest ("From ₹…"). */
+  priceVaries?: boolean;
   compareAtPrice?: number | null;
   currency: "INR";
   inventory: number;

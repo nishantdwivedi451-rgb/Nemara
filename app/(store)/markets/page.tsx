@@ -15,7 +15,10 @@ const NEXT_STOPS = [
 ];
 
 export default async function MarketsPage() {
-  const [markets, products] = await Promise.all([getMarkets(), commerce.getProducts()]);
+  const [all, products] = await Promise.all([getMarkets(), commerce.getProducts()]);
+  // a market is featured once it has pieces in the edit; the rest show as next on the route
+  const markets = all.filter((m) => products.some((p) => p.market === m.slug));
+  const upcoming = [...all.filter((m) => !markets.includes(m)).map((m) => ({ city: m.city, market: m.market, signature: m.signature })), ...NEXT_STOPS];
   return (
     <div className="page-enter">
       <header className="wrap page-head">
@@ -45,7 +48,7 @@ export default async function MarketsPage() {
         <p className="eyebrow">Next on the route</p>
         <h2 id="next-title" className="h2">Where we&apos;re hunting next.</h2>
         <ul className="next-stops__list">
-          {NEXT_STOPS.map((s) => <li key={s.city}><span className="h3">{s.city}</span><span className="muted">{s.market} · {s.signature}</span></li>)}
+          {upcoming.map((s) => <li key={s.city}><span className="h3">{s.city}</span><span className="muted">{s.market} · {s.signature}</span></li>)}
         </ul>
         <p className="muted">Join the Nemara Circle to see these edits before anyone else.</p>
       </section>

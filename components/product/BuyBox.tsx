@@ -14,6 +14,9 @@ type Props = { p: Product; market: Market | null; shipping: { freeShippingThresh
 export function BuyBox({ p, market, shipping }: Props) {
   const { add, toggleWish, isWished } = useStore();
   const [variant, setVariant] = useState<string | null>(p.variants.length === 1 ? p.variants[0].id : null);
+  const selected = p.variants.find((x) => x.id === variant);
+  const shown = selected?.price ?? p.price;
+  const numericSizes = p.variants.every((v) => /^\d/.test(v.title));
   const [err, setErr] = useState("");
   const [tryOn, setTryOn] = useState(false);
   const [stuck, setStuck] = useState(false);
@@ -31,7 +34,7 @@ export function BuyBox({ p, market, shipping }: Props) {
   }, []);
 
   const addToBag = () => {
-    if (p.variants.length && !variant) { setErr("Choose your size first."); return; }
+    if (p.variants.length && !variant) { setErr(numericSizes ? "Choose your size first." : "Choose an option first."); return; }
     const v = p.variants.find((x) => x.id === variant);
     add({ handle: p.handle, name: p.name, price: v?.price ?? p.price, image: p.images[0].src, variantId: v?.id, variantTitle: v?.title });
     setErr("");
@@ -43,7 +46,7 @@ export function BuyBox({ p, market, shipping }: Props) {
       <p className="eyebrow buybox__cat">{p.category.replace("-", " ")} · {p.sku}</p>
       <h1 className="h1 buybox__name">{p.name}</h1>
       {p.subtitle && <p className="buybox__sub">{p.subtitle}</p>}
-      <p className="buybox__price">{formatPrice(p.price)} <span className="muted">incl. of all taxes</span></p>
+      <p className="buybox__price">{p.priceVaries && !selected ? "From " : ""}{formatPrice(shown)} <span className="muted">incl. of all taxes</span></p>
       <p className="buybox__desc">{p.description}</p>
       {market && (
         <Link href={`/markets/${market.slug}`} className="buybox__market">
@@ -55,11 +58,11 @@ export function BuyBox({ p, market, shipping }: Props) {
 
       {p.variants.length > 0 && (
         <fieldset className="buybox__sizes">
-          <legend className="label">Size <Link href="/info/size-guide" className="text-link muted">Kada size guide</Link></legend>
+          <legend className="label">{numericSizes ? <>Size <Link href="/info/size-guide" className="text-link muted">Kada size guide</Link></> : "Choose"}</legend>
           <div className="chips">
             {p.variants.map((v) => (
               <button key={v.id} type="button" className={cx("chip chip--size", variant === v.id && "is-on")} aria-pressed={variant === v.id} disabled={!v.available}
-                onClick={() => { setVariant(v.id); setErr(""); }}>{v.title}</button>
+                onClick={() => { setVariant(v.id); setErr(""); }}>{v.title}{p.priceVaries ? ` · ${formatPrice(v.price)}` : ""}</button>
             ))}
           </div>
           {err && <p className="field-error" role="alert">{err}</p>}
@@ -69,7 +72,7 @@ export function BuyBox({ p, market, shipping }: Props) {
       <p className={cx("buybox__avail", p.availability)}><span className="dot" />{availability}</p>
 
       <div className="buybox__ctas">
-        <button ref={mainCta} className="btn btn--block" onClick={addToBag} disabled={soldOut}>Add to bag — {formatPrice(p.price)}</button>
+        <button ref={mainCta} className="btn btn--block" onClick={addToBag} disabled={soldOut}>Add to bag — {formatPrice(shown)}</button>
         <div className="buybox__row">
           {p.tryOn?.supported && <button className="btn btn--ghost" onClick={() => setTryOn(true)}><IconCamera /> Try this on</button>}
           <button className={cx("btn btn--ghost buybox__wish", wished && "is-on")} aria-pressed={wished} onClick={() => toggleWish({ handle: p.handle, name: p.name, price: p.price, image: p.images[0].src })} aria-label={wished ? "Remove from wishlist" : "Save to wishlist"}>
@@ -88,7 +91,7 @@ export function BuyBox({ p, market, shipping }: Props) {
 
       <div className="details">
         <details open><summary>Material</summary><p>{p.material}</p></details>
-        <details><summary>Dimensions</summary><p>{p.dimensions}</p></details>
+        {p.dimensions && <details><summary>Dimensions</summary><p>{p.dimensions}</p></details>}
         <details><summary>Care</summary><p>{p.care}</p></details>
         <details><summary>Shipping</summary><p>Dispatched in {shipping.dispatchDays} in a Nemara pouch and story card. Free across India over {formatPrice(shipping.freeShippingThreshold)}. <Link className="text-link" href="/info/shipping">Shipping details</Link></p></details>
         <details><summary>Warranty</summary><p>Covered for 3 months from delivery against manufacturing defects — loose stones, failed clasps or flaking plating. <Link className="text-link" href="/info/warranty">Warranty terms</Link></p></details>
@@ -97,7 +100,7 @@ export function BuyBox({ p, market, shipping }: Props) {
 
       {/* sticky mobile bar */}
       <div className={cx("sticky-buy", stuck && "is-on")} aria-hidden={!stuck}>
-        <div><span className="sticky-buy__name">{p.name}</span><span className="muted">{formatPrice(p.price)}</span></div>
+        <div><span className="sticky-buy__name">{p.name}</span><span className="muted">{formatPrice(shown)}</span></div>
         {p.tryOn?.supported && <button className="icon-btn" onClick={() => setTryOn(true)} aria-label="Try this on" tabIndex={stuck ? 0 : -1}><IconCamera /></button>}
         <button className="btn btn--sm" onClick={addToBag} disabled={soldOut} tabIndex={stuck ? 0 : -1}>Add to bag</button>
       </div>

@@ -5,7 +5,7 @@ import type { Market, Product } from "@/lib/commerce/types";
 
 /** "Every find has a story" — the buyer's sketch dissolves into the finished piece. */
 export function StoryTeaser({ product, market }: { product: Product; market?: Market | null }) {
-  const sketch = product.images.find((i) => i.role === "story") ?? product.images[0];
+  const sketch = product.images.find((i) => i.role === "story") ?? product.images.find((i) => i.role === "worn") ?? product.images[0];
   const hero = product.images[0];
   return (
     <section className="teaser section" aria-labelledby="teaser-title">

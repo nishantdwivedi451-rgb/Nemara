@@ -16,7 +16,7 @@ export default async function Home() {
   const [all, newest, categories, occasions, markets] = await Promise.all([
     commerce.getProducts(), commerce.getProducts({ sort: "newest", limit: 8 }), commerce.getCategories(), commerce.getOccasions(), getMarkets(),
   ]);
-  const storyPiece = all.find((p) => p.handle === "monsoon-hour-jhumka") ?? all[0];
+  const storyPiece = all.find((p) => p.handle === "rajwada-kada") ?? all[0];
   const storyMarket = await getMarket(storyPiece.market);
   const counts = Object.fromEntries(categories.map((c) => [c.slug, all.filter((p) => p.category === c.slug).length]));
 
@@ -108,7 +108,7 @@ export default async function Home() {
             <Link href="/markets" className="link-arrow">Explore the markets</Link>
           </div>
           <ul className="market-row">
-            {markets.map((m, i) => (
+            {markets.filter((m) => all.some((p) => p.market === m.slug)).map((m, i) => (
               <Reveal as="li" key={m.slug} delay={i * 70}>
                 <Link href={`/markets/${m.slug}`} className="market-chip">
                   <div className="market-chip__img"><Image src={m.image.src} alt={m.image.alt} fill sizes="(min-width: 900px) 16vw, 45vw" unoptimized /></div>

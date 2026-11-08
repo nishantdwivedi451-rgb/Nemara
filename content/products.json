@@ -1,88 +1,84 @@
 [
   {
     "id": "nem_001",
-    "sku": "NEM-ER-MAR-01",
-    "handle": "margin-note-drops",
-    "name": "Margin Note Drops",
-    "subtitle": "Pearl drop earrings",
-    "description": "A single curved line that ends in a pearl — light enough to forget, distinctive enough to be asked about.",
-    "price": 1890,
-    "compareAtPrice": null,
+    "sku": "NEM-BR-ARW-01",
+    "handle": "cupids-arrow-bracelet",
+    "name": "Cupid's Arrow Bracelet",
+    "subtitle": "Arrow-tip cuff with a stone line",
+    "description": "An open cuff with a polished arrow tip, crossed by a fine line of sparkling stones. Sharp enough for the office, pretty enough for date night.",
+    "price": 1299,
+    "compareAtPrice": 1799,
     "currency": "INR",
-    "inventory": 24,
-    "category": "earrings",
+    "inventory": 25,
+    "category": "bracelets",
     "occasions": [
       "nine-to-five",
-      "everyday"
+      "everyday",
+      "after-hours"
     ],
     "collections": [
+      "new-arrivals",
       "best-sellers",
-      "everyday-pieces",
       "giftable"
     ],
     "tags": [
-      "pearl",
-      "brass",
-      "minimal",
-      "lightweight"
+      "anti-tarnish",
+      "cuff",
+      "arrow",
+      "stackable"
     ],
-    "material": "Brass, gold-tone plating, glass pearl",
-    "dimensions": "Drop length 4.2 cm · 3.1 g per earring",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "hyderabad",
+    "material": "Anti-tarnish gold-tone finish, cubic zirconia stones",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
+    "market": "mumbai",
     "featured": true,
-    "createdAt": "2026-09-01T00:00:00.000Z",
+    "createdAt": "2026-11-08T10:07:00.000Z",
     "images": [
       {
-        "src": "/art/products/margin-note-drops/hero.svg",
-        "alt": "Margin Note Drops — product view",
+        "src": "/products/cupids-arrow-bracelet/01.webp",
+        "alt": "Cupid's Arrow Bracelet — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/margin-note-drops/worn.svg",
-        "alt": "Margin Note Drops — as worn",
+        "src": "/products/cupids-arrow-bracelet/02.webp",
+        "alt": "Cupid's Arrow Bracelet — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/margin-note-drops/detail.svg",
-        "alt": "Margin Note Drops — close-up detail",
+        "src": "/products/cupids-arrow-bracelet/03.webp",
+        "alt": "Cupid's Arrow Bracelet — close-up",
         "role": "detail"
-      },
-      {
-        "src": "/art/products/margin-note-drops/story.svg",
-        "alt": "Margin Note Drops — buyer's notebook sketch",
-        "role": "story"
       }
     ],
     "story": {
       "find": {
-        "body": "Found on a pearl counter halfway down Laad Bazaar, in a tray of fifty near-identical drops. This was the one with a single clean curve — no extra pearls, no fuss.",
-        "note": "one pearl. that's the whole point."
+        "body": "Spotted on a Colaba Causeway stall that only stocks minimal pieces. Of everything on the tray, this was the one we kept picking back up.",
+        "note": "the arrow points where you're going."
       },
       "check": {
-        "body": "We matched every pair for pearl size and lustre, swapped the hooks for secure lever-backs and checked that the curve hangs straight.",
+        "body": "We checked the stone line for even setting, the arrow tip for smooth edges and that the cuff opens and closes without losing shape.",
         "steps": [
-          "Pearls matched in pairs",
-          "Plating checked under bright light",
-          "Lever-backs fitted",
-          "Weight under 4 g a pair"
+          "Stone line checked for gaps",
+          "Smoothed arrow tip",
+          "Flex-tested opening",
+          "Anti-tarnish finish"
         ]
       },
       "style": {
-        "body": "Monday, 9:40 a.m. The meeting you prepared for. Something small at your ear that says you already know the answer.",
+        "body": "Monday, first meeting. Sleeves pushed up, one cuff, nothing else needed.",
         "pairWith": [
-          "Crisp white shirt",
-          "Low bun",
-          "The Chalk Line Set"
+          "Crisp shirt",
+          "Your everyday watch",
+          "Starline Stone Bangle"
         ]
       }
     },
     "variants": [],
     "tryOn": {
-      "supported": true,
-      "anchor": "ears",
+      "supported": false,
+      "anchor": "wrist",
       "scale": 1,
-      "overlay": "/art/products/margin-note-drops/overlay.svg",
+      "overlay": "",
       "arAsset": null
     },
     "seo": {
@@ -92,88 +88,92 @@
   },
   {
     "id": "nem_002",
-    "sku": "NEM-ER-MON-02",
-    "handle": "monsoon-hour-jhumka",
-    "name": "Monsoon Hour Jhumka",
-    "subtitle": "Lilac enamel jhumkas",
-    "description": "A jhumka that heard the rain. Lilac enamel fired in layers, with a fringe that moves a half-second after you do.",
-    "price": 3490,
+    "sku": "NEM-BR-BMB-02",
+    "handle": "blush-bamboo-bracelet",
+    "name": "Blush Bamboo Bracelet",
+    "subtitle": "Bamboo-link bracelet with pink stones",
+    "description": "Glossy bamboo links finished with tiny rings of blush-pink stones. Easy, warm and quietly special — the one you'll wear with everything.",
+    "price": 1199,
     "compareAtPrice": null,
     "currency": "INR",
-    "inventory": 12,
-    "category": "earrings",
+    "inventory": 25,
+    "category": "bracelets",
     "occasions": [
-      "celebration",
-      "after-hours"
+      "everyday"
     ],
     "collections": [
       "new-arrivals",
-      "editors-picks",
-      "statement"
+      "everyday-pieces",
+      "giftable"
     ],
     "tags": [
-      "enamel",
-      "meenakari",
-      "jhumka",
-      "lilac"
+      "anti-tarnish",
+      "bamboo",
+      "pink",
+      "everyday"
     ],
-    "material": "Brass, gold-tone plating, lilac meenakari, glass seed beads",
-    "dimensions": "Drop length 5.8 cm · 9.4 g per earring",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "jaipur",
+    "material": "Anti-tarnish gold-tone finish, cubic zirconia stones",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
+    "market": "mumbai",
     "featured": true,
-    "createdAt": "2026-09-02T00:00:00.000Z",
+    "createdAt": "2026-11-08T10:14:00.000Z",
     "images": [
       {
-        "src": "/art/products/monsoon-hour-jhumka/hero.svg",
-        "alt": "Monsoon Hour Jhumka — product view",
+        "src": "/products/blush-bamboo-bracelet/01.webp",
+        "alt": "Blush Bamboo Bracelet — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/monsoon-hour-jhumka/worn.svg",
-        "alt": "Monsoon Hour Jhumka — as worn",
+        "src": "/products/blush-bamboo-bracelet/02.webp",
+        "alt": "Blush Bamboo Bracelet — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/monsoon-hour-jhumka/detail.svg",
-        "alt": "Monsoon Hour Jhumka — close-up detail",
+        "src": "/products/blush-bamboo-bracelet/03.webp",
+        "alt": "Blush Bamboo Bracelet — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/blush-bamboo-bracelet/04.webp",
+        "alt": "Blush Bamboo Bracelet — close-up",
         "role": "detail"
       },
       {
-        "src": "/art/products/monsoon-hour-jhumka/story.svg",
-        "alt": "Monsoon Hour Jhumka — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/blush-bamboo-bracelet/05.webp",
+        "alt": "Blush Bamboo Bracelet — another view",
+        "role": "gallery"
       }
     ],
     "story": {
       "find": {
-        "body": "Spotted in a tiny Johari Bazaar shop with the enamelling workshop right upstairs. Every jhumka on the counter was red and green — except one tray in lilac.",
-        "note": "not ruby. lilac. this one."
+        "body": "Found on Colaba Causeway, where the everyday pieces are. Bamboo is everywhere this season — this was the only one with pink stones, and it stopped us.",
+        "note": "pink, but grown-up."
       },
       "check": {
-        "body": "We asked for a lighter dome so you can dance in them all night, checked every enamel layer for pinholes and every bead on the fringe.",
+        "body": "We checked every pink stone ring for grip, the links for a smooth, even shine and the clasp for a secure one-hand close.",
         "steps": [
-          "Enamel checked for pinholes",
-          "Fringe pulled bead by bead",
-          "Lighter dome — under 9 g each",
-          "Hooks tested for grip"
+          "Pink stones checked ring by ring",
+          "Even mirror finish",
+          "One-hand clasp",
+          "Anti-tarnish finish"
         ]
       },
       "style": {
-        "body": "The sangeet, second song. You weren't going to dance. The jhumkas had other plans.",
+        "body": "Saturday brunch, chikankari kurta, coffee in one hand.",
         "pairWith": [
-          "Pastel lehenga or a plain kurta",
-          "Hair tied back",
-          "Nothing else at the neck"
+          "White chikankari kurta",
+          "Petal Drop Earrings",
+          "A thin gold chain"
         ]
       }
     },
     "variants": [],
     "tryOn": {
       "supported": true,
-      "anchor": "ears",
-      "scale": 1.15,
-      "overlay": "/art/products/monsoon-hour-jhumka/overlay.svg",
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "/products/blush-bamboo-bracelet/tryon.png",
       "arAsset": null
     },
     "seo": {
@@ -183,87 +183,93 @@
   },
   {
     "id": "nem_003",
-    "sku": "NEM-ER-SEC-03",
-    "handle": "second-glance-hoops",
-    "name": "Second Glance Hoops",
-    "subtitle": "Asymmetric filigree hoops",
-    "description": "One hoop larger than the other, on purpose. The kind of detail people notice the second time they look.",
-    "price": 2690,
-    "compareAtPrice": null,
+    "sku": "NEM-KD-STR-03",
+    "handle": "starline-stone-bangle",
+    "name": "Starline Stone Bangle",
+    "subtitle": "Slim bangle with a row of stones",
+    "description": "A slim, polished bangle set with a single row of sparkling stones — the fine-jewellery look you can wear every single day.",
+    "price": 999,
+    "compareAtPrice": 1399,
     "currency": "INR",
-    "inventory": 18,
-    "category": "earrings",
+    "inventory": 30,
+    "category": "kada",
     "occasions": [
-      "after-hours",
-      "everyday"
+      "everyday",
+      "nine-to-five"
     ],
     "collections": [
       "new-arrivals",
-      "statement"
+      "best-sellers",
+      "everyday-pieces"
     ],
     "tags": [
-      "filigree",
-      "silver",
-      "asymmetric",
-      "hoops"
+      "anti-tarnish",
+      "bangle",
+      "minimal",
+      "stackable"
     ],
-    "material": "Silver-tone filigree, oxidised accents",
-    "dimensions": "Large hoop 4.4 cm · small hoop 2.8 cm · 4.6 g total",
-    "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
-    "market": "delhi",
+    "material": "Anti-tarnish gold-tone finish, cubic zirconia stones",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
+    "market": "mumbai",
     "featured": false,
-    "createdAt": "2026-09-03T00:00:00.000Z",
+    "createdAt": "2026-11-08T10:21:00.000Z",
     "images": [
       {
-        "src": "/art/products/second-glance-hoops/hero.svg",
-        "alt": "Second Glance Hoops — product view",
+        "src": "/products/starline-stone-bangle/01.webp",
+        "alt": "Starline Stone Bangle — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/second-glance-hoops/worn.svg",
-        "alt": "Second Glance Hoops — as worn",
+        "src": "/products/starline-stone-bangle/02.webp",
+        "alt": "Starline Stone Bangle — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/second-glance-hoops/detail.svg",
-        "alt": "Second Glance Hoops — close-up detail",
-        "role": "detail"
+        "src": "/products/starline-stone-bangle/03.webp",
+        "alt": "Starline Stone Bangle — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/second-glance-hoops/story.svg",
-        "alt": "Second Glance Hoops — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/starline-stone-bangle/04.webp",
+        "alt": "Starline Stone Bangle — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/starline-stone-bangle/05.webp",
+        "alt": "Starline Stone Bangle — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "Picked up from a Janpath stall that changes its stock every week. One hoop larger than the other — we thought it was a mistake, then couldn't stop looking.",
-        "note": "don't fix it. it's better uneven."
+        "body": "Picked up on Colaba Causeway after testing a dozen slim bangles for the one that caught the light without looking loud.",
+        "note": "one line of light."
       },
       "check": {
-        "body": "We checked the filigree for broken wires, the oxidising for even colour, and that both hoops close cleanly every time.",
+        "body": "We checked every stone for even setting, the inner edge for comfort and the plating under bright light.",
         "steps": [
-          "Filigree wire by wire",
-          "Even oxidised finish",
-          "Click-shut hoops",
-          "Smooth inside edges"
+          "Stones checked one by one",
+          "Comfort-rounded inner edge",
+          "Plating checked under bright light",
+          "Anti-tarnish finish"
         ]
       },
       "style": {
-        "body": "A rooftop at 11 p.m. Someone tilts their head and says, 'Wait — are they different?' Yes. That's the point.",
+        "body": "Office to dinner, without changing a thing.",
         "pairWith": [
-          "Black slip dress",
-          "White kurta & jeans",
-          "Hair down"
+          "Linen kurta",
+          "Cupid's Arrow Bracelet",
+          "Small studs"
         ]
       }
     },
     "variants": [],
     "tryOn": {
-      "supported": true,
-      "anchor": "ears",
-      "scale": 1.1,
-      "overlay": "/art/products/second-glance-hoops/overlay.svg",
+      "supported": false,
+      "anchor": "wrist",
+      "scale": 1,
+      "overlay": "",
       "arAsset": null
     },
     "seo": {
@@ -273,88 +279,93 @@
   },
   {
     "id": "nem_004",
-    "sku": "NEM-NS-CHA-04",
-    "handle": "chalk-line-necklace-set",
-    "name": "The Chalk Line Set",
-    "subtitle": "Fine collar & studs",
-    "description": "A fine collar with a single bar — the cleanest line on the street. Comes with matching studs.",
-    "price": 4290,
-    "compareAtPrice": null,
+    "sku": "NEM-BR-RPT-04",
+    "handle": "riptide-coil-bracelet",
+    "name": "Riptide Coil Bracelet",
+    "subtitle": "Wave cuff with stone-set coils",
+    "description": "A wavy cuff and a sparkling stone line, wrapped together by stacked stone-set coils. Modern, a little bold, made to be noticed.",
+    "price": 1399,
+    "compareAtPrice": 1899,
     "currency": "INR",
-    "inventory": 15,
-    "category": "necklace-sets",
+    "inventory": 20,
+    "category": "bracelets",
     "occasions": [
-      "nine-to-five",
+      "after-hours",
       "everyday"
     ],
     "collections": [
-      "best-sellers",
-      "everyday-pieces",
-      "giftable"
+      "new-arrivals",
+      "editors-picks",
+      "statement"
     ],
     "tags": [
-      "collar",
-      "brass",
-      "minimal",
-      "set"
+      "anti-tarnish",
+      "cuff",
+      "wave",
+      "statement"
     ],
-    "material": "Brass, gold-tone plating",
-    "dimensions": "Collar 38–43 cm adjustable · bar 3.2 cm · studs 0.8 cm",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "material": "Anti-tarnish gold-tone finish, cubic zirconia stones",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
     "market": "mumbai",
     "featured": true,
-    "createdAt": "2026-09-04T00:00:00.000Z",
+    "createdAt": "2026-11-08T10:28:00.000Z",
     "images": [
       {
-        "src": "/art/products/chalk-line-necklace-set/hero.svg",
-        "alt": "The Chalk Line Set — product view",
+        "src": "/products/riptide-coil-bracelet/01.webp",
+        "alt": "Riptide Coil Bracelet — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/chalk-line-necklace-set/worn.svg",
-        "alt": "The Chalk Line Set — as worn",
+        "src": "/products/riptide-coil-bracelet/02.webp",
+        "alt": "Riptide Coil Bracelet — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/chalk-line-necklace-set/detail.svg",
-        "alt": "The Chalk Line Set — close-up detail",
+        "src": "/products/riptide-coil-bracelet/03.webp",
+        "alt": "Riptide Coil Bracelet — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/riptide-coil-bracelet/04.webp",
+        "alt": "Riptide Coil Bracelet — close-up",
         "role": "detail"
       },
       {
-        "src": "/art/products/chalk-line-necklace-set/story.svg",
-        "alt": "The Chalk Line Set — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/riptide-coil-bracelet/05.webp",
+        "alt": "Riptide Coil Bracelet — another view",
+        "role": "gallery"
       }
     ],
     "story": {
       "find": {
-        "body": "Found on Colaba Causeway, on a stall that sells only minimal pieces. A fine collar with a single bar — the cleanest line on the whole street.",
-        "note": "one line. say it once."
+        "body": "From a Colaba stall that changes its edit every few weeks. We came back for this one twice before deciding it had to be ours.",
+        "note": "a wave you can wear."
       },
       "check": {
-        "body": "Minimal pieces have nowhere to hide, so we checked every joint and edge, the clasp and the stud backs, and that the collar sits flat.",
+        "body": "We checked each coil for loose stones, the wave for smooth edges and that the cuff holds its shape after flexing.",
         "steps": [
-          "Every joint and edge checked",
-          "Sits flat on the collarbone",
-          "Secure lobster clasp",
-          "Matching studs paired"
+          "Coils checked for loose stones",
+          "Smooth wave edges",
+          "Flex-tested shape",
+          "Anti-tarnish finish"
         ]
       },
       "style": {
-        "body": "The presentation. Collar under a crisp shirt. You speak, they listen.",
+        "body": "Friday night, rooftop, one statement on the wrist.",
         "pairWith": [
-          "Crisp shirt, top button open",
-          "Blazer",
-          "Margin Note Drops"
+          "Black dress or a satin shirt",
+          "Cascade Tassel Earrings",
+          "Hair up"
         ]
       }
     },
     "variants": [],
     "tryOn": {
-      "supported": true,
-      "anchor": "neck",
+      "supported": false,
+      "anchor": "wrist",
       "scale": 1,
-      "overlay": "/art/products/chalk-line-necklace-set/overlay.svg",
+      "overlay": "",
       "arAsset": null
     },
     "seo": {
@@ -364,87 +375,88 @@
   },
   {
     "id": "nem_005",
-    "sku": "NEM-NS-RAA-05",
-    "handle": "raat-rani-necklace-set",
-    "name": "Raat Rani Set",
-    "subtitle": "Filigree collar with violet stones",
-    "description": "Named for night-blooming jasmine. A filigree collar of petals and violet stones that opens slowly in the dark.",
-    "price": 6890,
-    "compareAtPrice": null,
+    "sku": "NEM-ER-CSC-05",
+    "handle": "cascade-tassel-earrings",
+    "name": "Cascade Tassel Earrings",
+    "subtitle": "Leaf-top crystal tassel drops",
+    "description": "A textured gold leaf at the ear, then a waterfall of crystal tassels that moves every time you do. Long, light and made for evenings.",
+    "price": 899,
+    "compareAtPrice": 1299,
     "currency": "INR",
-    "inventory": 6,
-    "category": "necklace-sets",
+    "inventory": 25,
+    "category": "earrings",
     "occasions": [
       "after-hours",
       "celebration"
     ],
     "collections": [
-      "editors-picks",
+      "new-arrivals",
+      "best-sellers",
       "statement"
     ],
     "tags": [
-      "filigree",
-      "statement",
-      "violet",
-      "set"
+      "anti-tarnish",
+      "tassel",
+      "crystal",
+      "drop"
     ],
-    "material": "Silver-tone filigree, gold-tone accents, violet glass stones",
-    "dimensions": "Collar 40 cm with 5 cm extender · earrings 3.6 cm",
-    "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
-    "market": "delhi",
+    "material": "Anti-tarnish gold-tone finish, cubic zirconia stones",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
+    "market": "mumbai",
     "featured": true,
-    "createdAt": "2026-09-05T00:00:00.000Z",
+    "createdAt": "2026-11-08T10:35:00.000Z",
     "images": [
       {
-        "src": "/art/products/raat-rani-necklace-set/hero.svg",
-        "alt": "Raat Rani Set — product view",
+        "src": "/products/cascade-tassel-earrings/01.webp",
+        "alt": "Cascade Tassel Earrings — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/raat-rani-necklace-set/worn.svg",
-        "alt": "Raat Rani Set — as worn",
+        "src": "/products/cascade-tassel-earrings/02.webp",
+        "alt": "Cascade Tassel Earrings — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/raat-rani-necklace-set/detail.svg",
-        "alt": "Raat Rani Set — close-up detail",
-        "role": "detail"
+        "src": "/products/cascade-tassel-earrings/03.webp",
+        "alt": "Cascade Tassel Earrings — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/raat-rani-necklace-set/story.svg",
-        "alt": "Raat Rani Set — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/cascade-tassel-earrings/04.webp",
+        "alt": "Cascade Tassel Earrings — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "From a second-floor shop in Dariba Kalan, Old Delhi's jewellers' lane since the Mughals. A filigree collar of petals and violet stones that looked like jasmine opening at night.",
-        "note": "the flower that only shows up after dark."
+        "body": "Spotted on Colaba Causeway catching the evening light. Tassels are everywhere — these were the only ones light enough to wear all night.",
+        "note": "movement, not weight."
       },
       "check": {
-        "body": "We checked every petal for loose stones, made sure the collar lies flat without pinching, and tested the clasp for a full night of dancing.",
+        "body": "We checked every tassel strand for missing stones, matched the pair for length and tested the push-backs for a secure fit.",
         "steps": [
-          "Every stone checked for grip",
-          "Filigree inspected petal by petal",
-          "Lies flat, no pinching",
-          "Clasp tested for a long night"
+          "Strands checked stone by stone",
+          "Pair matched for length",
+          "Secure push-backs",
+          "Lightweight for all-night wear"
         ]
       },
       "style": {
-        "body": "A wedding reception, late. Hair up, shoulders bare. Everybody asks where it's from.",
+        "body": "The sangeet, second song. Hair tucked behind one ear.",
         "pairWith": [
-          "Off-shoulder blouse or saree",
-          "Hair up",
-          "Skip the earrings — or go tiny"
+          "Hair tucked behind the ear",
+          "Riptide Coil Bracelet",
+          "Nothing at the neck"
         ]
       }
     },
     "variants": [],
     "tryOn": {
-      "supported": true,
-      "anchor": "neck",
-      "scale": 1.1,
-      "overlay": "/art/products/raat-rani-necklace-set/overlay.svg",
+      "supported": false,
+      "anchor": "ears",
+      "scale": 1,
+      "overlay": "",
       "arAsset": null
     },
     "seo": {
@@ -454,87 +466,88 @@
   },
   {
     "id": "nem_006",
-    "sku": "NEM-NS-INH-06",
-    "handle": "inheritance-rewritten-set",
-    "name": "Inheritance, Rewritten",
-    "subtitle": "Temple-motif necklace set",
-    "description": "The temple necklace your grandmother wore — asked a new question. Repoussé discs, spaced like breath, around a single pearl.",
-    "price": 5990,
-    "compareAtPrice": null,
+    "sku": "NEM-ER-PTL-06",
+    "handle": "petal-drop-earrings",
+    "name": "Petal Drop Earrings",
+    "subtitle": "Flower and leaf drop earrings",
+    "description": "A geometric stud, a polished gold flower and a little sprig of leaves. Delicate, everyday earrings that look like you chose them carefully.",
+    "price": 749,
+    "compareAtPrice": 999,
     "currency": "INR",
-    "inventory": 9,
-    "category": "necklace-sets",
+    "inventory": 30,
+    "category": "earrings",
     "occasions": [
-      "celebration"
+      "everyday",
+      "nine-to-five"
     ],
     "collections": [
-      "editors-picks",
-      "statement",
+      "new-arrivals",
+      "everyday-pieces",
       "giftable"
     ],
     "tags": [
-      "temple",
-      "repousse",
-      "festive",
-      "set"
+      "anti-tarnish",
+      "floral",
+      "drop",
+      "lightweight"
     ],
-    "material": "Brass, gold-tone plating, chased discs, pearl accents",
-    "dimensions": "Necklace 44 cm · centre disc 3.4 cm · earrings 3.0 cm",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "hyderabad",
+    "material": "Anti-tarnish gold-tone finish",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
+    "market": "mumbai",
     "featured": false,
-    "createdAt": "2026-09-06T00:00:00.000Z",
+    "createdAt": "2026-11-08T11:42:00.000Z",
     "images": [
       {
-        "src": "/art/products/inheritance-rewritten-set/hero.svg",
-        "alt": "Inheritance, Rewritten — product view",
+        "src": "/products/petal-drop-earrings/01.webp",
+        "alt": "Petal Drop Earrings — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/inheritance-rewritten-set/worn.svg",
-        "alt": "Inheritance, Rewritten — as worn",
+        "src": "/products/petal-drop-earrings/02.webp",
+        "alt": "Petal Drop Earrings — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/inheritance-rewritten-set/detail.svg",
-        "alt": "Inheritance, Rewritten — close-up detail",
-        "role": "detail"
+        "src": "/products/petal-drop-earrings/03.webp",
+        "alt": "Petal Drop Earrings — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/inheritance-rewritten-set/story.svg",
-        "alt": "Inheritance, Rewritten — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/petal-drop-earrings/04.webp",
+        "alt": "Petal Drop Earrings — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "Found in Laad Bazaar among the coin-and-pearl sets Hyderabadi brides have worn for generations. This one kept the prayer and lost the weight.",
-        "note": "keep the tradition, lose the weight."
+        "body": "Found at a minimal-jewellery stall on Colaba Causeway, in a tray of florals. This was the one that still looked good from across the room.",
+        "note": "a flower that goes to work."
       },
       "check": {
-        "body": "We checked every disc for crisp stamping, matched the pearl, and made sure the whole set is light enough to wear from the puja to the party.",
+        "body": "We checked every link for secure joins, matched the pair, and made sure they're light enough to forget you're wearing them.",
         "steps": [
-          "Discs checked for crisp detail",
-          "Pearl matched and secured",
-          "Light enough for all-day wear",
-          "Earrings paired and balanced"
+          "Links checked for secure joins",
+          "Pair matched",
+          "Lightweight for all-day wear",
+          "Anti-tarnish finish"
         ]
       },
       "style": {
-        "body": "Diwali morning at your grandmother's house. She holds the centre disc, turns it over, and nods.",
+        "body": "Monday, 9:40 a.m. Something small at your ear that says you thought about it.",
         "pairWith": [
-          "Silk saree or a solid kurta",
-          "Small bindi",
-          "A kada on one wrist"
+          "White shirt",
+          "Low bun",
+          "Blush Bamboo Bracelet"
         ]
       }
     },
     "variants": [],
     "tryOn": {
       "supported": true,
-      "anchor": "neck",
-      "scale": 1.05,
-      "overlay": "/art/products/inheritance-rewritten-set/overlay.svg",
+      "anchor": "ears",
+      "scale": 1,
+      "overlay": "/products/petal-drop-earrings/tryon.png",
       "arAsset": null
     },
     "seo": {
@@ -544,87 +557,88 @@
   },
   {
     "id": "nem_007",
-    "sku": "NEM-BR-REC-07",
-    "handle": "recess-bracelet",
-    "name": "Recess Bracelet",
-    "subtitle": "Beaded brass bracelet",
-    "description": "Brass and lilac beads in no particular order. Stack it, gift it, forget you're wearing it.",
-    "price": 1690,
-    "compareAtPrice": null,
+    "sku": "NEM-ER-LEF-07",
+    "handle": "autumn-leaf-earrings",
+    "name": "Autumn Leaf Earrings",
+    "subtitle": "Filigree leaf drops with frosted petals",
+    "description": "An openwork gold leaf hanging from a small hoop, topped with two frosted petals. Nature-inspired, light, and a little bit dreamy.",
+    "price": 799,
+    "compareAtPrice": 1099,
     "currency": "INR",
-    "inventory": 30,
-    "category": "bracelets",
+    "inventory": 25,
+    "category": "earrings",
     "occasions": [
-      "everyday"
+      "everyday",
+      "after-hours"
     ],
     "collections": [
-      "best-sellers",
-      "everyday-pieces",
+      "new-arrivals",
+      "editors-picks",
       "giftable"
     ],
     "tags": [
-      "beads",
-      "brass",
-      "playful",
-      "stackable"
+      "anti-tarnish",
+      "leaf",
+      "filigree",
+      "drop"
     ],
-    "material": "Brass beads, lilac glass beads, stretch cord",
-    "dimensions": "Fits 15–17 cm wrists · bead 6 mm",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
+    "material": "Anti-tarnish gold-tone finish, frosted acrylic petals",
+    "dimensions": "",
+    "care": "Anti-tarnish finish made for everyday wear. Keep away from perfume and harsh chemicals, wipe dry after wearing and store in the Nemara pouch.",
     "market": "mumbai",
     "featured": false,
-    "createdAt": "2026-09-07T00:00:00.000Z",
+    "createdAt": "2026-11-08T11:49:00.000Z",
     "images": [
       {
-        "src": "/art/products/recess-bracelet/hero.svg",
-        "alt": "Recess Bracelet — product view",
+        "src": "/products/autumn-leaf-earrings/01.webp",
+        "alt": "Autumn Leaf Earrings — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/recess-bracelet/worn.svg",
-        "alt": "Recess Bracelet — as worn",
+        "src": "/products/autumn-leaf-earrings/02.webp",
+        "alt": "Autumn Leaf Earrings — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/recess-bracelet/detail.svg",
-        "alt": "Recess Bracelet — close-up detail",
-        "role": "detail"
+        "src": "/products/autumn-leaf-earrings/03.webp",
+        "alt": "Autumn Leaf Earrings — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/recess-bracelet/story.svg",
-        "alt": "Recess Bracelet — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/autumn-leaf-earrings/04.webp",
+        "alt": "Autumn Leaf Earrings — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "Pulled out of a jar of mixed beads at a Colaba stall. Brass and lilac in no particular order — exactly the kind of thing you wear every day.",
-        "note": "no pattern. that's the pattern."
+        "body": "Picked up on Colaba Causeway. The frosted petals were what got us — they soften the gold and make the leaf feel real.",
+        "note": "autumn, all year."
       },
       "check": {
-        "body": "We restrung the beads on stronger stretch cord, checked every bead for chips and made sure it stacks without tangling.",
+        "body": "We checked the openwork for clean edges, the petals for secure fixing and the hoops for an easy, secure close.",
         "steps": [
-          "Restrung on stronger cord",
-          "Beads checked for chips",
-          "Stretch-tested 200 times",
-          "Stacks without tangling"
+          "Openwork edges checked",
+          "Petals secured",
+          "Easy-close hoops",
+          "Anti-tarnish finish"
         ]
       },
       "style": {
-        "body": "Saturday market, coffee in one hand. Stack it with everything or wear it alone.",
+        "body": "A long lunch that turns into dinner. Hair down, ivory kurta.",
         "pairWith": [
-          "White tee & denim",
-          "Your everyday watch",
-          "Sunday Kada"
+          "Ivory kurta",
+          "Hair down",
+          "Starline Stone Bangle"
         ]
       }
     },
     "variants": [],
     "tryOn": {
       "supported": true,
-      "anchor": "wrist",
+      "anchor": "ears",
       "scale": 1,
-      "overlay": "/art/products/recess-bracelet/overlay.svg",
+      "overlay": "/products/autumn-leaf-earrings/tryon.png",
       "arAsset": null
     },
     "seo": {
@@ -634,87 +648,113 @@
   },
   {
     "id": "nem_008",
-    "sku": "NEM-BR-THR-08",
-    "handle": "thread-of-thought-cuff",
-    "name": "Thread of Thought Cuff",
-    "subtitle": "Woven filigree cuff",
-    "description": "An open cuff woven from silver threads — a reminder that every good idea is a few loose ends, pulled together.",
-    "price": 2990,
-    "compareAtPrice": null,
+    "sku": "NEM-KD-JAL-08",
+    "handle": "jaali-bloom-ad-kada-pair",
+    "name": "Jaali Bloom AD Kada Pair",
+    "subtitle": "Floral jaali kadas · set of 2",
+    "description": "A pair of kadas in a lace-like jaali of American diamonds, with golden flowers and swirls woven through. Bridal sparkle, made wearable.",
+    "price": 2499,
+    "compareAtPrice": 3299,
     "currency": "INR",
-    "inventory": 14,
-    "category": "bracelets",
+    "inventory": 20,
+    "category": "kada",
     "occasions": [
-      "nine-to-five",
-      "after-hours"
+      "celebration"
     ],
     "collections": [
       "new-arrivals",
-      "editors-picks"
+      "editors-picks",
+      "statement",
+      "giftable"
     ],
     "tags": [
-      "filigree",
-      "silver",
-      "cuff",
-      "woven"
+      "ad",
+      "american diamond",
+      "kada",
+      "set of 2",
+      "festive"
     ],
-    "material": "Silver-tone filigree",
-    "dimensions": "Opening 2.4 cm · width 1.8 cm · fits most wrists",
-    "care": "Store in the pouch to slow tarnishing. Polish gently with the Nemara cloth; avoid chemical dips.",
-    "market": "kashmir",
+    "material": "Alloy base, two-tone gold and rhodium finish, American diamond (cubic zirconia) stones",
+    "dimensions": "",
+    "care": "Keep away from water, perfume and sprays. Wipe with a soft dry cloth and store flat in the Nemara pouch, away from other pieces, so the stones stay bright.",
+    "market": "hyderabad",
     "featured": true,
-    "createdAt": "2026-09-08T00:00:00.000Z",
+    "createdAt": "2026-11-08T11:56:00.000Z",
     "images": [
       {
-        "src": "/art/products/thread-of-thought-cuff/hero.svg",
-        "alt": "Thread of Thought Cuff — product view",
+        "src": "/products/jaali-bloom-ad-kada-pair/01.webp",
+        "alt": "Jaali Bloom AD Kada Pair — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/thread-of-thought-cuff/worn.svg",
-        "alt": "Thread of Thought Cuff — as worn",
+        "src": "/products/jaali-bloom-ad-kada-pair/02.webp",
+        "alt": "Jaali Bloom AD Kada Pair — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/thread-of-thought-cuff/detail.svg",
-        "alt": "Thread of Thought Cuff — close-up detail",
-        "role": "detail"
+        "src": "/products/jaali-bloom-ad-kada-pair/03.webp",
+        "alt": "Jaali Bloom AD Kada Pair — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/thread-of-thought-cuff/story.svg",
-        "alt": "Thread of Thought Cuff — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/jaali-bloom-ad-kada-pair/04.webp",
+        "alt": "Jaali Bloom AD Kada Pair — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/jaali-bloom-ad-kada-pair/05.webp",
+        "alt": "Jaali Bloom AD Kada Pair — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "Found in a quiet shop near Polo View in Srinagar, over a cup of kahwa. An open cuff woven like lace — the kind of thing you'll wear every day for a year.",
-        "note": "looks like lace. wears like armour."
+        "body": "Found on the bangle lane of Laad Bazaar, Hyderabad, where every counter glitters. This pair had the finest jaali on the street.",
+        "note": "lace, but it sparkles."
       },
       "check": {
-        "body": "We checked the woven filigree for loose threads, made sure the cuff flexes to your wrist without losing shape, and smoothed the ends.",
+        "body": "We checked every stone in the jaali for grip, matched the pair exactly and smoothed the inner edges for comfort.",
         "steps": [
-          "Weave checked thread by thread",
-          "Flex-tested to keep its shape",
-          "Smoothed, rounded ends",
-          "Oxidised finish checked"
+          "Jaali stones checked for grip",
+          "Pair matched exactly",
+          "Comfort-rounded inner edges",
+          "Plating checked under bright light"
         ]
       },
       "style": {
-        "body": "Thursday evening. Laptop closed, sleeves rolled up. Straight from the office to dinner, no change needed.",
+        "body": "The wedding reception. Both kadas on one wrist, everything else quiet.",
         "pairWith": [
-          "Rolled-up shirt sleeves",
-          "Your watch on the same wrist",
-          "Second Glance Hoops"
+          "Pastel lehenga or silk saree",
+          "Radiant Grace AD Set",
+          "Hair in a low bun"
         ]
       }
     },
-    "variants": [],
+    "variants": [
+      {
+        "title": "2.4",
+        "sku": "NEM-KD-JAL-08-24",
+        "price": null,
+        "available": true
+      },
+      {
+        "title": "2.6",
+        "sku": "NEM-KD-JAL-08-26",
+        "price": null,
+        "available": true
+      },
+      {
+        "title": "2.8",
+        "sku": "NEM-KD-JAL-08-28",
+        "price": null,
+        "available": true
+      }
+    ],
     "tryOn": {
-      "supported": true,
+      "supported": false,
       "anchor": "wrist",
       "scale": 1,
-      "overlay": "/art/products/thread-of-thought-cuff/overlay.svg",
+      "overlay": "",
       "arAsset": null
     },
     "seo": {
@@ -724,87 +764,113 @@
   },
   {
     "id": "nem_009",
-    "sku": "NEM-BR-LAN-09",
-    "handle": "lantern-bracelet",
-    "name": "Lantern Bracelet",
-    "subtitle": "Enamel link bracelet",
-    "description": "Small enamel links that glow like lanterns strung across a courtyard on a festival night.",
-    "price": 2490,
-    "compareAtPrice": null,
+    "sku": "NEM-KD-RNG-09",
+    "handle": "rangoli-ad-kada",
+    "name": "Rangoli AD Kada",
+    "subtitle": "Multicolour AD bracelet-kada",
+    "description": "Marquise links of American diamonds, with emerald-green and ruby-pink stones set between them like a rangoli. Wear one, or stack the pair.",
+    "price": 1499,
+    "compareAtPrice": 1999,
     "currency": "INR",
-    "inventory": 11,
-    "category": "bracelets",
+    "inventory": 25,
+    "category": "kada",
     "occasions": [
-      "after-hours",
-      "celebration"
+      "celebration",
+      "after-hours"
     ],
     "collections": [
       "new-arrivals",
+      "best-sellers",
+      "statement",
       "giftable"
     ],
     "tags": [
-      "enamel",
-      "links",
-      "violet",
+      "ad",
+      "american diamond",
+      "multicolour",
+      "kada",
       "festive"
     ],
-    "material": "Brass, gold-tone plating, violet meenakari",
-    "dimensions": "Length 17.5 cm + 2 cm extender · link 1.1 cm",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "kashmir",
-    "featured": false,
-    "createdAt": "2026-09-09T00:00:00.000Z",
+    "material": "Alloy base, gold-tone finish, American diamond (cubic zirconia) and coloured stones, box clasp",
+    "dimensions": "",
+    "care": "Keep away from water, perfume and sprays. Wipe with a soft dry cloth and store flat in the Nemara pouch, away from other pieces, so the stones stay bright.",
+    "market": "hyderabad",
+    "featured": true,
+    "createdAt": "2026-11-08T11:03:00.000Z",
     "images": [
       {
-        "src": "/art/products/lantern-bracelet/hero.svg",
-        "alt": "Lantern Bracelet — product view",
+        "src": "/products/rangoli-ad-kada/01.webp",
+        "alt": "Rangoli AD Kada — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/lantern-bracelet/worn.svg",
-        "alt": "Lantern Bracelet — as worn",
+        "src": "/products/rangoli-ad-kada/02.webp",
+        "alt": "Rangoli AD Kada — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/lantern-bracelet/detail.svg",
-        "alt": "Lantern Bracelet — close-up detail",
-        "role": "detail"
+        "src": "/products/rangoli-ad-kada/03.webp",
+        "alt": "Rangoli AD Kada — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/lantern-bracelet/story.svg",
-        "alt": "Lantern Bracelet — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/rangoli-ad-kada/04.webp",
+        "alt": "Rangoli AD Kada — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/rangoli-ad-kada/05.webp",
+        "alt": "Rangoli AD Kada — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/rangoli-ad-kada/06.webp",
+        "alt": "Rangoli AD Kada — another view",
+        "role": "gallery"
       }
     ],
     "story": {
       "find": {
-        "body": "From a Lal Chowk counter where the enamel colours come straight from Kashmir's papier-mâché boxes. Little violet links that glow like lanterns.",
-        "note": "a row of small lights."
+        "body": "From a Laad Bazaar counter in the shadow of the Charminar. We liked that the colour comes in small, clever doses — never too much.",
+        "note": "colour, in small doses."
       },
       "check": {
-        "body": "We checked every enamel link for clean edges and even colour, tested each jump ring, and fitted a clasp you can close one-handed.",
+        "body": "We checked every stone for grip, tested the box clasp for a secure close and matched stone colours across the pair.",
         "steps": [
-          "Enamel edges checked link by link",
-          "Jump rings tested",
-          "One-hand clasp",
-          "Colour matched across links"
+          "Stones checked for grip",
+          "Box clasp tested",
+          "Colours matched across the pair",
+          "Plating checked under bright light"
         ]
       },
       "style": {
-        "body": "Festival night on the terrace. Sparklers, laughter, a wrist that catches the light every time you raise a glass.",
+        "body": "Diwali night. One on the wrist with your kurta — or both with a lehenga.",
         "pairWith": [
-          "Festive kurta or a little black dress",
-          "Monsoon Hour Jhumka",
-          "Bare neck"
+          "Silk kurta or lehenga",
+          "Ruby Rani AD Set",
+          "A small bindi"
         ]
       }
     },
-    "variants": [],
+    "variants": [
+      {
+        "title": "Single",
+        "sku": "NEM-KD-RNG-09-SINGLE",
+        "price": 1499,
+        "available": true
+      },
+      {
+        "title": "Set of 2",
+        "sku": "NEM-KD-RNG-09-SETOF2",
+        "price": 2699,
+        "available": true
+      }
+    ],
     "tryOn": {
       "supported": true,
       "anchor": "wrist",
       "scale": 1,
-      "overlay": "/art/products/lantern-bracelet/overlay.svg",
+      "overlay": "/products/rangoli-ad-kada/tryon.png",
       "arAsset": null
     },
     "seo": {
@@ -814,100 +880,112 @@
   },
   {
     "id": "nem_010",
-    "sku": "NEM-KD-SUN-10",
-    "handle": "sunday-kada",
-    "name": "Sunday Kada",
-    "subtitle": "Hammered brass kada",
-    "description": "A hammered kada with the slow warmth of a Sunday morning. Irregular, soft, entirely yours.",
-    "price": 2190,
-    "compareAtPrice": null,
+    "sku": "NEM-KD-RJW-10",
+    "handle": "rajwada-kada",
+    "name": "Rajwada Kada",
+    "subtitle": "Antique-gold kada with ghungroos",
+    "description": "A royal, antique-gold kada carved with florals, set with red and green stones, and finished with tiny ghungroo bells that chime as you move.",
+    "price": 1699,
+    "compareAtPrice": 2299,
     "currency": "INR",
-    "inventory": 22,
+    "inventory": 20,
     "category": "kada",
     "occasions": [
-      "everyday",
-      "nine-to-five"
+      "celebration"
     ],
     "collections": [
-      "best-sellers",
-      "everyday-pieces"
+      "new-arrivals",
+      "editors-picks",
+      "statement",
+      "giftable"
     ],
     "tags": [
-      "brass",
-      "hammered",
+      "antique",
       "kada",
-      "everyday"
+      "temple",
+      "ghungroo",
+      "festive"
     ],
-    "material": "Hammered brass, gold-tone plating",
-    "dimensions": "Width 0.9 cm · available in 2.4, 2.6 and 2.8",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "ahmedabad",
-    "featured": false,
-    "createdAt": "2026-09-10T00:00:00.000Z",
+    "material": "Alloy base, antique gold-tone finish, red and green stones, ghungroo beads; hinged opening",
+    "dimensions": "",
+    "care": "Keep away from water and perfume. Wipe gently with a soft dry cloth and store in the Nemara pouch to keep the antique finish rich.",
+    "market": "jaipur",
+    "featured": true,
+    "createdAt": "2026-11-08T11:10:00.000Z",
     "images": [
       {
-        "src": "/art/products/sunday-kada/hero.svg",
-        "alt": "Sunday Kada — product view",
+        "src": "/products/rajwada-kada/01.webp",
+        "alt": "Rajwada Kada — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/sunday-kada/worn.svg",
-        "alt": "Sunday Kada — as worn",
+        "src": "/products/rajwada-kada/02.webp",
+        "alt": "Rajwada Kada — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/rajwada-kada/03.webp",
+        "alt": "Rajwada Kada — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/sunday-kada/detail.svg",
-        "alt": "Sunday Kada — close-up detail",
-        "role": "detail"
+        "src": "/products/rajwada-kada/04.webp",
+        "alt": "Rajwada Kada — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/sunday-kada/story.svg",
-        "alt": "Sunday Kada — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/rajwada-kada/05.webp",
+        "alt": "Rajwada Kada — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/rajwada-kada/06.webp",
+        "alt": "Rajwada Kada — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "From Law Garden night market, where all of Gujarat shops for Navratri. A hammered kada with soft, irregular light — good for garba, better for every day.",
-        "note": "the one you never take off."
+        "body": "Found in a small shop off Johari Bazaar, Jaipur, where the antique-gold pieces are still finished by hand upstairs. The ghungroos sealed it.",
+        "note": "it chimes when you laugh."
       },
       "check": {
-        "body": "We checked the hammering for sharp spots, the plating for even colour, and that it slips on easily and moves without rattling.",
+        "body": "We checked the carving for crisp detail, every stone and ghungroo for a secure fix, and the hinge for a smooth, safe close.",
         "steps": [
-          "Hammering checked for sharp spots",
-          "Even gold-tone finish",
-          "Easy slip-on opening",
-          "Weight balanced for daily wear"
+          "Carving checked for crisp detail",
+          "Stones and ghungroos secured",
+          "Hinge tested",
+          "Antique finish checked up close"
         ]
       },
       "style": {
-        "body": "Sunday, late breakfast, nowhere to be. Then Monday, and you leave it on.",
+        "body": "The haldi, then the mehendi. Bangles stacked, hands full of colour.",
         "pairWith": [
-          "Joggers & a tee",
-          "Linen kurta",
-          "Recess Bracelet"
+          "Bandhani or Banarasi saree",
+          "Rajwada Temple Set",
+          "Mehendi"
         ]
       }
     },
     "variants": [
       {
-        "title": "2.4",
-        "sku": "NEM-KD-SUN-24"
+        "title": "Single",
+        "sku": "NEM-KD-RJW-10-SINGLE",
+        "price": 1699,
+        "available": true
       },
       {
-        "title": "2.6",
-        "sku": "NEM-KD-SUN-26"
-      },
-      {
-        "title": "2.8",
-        "sku": "NEM-KD-SUN-28"
+        "title": "Set of 2",
+        "sku": "NEM-KD-RJW-10-SETOF2",
+        "price": 2999,
+        "available": true
       }
     ],
     "tryOn": {
-      "supported": true,
+      "supported": false,
       "anchor": "wrist",
       "scale": 1,
-      "overlay": "/art/products/sunday-kada/overlay.svg",
+      "overlay": "",
       "arAsset": null
     },
     "seo": {
@@ -917,100 +995,94 @@
   },
   {
     "id": "nem_011",
-    "sku": "NEM-KD-AAN-11",
-    "handle": "aangan-kada",
-    "name": "Aangan Kada",
-    "subtitle": "Repoussé courtyard kada",
-    "description": "An aangan — the open courtyard at the heart of a home — pressed into brass and wrapped around the wrist.",
-    "price": 3890,
-    "compareAtPrice": null,
+    "sku": "NEM-NS-RDG-11",
+    "handle": "radiant-grace-ad-set",
+    "name": "Radiant Grace AD Set",
+    "subtitle": "Necklace & chandelier earrings",
+    "description": "A lattice necklace of American diamonds that falls into pear-shaped drops, with matching chandelier earrings. The set you wear when you want the room to notice.",
+    "price": 2799,
+    "compareAtPrice": 3999,
     "currency": "INR",
-    "inventory": 8,
-    "category": "kada",
+    "inventory": 15,
+    "category": "necklace-sets",
     "occasions": [
-      "celebration"
+      "celebration",
+      "after-hours"
     ],
     "collections": [
+      "new-arrivals",
       "editors-picks",
-      "statement",
-      "giftable"
+      "statement"
     ],
     "tags": [
-      "repousse",
-      "kada",
-      "festive",
-      "motif"
+      "ad",
+      "american diamond",
+      "necklace set",
+      "bridal",
+      "silver-tone"
     ],
-    "material": "Brass, gold-tone plating, chased",
-    "dimensions": "Width 1.6 cm · available in 2.4, 2.6 and 2.8",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "ahmedabad",
+    "material": "Alloy base, rhodium (silver-tone) finish, American diamond (cubic zirconia) stones, adjustable chain",
+    "dimensions": "",
+    "care": "Keep away from water, perfume and sprays. Wipe with a soft dry cloth and store flat in the Nemara pouch, away from other pieces, so the stones stay bright.",
+    "market": "delhi",
     "featured": true,
-    "createdAt": "2026-09-11T00:00:00.000Z",
+    "createdAt": "2026-11-08T11:17:00.000Z",
     "images": [
       {
-        "src": "/art/products/aangan-kada/hero.svg",
-        "alt": "Aangan Kada — product view",
+        "src": "/products/radiant-grace-ad-set/01.webp",
+        "alt": "Radiant Grace AD Set — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/aangan-kada/worn.svg",
-        "alt": "Aangan Kada — as worn",
+        "src": "/products/radiant-grace-ad-set/02.webp",
+        "alt": "Radiant Grace AD Set — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/aangan-kada/detail.svg",
-        "alt": "Aangan Kada — close-up detail",
-        "role": "detail"
+        "src": "/products/radiant-grace-ad-set/03.webp",
+        "alt": "Radiant Grace AD Set — another view",
+        "role": "gallery"
       },
       {
-        "src": "/art/products/aangan-kada/story.svg",
-        "alt": "Aangan Kada — buyer's notebook sketch",
-        "role": "story"
+        "src": "/products/radiant-grace-ad-set/04.webp",
+        "alt": "Radiant Grace AD Set — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/radiant-grace-ad-set/05.webp",
+        "alt": "Radiant Grace AD Set — close-up",
+        "role": "detail"
       }
     ],
     "story": {
       "find": {
-        "body": "Found at Law Garden on the busiest night of the year. A chased kada with a courtyard pattern all the way round — the statement piece of the stall.",
-        "note": "the one everyone reached for."
+        "body": "From a second-floor shop in Dariba Kalan, Old Delhi's jewellers' lane. The owner brought this set out last — it was clearly his favourite, and it became ours.",
+        "note": "the room will notice."
       },
       "check": {
-        "body": "We checked the chased pattern up close, the inner edge for comfort, and the plating for even colour all the way round.",
+        "body": "We checked every stone in the lattice for grip, matched the earrings, and made sure the necklace lies flat and the chain adjusts smoothly.",
         "steps": [
-          "Chased detail checked up close",
-          "Comfort-rounded inner edge",
-          "Even plating all round",
-          "Sized for an easy slip-on"
+          "Lattice stones checked for grip",
+          "Earrings matched",
+          "Lies flat, no pinching",
+          "Adjustable chain tested"
         ]
       },
       "style": {
-        "body": "The griha pravesh of your first home. Everyone in the courtyard. You, in the doorway.",
+        "body": "The reception, late. Hair up, shoulders bare, one set doing all the talking.",
         "pairWith": [
-          "Silk saree or anarkali",
-          "Inheritance, Rewritten",
-          "Hair in a braid"
+          "Wine or black saree",
+          "Hair up",
+          "Jaali Bloom AD Kada Pair"
         ]
       }
     },
-    "variants": [
-      {
-        "title": "2.4",
-        "sku": "NEM-KD-AAN-24"
-      },
-      {
-        "title": "2.6",
-        "sku": "NEM-KD-AAN-26"
-      },
-      {
-        "title": "2.8",
-        "sku": "NEM-KD-AAN-28"
-      }
-    ],
+    "variants": [],
     "tryOn": {
       "supported": true,
-      "anchor": "wrist",
-      "scale": 1.05,
-      "overlay": "/art/products/aangan-kada/overlay.svg",
+      "anchor": "neck",
+      "scale": 1,
+      "overlay": "/products/radiant-grace-ad-set/tryon.png",
       "arAsset": null
     },
     "seo": {
@@ -1020,20 +1092,211 @@
   },
   {
     "id": "nem_012",
-    "sku": "NEM-KD-INK-12",
-    "handle": "ink-and-gold-kada-pair",
-    "name": "Ink & Gold Kada Pair",
-    "subtitle": "Enamel-inlay kada pair",
-    "description": "Two gold-tone kadas, each drawn through with a single line of deep purple enamel — Nemara's colour, made to be shared.",
-    "price": 4490,
-    "compareAtPrice": null,
+    "sku": "NEM-NS-RBY-12",
+    "handle": "ruby-rani-ad-set",
+    "name": "Ruby Rani AD Set",
+    "subtitle": "Ruby-red AD necklace & drop earrings",
+    "description": "Ruby-red stones framed in sparkling American diamonds on a gold-tone setting, with matching three-drop earrings. Classic, festive and forever flattering.",
+    "price": 2499,
+    "compareAtPrice": 3499,
     "currency": "INR",
-    "inventory": 10,
-    "category": "kada",
+    "inventory": 15,
+    "category": "necklace-sets",
     "occasions": [
-      "after-hours",
+      "celebration"
+    ],
+    "collections": [
+      "new-arrivals",
+      "best-sellers",
+      "giftable"
+    ],
+    "tags": [
+      "ad",
+      "american diamond",
+      "ruby",
+      "necklace set",
+      "festive"
+    ],
+    "material": "Alloy base, gold-tone finish, American diamond (cubic zirconia) and ruby-red stones, adjustable chain",
+    "dimensions": "",
+    "care": "Keep away from water, perfume and sprays. Wipe with a soft dry cloth and store flat in the Nemara pouch, away from other pieces, so the stones stay bright.",
+    "market": "hyderabad",
+    "featured": false,
+    "createdAt": "2026-11-08T12:24:00.000Z",
+    "images": [
+      {
+        "src": "/products/ruby-rani-ad-set/01.webp",
+        "alt": "Ruby Rani AD Set — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/products/ruby-rani-ad-set/02.webp",
+        "alt": "Ruby Rani AD Set — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/products/ruby-rani-ad-set/03.webp",
+        "alt": "Ruby Rani AD Set — close-up",
+        "role": "detail"
+      },
+      {
+        "src": "/products/ruby-rani-ad-set/04.webp",
+        "alt": "Ruby Rani AD Set — another view",
+        "role": "gallery"
+      }
+    ],
+    "story": {
+      "find": {
+        "body": "Found in Laad Bazaar, Hyderabad, between trays of pearls. Red sets are everywhere — this one had the cleanest settings on the street.",
+        "note": "red, but refined."
+      },
+      "check": {
+        "body": "We checked every ruby-red stone and its halo for grip, matched the earrings and tested the chain and clasp.",
+        "steps": [
+          "Stones and halos checked",
+          "Earrings matched",
+          "Chain and clasp tested",
+          "Plating checked under bright light"
+        ]
+      },
+      "style": {
+        "body": "Karva Chauth, Diwali, the cousin's wedding. A set that already knows what to do.",
+        "pairWith": [
+          "Red or maroon saree",
+          "Rangoli AD Kada",
+          "Hair in a bun with flowers"
+        ]
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "neck",
+      "scale": 1,
+      "overlay": "/products/ruby-rani-ad-set/tryon.png",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_013",
+    "sku": "NEM-NS-TMP-13",
+    "handle": "rajwada-temple-set",
+    "name": "Rajwada Temple Set",
+    "subtitle": "Antique-gold necklace & stud earrings",
+    "description": "An antique-gold necklace of carved chandbali-style motifs and tiny beads, with matching round studs and a beaded drawstring back. Traditional, light and easy to wear.",
+    "price": 1899,
+    "compareAtPrice": 2599,
+    "currency": "INR",
+    "inventory": 20,
+    "category": "necklace-sets",
+    "occasions": [
+      "celebration"
+    ],
+    "collections": [
+      "new-arrivals",
+      "statement",
+      "giftable"
+    ],
+    "tags": [
+      "antique",
+      "temple",
+      "copper",
+      "necklace set",
+      "festive"
+    ],
+    "material": "Copper base, antique gold-tone finish, glass beads; adjustable drawstring (dori) back",
+    "dimensions": "",
+    "care": "Keep away from water and perfume. Wipe gently with a soft dry cloth and store in the Nemara pouch to keep the antique finish rich.",
+    "market": "jaipur",
+    "featured": false,
+    "createdAt": "2026-11-08T12:31:00.000Z",
+    "images": [
+      {
+        "src": "/products/rajwada-temple-set/01.webp",
+        "alt": "Rajwada Temple Set — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/products/rajwada-temple-set/02.webp",
+        "alt": "Rajwada Temple Set — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/products/rajwada-temple-set/03.webp",
+        "alt": "Rajwada Temple Set — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/rajwada-temple-set/04.webp",
+        "alt": "Rajwada Temple Set — close-up",
+        "role": "detail"
+      },
+      {
+        "src": "/products/rajwada-temple-set/05.webp",
+        "alt": "Rajwada Temple Set — another view",
+        "role": "gallery"
+      },
+      {
+        "src": "/products/rajwada-temple-set/06.webp",
+        "alt": "Rajwada Temple Set — another view",
+        "role": "gallery"
+      }
+    ],
+    "story": {
+      "find": {
+        "body": "From the same Johari Bazaar workshop as our Rajwada Kada. It reminded us of the sets our mothers wore — just lighter, and easier.",
+        "note": "heritage, lighter."
+      },
+      "check": {
+        "body": "We checked each motif for crisp detail, the beads for secure stringing, and the dori back for a smooth, adjustable fit.",
+        "steps": [
+          "Motifs checked for crisp detail",
+          "Beads securely strung",
+          "Adjustable dori tested",
+          "Antique finish checked up close"
+        ]
+      },
+      "style": {
+        "body": "Onam, Pongal, the puja at home. Kasavu saree, hair in a bun.",
+        "pairWith": [
+          "Kasavu or silk saree",
+          "Rajwada Kada",
+          "Jasmine in your hair"
+        ]
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "neck",
+      "scale": 1,
+      "overlay": "/products/rajwada-temple-set/tryon.png",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_014",
+    "sku": "NEM-NS-EMR-14",
+    "handle": "emerald-grace-ad-set",
+    "name": "Emerald Grace AD Set",
+    "subtitle": "Emerald-green AD necklace & earrings",
+    "description": "Round medallions of American diamonds, each holding a small emerald-green bloom, with matching drop earrings. Fresh, elegant and a little unexpected.",
+    "price": 2299,
+    "compareAtPrice": 3199,
+    "currency": "INR",
+    "inventory": 15,
+    "category": "necklace-sets",
+    "occasions": [
       "celebration",
-      "nine-to-five"
+      "after-hours"
     ],
     "collections": [
       "new-arrivals",
@@ -1041,81 +1304,155 @@
       "giftable"
     ],
     "tags": [
-      "enamel",
-      "kada",
-      "signature",
-      "pair"
+      "ad",
+      "american diamond",
+      "emerald",
+      "green",
+      "necklace set"
     ],
-    "material": "Brass, gold-tone plating, deep purple enamel",
-    "dimensions": "Width 0.7 cm each · available in 2.4, 2.6 and 2.8",
-    "care": "Keep away from perfume, water and sweat. Wipe with the Nemara cloth after wearing and store in the pouch provided.",
-    "market": "jaipur",
-    "featured": true,
-    "createdAt": "2026-09-12T00:00:00.000Z",
+    "material": "Alloy base, rhodium (silver-tone) finish, American diamond (cubic zirconia) and emerald-green stones",
+    "dimensions": "",
+    "care": "Keep away from water, perfume and sprays. Wipe with a soft dry cloth and store flat in the Nemara pouch, away from other pieces, so the stones stay bright.",
+    "market": "delhi",
+    "featured": false,
+    "createdAt": "2026-11-08T12:38:00.000Z",
     "images": [
       {
-        "src": "/art/products/ink-and-gold-kada-pair/hero.svg",
-        "alt": "Ink & Gold Kada Pair — product view",
+        "src": "/products/emerald-grace-ad-set/01.webp",
+        "alt": "Emerald Grace AD Set — product view",
         "role": "hero"
       },
       {
-        "src": "/art/products/ink-and-gold-kada-pair/worn.svg",
-        "alt": "Ink & Gold Kada Pair — as worn",
+        "src": "/products/emerald-grace-ad-set/02.webp",
+        "alt": "Emerald Grace AD Set — as worn",
         "role": "worn"
       },
       {
-        "src": "/art/products/ink-and-gold-kada-pair/detail.svg",
-        "alt": "Ink & Gold Kada Pair — close-up detail",
+        "src": "/products/emerald-grace-ad-set/03.webp",
+        "alt": "Emerald Grace AD Set — close-up",
         "role": "detail"
-      },
-      {
-        "src": "/art/products/ink-and-gold-kada-pair/story.svg",
-        "alt": "Ink & Gold Kada Pair — buyer's notebook sketch",
-        "role": "story"
       }
     ],
     "story": {
       "find": {
-        "body": "From a Jaipur enameller who usually works in ruby and emerald. We asked for a single line of deep purple instead — Nemara's colour, in enamel.",
-        "note": "purple, not red. our colour."
+        "body": "Picked up in Dariba Kalan, Old Delhi. Green is having a moment — this was the set that wore it best.",
+        "note": "green is the new white."
       },
       "check": {
-        "body": "We checked the enamel line for an even fill, matched the two kadas exactly, and tested that they sound good together — a soft clink, not a clatter.",
+        "body": "We checked every medallion for grip, matched the earrings and tested the chain and clasp.",
         "steps": [
-          "Enamel line checked for even fill",
-          "Pair matched exactly",
-          "Comfort-rounded inner edges",
+          "Medallions checked for grip",
+          "Earrings matched",
+          "Chain and clasp tested",
           "Plating checked under bright light"
         ]
       },
       "style": {
-        "body": "Any day you want to sign your name on it. Wear them together, or give one away.",
+        "body": "An evening wedding in green. Let the set do the colour.",
         "pairWith": [
-          "Anything — they go with everything",
-          "One on each wrist",
-          "Share one with your best friend"
+          "Bottle-green or ivory saree",
+          "Hair in a low bun",
+          "Silver-tone bangles"
         ]
       }
     },
-    "variants": [
-      {
-        "title": "2.4",
-        "sku": "NEM-KD-INK-24"
-      },
-      {
-        "title": "2.6",
-        "sku": "NEM-KD-INK-26"
-      },
-      {
-        "title": "2.8",
-        "sku": "NEM-KD-INK-28"
-      }
-    ],
+    "variants": [],
     "tryOn": {
       "supported": true,
-      "anchor": "wrist",
+      "anchor": "neck",
       "scale": 1,
-      "overlay": "/art/products/ink-and-gold-kada-pair/overlay.svg",
+      "overlay": "/products/emerald-grace-ad-set/tryon.png",
+      "arAsset": null
+    },
+    "seo": {
+      "title": null,
+      "description": null
+    }
+  },
+  {
+    "id": "nem_015",
+    "sku": "NEM-NS-VIN-15",
+    "handle": "silver-vine-ad-set",
+    "name": "Silver Vine AD Set",
+    "subtitle": "Vine necklace & leaf earrings",
+    "description": "A V-shaped vine of American diamond leaves that falls to a single pear drop, with matching leaf earrings. Sleek, modern and made for cocktail hours.",
+    "price": 2599,
+    "compareAtPrice": 3599,
+    "currency": "INR",
+    "inventory": 15,
+    "category": "necklace-sets",
+    "occasions": [
+      "after-hours",
+      "celebration"
+    ],
+    "collections": [
+      "new-arrivals",
+      "statement"
+    ],
+    "tags": [
+      "ad",
+      "american diamond",
+      "necklace set",
+      "cocktail",
+      "silver-tone"
+    ],
+    "material": "Alloy base, rhodium (silver-tone) finish, American diamond (cubic zirconia) stones",
+    "dimensions": "",
+    "care": "Keep away from water, perfume and sprays. Wipe with a soft dry cloth and store flat in the Nemara pouch, away from other pieces, so the stones stay bright.",
+    "market": "delhi",
+    "featured": false,
+    "createdAt": "2026-11-08T12:45:00.000Z",
+    "images": [
+      {
+        "src": "/products/silver-vine-ad-set/01.webp",
+        "alt": "Silver Vine AD Set — product view",
+        "role": "hero"
+      },
+      {
+        "src": "/products/silver-vine-ad-set/02.webp",
+        "alt": "Silver Vine AD Set — as worn",
+        "role": "worn"
+      },
+      {
+        "src": "/products/silver-vine-ad-set/03.webp",
+        "alt": "Silver Vine AD Set — close-up",
+        "role": "detail"
+      },
+      {
+        "src": "/products/silver-vine-ad-set/04.webp",
+        "alt": "Silver Vine AD Set — another view",
+        "role": "gallery"
+      }
+    ],
+    "story": {
+      "find": {
+        "body": "From a Dariba Kalan counter that sells to Delhi's party crowd. The V-shape is what sold us — it flatters every neckline.",
+        "note": "the neckline's best friend."
+      },
+      "check": {
+        "body": "We checked every leaf for grip, matched the earrings, and made sure the V sits centred and flat.",
+        "steps": [
+          "Leaves checked for grip",
+          "Earrings matched",
+          "Sits centred and flat",
+          "Clasp tested"
+        ]
+      },
+      "style": {
+        "body": "Cocktail night. Black dress, the V-neck, and this.",
+        "pairWith": [
+          "Black dress or saree",
+          "Hair slicked back",
+          "Riptide Coil Bracelet"
+        ]
+      }
+    },
+    "variants": [],
+    "tryOn": {
+      "supported": true,
+      "anchor": "neck",
+      "scale": 1,
+      "overlay": "/products/silver-vine-ad-set/tryon.png",
       "arAsset": null
     },
     "seo": {

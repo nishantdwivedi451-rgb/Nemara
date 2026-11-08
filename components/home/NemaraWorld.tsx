@@ -5,11 +5,11 @@ import { useState } from "react";
 
 const WORLD = [
   { k: "Markets", img: "/art/markets/jaipur.svg", note: "six cities. one wardrobe.", body: "Johari Bazaar, Dariba Kalan, Lal Chowk, Laad Bazaar, Colaba Causeway, Law Garden. We walk India's most famous jewellery markets every season, so you don't have to.", href: "/markets" },
-  { k: "Handpicked", img: "/art/products/monsoon-hour-jhumka/story.svg", note: "one in fifty makes it.", body: "We pick for three things: beautiful, wearable, right for now. Too heavy to dance in? It doesn't make it. Already everywhere? Neither does that.", href: "/our-story" },
-  { k: "Checked", img: "/art/products/aangan-kada/detail.svg", note: "checked like fine jewellery.", body: "Plating, stones, clasps, comfort and every edge that touches your skin — checked before it ships, and backed by a 3-month warranty.", href: "/info/warranty" },
-  { k: "Styled", img: "/art/campaign/nine-to-five.svg", note: "office to dinner, no change needed.", body: "Every piece comes with how to wear it and what to pair it with. Ask the Nemara Stylist where you're going and get an edit back.", href: "/stylist" },
-  { k: "Premium", img: "/art/campaign/celebration.svg", note: "premium, not precious.", body: "The look and finish of fine jewellery at a price that lets you build a whole wardrobe — and actually wear it on a Tuesday.", href: "/shop" },
-  { k: "Yours", img: "/art/campaign/after-hours.svg", note: "see it on you, then decide.", body: "Try any piece on with your camera. Mix, stack, break the rules — it's your wardrobe and your story.", href: "/try-on" },
+  { k: "Handpicked", img: "/products/rajwada-kada/01.webp", note: "one in fifty makes it.", body: "We pick for three things: beautiful, wearable, right for now. Too heavy to dance in? It doesn't make it. Already everywhere? Neither does that.", href: "/our-story" },
+  { k: "Checked", img: "/products/jaali-bloom-ad-kada-pair/05.webp", note: "checked like fine jewellery.", body: "Plating, stones, clasps, comfort and every edge that touches your skin — checked before it ships, and backed by a 3-month warranty.", href: "/info/warranty" },
+  { k: "Styled", img: "/products/cupids-arrow-bracelet/02.webp", note: "office to dinner, no change needed.", body: "Every piece comes with how to wear it and what to pair it with. Ask the Nemara Stylist where you're going and get an edit back.", href: "/stylist" },
+  { k: "Premium", img: "/products/radiant-grace-ad-set/02.webp", note: "premium, not precious.", body: "The look and finish of fine jewellery at a price that lets you build a whole wardrobe — and actually wear it on a Tuesday.", href: "/shop" },
+  { k: "Yours", img: "/products/cascade-tassel-earrings/02.webp", note: "see it on you, then decide.", body: "Try any piece on with your camera. Mix, stack, break the rules — it's your wardrobe and your story.", href: "/try-on" },
 ];
 
 export function NemaraWorld() {

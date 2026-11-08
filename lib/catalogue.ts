@@ -2,6 +2,10 @@ import "server-only";
 import { unstable_cache, revalidateTag, updateTag } from "next/cache";
 import seed from "@/content/products.json";
 import { store } from "@/lib/store";
+import { createHash } from "node:crypto";
+
+// Cache key follows the seed, so a catalogue change shipped in the repo never serves a stale cached copy.
+const SEED_KEY = createHash("sha1").update(JSON.stringify(seed)).digest("hex").slice(0, 12);
 
 /**
  * The catalogue as stored and edited in Nemara Studio. One document holds every
@@ -30,7 +34,7 @@ async function read(): Promise<StoredProduct[]> {
 }
 
 /** Cached read used by the storefront (tag: "catalogue"). */
-export const loadCatalogue = unstable_cache(read, ["nemara-catalogue-v1"], { tags: ["catalogue"], revalidate: 600 });
+export const loadCatalogue = unstable_cache(read, ["nemara-catalogue", SEED_KEY], { tags: ["catalogue"], revalidate: 600 });
 /** Uncached read for Nemara Studio. */
 export const loadCatalogueFresh = read;
 

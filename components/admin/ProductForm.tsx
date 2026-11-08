@@ -47,11 +47,14 @@ export function ProductForm({ initial, taxonomy, markets }: Props) {
     findBody: initial?.story.find.body ?? "", findNote: initial?.story.find.note ?? "",
     checkBody: initial?.story.check.body ?? "", checkSteps: (initial?.story.check.steps ?? []).join("\n"),
     styleBody: initial?.story.style.body ?? "", pairWith: (initial?.story.style.pairWith ?? []).join("\n"),
-    sizes: (initial?.variants ?? []).map((v) => v.title).join(", "),
+    variants: ((initial?.variants ?? []) as { title: string; price?: number | null; available?: boolean }[]).map((v) => ({ title: v.title, price: v.price ?? 0, available: v.available !== false })),
     tryOn: initial?.tryOn?.supported ?? false, anchor: (initial?.tryOn?.anchor as "ears" | "neck" | "wrist") ?? "ears",
     overlay: initial?.tryOn?.overlay ?? "", scale: initial?.tryOn?.scale ?? 1,
   }));
+  // photos beyond the four slots (extra gallery shots) are kept as they are on save
+  const extraImages = (initial?.images ?? []).filter((im) => !SLOTS.some((s) => s.role === im.role));
   const set = <K extends keyof typeof f>(k: K, v: (typeof f)[K]) => setF((s) => ({ ...s, [k]: v }));
+  const setVariant = (i: number, patch: Partial<(typeof f)["variants"][number]>) => set("variants", f.variants.map((v, j) => (j === i ? { ...v, ...patch } : v)));
   const toggle = (k: "occasions" | "collections", v: string) => set(k, f[k].includes(v) ? f[k].filter((x) => x !== v) : [...f[k], v]);
   const err = (k: string) => errors[k] && <span className="a-error">{errors[k]}</span>;
 
@@ -70,20 +73,19 @@ export function ProductForm({ initial, taxonomy, markets }: Props) {
   function submit(e: React.FormEvent) {
     e.preventDefault();
     setMsg(null); setErrors({});
-    const sizes = f.sizes.split(",").map((s) => s.trim()).filter(Boolean);
     const input: ProductInput = {
       previousHandle: initial?.handle, handle: f.handle, sku: f.sku.trim().toUpperCase(), name: f.name.trim(), subtitle: f.subtitle.trim(),
       description: f.description.trim(), price: Math.round(Number(f.price)), compareAtPrice: Number(f.compareAtPrice) > 0 ? Math.round(Number(f.compareAtPrice)) : null,
       inventory: Math.round(Number(f.inventory)), lowStockAt: Math.round(Number(f.lowStockAt)),
       category: f.category, occasions: f.occasions, collections: f.collections, tags: f.tags.split(",").map((t) => t.trim()).filter(Boolean),
       material: f.material, dimensions: f.dimensions, care: f.care, market: f.market, featured: f.featured, exclusive: f.exclusive, status: f.status as "active" | "draft",
-      images: SLOTS.map((s, i) => ({ src: f.images[i], alt: `${f.name} — ${s.label.toLowerCase()}`, role: s.role })).filter((i) => i.src),
+      images: [...SLOTS.map((s, i) => ({ src: f.images[i], alt: `${f.name} — ${s.label.toLowerCase()}`, role: s.role })).filter((i) => i.src), ...extraImages],
       story: {
         find: { body: f.findBody, note: f.findNote || undefined },
         check: { body: f.checkBody, steps: lines(f.checkSteps) },
         style: { body: f.styleBody, pairWith: lines(f.pairWith) },
       },
-      variants: sizes.map((t) => ({ title: t, sku: `${f.sku.trim().toUpperCase()}-${t.replace(/\W/g, "")}` })),
+      variants: f.variants.filter((v) => v.title.trim()).map((v) => ({ title: v.title.trim(), sku: `${f.sku.trim().toUpperCase()}-${v.title.trim().toUpperCase().replace(/\W+/g, "")}`, price: Number(v.price) > 0 ? Math.round(Number(v.price)) : null, available: v.available })),
       tryOn: f.tryOn && f.overlay ? { supported: true, anchor: f.anchor, overlay: f.overlay, scale: Number(f.scale) || 1 } : null,
     };
     start(async () => {
@@ -148,12 +150,37 @@ export function ProductForm({ initial, taxonomy, markets }: Props) {
         </section>
 
         <section className="a-card">
+          <div className="a-card__head"><h2>Sizes &amp; options</h2><small className="a-muted">Leave empty for a one-size piece. Each size or option can have its own price — blank uses the main price.</small></div>
+          <div className="a-form">
+            {f.variants.length > 0 && (
+              <table className="a-table a-variants">
+                <thead><tr><th>Size / option</th><th>Price (₹)</th><th>Available</th><th aria-label="Remove" /></tr></thead>
+                <tbody>
+                  {f.variants.map((v, i) => (
+                    <tr key={i}>
+                      <td><input className="a-input" value={v.title} placeholder="2.6 or Set of 2" aria-label={`Size ${i + 1}`} onChange={(e) => setVariant(i, { title: e.target.value })} /></td>
+                      <td><input className="a-input" type="number" min={0} inputMode="numeric" value={v.price || ""} placeholder={String(f.price || "")} aria-label={`Price for ${v.title || `size ${i + 1}`}`} onChange={(e) => setVariant(i, { price: Number(e.target.value) })} /></td>
+                      <td><label className="a-check"><input type="checkbox" checked={v.available} onChange={(e) => setVariant(i, { available: e.target.checked })} /> {v.available ? "In stock" : "Hidden"}</label></td>
+                      <td><button type="button" className="a-btn a-btn--sm" onClick={() => set("variants", f.variants.filter((_, j) => j !== i))}>Remove</button></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+            <div className="a-row-actions">
+              <button type="button" className="a-btn a-btn--sm" onClick={() => set("variants", [...f.variants, { title: "", price: 0, available: true }])}>+ Add size / option</button>
+              <button type="button" className="a-btn a-btn--sm" onClick={() => set("variants", ["2.4", "2.6", "2.8"].map((t) => ({ title: t, price: 0, available: true })))}>Kada sizes 2.4 · 2.6 · 2.8</button>
+              <button type="button" className="a-btn a-btn--sm" onClick={() => set("variants", [{ title: "Single", price: 0, available: true }, { title: "Set of 2", price: 0, available: true }])}>Single / Set of 2</button>
+            </div>
+          </div>
+        </section>
+
+        <section className="a-card">
           <div className="a-card__head"><h2>Details</h2></div>
           <div className="a-form">
             <label className="a-field"><span>Material</span><input className="a-input" value={f.material} onChange={(e) => set("material", e.target.value)} /></label>
             <label className="a-field"><span>Dimensions &amp; weight</span><input className="a-input" value={f.dimensions} onChange={(e) => set("dimensions", e.target.value)} /></label>
             <label className="a-field"><span>Care</span><textarea className="a-input" rows={2} value={f.care} onChange={(e) => set("care", e.target.value)} /></label>
-            <label className="a-field"><span>Sizes (comma-separated, leave empty if one size)</span><input className="a-input" value={f.sizes} onChange={(e) => set("sizes", e.target.value)} placeholder="2.4, 2.6, 2.8" /></label>
             <label className="a-field"><span>Tags (comma-separated, help search)</span><input className="a-input" value={f.tags} onChange={(e) => set("tags", e.target.value)} placeholder="enamel, lilac, festive" /></label>
           </div>
         </section>

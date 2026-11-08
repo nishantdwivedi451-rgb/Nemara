@@ -75,7 +75,7 @@ const productSchema = z.object({
     check: z.object({ body: z.string().max(1500).default(""), steps: z.array(z.string().max(80)).max(8).optional() }),
     style: z.object({ body: z.string().max(800).default(""), pairWith: z.array(z.string().max(60)).max(8).optional() }),
   }),
-  variants: z.array(z.object({ title: z.string().max(20), sku: z.string().max(60) })).max(12).default([]),
+  variants: z.array(z.object({ title: z.string().min(1).max(24), sku: z.string().max(60), price: z.number().int().min(1).max(10_00_000).nullable().optional(), available: z.boolean().default(true) })).max(12).default([]),
   tryOn: z.object({ supported: z.boolean(), anchor: z.enum(["ears", "neck", "wrist"]), overlay: z.string().max(500), scale: z.number().min(0.3).max(3).optional(), arAsset: z.null().optional() }).nullable(),
 });
 export type ProductInput = z.input<typeof productSchema>;

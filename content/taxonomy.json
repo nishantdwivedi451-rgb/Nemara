@@ -3,9 +3,9 @@
     {
       "slug": "necklace-sets",
       "name": "Necklace Sets",
-      "line": "Collars, chokers and the studs that finish the sentence.",
+      "line": "Necklaces with matching earrings, ready for the occasion.",
       "image": {
-        "src": "/art/products/raat-rani-necklace-set/worn.svg",
+        "src": "/products/radiant-grace-ad-set/02.webp",
         "alt": "Necklace set worn at the collarbone",
         "role": "worn"
       }
@@ -15,7 +15,7 @@
       "name": "Earrings",
       "line": "Drops, jhumkas and hoops — the first thing they notice when you turn your head.",
       "image": {
-        "src": "/art/products/monsoon-hour-jhumka/worn.svg",
+        "src": "/products/cascade-tassel-earrings/02.webp",
         "alt": "Jhumka earring worn in profile",
         "role": "worn"
       }
@@ -25,17 +25,17 @@
       "name": "Bracelets",
       "line": "For the wrist that talks with its hands.",
       "image": {
-        "src": "/art/products/thread-of-thought-cuff/worn.svg",
+        "src": "/products/blush-bamboo-bracelet/05.webp",
         "alt": "Filigree cuff worn on the wrist",
         "role": "worn"
       }
     },
     {
       "slug": "kada",
-      "name": "Kada",
-      "line": "The bangle that carries weight — in every sense.",
+      "name": "Kada & Bangles",
+      "line": "From slim everyday bangles to festive kadas.",
       "image": {
-        "src": "/art/products/aangan-kada/worn.svg",
+        "src": "/products/rajwada-kada/03.webp",
         "alt": "Repoussé kada worn on the wrist",
         "role": "worn"
       }

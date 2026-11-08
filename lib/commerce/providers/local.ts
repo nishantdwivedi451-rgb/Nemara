@@ -4,14 +4,24 @@ import type { CommerceProvider, Product } from "../types";
 import { applyQuery, availabilityOf } from "../query";
 import { loadCatalogue, type StoredProduct } from "@/lib/catalogue";
 
+type StoredVariant = { title: string; sku: string; price?: number | null; available?: boolean };
+
+/** Sizes / options from Studio. Each can carry its own price; the product shows "From" the lowest available one. */
+function variantsOf(r: StoredProduct) {
+  const variants = ((r.variants ?? []) as StoredVariant[]).map((v) => ({
+    id: v.sku, title: v.title, sku: v.sku, available: r.inventory > 0 && v.available !== false, price: v.price || r.price,
+  }));
+  const priced = variants.filter((v) => v.available).map((v) => v.price);
+  const price = priced.length ? Math.min(...priced) : r.price;
+  return { variants, price, priceVaries: new Set(variants.map((v) => v.price)).size > 1 };
+}
+
 export function normalise(r: StoredProduct): Product {
   return {
     ...r,
     currency: "INR",
     availability: availabilityOf(r.inventory),
-    variants: (r.variants ?? []).map((v: { title: string; sku: string }) => ({
-      id: v.sku, title: v.title, sku: v.sku, available: r.inventory > 0, price: r.price,
-    })),
+    ...variantsOf(r),
     tryOn: r.tryOn as Product["tryOn"],
     exclusive: !!r.exclusive,
   } as Product;

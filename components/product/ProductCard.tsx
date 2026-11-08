@@ -6,7 +6,7 @@ import { IconCamera, IconHeart, IconPlus } from "@/components/brand/Icons";
 import { formatPrice, cx } from "@/lib/format";
 import type { Product } from "@/lib/commerce/types";
 
-export type CardProduct = Pick<Product, "handle" | "name" | "subtitle" | "price" | "compareAtPrice" | "images" | "availability" | "variants" | "tryOn" | "story">;
+export type CardProduct = Pick<Product, "handle" | "name" | "subtitle" | "price" | "compareAtPrice" | "images" | "availability" | "variants" | "tryOn" | "story" | "priceVaries">;
 
 export function ProductCard({ p, size = "md", priority = false, showNote = false }: { p: CardProduct; size?: "md" | "lg"; priority?: boolean; showNote?: boolean }) {
   const { add, toggleWish, isWished } = useStore();
@@ -33,13 +33,13 @@ export function ProductCard({ p, size = "md", priority = false, showNote = false
         <div className="pcard__actions">
           {p.tryOn?.supported && <Link href={`/try-on?piece=${p.handle}`} className="pcard__try"><IconCamera /> Try it on</Link>}
           {!soldOut && (needsSize
-            ? <Link href={`/product/${p.handle}`} className="pcard__add">Choose size</Link>
+            ? <Link href={`/product/${p.handle}`} className="pcard__add">{p.variants.every((v) => /^\d/.test(v.title)) ? "Choose size" : "Choose option"}</Link>
             : <button className="pcard__add" onClick={() => add({ handle: p.handle, name: p.name, price: p.price, image: hero.src })}><IconPlus /> Quick add</button>)}
         </div>
       </div>
       <Link href={`/product/${p.handle}`} className="pcard__meta">
         <h3 className="pcard__name">{p.name}</h3>
-        <span className="pcard__price">{formatPrice(p.price)}</span>
+        <span className="pcard__price">{p.priceVaries ? "From " : ""}{formatPrice(p.price)}</span>
         {p.subtitle && <span className="pcard__sub">{p.subtitle}</span>}
         {showNote && p.story.find.note && <span className="hand pcard__note">“{p.story.find.note}”</span>}
       </Link>

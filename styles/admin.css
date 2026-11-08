@@ -178,3 +178,5 @@ textarea.a-input { resize: vertical; line-height: 1.45; }
 .a-savebar { position: sticky; bottom: 12px; display: grid; gap: 8px; background: var(--a-card); border: 1px solid var(--a-line); border-radius: 10px; padding: 14px; box-shadow: 0 10px 30px rgba(43, 18, 54, .08); }
 .a-danger { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; border: 1px solid #F0C9D0; background: #FFF8F9; border-radius: 10px; padding: 16px 18px; }
 .a-danger p { color: var(--a-muted); font-size: 13px; }
+.a-variants td:first-child { width: 40%; } .a-variants td:nth-child(2) { width: 24%; }
+.a-row-actions { display: flex; flex-wrap: wrap; gap: 8px; }

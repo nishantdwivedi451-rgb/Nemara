@@ -266,7 +266,7 @@ for (const opt of OPTIONS) {
 }
 
 /* ---------- presentation: lineup + printer brief ---------- */
-const sample = products.find((p) => p.handle === "second-glance-hoops");
+const sample = products.find((p) => p.handle === "cascade-tassel-earrings");
 const big = (d, scale, id) => {
   const pad = 3;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${-pad} ${-pad} ${d.w + 2 * pad} ${d.h + 2 * pad}" width="${(d.w + 2 * pad) * scale}mm" height="${(d.h + 2 * pad) * scale}mm">${DEFS}<defs><clipPath id="clip-${id}">${d.cut}</clipPath><filter id="sh-${id}" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="0.35" stdDeviation="0.45" flood-color="#21102A" flood-opacity=".22"/></filter></defs>
@@ -283,7 +283,7 @@ const hoopMock = (() => {
       <g transform="translate(3 -5)"><g filter="drop-shadow(0 .4px .5px rgba(33,16,42,.3))"><g clip-path="url(#padA)"><rect width="14" height="10" fill="${C.ink}"/>${mark(7, 5, 5.8, "f")}</g></g></g>
     </g></svg>`;
 })();
-const seals = seal(), story = storyTag(products.find((p) => p.handle === "monsoon-hour-jhumka")), flag = jewelFlag(sample), archD = arch(), note = marginNote(markets.jaipur);
+const seals = seal(), story = storyTag(products.find((p) => p.handle === "rajwada-kada")), flag = jewelFlag(sample), archD = arch(), note = marginNote(markets.jaipur);
 const swap = (d) => d;
 const fit = (d, bw, bh) => Math.min(bw / (d.w + 6), bh / (d.h + 6));
 const tiles = [

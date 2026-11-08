@@ -3,12 +3,12 @@
     "slug": "a-morning-in-johari-bazaar",
     "kind": "Market Diary",
     "title": "A morning in Johari Bazaar",
-    "excerpt": "Pink arches, chai at 9 a.m., and the one lilac tray that became the Monsoon Hour jhumka.",
+    "excerpt": "Pink arches, chai at 9 a.m., and the tray of antique-gold kadas that became our Rajwada Kada.",
     "date": "2026-10-12",
     "author": "Nemara Buying Team",
     "cover": {
-      "src": "/art/markets/jaipur.svg",
-      "alt": "Illustration of Jaipur's jharokhas",
+      "src": "/products/rajwada-kada/02.webp",
+      "alt": "Rajwada Kada pair on a stone plinth",
       "role": "campaign"
     },
     "body": [
@@ -18,15 +18,15 @@
       },
       {
         "type": "h",
-        "text": "Red, green… and one tray of lilac"
+        "text": "Red, green… and a few tiny bells"
       },
       {
         "type": "p",
-        "text": "Almost every jhumka counter here leads with ruby red and emerald green. They're beautiful, and they're everywhere. Three shops in, we found a single tray of lilac meenakari — the enameller upstairs had been experimenting. That tray became our Monsoon Hour jhumka."
+        "text": "Most counters here lead with the same bright bridal sets. Three shops in, the owner of a small workshop brought out a tray of antique-gold kadas — carved florals, red and green stones, and tiny ghungroos that chime when you move. That tray became our Rajwada Kada."
       },
       {
         "type": "p",
-        "text": "We asked for one change: a lighter dome, so you can wear them through a whole sangeet without your ears hating you. Two weeks later, the samples arrived."
+        "text": "We asked for one change: a smooth hinge, so it opens and closes without a struggle. Two weeks later, the samples arrived — and the matching temple necklace came with them."
       },
       {
         "type": "quote",
@@ -38,7 +38,7 @@
       },
       {
         "type": "p",
-        "text": "Glossy enamel with no pinholes. Kundan that sits flush. Fringes that move. And colours that work with denim as much as with a lehenga."
+        "text": "Crisp carving, stones that sit flush, finishes that look rich up close — and pieces light enough to wear from the haldi to the reception."
       }
     ]
   },
@@ -50,8 +50,8 @@
     "date": "2026-09-28",
     "author": "Nemara Quality Desk",
     "cover": {
-      "src": "/art/campaign/studio.svg",
-      "alt": "Illustration of the Nemara checking table",
+      "src": "/products/jaali-bloom-ad-kada-pair/05.webp",
+      "alt": "Close-up of the Jaali Bloom AD kada",
       "role": "campaign"
     },
     "body": [
@@ -84,35 +84,35 @@
   {
     "slug": "styling-one-kada-five-ways",
     "kind": "Styling Guide",
-    "title": "One kada, five versions of you",
-    "excerpt": "The Ink & Gold pair, worn from a Monday stand-up to a Saturday sangeet.",
+    "title": "One bangle, five versions of you",
+    "excerpt": "The Starline Stone Bangle, worn from a Monday stand-up to a Saturday sangeet.",
     "date": "2026-08-21",
     "author": "Nemara Studio",
     "cover": {
-      "src": "/art/campaign/everyday.svg",
-      "alt": "Placeholder — kadas stacked on the wrist",
+      "src": "/products/starline-stone-bangle/02.webp",
+      "alt": "Starline Stone Bangle worn with a chikankari kurta",
       "role": "campaign"
     },
     "body": [
       {
         "type": "p",
-        "text": "Monday: one kada, crisp white shirt, sleeves pushed up. The purple line does the talking."
+        "text": "Monday: the Starline bangle alone, crisp white shirt, sleeves pushed up. One line of light does the talking."
       },
       {
         "type": "p",
-        "text": "Wednesday: both kadas with a watch on the other wrist. Balanced, not matched."
+        "text": "Wednesday: stack it with the Cupid's Arrow Bracelet, watch on the other wrist. Balanced, not matched."
       },
       {
         "type": "p",
-        "text": "Friday: stack them with the Recess bracelet. Play is allowed."
+        "text": "Friday: add the Blush Bamboo Bracelet. A little pink, a little play."
       },
       {
         "type": "p",
-        "text": "Saturday: with a silk saree and the Monsoon Hour jhumkas — gold to gold, lilac to purple."
+        "text": "Saturday: with a silk saree and the Petal Drop Earrings — gold to gold, soft to sparkle."
       },
       {
         "type": "quote",
-        "text": "Sunday: give one to your sister. She'll know why."
+        "text": "Sunday: lend it to your sister. She'll know why."
       }
     ]
   }
